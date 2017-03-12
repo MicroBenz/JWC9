@@ -2,6 +2,10 @@
 
 Powered by Laravel 5.4
 
+## Libraries
+- Bootstrap 3.3.7
+- jQuery 3.1.1
+
 ## Dev First time setup guide
 
 - Install dependencies via composer
