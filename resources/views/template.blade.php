@@ -33,9 +33,11 @@
     <meta property="article:tag" content="Article Tag" />
     <meta property="fb:admins" content="Facebook numberic ID" />
 
-    <link href="{{URL::asset('css/app.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('libs/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 </head>
 <body>
     @yield('content')
+    <script src="{{URL::asset('libs/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{URL::asset('libs/bootstrap/js/bootstrap.min.js')}}"></script>
 </body>
 </html>
