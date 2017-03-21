@@ -3,3 +3,51 @@ html, body {
     height: 100%;
     background-color: #23B4C1;
 }
+
+/* Bouncing Keyframes */
+@keyframes bouncing {
+    0% { transform: translateY(0);}
+    50% { transform: translateY(-30px);}
+    100% { transform: translateY(0px);}
+}
+
+.logo-container {
+    position: relative;
+}
+
+.logo-container .floating-cloud {
+    position: absolute;
+    width: 50px;
+    animation: bouncing 5s infinite;
+}
+
+/* Cloud Position */
+.floating-cloud.left-top {
+    left: 100px;
+    top: 100px;
+}
+
+.floating-cloud.left-mid {
+    left: 10px;
+    top: 300px;
+}
+
+.floating-cloud.left-bottom {
+    left: 120px;
+    top: 500px;
+}
+
+.floating-cloud.right-top {
+    right: 100px;
+    top: 100px;
+}
+
+.floating-cloud.right-mid {
+    right: 10px;
+    top: 300px;
+}
+
+.floating-cloud.right-bottom {
+    right: 120px;
+    top: 500px;
+}
