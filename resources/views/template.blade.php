@@ -34,6 +34,7 @@
     <meta property="fb:admins" content="Facebook numberic ID" />
 
     <link href="{{URL::asset('libs/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    @yield('style')
 </head>
 <body>
     @yield('content')
