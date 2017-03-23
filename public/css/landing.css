@@ -2,6 +2,7 @@ html, body {
     width: 100%;
     height: 100%;
     background-color: #23B4C1;
+    font-family: 'DB Helvethaica X'    
 }
 
 /* Bouncing Keyframes */
@@ -13,41 +14,80 @@ html, body {
 
 .logo-container {
     position: relative;
+    text-align: center;
+}
+
+.logo-container .logo {
+    /*position: absolute;*/
 }
 
 .logo-container .floating-cloud {
     position: absolute;
-    width: 50px;
+    width: 80px;
     animation: bouncing 5s infinite;
 }
 
 /* Cloud Position */
 .floating-cloud.left-top {
-    left: 100px;
-    top: 100px;
+    top: 50px;
+    left: 0px;
 }
-
 .floating-cloud.left-mid {
-    left: 10px;
-    top: 300px;
+    top: 45%;
+    left: 0px
 }
-
 .floating-cloud.left-bottom {
-    left: 120px;
-    top: 500px;
+    bottom: 50px;
+    left: 0px    
 }
-
 .floating-cloud.right-top {
-    right: 100px;
-    top: 100px;
+    top: 50px;
+    right: 0px;
 }
-
 .floating-cloud.right-mid {
-    right: 10px;
-    top: 300px;
+    top: 45%;
+    right: 0px;    
+}
+.floating-cloud.right-bottom {
+    bottom: 50px;
+    right: 0px;        
 }
 
-.floating-cloud.right-bottom {
-    right: 120px;
-    top: 500px;
+.coming-soon-container {
+    text-align: center;
+}
+
+.coming-soon-container .coming-soon-text {
+    color: #FAC621;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 76px;
+    line-height: 58px;
+    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.21);      
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.coming-soon-container .supported-by-text {
+    color: #442C1F;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.coming-soon-container .subscribe-text {
+    color: #ffffff;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.social-button-group {
+    text-align: center;
+}
+
+.social-button-group .facebook-button {
+    font-size: 35px;
+    color: #ffffff;
+    background-color: #3C5A99;
 }
