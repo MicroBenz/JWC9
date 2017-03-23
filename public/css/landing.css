@@ -109,6 +109,9 @@ html, body {
     width: 45px;
     height: 45px;
     border-radius: 22px;
+    -webkit-box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.57);
+    -moz-box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.57);
+    box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.57);
 }
 
 .social-button-group .facebook-button {
