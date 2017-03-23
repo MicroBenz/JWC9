@@ -5,40 +5,51 @@ html, body {
     font-family: 'DB Helvethaica X 55';
 }
 
+.screen{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 /* Bouncing Keyframes */
 @keyframes bouncing-right {
-    0% { transform: translateX(0);}
-    50% { transform: translateX(30px);}
-    100% { transform: translateX(0px);}
+    0% { transform: translate(0, 0);}
+    50% { transform: translate(30px, 15px);}
+    100% { transform: translate(0, 0);}
 }
 
 @keyframes bouncing-left {
-    0% { transform: translateX(0);}
-    50% { transform: translateX(-30px);}
-    100% { transform: translateX(0px);}
+    0% { transform: translate(0, 0);}
+    50% { transform: translate(-30px, 15px);}
+    100% { transform: translate(0, 0);}
 }
 
 .logo-container {
     position: relative;
     text-align: center;
+    max-width: 600px;
+    margin: auto;
 }
 
 .logo-container .logo {
     /*position: absolute;*/
     width: 420px;
+    max-width: 100%;
 }
 
 .logo-container .floating-cloud {
     position: absolute;
     width: 80px;
+    opacity: 0.85;
 }
 
 .logo-container .floating-cloud-left {
-    animation: bouncing-right 5s infinite;
+    animation: bouncing-right 7s infinite linear;
 }
 
 .logo-container .floating-cloud-right {
-    animation: bouncing-left 5s infinite;
+    animation: bouncing-left 7s infinite linear;
 }
 
 /* Cloud Position */
@@ -51,11 +62,11 @@ html, body {
     right: 15%;
 }
 .floating-cloud.left-mid {
-    top: 45%;
+    top: 37%;
     left: 20px
 }
 .floating-cloud.right-mid {
-    top: 45%;
+    top: 37%;
     right: 20px;    
 }
 .floating-cloud.left-bottom {
