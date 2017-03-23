@@ -6,10 +6,16 @@ html, body {
 }
 
 /* Bouncing Keyframes */
-@keyframes bouncing {
-    0% { transform: translateY(0);}
-    50% { transform: translateY(-30px);}
-    100% { transform: translateY(0px);}
+@keyframes bouncing-right {
+    0% { transform: translateX(0);}
+    50% { transform: translateX(30px);}
+    100% { transform: translateX(0px);}
+}
+
+@keyframes bouncing-left {
+    0% { transform: translateX(0);}
+    50% { transform: translateX(-30px);}
+    100% { transform: translateX(0px);}
 }
 
 .logo-container {
@@ -19,42 +25,52 @@ html, body {
 
 .logo-container .logo {
     /*position: absolute;*/
+    width: 420px;
 }
 
 .logo-container .floating-cloud {
     position: absolute;
     width: 80px;
-    animation: bouncing 5s infinite;
+}
+
+.logo-container .floating-cloud-left {
+    animation: bouncing-right 5s infinite;
+}
+
+.logo-container .floating-cloud-right {
+    animation: bouncing-left 5s infinite;
 }
 
 /* Cloud Position */
 .floating-cloud.left-top {
     top: 50px;
-    left: 0px;
-}
-.floating-cloud.left-mid {
-    top: 45%;
-    left: 0px
-}
-.floating-cloud.left-bottom {
-    bottom: 50px;
-    left: 0px    
+    left: 15%;
 }
 .floating-cloud.right-top {
     top: 50px;
-    right: 0px;
+    right: 15%;
+}
+.floating-cloud.left-mid {
+    top: 45%;
+    left: 20px
 }
 .floating-cloud.right-mid {
     top: 45%;
-    right: 0px;    
+    right: 20px;    
+}
+.floating-cloud.left-bottom {
+    bottom: 50px;
+    left: 19%;    
 }
 .floating-cloud.right-bottom {
     bottom: 50px;
-    right: 0px;        
+    right: 19%;        
 }
 
 .coming-soon-container {
     text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;    
 }
 
 .coming-soon-container .coming-soon-text {
@@ -86,8 +102,21 @@ html, body {
     text-align: center;
 }
 
+.social-button-group .social-icon {
+    padding: 7px;
+    font-size: 23px;
+    line-height: 34px;
+    width: 45px;
+    height: 45px;
+    border-radius: 22px;
+}
+
 .social-button-group .facebook-button {
-    font-size: 35px;
     color: #ffffff;
     background-color: #3C5A99;
+}
+
+.social-button-group .twitter-button {
+    color: #ffffff;
+    background-color: #2AAAE0;
 }
