@@ -30,6 +30,7 @@ html, body {
     text-align: center;
     max-width: 800px;
     margin: auto;
+    margin-top: 30px;
 }
 
 .logo-container .logo {
@@ -78,6 +79,59 @@ html, body {
     right: 19%;        
 }
 
+@media screen and (max-width: 768px){
+    .coming-soon-container h1.coming-soon-text {
+        font-size: 48px;
+    }
+    .logo-container{
+        margin-top: 15px;
+    }
+    .logo-container .logo{
+        padding-top: 20px;
+        max-width: 420px;
+        width: 95%;
+    }
+    .logo-container .floating-cloud{
+        width: 50px;
+    }
+    .floating-cloud.left-top {
+        top: 50px;
+        left: 10%;
+    }
+    .floating-cloud.left-mid {
+        top: 37%;
+        left: 15px
+    }
+    .floating-cloud.left-bottom {
+        bottom: 65px;
+        left: 15%;
+    }
+    .floating-cloud.right-top {
+        top: 50px;
+        right: 10%;
+    }
+    .floating-cloud.right-mid {
+        top: 37%;
+        right: 15px;
+    }
+    .floating-cloud.right-bottom {
+        bottom: 65px;
+        right: 15%;
+    }
+    /* Bouncing Keyframes */
+    @keyframes bouncing-right {
+        0% { transform: translate(0, 0);}
+        50% { transform: translate(15px, 8px);}
+        100% { transform: translate(0, 0);}
+    }
+
+    @keyframes bouncing-left {
+        0% { transform: translate(0, 0);}
+        50% { transform: translate(-15px, 8px);}
+        100% { transform: translate(0, 0);}
+    }
+}
+
 .coming-soon-container {
     text-align: center;
     padding-top: 10px;
@@ -110,6 +164,8 @@ html, body {
 
 .social-button-group {
     text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 .social-button-group .social-icon {
@@ -122,6 +178,7 @@ html, body {
     -webkit-box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.57);
     -moz-box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.57);
     box-shadow: 3px 3px 10px -2px rgba(0,0,0,0.57);
+    opacity: 1;
 }
 
 .social-button-group .facebook-button {
