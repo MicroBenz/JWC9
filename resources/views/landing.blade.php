@@ -5,7 +5,7 @@
 @endsection
 
 @section('title')
-JWC#9
+    Junior Webmaster Camp #9
 @endsection
 
 @section('content')

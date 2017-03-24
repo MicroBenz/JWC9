@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('landing');
 });
+
+Route::post('subscribe', 'SubscribeController@insert');

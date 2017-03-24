@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
     <title>@yield('title')</title>
-    <meta name="description" content="Page description. No longer than 155 characters." />
+    <meta name="description" content="Junior Webmaster Camp #9">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="The Name or Title Here">
-    <meta itemprop="description" content="This is the page description">
-    <meta itemprop="image" content="http://www.example.com/image.jpg">
+    <meta itemprop="name" content="Junior Webmaster Camp #9">
+    <meta itemprop="description" content="Junior Webmaster Camp #9">
+    <meta itemprop="image" content="{{URL::asset('img/logo.png')}}">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
@@ -37,6 +38,11 @@
     <link href="{{URL::asset('libs/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">   
     <link href="{{URL::asset('fonts/font.css')}}" rel="stylesheet"> 
     @yield('style')
+    <script>
+        window.Laravel = {!! json_encode([
+                'csrfToken' => csrf_token(),
+            ]) !!};
+    </script>
 </head>
 <body>
     @yield('content')
@@ -50,5 +56,6 @@
         ga('create', 'UA-93538944-1', 'auto');
         ga('send', 'pageview');
     </script>
+    <script src="{{URL('js/app.js')}}"></script>
 </body>
 </html>

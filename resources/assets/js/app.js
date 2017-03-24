@@ -14,7 +14,7 @@ require('./bootstrap');
  */
 
 Vue.component('example', require('./components/Example.vue'));
-Vue.component('Subscribe', require('./components/Subscribe.vue'));
+Vue.component('subscribe', require('./components/Subscribe.vue'));
 
 const app = new Vue({
     el: '#app'
