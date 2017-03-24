@@ -12326,7 +12326,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var regEx = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
             if (regEx.test(this.email)) {
                 console.log('email validated pass');
-                axios.post('/subscribe', { email: this.email }).then(function (res) {
+                axios.post('https://jwc9.jwc.in.th/subscribe', { email: this.email }).then(function (res) {
                     console.log('axios post');
                     $('#show-modal-success').click();
                 }).catch(function (fallback) {
