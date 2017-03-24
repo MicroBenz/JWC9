@@ -8,7 +8,7 @@
                 </div>
                 <input v-model="email" type="email" class="form-control subscribe" name="email" placeholder="E-Mail">
                 <div class="input-group-addon">
-                    <div class="icon-subscribe" @click="subscribe()"></div>
+                    <div class="icon-subscribe" @click="subscribe()" @keyup.enter="subscribe"></div>
                 </div>
             </div>
         </div>
@@ -128,6 +128,9 @@
         box-shadow: none;
     }
     input.subscribe::-webkit-input-placeholder{
+        color: #ddd;
+    }
+    input.subscribe::-moz-placeholder{
         color: #ddd;
     }
     .icon-subscribe{
