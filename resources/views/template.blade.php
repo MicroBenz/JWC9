@@ -16,13 +16,12 @@
     <meta itemprop="image" content="{{URL::asset('img/cover.png')}}">
 
     <!-- Twitter Card data -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@publisher_handle">
-    <meta name="twitter:title" content="Junior Webmaster Camp #9">
-    <meta name="twitter:description" content="คว้าโอกาสแล้วเปลี่ยนเป็นสุดยอด Class Digital">
-    <meta name="twitter:creator" content="@author_handle">
-    <!-- Twitter summary card with large image must be at least 280x150px -->
-    <meta name="twitter:image:src" content="https://jwc9.jwc.in.th/img/cover.png">
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:description" content="คว้าโอกาสแล้วเปลี่ยนเป็นสุดยอด Class Digital"/>
+    <meta name="twitter:title" content="Junior Webmaster Camp #9"/>
+    <meta name="twitter:site" content="@jwcth"/>
+    <meta name="twitter:image" content="https://jwc9.jwc.in.th/img/cover.png"/>
+    <meta name="twitter:creator" content="@jwcth"/>
 
     <!-- Open Graph data -->
     <meta property="og:title" content="Junior Webmaster Camp #9" />
