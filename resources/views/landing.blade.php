@@ -21,7 +21,7 @@
             <img src="{{URL::asset('img/cloud/right-bottom.png')}}" class="floating-cloud floating-cloud-right right-bottom">
         </div>
         <div class="coming-soon-container animated zoomIn">
-            <h1 class="coming-soon-text">เปิดรับสมัครเร็วๆ นี้</h1>
+            <h1 class="coming-soon-text">เปิดรับสมัครเร็ว ๆ นี้</h1>
             <p class="supported-by-text">สนับสนุนโดย สมาคมผู้ดูแลเว็บไทย</p>
             <subscribe></subscribe>
         </div>
