@@ -7,6 +7,9 @@
     <meta name="description" content="Junior Webmaster Camp #9">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="Junior Webmaster Camp #9">
     <meta itemprop="description" content="คว้าโอกาสแล้วเปลี่ยนเป็นสุดยอด Class Digital">
