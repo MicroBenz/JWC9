@@ -13,7 +13,7 @@
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="Junior Webmaster Camp #9">
     <meta itemprop="description" content="คว้าโอกาสแล้วเปลี่ยนเป็นสุดยอด Class Digital">
-    <meta itemprop="image" content="{{URL::asset('img/logo.png')}}">
+    <meta itemprop="image" content="{{URL::asset('img/cover.png')}}">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
@@ -22,13 +22,13 @@
     <meta name="twitter:description" content="คว้าโอกาสแล้วเปลี่ยนเป็นสุดยอด Class Digital">
     <meta name="twitter:creator" content="@author_handle">
     <!-- Twitter summary card with large image must be at least 280x150px -->
-    <meta name="twitter:image:src" content="https://jwc9.jwc.in.th/img/logo.png">
+    <meta name="twitter:image:src" content="https://jwc9.jwc.in.th/img/cover.png">
 
     <!-- Open Graph data -->
     <meta property="og:title" content="Junior Webmaster Camp #9" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://jwc9.jwc.in.th" />
-    <meta property="og:image" content="https://jwc9.jwc.in.th/img/logo.png" />
+    <meta property="og:image" content="https://jwc9.jwc.in.th/img/cover.png" />
     <meta property="og:description" content="คว้าโอกาสแล้วเปลี่ยนเป็นสุดยอด Class Digital" />
     <meta property="og:site_name" content="Junior Webmaster Camp #9" />
     <meta property="article:published_time" content="2017-03-2517T05:59:00+07:00" />
