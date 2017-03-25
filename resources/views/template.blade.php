@@ -22,7 +22,7 @@
     <meta name="twitter:image:src" content="https://jwc9.jwc.in.th/img/logo.png">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Junior Webmastet Camp #9" />
+    <meta property="og:title" content="Junior Webmaster Camp #9" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://jwc9.jwc.in.th" />
     <meta property="og:image" content="https://jwc9.jwc.in.th/img/logo.png" />
