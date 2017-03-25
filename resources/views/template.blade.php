@@ -15,11 +15,11 @@
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@publisher_handle">
-    <meta name="twitter:title" content="Page Title">
-    <meta name="twitter:description" content="Page description less than 200 characters">
+    <meta name="twitter:title" content="Junior Webmastet Camp #9">
+    <meta name="twitter:description" content="คว้าโอกาสแล้วเปลี่ยนเป็นสุดยอด Class Digital">
     <meta name="twitter:creator" content="@author_handle">
     <!-- Twitter summary card with large image must be at least 280x150px -->
-    <meta name="twitter:image:src" content="http://www.example.com/image.jpg">
+    <meta name="twitter:image:src" content="https://jwc9.jwc.in.th/img/logo.png">
 
     <!-- Open Graph data -->
     <meta property="og:title" content="Junior Webmastet Camp #9" />
