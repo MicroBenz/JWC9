@@ -16,6 +16,15 @@ require('./bootstrap');
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('subscribe', require('./components/Subscribe.vue'));
 Vue.component('test', require('./components/Test.vue'))
+
+Vue.component('app', require('./components/App.vue'));
+
+// Register Component
+Vue.component('register', require('./components/registers/Register.vue'));
+Vue.component('register-content', require('./components/registers/roles/Content.Register.vue'));
+Vue.component('register-designer', require('./components/registers/roles/Designer.Register.vue'));
+Vue.component('register-marketing', require('./components/registers/roles/Marketing.Register.vue'));
+
 const app = new Vue({
     el: '#app'
 });
