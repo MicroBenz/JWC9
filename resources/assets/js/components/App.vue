@@ -7,7 +7,10 @@
   </div>
 </template>
 <script>
-  export default {
-      
+import AppsNav from './nav/Nav';
+export default {
+  components: {
+    AppsNav
   }
+}
 </script>

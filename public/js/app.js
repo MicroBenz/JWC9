@@ -11286,9 +11286,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
   routes: [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_1__pages_Landing_page_vue___default.a }, { path: '/register', component: __WEBPACK_IMPORTED_MODULE_2__pages_Register_page_vue___default.a }]
 });
 
-// Core Component (Apps + Nav)
 Vue.component('app', __webpack_require__(43));
-Vue.component('apps-nav', __webpack_require__(73));
 
 var app = new Vue({
   router: router
@@ -12142,6 +12140,8 @@ module.exports = function spread(callback) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__nav_Nav__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__nav_Nav___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__nav_Nav__);
 //
 //
 //
@@ -12151,7 +12151,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    AppsNav: __WEBPACK_IMPORTED_MODULE_0__nav_Nav___default.a
+  }
+});
 
 /***/ }),
 /* 31 */,

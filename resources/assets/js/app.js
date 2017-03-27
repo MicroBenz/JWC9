@@ -12,10 +12,7 @@ const router = new VueRouter({
   ]
 })
 
-// Core Component (Apps + Nav)
 Vue.component('app', require('./components/App.vue'));
-Vue.component('apps-nav', require('./components/nav/Nav.vue'));
-
 
 const app = new Vue({
   router
