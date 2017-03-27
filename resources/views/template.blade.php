@@ -49,7 +49,7 @@
     </script>
 </head>
 <body>
-    @yield('content')
+    <div id="app">@yield('content')</div>
     <script src="{{URL::asset('libs/jquery-3.1.1.min.js')}}"></script>
     <script src="{{URL::asset('libs/bootstrap/js/bootstrap.min.js')}}"></script>
     <script>

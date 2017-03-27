@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-<h1>Welcome page</h1>
+    <test></test>
 @endsection
