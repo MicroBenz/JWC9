@@ -17,15 +17,15 @@ export default {
   mounted() {
     console.log(this.countdownTime);
     setInterval(() => {
-      const deadline = moment('2017-03-31 23:59:59');
+      const deadline = moment('2017-05-01 23:59:59');
       const today = moment();
       const dateDiff = deadline.diff(today);
-      this.countdownTime = moment(dateDiff).format('D HH:mm:ss');
+      this.countdownTime = moment(dateDiff).format('M เดือน D วัน HH:mm:ss');
     }, 1000);
   },
   data() {
     return {
-      countdownTime: '- --:--:--'
+      countdownTime: '- เดือน - วัน --:--:--'
     }
   }
 }
