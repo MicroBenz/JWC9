@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="landing">
     <intro></intro>
     <about-jwc></about-jwc>
     <role-selection></role-selection>
@@ -37,3 +37,9 @@ export default {
   }
 }
 </script>
+
+<style lang="css" scoped>
+  .landing {
+    text-align: center;
+  }
+</style>
