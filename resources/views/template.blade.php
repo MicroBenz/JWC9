@@ -36,9 +36,7 @@
     <meta property="article:tag" content="Article Tag" />
     <meta property="fb:admins" content="Facebook numberic ID" />
 
-    <link href="{{URL::asset('libs/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('libs/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">   
-    <link href="{{URL::asset('fonts/font.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/app.css')}}" rel="stylesheet">
 
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">-->
     @yield('style')

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Intro</h1>
+    <h1><i class="fa fa-facebook"></i>Intro</h1>
   </div>
 </template>
 
