@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::post('subscribe', 'SubscribeController@insert');
+Route::get('/callback/{team}', 'SocialAuthController@callback');
+Route::get('/login/{team}', 'SocialAuthController@redirect');
