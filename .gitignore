@@ -16,3 +16,5 @@ bootstrap/cache/*
 .rocketeer/
 
 .vscode
+
+composer\.lock
