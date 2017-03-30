@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" style="width: 100%; height: 100%">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -36,9 +36,7 @@
     <meta property="article:tag" content="Article Tag" />
     <meta property="fb:admins" content="Facebook numberic ID" />
 
-    <link href="{{URL::asset('libs/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{URL::asset('libs/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">   
-    <link href="{{URL::asset('fonts/font.css')}}" rel="stylesheet">
+    <link href="{{URL::asset('css/app.css')}}" rel="stylesheet">
 
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">-->
     @yield('style')
@@ -48,10 +46,8 @@
             ]) !!};
     </script>
 </head>
-<body>
-    @yield('content')
-    <script src="{{URL::asset('libs/jquery-3.1.1.min.js')}}"></script>
-    <script src="{{URL::asset('libs/bootstrap/js/bootstrap.min.js')}}"></script>
+<body style="width: 100%; height: 100%">
+    <div id="app" style="width: 100%; height: 100%">@yield('content')</div>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

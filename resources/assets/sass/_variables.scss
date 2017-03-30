@@ -1,6 +1,8 @@
+// This file will override global color variable for bootstrap
+// More info http://getbootstrap.com/customize/#less-variables
 
 // Body
-$body-bg: #f5f8fa;
+$body-bg: #53b5c1;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
@@ -18,21 +20,10 @@ $brand-danger: #bf5329;
 
 // Typography
 $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 14px;
+$font-family-sans-serif: 'ThaiSans Neue';
+$font-size-base: 27px;
 $line-height-base: 1.6;
-$text-color: #636b6f;
+$text-color: #ffffff;
 
 // Navbar
 $navbar-default-bg: #fff;
-
-// Buttons
-$btn-default-color: $text-color;
-
-// Inputs
-$input-border: lighten($text-color, 40%);
-$input-border-focus: lighten($brand-primary, 25%);
-$input-color-placeholder: lighten($text-color, 30%);
-
-// Panels
-$panel-default-heading-bg: #fff;
