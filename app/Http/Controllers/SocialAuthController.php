@@ -45,7 +45,7 @@ class SocialAuthController extends Controller
 
     public function authen(Request $request, $team)
     {
-        $token = $request->access_token;
+        $token = $request->input('access_token');
         $user = Socialite::driver('facebook')->userFromToken($token);
         $team_id = Teams::where('TeamName', $team)->first()['TeamID'];
         if(!Fbaccounts::where('FacebookUniqueID', $user->getId())->exists()) {
