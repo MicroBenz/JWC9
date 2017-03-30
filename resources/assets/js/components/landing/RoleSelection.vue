@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>เลือกอาชีพ</h1>
+    <h1>{{isLoggedIn}}</h1>
     <div class="role-selection-wrapper">
       <div class="role-selection-item">
         <role-selector
@@ -27,18 +28,23 @@
         </role-selector>
       </div>
     </div>
-    <button class="btn btn-primary register-button" v-if="this.selectedRole !== 'none'">สมัครสาขา {{selectedRole}}</button>
+    <button class="btn btn-primary register-button" v-on:click="navigateToRegister" v-if="this.selectedRole !== 'none'">สมัครสาขา {{selectedRole}}</button>
     <button class="btn btn-primary register-button" disabled="disabled" v-if="this.selectedRole === 'none'">โปรดทำการเลือกสาขา</button>    
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import VueRouter from 'vue-router';
+
 import RoleSelector from './RoleSelector';
 
 const router = new VueRouter();
 
 export default {
+  computed: mapGetters({
+    isLoggedIn: 'isLoggedIn'
+  }),
   data() {
     return {
       selectedRole: 'none',
@@ -48,9 +54,11 @@ export default {
     onSelect(role) {
       this.selectedRole = role;
     },
-    navigateToRegister(role) {
-      console.log(role);
-      router.push(`/register/${role}`);
+    navigateToRegister() {
+      console.log(this.selectedRole);
+      FB.login((response) => {
+        console.log(response);
+      })
     }
   },
   components: {

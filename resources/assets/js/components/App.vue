@@ -5,11 +5,42 @@
     <router-view></router-view>
   </div>
 </template>
+
 <script>
 import AppsNav from './nav/Nav';
 import SocialGroupButton from './social-button/SocialGroupButton';
 
 export default {
+  mounted() {
+    window.fbAsyncInit = () => {
+      FB.init({
+        appId: '1540852432838036',
+        cookie: true,
+        xfbml: true,
+        version: 'v2.1',
+      });
+      console.log(this.$store);
+      FB.getLoginStatus((loginStatus) => {
+        console.log(loginStatus);
+        if (loginStatus.status === 'connected') {
+          console.log('connected');
+          this.$store.dispatch('setLogin');
+        }
+        else {
+          this.$store.dispatch('setNotLogin');          
+        }
+      })
+    };
+
+    ((d, s, id) => {
+      let js = d.getElementsByTagName(s)[0];
+      const fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = '//connect.facebook.net/en_US/sdk.js';
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, 'script', 'facebook-jssdk');
+  },
   components: {
     AppsNav,
     SocialGroupButton

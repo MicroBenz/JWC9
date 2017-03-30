@@ -1,7 +1,9 @@
 require('./bootstrap');
 import VueRouter from 'vue-router';
+
 import Landing from './pages/Landing.page.vue';
 import Register from './pages/Register.page.vue';
+import store from './store/index';
 
 Vue.use(VueRouter);
 const router = new VueRouter({
@@ -15,5 +17,6 @@ const router = new VueRouter({
 Vue.component('app', require('./components/App.vue'));
 
 const app = new Vue({
-  router
+  router,
+  store
 }).$mount('#app')
