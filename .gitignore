@@ -7,7 +7,7 @@ bootstrap/compiled.php
 app/storage/
 
 # Laravel 5 & Lumen specific
-bootstrap/cache/
+bootstrap/cache/*
 .env.*.php
 .env.php
 .env
@@ -19,3 +19,4 @@ bootstrap/cache/
 public/css
 public/js
 public/fonts
+composer\.lock

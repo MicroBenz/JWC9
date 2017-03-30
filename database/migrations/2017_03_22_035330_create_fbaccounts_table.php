@@ -16,7 +16,7 @@ class CreateFbaccountsTable extends Migration
         Schema::create('fbaccounts', function (Blueprint $table) {
             $table->string('FacebookUniqueID')->unique();
             $table->string('FacebookName');
-            $table->string('FacebookEmail');
+            $table->string('FacebookEmail')->nullable();
             $table->string('FacebookAvatar');
         });
     }
