@@ -1,16 +1,26 @@
 <template>
   <div>
-    <apps-nav></apps-nav>
-    <social-group-button></social-group-button>
-    <router-view></router-view>
+    <div v-if="isFacebookApiReady">
+      <apps-nav></apps-nav>
+      <social-group-button></social-group-button>
+      <router-view></router-view>
+    </div>
+    <div v-else>
+      <h1>Loading...</h1>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 import AppsNav from './nav/Nav';
 import SocialGroupButton from './social-button/SocialGroupButton';
 
 export default {
+  computed: mapGetters({
+    isFacebookApiReady: 'isFacebookApiReady'
+  }),
   mounted() {
     window.fbAsyncInit = () => {
       FB.init({
@@ -22,11 +32,13 @@ export default {
       console.log(this.$store);
       FB.getLoginStatus((loginStatus) => {
         console.log(loginStatus);
+        this.$store.dispatch('facebookApiIsReady');
         if (loginStatus.status === 'connected') {
           console.log('connected');
           this.$store.dispatch('setLogin');
         }
         else {
+          console.log('not login');          
           this.$store.dispatch('setNotLogin');          
         }
       })
