@@ -1,11 +1,13 @@
 export default {
   state: {
     isFacebookApiReady: false,
-    isLoggedIn: false
+    isLoggedIn: false,
+    accessToken: '',
   },
   getters: {
     isLoggedIn: state => state.isLoggedIn,
-    isFacebookApiReady: state => state.isFacebookApiReady
+    isFacebookApiReady: state => state.isFacebookApiReady,
+    accessToken: state => state.accessToken,
   },
   mutations: {
     setLoginStatus(state, isLoggedIn) {
@@ -13,6 +15,9 @@ export default {
     },
     facebookApiReady(state) {
       state.isFacebookApiReady = true;
+    },
+    setAccessToken(state, token) {
+      state.accessToken = token;
     }
   },
   actions: {
@@ -24,6 +29,9 @@ export default {
     },
     setNotLogin({ commit }) {
       commit('setLoginStatus', false)
+    },
+    setAccessToken({ commit }, token) {
+      commit('setAccessToken', token);
     }
   }
 }

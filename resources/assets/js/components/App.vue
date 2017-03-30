@@ -34,6 +34,7 @@ export default {
         if (loginStatus.status === 'connected') {
           console.log('connected');
           this.$store.dispatch('setLogin');
+          this.$store.dispatch('setAccessToken', loginStatus.authResponse.accessToken);
         }
         else {
           console.log('not login');          

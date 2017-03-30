@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>เลือกอาชีพ</h1>
-    <h1>{{isLoggedIn}}</h1>
+    <h1>IS LOGIN: {{isLoggedIn}}</h1>
+    <h1>TOKEN: {{accessToken}}</h1>    
     <div class="role-selection-wrapper">
       <div class="role-selection-item">
         <role-selector
@@ -36,14 +37,17 @@
 <script>
 import { mapGetters } from 'vuex'
 import VueRouter from 'vue-router';
+import axios from 'axios';
 
 import RoleSelector from './RoleSelector';
 
 const router = new VueRouter();
 
 export default {
+  
   computed: mapGetters({
-    isLoggedIn: 'isLoggedIn'
+    isLoggedIn: 'isLoggedIn',
+    accessToken: 'accessToken',
   }),
   data() {
     return {
@@ -55,10 +59,20 @@ export default {
       this.selectedRole = role;
     },
     navigateToRegister() {
-      console.log(this.selectedRole);
-      FB.login((response) => {
-        console.log(response);
+      console.log(this.selectedRole, this.accessToken);
+      axios.post(`/authen/${this.selectedRole}`, {
+        access_token: this.accessToken
       })
+      .then(
+        (response) => {
+          console.log(response);
+        }
+      )
+      .catch(
+        (error) => {
+          console.error('Error while register:', error);
+        }
+      )
     }
   },
   components: {
