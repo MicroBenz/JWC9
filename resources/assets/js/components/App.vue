@@ -1,13 +1,11 @@
 <template>
-  <div>
+  <div class="apps-container">
     <div v-if="isFacebookApiReady">
       <apps-nav></apps-nav>
       <social-group-button></social-group-button>
       <router-view></router-view>
     </div>
-    <div v-else>
-      <h1>Loading...</h1>
-    </div>
+    <loader v-else></loader>
   </div>
 </template>
 
@@ -59,3 +57,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+  .apps-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+  }
+</style>

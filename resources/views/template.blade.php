@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" style="width: 100%; height: 100%">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -46,8 +46,8 @@
             ]) !!};
     </script>
 </head>
-<body>
-    <div id="app">@yield('content')</div>
+<body style="width: 100%; height: 100%">
+    <div id="app" style="width: 100%; height: 100%">@yield('content')</div>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

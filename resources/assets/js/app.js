@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 import Landing from './pages/Landing.page.vue';
 import Register from './pages/Register.page.vue';
 import store from './store/index';
+import 'loaders.css';
 
 Vue.use(VueRouter);
 const router = new VueRouter({
@@ -15,6 +16,7 @@ const router = new VueRouter({
 })
 
 Vue.component('app', require('./components/App.vue'));
+Vue.component('loader', require('./components/Loader.vue'));
 
 const app = new Vue({
   router,
