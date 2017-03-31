@@ -16,7 +16,8 @@
 <script>
 import Intro from '../components/landing/Intro';
 import AboutJWC from '../components/landing/AboutJWC'
-import RoleSelection from '../components/landing/RoleSelection'
+// import RoleSelection from '../components/landing/RoleSelection'
+import RoleSelection from '../components/landing/role-selection/RoleSelection'
 import Schedule from '../components/landing/Schedule'
 import Guru from '../components/landing/Guru'
 import Map from '../components/landing/Map'

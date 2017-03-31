@@ -1,6 +1,6 @@
 export default {
   state: {
-    isFacebookApiReady: false,
+    isFacebookApiReady: true,
     isLoggedIn: false,
     accessToken: '',
   },
