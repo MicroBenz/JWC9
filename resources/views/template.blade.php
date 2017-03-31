@@ -76,6 +76,7 @@
             search_string: 'leather sandals'
         });
     </script>
+    <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="{{URL('js/app.js')}}"></script>
 </body>
 </html>
