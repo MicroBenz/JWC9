@@ -1,8 +1,6 @@
 <template>
   <div>
-    <h1>เลือกอาชีพ</h1>
-    <h1>IS LOGIN: {{isLoggedIn}}</h1>
-    <h1>TOKEN: {{accessToken}}</h1>    
+    <h1>เลือกอาชีพ</h1> 
     <div class="role-selection-wrapper">
       <div class="role-selection-item">
         <role-selector

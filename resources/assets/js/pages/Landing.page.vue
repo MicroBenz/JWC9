@@ -9,6 +9,7 @@
     <gallery></gallery>
     <faq></faq>
     <supporter></supporter>
+    <social-banner></social-banner>
   </div>
 </template>
 
@@ -22,6 +23,7 @@ import Map from '../components/landing/Map'
 import Gallery from '../components/landing/Gallery'
 import FAQ from '../components/landing/FAQ'
 import Supporter from '../components/landing/Supporter'
+import SocialBanner from '../components/landing/SocialBanner';
 
 export default {
   components: {
@@ -33,7 +35,8 @@ export default {
     'jwc-map': Map,
     Gallery,
     faq: FAQ,
-    Supporter
+    Supporter,
+    SocialBanner
   }
 }
 </script>

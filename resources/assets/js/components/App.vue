@@ -42,13 +42,12 @@ export default {
         }
       })
     };
-
     ((d, s, id) => {
       let js = d.getElementsByTagName(s)[0];
       const fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
-      js.src = '//connect.facebook.net/en_US/sdk.js';
+      js.src = '//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=113717632497937';
       fjs.parentNode.insertBefore(js, fjs);
     })(document, 'script', 'facebook-jssdk');
   },

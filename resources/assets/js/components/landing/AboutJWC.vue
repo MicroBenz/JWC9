@@ -5,7 +5,7 @@
   </div>
   <div class="col-md-7 about-jwc">
     <h1>JWC คืออะไร?</h1>
-    <p>Nostrud culpa velit velit commodo elit. Est fugiat mollit aliqua incididunt enim incididunt excepteur sit. Nostrud reprehenderit ad cupidatat mollit ea culpa nisi. Esse commodo amet ullamco minim officia nisi ad laboris velit. Mollit laboris veniam deserunt nostrud tempor sit officia. Adipisicing aliqua nisi non excepteur tempor anim anim ad est sunt commodo occaecat labore esse.</p>
+    <p>ค่ายที่จะพาน้องๆ ม.ปลาย ค้นหาตัวตนที่ใช่ กับ 3 สาขาสำคัญในโลกการทำงานดิจิทัล ทั้ง Marketing, Content Creator และ Design พร้อมเรียนรู้เทคนิคสร้างสรรค์ไอเดียให้บรรเจิดผ่านกิจกรรมสุดว๊าวที่มีแค่ค่ายนี้เท่านั้น โดยภายในค่ายจะมี Workshop พิเศษจากพี่ๆ สุดเทพทั้งสามสาขา เพื่อขนอาวุธ ระดมไอเดีย สร้างโปรเจคนวัตกรรมของโลกยุค 2017</p>
   </div>
 </div>
 </template>
