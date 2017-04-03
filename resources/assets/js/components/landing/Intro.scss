@@ -1,0 +1,52 @@
+@import '../../../sass/_variables.scss';
+
+.intro {
+  @include background('/img/bg/yellow.png');
+  padding-top: 15px;
+  padding-bottom: 15px;
+  position: relative;
+  .jwc-logo {
+    width: 320px;
+  }
+  .date-and-place {
+    padding-top: 15px;
+    padding-bottom: 25px;
+
+  }
+  .camp-date {
+    // font-size: 50px;
+    color: $brown;
+    margin: 0;
+    font-weight: bold;
+    font-style: italic;
+  }
+  .camp-place {
+    // font-size: 26px;
+    color: #442c1f;  
+    font-style: italic;  
+    margin: 0;
+    font-weight: normal;
+  }
+  .login-with-fb-button {
+    width: 250px;
+    cursor: pointer;
+  }
+  .countdown {
+    padding-top: 10px;
+    padding-bottom: 10px;  
+    p {
+      margin: 0;
+    }
+  }
+  .kid {
+    position: absolute;
+    bottom: 0;
+    height: 215px;    
+    &.kid-left {
+      left: 8%;
+    }
+    &.kid-right {
+      right: 8%;
+    }
+  }
+}

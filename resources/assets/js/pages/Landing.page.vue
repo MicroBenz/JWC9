@@ -1,5 +1,5 @@
 <template>
-  <div class="landing container">
+  <div class="landing">
     <intro></intro>
     <about-jwc></about-jwc>
     <role-selection></role-selection>

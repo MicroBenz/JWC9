@@ -1,20 +1,17 @@
 <template>
   <div class="loader-wrapper">
-      <div class="pacman">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>        
-      </div>
+      <img src="./loader.gif">
     </div>
 </template>
 
 <style lang="scss" scoped>
-  .loader-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
+@import '../../sass/_variables.scss';
+
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: $brown;
+}
 </style>
