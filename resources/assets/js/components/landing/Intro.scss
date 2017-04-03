@@ -2,8 +2,8 @@
 
 .intro {
   @include background('/img/bg/yellow.png');
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
   position: relative;
   .jwc-logo {
     width: 320px;
