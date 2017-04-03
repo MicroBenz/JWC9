@@ -1,7 +1,6 @@
 <template>
   <div class="apps-container">
     <div v-if="isFacebookApiReady">
-      <apps-nav></apps-nav>
       <social-group-button></social-group-button>
       <router-view></router-view>
     </div>

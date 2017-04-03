@@ -1,12 +1,18 @@
 <template>
 <div class="intro">
   <img class="jwc-logo" src="/img/logo.png">
-  <h1 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h1>
-  <h3 class="camp-place">มหาวิทยาลัยราชภัฎจันทรเกษม</h3>
-  <div class="countdown">
+  <div class="date-and-place">
+    <h1 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h1>
+    <h3 class="camp-place">มหาวิทยาลัยราชภัฎจันทรเกษม</h3>
+  </div>
+  <img v-on:click="scrollDown" class="login-with-fb-button" src="./button/join-button.png">
+  <!--<div class="countdown">
     <p>เหลือเวลาสมัครอีก</p>
     <p>{{countdownTime}}</p>
-  </div>
+  </div>-->
+  <p>scroll down</p>
+  <img class="kid kid-left" src="/img/landing/intro/kid-left.png">
+  <img class="kid kid-right" src="/img/landing/intro/kid-right.png">  
 </div>
 </template>
 
@@ -27,32 +33,13 @@ export default {
     return {
       countdownTime: '- เดือน - วัน --:--:--'
     }
+  },
+  methods: {
+    scrollDown: () => {
+      console.log('ssss');
+    }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.intro {
-  background: url('/img/bg/yellow.jpg');
-}
-.jwc-logo {
-  width: 320px;
-}
-.camp-date {
-  // font-size: 50px;
-  margin: 0;
-  font-weight: bold;
-}
-.camp-place {
-  // font-size: 26px;
-  margin: 0;
-  font-weight: normal;
-}
-.countdown {
-  padding-top: 10px;
-  padding-bottom: 10px;  
-  p {
-    margin: 0;
-  }
-}
-</style>
+<style lang="scss" src="./Intro.scss" scoped></style>

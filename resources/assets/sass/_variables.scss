@@ -1,8 +1,10 @@
 // This file will override global color variable for bootstrap
 // More info http://getbootstrap.com/customize/#less-variables
+// BG 
+$brown: #442c1f;
 
 // Body
-$body-bg: #53b5c1;
+$body-bg: #ffffff;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
