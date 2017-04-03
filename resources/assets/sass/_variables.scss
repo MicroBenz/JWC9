@@ -29,3 +29,7 @@ $text-color: #ffffff;
 
 // Navbar
 $navbar-default-bg: #fff;
+
+@mixin background($imgUrl) {
+  background: url($imgUrl) repeat center;
+}

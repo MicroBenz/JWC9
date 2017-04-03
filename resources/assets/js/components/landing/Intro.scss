@@ -1,7 +1,7 @@
 @import '../../../sass/_variables.scss';
 
 .intro {
-  background: url('/img/bg/yellow.png') repeat center;
+  @include background('/img/bg/yellow.png');
   padding-top: 15px;
   padding-bottom: 15px;
   position: relative;
