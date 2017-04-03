@@ -1,12 +1,27 @@
 <template>
   <div class="menu-container">
-    <img src="./hamburger-menu.png">
+    <img v-on:click="toggleMenu" src="./hamburger-menu.png">
+    <side-menu v-if="isShowMenu" :closeMenu="toggleMenu"></side-menu>
   </div>
 </template>
 
 <script>
+import SideMenu from './SideMenu';
+
 export default {
-  
+  data() {
+    return {
+      isShowMenu: false
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.isShowMenu = !this.isShowMenu;
+    }
+  },
+  components: {
+    SideMenu
+  }
 }
 </script>
 
