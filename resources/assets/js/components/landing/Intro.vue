@@ -1,6 +1,6 @@
 <template>
-<div>
-  <img class="jwc-logo" src="./logo.png">
+<div class="intro">
+  <img class="jwc-logo" src="/img/logo.png">
   <h1 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h1>
   <h3 class="camp-place">มหาวิทยาลัยราชภัฎจันทรเกษม</h3>
   <div class="countdown">
@@ -32,6 +32,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.intro {
+  background: url('/img/bg/yellow.jpg');
+}
 .jwc-logo {
   width: 320px;
 }
