@@ -1,6 +1,7 @@
 <template>
   <div class="apps-container">
     <div v-if="isFacebookApiReady">
+      <apps-menu></apps-menu>
       <social-group-button></social-group-button>
       <router-view></router-view>
     </div>
@@ -11,7 +12,7 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import AppsNav from './nav/Nav';
+import HamburgerMenu from './menu/HamburgerMenu';
 import SocialGroupButton from './social-button/SocialGroupButton';
 
 export default {
@@ -51,7 +52,7 @@ export default {
     })(document, 'script', 'facebook-jssdk');
   },
   components: {
-    AppsNav,
+    'apps-menu': HamburgerMenu,
     SocialGroupButton
   }
 }

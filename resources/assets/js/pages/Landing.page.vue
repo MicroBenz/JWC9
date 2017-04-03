@@ -14,11 +14,10 @@
 </template>
 
 <script>
-import Intro from '../components/landing/Intro';
-import AboutJWC from '../components/landing/AboutJWC'
-// import RoleSelection from '../components/landing/RoleSelection'
+import Intro from '../components/landing/intro/Intro';
+import AboutJWC from '../components/landing/about-jwc/AboutJWC'
 import RoleSelection from '../components/landing/role-selection/RoleSelection'
-import Schedule from '../components/landing/Schedule'
+import Schedule from '../components/landing/schedule/Schedule'
 import Guru from '../components/landing/Guru'
 import Map from '../components/landing/Map'
 import Gallery from '../components/landing/Gallery'

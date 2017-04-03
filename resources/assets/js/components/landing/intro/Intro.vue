@@ -5,7 +5,7 @@
     <h1 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h1>
     <h3 class="camp-place">มหาวิทยาลัยราชภัฎจันทรเกษม</h3>
   </div>
-  <img v-on:click="scrollDown" class="login-with-fb-button" src="./button/join-button.png">
+  <img v-on:click="scrollDown" class="login-with-fb-button" src="../button/join-button.png">
   <!--<div class="countdown">
     <p>เหลือเวลาสมัครอีก</p>
     <p>{{countdownTime}}</p>

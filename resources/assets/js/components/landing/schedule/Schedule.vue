@@ -38,7 +38,7 @@
 </template>
 
 <style lang="scss" scoped>
-@import '../../../sass/_variables.scss';
+@import '../../../../sass/_variables.scss';
 
 .schedule {
   @include background('/img/bg/brown.png');
