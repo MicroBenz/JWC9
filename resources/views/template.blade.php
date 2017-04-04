@@ -45,6 +45,9 @@
                 'csrfToken' => csrf_token(),
             ]) !!};
     </script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
 </head>
 <body style="width: 100%; height: 100%">
     <div id="app" style="width: 100%; height: 100%">@yield('content')</div>
@@ -78,5 +81,8 @@
     </script>
     <script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="{{URL('js/app.js')}}"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous">
+  </script>-->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 </body>
 </html>
