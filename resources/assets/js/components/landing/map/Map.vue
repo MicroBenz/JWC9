@@ -13,15 +13,6 @@
         <div class="place-detail">
           <img src="./place.png">
           <img src="./transportation.png">        
-          <!--<h2>มหาวิทยาลัยราชภัฎจันทรเกษม</h2>
-          <h4>39/1 ถนนรัชดาภิเษก แขวงจันทรเกษม เขตจตุจักร กรุงเทพฯ 10900</h4>
-          <p><b>รถปรับอากาศ:</b> ปอ.185, ปอ.136, ปอ.206, ปอ.529</p>
-          <p><b>รถโดยสารธรรมดา:</b> สาย 38, 126, 136, 134 ก, 178, 179, 206</p>     
-          <iframe
-            class="map"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAh0YlO7TG-Q_-2tzmuqYgJ_7z57_AsQvc
-              &q=มหาวิทยาลัยราชภัฏจันทรเกษม" allowfullscreen>
-          </iframe>   -->
         </div>
       </div>
     </div>

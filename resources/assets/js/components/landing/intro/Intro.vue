@@ -10,7 +10,7 @@
     <p>เหลือเวลาสมัครอีก</p>
     <p>{{countdownTime}}</p>
   </div>-->
-  <p>scroll down</p>
+  <p class="scroll-down-text">scroll down</p>
   <img class="kid kid-left" src="./kid-left.png">
   <img class="kid kid-right" src="./kid-right.png">  
 </div>

@@ -1,5 +1,9 @@
 @import '../../../../sass/_variables.scss';
 
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+
 .intro {
   @include background('/img/bg/yellow.png');
   padding-top: $section-padding;
@@ -26,6 +30,19 @@
     font-style: italic;  
     margin: 0;
     font-weight: normal;
+  }
+  .scroll-down-text {
+    color: #000000;
+    font-weight: bold;
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 37px;
+    line-height: 37px;
+    animation: blinker 1s linear infinite;
   }
   .login-with-fb-button {
     width: 250px;
