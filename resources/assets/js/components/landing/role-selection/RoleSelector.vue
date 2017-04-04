@@ -1,9 +1,5 @@
 <template>
   <div class="character-card">
-    <div class="character-des">
-      <h1>{{role}}</h1>
-      <p>{{description}}</p>
-    </div>
     <div class="character-img">
       <img :src="imgSrc">
     </div>
@@ -27,9 +23,7 @@ h1 {
 .character-card {
   display: flex;
   width: 100%;
-  background-color: red;
   padding: 10px;
-  border-radius: 15px;
   .character-des {
     text-align: left;
     flex: 1;

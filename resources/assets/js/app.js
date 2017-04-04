@@ -1,5 +1,6 @@
 require('./bootstrap');
 import VueRouter from 'vue-router';
+import vueScrollTo from 'vue-scroll-to';
 
 import Landing from './pages/Landing.page.vue';
 import Register from './pages/Register.page.vue';
@@ -15,6 +16,7 @@ import Marketer from './components/registers/roles/Marketing.Register.vue';
 // import 'loaders.css';
 
 Vue.use(VueRouter);
+Vue.use(vueScrollTo);
 const router = new VueRouter({
   base: __dirname,
   routes: [
