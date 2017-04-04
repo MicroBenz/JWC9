@@ -12,7 +12,8 @@ const router = new VueRouter({
   routes: [
     { path: '/', component: Landing },
     { path: '/register', component: Register },
-  ]
+  ],
+  mode: 'history'
 })
 
 Vue.component('app', require('./components/App.vue'));
