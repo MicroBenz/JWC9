@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Profiles extends Model
 {
     public $timestamps = false;
-    private $fillable = [
+    protected $primaryKey = 'CamperID';
+    protected $fillable = [
         'CamperID',
         'FirstName',
         'LastName',
@@ -32,7 +33,7 @@ class Profiles extends Model
         'EmergencyContact',
         'EmergencyTel',
         'EmergencyRelation',
-        'activities',
+        'Activities',
         'ProfilePicture'
         ];
         

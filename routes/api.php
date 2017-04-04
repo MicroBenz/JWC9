@@ -19,5 +19,8 @@ Route::group(['middleware' => 'jwt.auth'], function () {
         return "has token";
     });
 
+    Route::get('register/data', 'ProfileController@getProfile');
     Route::post('register', 'ProfileController@createProfile');
+    Route::put('register', 'ProfileController@updateProfile');
+    Route::post('register/complete', 'ProfileController@lockProfile');
 });

@@ -53,6 +53,7 @@ class SocialAuthController extends Controller
             Campers::create(['FacebookUniqueID'=>$user->getId(), 'TeamID'=>$team_id, 'IsLock'=>false]);
         }
         $fbaccount = Fbaccounts::where('FacebookUniqueID', $user->getId())->first();
+        $camper_id = Campers::where('FacebookUniqueID', $user->getId())->first()['CamperID'];
         try {
             // attempt to verify the credentials and create a token for the user
             if (!$token = JWTAuth::fromUser($fbaccount)) {
@@ -64,6 +65,6 @@ class SocialAuthController extends Controller
         }
 
         // all good so return the token
-        return response()->json(compact('token', 'team'));
+        return response()->json(compact('token', 'team', 'camper_id'));
     }
 }

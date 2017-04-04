@@ -15,6 +15,10 @@ class Fbaccounts extends Authenticatable
     protected $fillable = ['FacebookUniqueID', 'FacebookName', 'FacebookEmail', 'FacebookAvatar'];
 
     public function camper(){
-        return $this->hasOne('App\Campers');
+        return $this->hasOne('App\Campers', 'FacebookUniqueID', 'FacebookUniqueID');
+    }
+
+    public function profile() {
+        return $this->belongsToMany('App\Profiles', 'campers', 'FacebookUniqueID', 'CamperID');
     }
 }
