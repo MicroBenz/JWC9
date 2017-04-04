@@ -43,6 +43,7 @@ $yellow: #fbc80b;
     .map-eng {
       color: $yellow;
       font-style: italic;
+      text-transform: uppercase;
       font-size: 88px;
       line-height: 68px;
     }

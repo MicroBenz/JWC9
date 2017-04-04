@@ -93,6 +93,7 @@
   }
   .topicHeader{
     font-style: italic;
+    text-transform: uppercase;
   }
   .topicSubheader{
     font-style: bold;
