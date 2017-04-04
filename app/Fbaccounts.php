@@ -13,4 +13,8 @@ class Fbaccounts extends Authenticatable
     protected $primaryKey = 'FacebookUniqueID';
     public $incrementing = false;
     protected $fillable = ['FacebookUniqueID', 'FacebookName', 'FacebookEmail', 'FacebookAvatar'];
+
+    public function camper(){
+        return $this->hasOne('App\Campers');
+    }
 }

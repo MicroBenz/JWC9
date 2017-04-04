@@ -50,12 +50,12 @@ class SocialAuthController extends Controller
         $team_id = Teams::where('TeamName', $team)->first()['TeamID'];
         if(!Fbaccounts::where('FacebookUniqueID', $user->getId())->exists()) {
             Fbaccounts::create(['FacebookUniqueID'=>$user->getId(), 'FacebookName'=>$user->getName(), 'FacebookEmail'=>$user->getEmail(), 'FacebookAvatar'=>$user->getAvatar()]);
-            Campers::create(['FacebookUniqueID'=>$user->getId(), 'TeamID'=>$team_id]);
+            Campers::create(['FacebookUniqueID'=>$user->getId(), 'TeamID'=>$team_id, 'IsLock'=>false]);
         }
         $fbaccount = Fbaccounts::where('FacebookUniqueID', $user->getId())->first();
         try {
             // attempt to verify the credentials and create a token for the user
-            if (! $token = JWTAuth::fromUser($fbaccount)) {
+            if (!$token = JWTAuth::fromUser($fbaccount)) {
                 return response()->json(['error' => 'invalid_credentials'], 401);
             }
         } catch (JWTException $e) {

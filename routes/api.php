@@ -18,4 +18,6 @@ Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('token_tests', function(){
         return "has token";
     });
+
+    Route::post('register', 'ProfileController@createProfile');
 });

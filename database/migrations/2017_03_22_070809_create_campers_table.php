@@ -17,6 +17,7 @@ class CreateCampersTable extends Migration
             $table->increments('CamperID');
             $table->string('FacebookUniqueID');
             $table->unsignedInteger('TeamID');
+            $table->boolean('IsLock');
 
             $table->foreign('FacebookUniqueID')->references('FacebookUniqueID')->on('fbaccounts');
             $table->foreign('TeamID')->references('TeamID')->on('teams');
