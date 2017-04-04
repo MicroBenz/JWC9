@@ -5,14 +5,14 @@
     <h1 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h1>
     <h3 class="camp-place">มหาวิทยาลัยราชภัฎจันทรเกษม</h3>
   </div>
-  <img v-on:click="scrollDown" class="login-with-fb-button" src="../button/join-button.png">
+  <img v-on:click="scrollDown" class="login-with-fb-button" src="./register-button.png">
   <!--<div class="countdown">
     <p>เหลือเวลาสมัครอีก</p>
     <p>{{countdownTime}}</p>
   </div>-->
   <p>scroll down</p>
-  <img class="kid kid-left" src="/img/landing/intro/kid-left.png">
-  <img class="kid kid-right" src="/img/landing/intro/kid-right.png">  
+  <img class="kid kid-left" src="./kid-left.png">
+  <img class="kid kid-right" src="./kid-right.png">  
 </div>
 </template>
 
@@ -36,7 +36,12 @@ export default {
   },
   methods: {
     scrollDown: () => {
-      console.log('ssss');
+      // console.log($('#role-selection').offset());
+      // console.log($('html, body').offset());  
+      // $('body').scrollTop($('#role-selection').offset().top);    
+      $(document.body).animate({
+        scrollTop: $("#role-selection").offset().top
+      });
     }
   }
 }
