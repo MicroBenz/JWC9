@@ -7,35 +7,74 @@
     <div class="container">
       <div class="col-md-3 col-sm-6">
         <div class="schedule-item">
-          <img class="" src="/img/landing/schedule/1.png">
-          <h3 class="highlight">รับสมัคร</h3>
-          <p>7 เมษายน วันส่งงาน...</p>
+          <img v-if="!isActiveClass(1)" src="./1.png">
+          <img v-if="isActiveClass(1)" src="./1-active.png">
+          <h3 :class="isActiveClass(1) ? 'highlight' : ''">รับสมัคร</h3>
+          <p>10 เมษายน - 1 พฤษภาคม</p>
+          <p>{{isActiveClass(1)}}</p>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="schedule-item">
-          <img src="/img/landing/schedule/2.png">          
-          <h3>ประกาศผล</h3>
-          <p>7 เมษายน วันส่งงาน...</p>
+          <img v-if="!isActiveClass(2)" src="./2.png">
+          <img v-if="isActiveClass(2)" src="./2-active.png">        
+          <h3 :class="isActiveClass(2) ? 'highlight' : ''">ประกาศผล</h3>
+          <p>5 พฤษภาคม</p>
+          <p>{{isActiveClass(2)}}</p>          
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="schedule-item">
-          <img src="/img/landing/schedule/3.png">          
-          <h3>ยืนยันสิทธิ์</h3>
-          <p>7 เมษายน วันส่งงาน...</p>
+          <img v-if="!isActiveClass(3)" src="./3.png">
+          <img v-if="isActiveClass(3)" src="./3-active.png">          
+          <h3 :class="isActiveClass(3) ? 'highlight' : ''">ยืนยันสิทธิ์</h3>
+          <p>5 - 10 พฤษภาคม</p>
+          <p>{{isActiveClass(3)}}</p>          
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <div class="schedule-item">
-          <img src="/img/landing/schedule/4.png">          
-          <h3>วันค่าย</h3>
-          <p>7 เมษายน วันส่งงาน...</p>
+          <img v-if="!isActiveClass(4)" src="./4.png">
+          <img v-if="isActiveClass(4)" src="./4-active.png">        
+          <h3 :class="isActiveClass(4) ? 'highlight' : ''">วันค่าย</h3>
+          <p>26 - 28 พฤษภาคม</p>
+          <p>{{isActiveClass(4)}}</p>          
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import moment from 'moment';
+
+export default {
+  methods: {
+    isActiveClass(order) {
+      let today = moment();
+      let startDate, endDate;
+      switch (order) {
+        case 1:
+          startDate = moment('2017-04-10');
+          endDate = moment('2017-05-01');
+          today = moment('2017-04-15');
+          return startDate.isSameOrBefore(today) && today.isSameOrBefore(endDate); 
+        case 2:
+          startDate = moment('2017-05-05');
+          return startDate.isSame(today);
+        case 3:
+          startDate = moment('2017-05-05');
+          endDate = moment('2017-05-10');         
+          return startDate.isSameOrBefore(today) && today.isSameOrBefore(endDate);
+        case 4:
+          startDate = moment('2017-05-26');
+          endDate = moment('2017-05-28');  
+          return startDate.isSameOrBefore(today) && today.isSameOrBefore(endDate);
+      }
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import '../../../../sass/_variables.scss';
