@@ -1,7 +1,12 @@
 <template>
+<<<<<<< HEAD
   <!--  <div class="bg-character" style="transform: scale(0.8, 0.8)">
   <div class="containe-fluidr">
     <div class="col-md-3 about-role">
+=======
+  <div class="container" id="role-selection">
+    <div class="col-md-4 about-role">
+>>>>>>> origin/front-end
       <h1>Designer</h1>
       <p>Quis ad cillum cupidatat adipisicing. Magna veniam duis minim consectetur aliqua minim aute sit irure occaecat velit. Enim cupidatat nisi aliquip aute et elit ullamco excepteur voluptate dolor ea laborum magna. Quis est ea elit ut proident incididunt ullamco. Laboris ullamco commodo consectetur irure amet anim cillum magna aliquip Lorem. Officia reprehenderit ullamco eu anim labore occaecat amet culpa aute officia excepteur labore. Officia voluptate amet minim ut culpa nostrud quis commodo aliqua laborum ex dolor mollit.</p>
     </div>

@@ -49,8 +49,8 @@
               dots: false,
               arrows: false,
               infinite: false,
-              slidesToShow: 2,
-              slidesToScroll: 2
+              slidesToShow: 1,
+              slidesToScroll: 1
             }
           }]
         });
@@ -93,6 +93,7 @@
   }
   .topicHeader{
     font-style: italic;
+    text-transform: uppercase;
   }
   .topicSubheader{
     font-style: bold;

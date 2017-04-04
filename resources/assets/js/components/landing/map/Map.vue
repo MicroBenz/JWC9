@@ -1,25 +1,18 @@
 <template>
   <div class="map-wrapper">
-    <h1>Map</h1>
-    <h1>แผนที่การเดินทาง</h1>
+    <div class="map-title">
+      <h1 class="map-eng">Map</h1>
+      <h1 class="map-thai">แผนที่การเดินทาง</h1>
+    </div>
     <div class="container">
       <div class="how-to-go">
         <div class="map-column">
           <img class="map-image" src="./map.png">     
-          <img class="go-to-ggmap-button" src="./google-map.png">   
+          <img v-on:click="goToGoogleMap" class="go-to-ggmap-button" src="./google-map.png">   
         </div>
         <div class="place-detail">
           <img src="./place.png">
           <img src="./transportation.png">        
-          <!--<h2>มหาวิทยาลัยราชภัฎจันทรเกษม</h2>
-          <h4>39/1 ถนนรัชดาภิเษก แขวงจันทรเกษม เขตจตุจักร กรุงเทพฯ 10900</h4>
-          <p><b>รถปรับอากาศ:</b> ปอ.185, ปอ.136, ปอ.206, ปอ.529</p>
-          <p><b>รถโดยสารธรรมดา:</b> สาย 38, 126, 136, 134 ก, 178, 179, 206</p>     
-          <iframe
-            class="map"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAh0YlO7TG-Q_-2tzmuqYgJ_7z57_AsQvc
-              &q=มหาวิทยาลัยราชภัฏจันทรเกษม" allowfullscreen>
-          </iframe>   -->
         </div>
       </div>
     </div>
@@ -28,17 +21,36 @@
 
 <script>
 export default {
-  
+  methods: {
+    goToGoogleMap() {
+      window.open('https://www.google.co.th/maps/place/%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%A5%E0%B8%B1%E0%B8%A2%E0%B8%A3%E0%B8%B2%E0%B8%8A%E0%B8%A0%E0%B8%B1%E0%B8%8F%E0%B8%88%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%A3%E0%B9%80%E0%B8%81%E0%B8%A9%E0%B8%A1/@13.8188261,100.5751203,17z/data=!3m1!4b1!4m5!3m4!1s0x30e29daba07cbffd:0xf0100b33d0b32b0!8m2!3d13.8188209!4d100.577309');
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../../../../sass/_variables.scss';
 
+$yellow: #fbc80b;
+
 .map-wrapper {
   padding-top: $section-padding;
   padding-bottom: $section-padding;  
   @include background('/img/bg/blue.png');
+  .map-title {
+    padding-bottom: 40px;
+    .map-eng {
+      color: $yellow;
+      font-style: italic;
+      text-transform: uppercase;
+      font-size: 88px;
+      line-height: 68px;
+    }
+    .map-thai {
+      font-size: 44px;
+    }
+  }
   .how-to-go {
     display: flex;
     .map-column, .place-detail {
@@ -51,6 +63,7 @@ export default {
       }
       .go-to-ggmap-button {
         width: 180px;
+        cursor: pointer;
       }
     }
     // .map {

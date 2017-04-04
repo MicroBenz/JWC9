@@ -1,8 +1,9 @@
 <template>
 <div class="about-jwc">
   <div class="container">
+    <img class="about-title" src="./about-title.png">
     <div class="col-md-5">
-      <img class="about-img" src="/img/landing/about/about.png">
+      <img class="about-img" src="./about.png">
     </div>
     <div class="col-md-7 about-jwc-text">
       <p>ค่ายที่จะพาน้องๆ ม.ปลาย ค้นหาตัวตนที่ใช่ กับ 3 สาขาสำคัญในโลกการทำงานดิจิทัล ทั้ง <span class="role-text">Marketing, Content Creator</span> และ <span class="role-text">Design</span> พร้อมเรียนรู้เทคนิคสร้างสรรค์ไอเดียให้บรรเจิดผ่านกิจกรรมสุดว๊าวที่มีแค่ค่ายนี้เท่านั้น โดยภายในค่ายจะมี Workshop พิเศษจากพี่ๆ สุดเทพทั้งสามสาขา เพื่อขนอาวุธ ระดมไอเดีย สร้างโปรเจคนวัตกรรมของโลกยุค 2017</p>
@@ -24,6 +25,10 @@ export default {
   padding-bottom: $section-padding;
   text-align: left;
   @include background('/img/bg/blue.png');
+  .about-title {
+    width: 700px;
+    margin-bottom: 23px;
+  }
   .about-img {
     width: 100%;
   }
