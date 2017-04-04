@@ -20,12 +20,6 @@ Route::get('/coming-soon', function () {
 });
 
 Route::post('subscribe', 'SubscribeController@insert');
-Route::get('/callback/{team}', 'SocialAuthController@callback');
-Route::get('/login/{team}', 'SocialAuthController@redirect');
+// Route::get('/callback/{team}', 'SocialAuthController@callback');
+// Route::get('/login/{team}', 'SocialAuthController@redirect');
 Route::post('authen/{team}', 'SocialAuthController@authen');
-
-Route::group(['middleware' => 'jwt.auth'], function () {
-    Route::get('token_test', function(){
-        return "has token";
-    });
-});
