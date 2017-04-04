@@ -5,16 +5,26 @@
             <div class="questionsDiv col-xs-12">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
-                        <label for="thai-name">1. สมมุติว่ามีนักรบกำลังจะออกเดินทางไปช่วยเจ้าหญิงที่ปราสาทของบอส ซึ่งสามารถหยิบของได้เพียง 3 ชิ้นเท่านั้น น้องจะเลือกหยิบอะไรไป เพราะอะไร และจงเล่าเรื่องราวการการผจญภัยเพื่อไปช่วยเจ้าหญิงจากตัวร้าย ( ไม่จำกัดไอเดีย )
-</label>
+                        <label for="thai-name">1. ทำไมถึงอยากจะมาเข้าค่าย JWC และคาดหวังอะไรจากค่าย ในครั้งนี้ ?</label>
                         <br>
                         <textarea style="width:100%;"></textarea>
                     </div>    
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
-                        <label for="thai-name">2. จากเรื่องที่แต่งมา จงย่อให้เหลืออย่างน้อย 120 คำและไม่เกิน 150 คำ</label>
+                        <label for="thai-name">2. เว็บไซต์อะไรที่น้องอยากสร้างในอนาคต พร้อมเหตุผล</label>
                         <br>
                         <textarea style="width:100%;"></textarea>
                     </div>    
+                    <div class="col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="thai-name">3. เล่าประสบการณ์ กิจกรรมและผลงานของน้อง</label>
+                        <br>
+                        <textarea style="width:100%;"></textarea>
+                    </div>    
+                    <div class="col-xs-12 col-sm-12 col-md-12 form-group">
+                        <label for="thai-name">4. เล่าความสามารถพิเศษของน้อง</label>
+                        <br>
+                        <textarea style="width:100%;"></textarea>
+                    </div>    
+                    
                 </div>
             </div>
             <div class="col-xs-12">
