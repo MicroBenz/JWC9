@@ -1,7 +1,13 @@
-// This file will override global color variable for bootstrap
+// This file will override global color variable for bootstrap if variable name is already exist by bootstrap
 // More info http://getbootstrap.com/customize/#less-variables
+// But you still can define some of your own variables
+
 // BG 
 $brown: #442c1f;
+$yellow: #ffd059;
+
+// Section Padding
+$section-padding: 50px;
 
 // Body
 $body-bg: #ffffff;
@@ -30,6 +36,7 @@ $text-color: #ffffff;
 // Navbar
 $navbar-default-bg: #fff;
 
+// Mixins
 @mixin background($imgUrl) {
   background: url($imgUrl) repeat center;
 }

@@ -1,7 +1,7 @@
 @extends('template')
 
 @section('title')
-    Welcome
+    Junior Webmaster Camp #9
 @endsection
 
 @section('content')

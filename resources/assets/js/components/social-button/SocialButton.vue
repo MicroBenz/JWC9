@@ -19,6 +19,4 @@
   }
 </script>
 
-<style lang="scss" scoped>
-@import './SocialButton.scss';
-</style>
+<style lang="scss" src="./SocialButton.scss" scoped></style>

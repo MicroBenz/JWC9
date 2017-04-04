@@ -17,11 +17,13 @@ export default {
 }
 </script>
 <style lang="scss">
+@import '../../../../sass/_variables.scss';
+
 .about-jwc {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: $section-padding;
+  padding-bottom: $section-padding;
   text-align: left;
-  background: url('/img/bg/blue.png') repeat center;
+  @include background('/img/bg/blue.png');
   .about-img {
     width: 100%;
   }
