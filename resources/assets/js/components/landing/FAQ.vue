@@ -81,5 +81,10 @@
   .topicHeader{
     color: #ffd059;
     font-style: italic;
+    font-size: 88px;
+    line-height: 68px;
+  }
+  .topicSubheader {
+    font-size: 44px;
   }
 </style>

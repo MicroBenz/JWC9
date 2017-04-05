@@ -94,10 +94,13 @@
   .topicHeader{
     font-style: italic;
     text-transform: uppercase;
+    font-size: 88px;
+    line-height: 68px;
   }
   .topicSubheader{
     font-style: bold;
     color: #5e4239;
+    font-size: 44px;
   }
   .galleryContainer{
     padding-top: 2em;
