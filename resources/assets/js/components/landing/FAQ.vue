@@ -51,8 +51,8 @@
               dots: false,
               arrows: true,
               infinite: false,
-              slidesToShow: 2,
-              slidesToScroll: 2
+              slidesToShow: 1,
+              slidesToScroll: 1
             }
           }]
         });

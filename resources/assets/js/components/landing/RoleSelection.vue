@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-character">
     <h1>เลือกอาชีพ</h1> 
     <div class="role-selection-wrapper">
       <div class="role-selection-item">

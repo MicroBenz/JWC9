@@ -1,6 +1,6 @@
 <template>
   <div class="landing">
-    <intro></intro>
+    <intro class="intro"></intro>
     <about-jwc></about-jwc>
     <role-selection></role-selection>
     <schedule></schedule>
@@ -42,6 +42,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  .intro{
+    min-height: 100vh;
+  }
   .landing {
     text-align: center;
   }
