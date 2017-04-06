@@ -11,7 +11,7 @@
             </p>
             <p class="desc-head">สกิล</p>
             <p>
-                <img class="skill-icon" src="/img/characters/Design_Skill_1.png">
+                <img class="skill-icon active" src="/img/characters/Design_Skill_1.png">
                 <img class="skill-icon" src="/img/characters/Design_Skill_2.png">
                 <img class="skill-icon" src="/img/characters/Design_Skill_3.png">
             </p>
@@ -124,11 +124,25 @@ export default {
         top: 30px;
         right: 30px;
         position: absolute;
+        text-align: right;
     }
 
     .job-banner{
-        width: 400px;
-        padding: 15px 30px;
+        width: 340px;
+        margin-left: auto;
+        margin-right: 30px;
+        margin-top : 20px;
+        margin-bottom: 20px;
+        opacity: 0.6;
+        display: block;
+        transition: opacity, box-shadow;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+    }
+
+    .job-banner:hover, .job-banner.active{
+        opacity: 1;
+        box-shadow: 0 0 30px #333;
     }
 
     .selected-role-title{
@@ -162,10 +176,12 @@ export default {
         border-radius: 32px;
         border: 5px solid transparent;
         transition: border 0.2s ease;
+        opacity: 0.6;
     }
 
     .skill-icon:hover, .skill-icon.active{
         border: 5px solid #fdbe00;
+        opacity: 1;
     }
 
     .skill-box{
