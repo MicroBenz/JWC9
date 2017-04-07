@@ -36,7 +36,7 @@
     margin: 0;
     font-weight: normal;
   }
-  @media( max-width : 700px){
+  @media( max-width : 700px) , (max-height: 720px){
       .camp-date{
         font-size: 60px;
       }
@@ -44,6 +44,18 @@
         font-size: 30px;
       }
   }
+  @media(max-height: 670px){
+      .camp-date{
+        font-size: 40px;
+      }
+  }
+  @media(max-height: 630px){
+      .camp-date{
+        font-size: 30px;
+      }
+     
+  }
+  
   .scroll-down-text {
     color: #000000;
     font-weight: bold;
@@ -73,6 +85,11 @@
     width: 250px;
     cursor: pointer;
   }
+  @media(max-height: 630px){
+    .login-with-fb-button {
+      width: 200px;
+    }
+  }
   .countdown {
     padding-top: 10px;
     padding-bottom: 10px;  
@@ -96,7 +113,7 @@
         height: 220px;
       }
   }
-  @media( max-width : 750px){
+  @media( max-width : 750px),(max-height: 720px){
       .kid{
         height: 150px;
       }
