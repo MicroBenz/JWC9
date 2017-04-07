@@ -9,7 +9,7 @@
             <!-- Left Section: Job Description -->
             <div class="section-heading">Job Intro</div>
             <div class="section-desc">เลือกอาชีพ</div>
-            <div class="selected-role-title">DESIGN</div>
+            <div class="selected-role-title" v-bind:style="{ background: presentColor }">DESIGN</div>
             <div class="selected-role-desc">
                 <p class="desc-head">คำอธิบาย</p>
                 <p>
@@ -17,11 +17,11 @@
                 </p>
                 <p class="desc-head">สกิล</p>
                 <p>
-                    <img class="skill-icon active" src="/img/characters/Design_Skill_1.png">
-                    <img class="skill-icon" src="/img/characters/Design_Skill_2.png">
-                    <img class="skill-icon" src="/img/characters/Design_Skill_3.png">
+                    <img class="skill-icon active" v-on:mouseover="this.style.borderColor = presentColor" src="/img/characters/Design_Skill_1.png">
+                    <img class="skill-icon" v-on:mouseover="this.style.borderColor = presentColor" src="/img/characters/Design_Skill_2.png">
+                    <img class="skill-icon" v-on:mouseover="this.style.borderColor = presentColor" src="/img/characters/Design_Skill_3.png">
                 </p>
-                <div class="skill-box">
+                <div class="skill-box" v-bind:style="{ background: presentColor }">
                     <div class="skill-name">DESIGN SKILL</div>
                     <div class="skill-info">ความเป็นเลิศด้านการออกแบบ</div>
                 </div>
@@ -30,22 +30,22 @@
 
         <!-- Middle Section: Stage & Presenter -->
         <div class="presenter">
-            <img class="presenter-body" src="/img/characters/Human_Design.png">
-            <img class="presenter-light" src="/img/characters/Light-Design.png">
+            <img class="presenter-body" v-bind:src="presenter.body">
+            <img class="presenter-light" v-bind:src="presenter.light">
             <div v-on:click="chooseRole()" v-bind:class="{'btn-join':true, 'btn-join-disabled':selectedRole=='none'}" >สมัครเลย</div>
         </div>
 
         <!-- Right Section: Job Selector -->
         <div class="job-picker">
-            <img v-on:click="selectJob('design')"  v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='design'}" src="/img/characters/R-DesignButton.png">
-            <img v-on:click="selectJob('content')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='content'}" src="/img/characters/R-ContentButton.png">
-            <img v-on:click="selectJob('marketing')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='marketing'}" src="/img/characters/R-MarketingButton.png">            
+            <img v-on:click="selectJob('design')" @click="setPresenter('/img/characters/Human_Design.png', '/img/characters/Light-Design.png', '#fac61f')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='design'}" src="/img/characters/R-DesignButton.png">
+            <img v-on:click="selectJob('content')" @click="setPresenter('/img/characters/Human_Content.png', '/img/characters/Light-Content.png', '#3364a7')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='content'}" src="/img/characters/R-ContentButton.png">
+            <img v-on:click="selectJob('marketing')" @click="setPresenter('/img/characters/Human_Marketing.png', '/img/characters/Light-Marketing.png', '#f14d50')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='marketing'}" src="/img/characters/R-MarketingButton.png">
         </div>
 
             <div class="counter desktop">
-                <b style="color: #fac61f;">Design</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count }}</span> คน<br>
-                <b style="color: #fac61f;">Content</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count }}</span> คน<br>
-                <b style="color: #fac61f;">Marketing</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count }}</span> คน<br>
+                <b style="color: #fac61f;">Design</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count.design }}</span> คน<br>
+                <b style="color: #3364a7;">Content</b> มีผู้เข้าร่วมแล้ว <span class="color: #3364a7">{{ count.content }}</span> คน<br>
+                <b style="color: #f14d50;">Marketing</b> มีผู้เข้าร่วมแล้ว <span class="color: #f14d50">{{ count.marketing }}</span> คน<br>
             </div>
         </div>
         <div class="mobile">
@@ -66,9 +66,9 @@
                     <div class="skill-info">ความเป็นเลิศด้านการออกแบบ</div>
                 </div>
                 <div class="counter mobile">
-                    <b style="color: #fac61f;">Design</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count }}</span> คน<br>
-                    <b style="color: #fac61f;">Content</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count }}</span> คน<br>
-                    <b style="color: #fac61f;">Marketing</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count }}</span> คน<br>
+                    <b style="color: #fac61f;">Design</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count.design }}</span> คน<br>
+                    <b style="color: #fac61f;">Content</b> มีผู้เข้าร่วมแล้ว <span class="color: #3364a7">{{ count.content }}</span> คน<br>
+                    <b style="color: #fac61f;">Marketing</b> มีผู้เข้าร่วมแล้ว <span class="color: #f14d50">{{ count.marketing }}</span> คน<br>
                 </div>
             </div>
 
@@ -87,7 +87,16 @@ export default {
             screenHeight: 900,
             scaleX: 1,
             scaleY: 1,
-            count: 0
+            count: {
+                design: 0,
+                content: 0,
+                marketing: 0,
+            },
+            presenter: {
+                body: '/img/characters/Human_Design.png',
+                light: '/img/characters/Light-Design.png'
+            },
+            presentColor: '',
         };
     },
     components: {
@@ -101,6 +110,11 @@ export default {
         window.addEventListener('resize', this.screenConstruct)
     },
     methods: {
+        setPresenter (body, light, color) {
+            this.presenter.body = body
+            this.presenter.light = light
+            this.presentColor = color
+        },
         chooseRole(){
             var that = this;
             console.log('choose role');
@@ -118,6 +132,7 @@ export default {
         },
         selectJob(selectedRole){
             this.selectedRole = selectedRole
+
         },
         screenConstruct () {
             let width = $(window).width()
@@ -139,7 +154,7 @@ export default {
         },
 
         calculateHeightFromWidth (width) {
-            let height = width * 0.5625
+            let height = (width * 0.53)
             return height
         },
         facebookLogin(){
@@ -431,9 +446,6 @@ export default {
             position: static;
             margin-top: 20px;
         }
-        .btn-join:hover{
-            display: none;
-        }
         .job-picker{
             left: 0;
             right: 0;
@@ -449,6 +461,9 @@ export default {
             max-height: 100px;
             margin: auto;
             margin-bottom: 10px;
+        }
+        .btn-join:hover{
+            border-bottom: 3px solid #2455a7;
         }
         .selected-role-desc, .selected-role-title{
             display: none;
