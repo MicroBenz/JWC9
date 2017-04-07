@@ -153,10 +153,6 @@ export default {
                         console.log('Good to see you, ' + response.name + '.');
                         var fullname = response.name;
                         var arrName = fullname.split(" ");
-                        // var aToZ = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-                        // if(aToZ.contains(arrName)){
-
-                        // }
                         var charCode = fullname[0].charCodeAt(0);
                         console.log(charCode);
                         if(charCode > 64 && charCode < 123){
@@ -173,7 +169,6 @@ export default {
                                 lastnameTH: arrName[1]
                             })
                         }
-                        
                         component.facebookGetLoginStatus()
 
                     });
@@ -192,6 +187,9 @@ export default {
                     // request, and the time the access token
                     // and signed request each expire
                     component.facebookAccessToken = response.authResponse.accessToken;
+                    console.log(`!!!!!!! accessToken: ${component.facebookAccessToken}`)
+                    console.log(component.selectedRole)
+                    component.authen(component.selectedRole);
                 } else if (response.status === 'not_authorized') {
                     // the user is logged in to Facebook,
                     // but has not authenticated your app
@@ -206,6 +204,7 @@ export default {
         },
 
         authen(team){
+            console.log(`called: authen(${team})`)
             let filter = ['design', 'content', 'marketing']
             for(let i = 0; i < 3; i++){
                 if(team == filter[i]){
@@ -214,9 +213,11 @@ export default {
                         access_token: this.facebookAccessToken
                     }).then(function(res){
                         console.log("Fuck Yeah!")
+                        console.log(res.data);
                     })
                 }
             }
+            
         }
     }
 }

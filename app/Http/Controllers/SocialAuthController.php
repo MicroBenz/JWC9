@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use JWTAuth;
 use Tymon\JWTAuthExceptions\JWTException;
-use \App\Fbaccounts;
-use \App\Teams;
-use \App\Campers;
+use App\Fbaccounts;
+use App\Teams;
+use App\Campers;
+use App\Profiles;
 use \Config;
 use Socialite;
 
@@ -45,17 +46,23 @@ class SocialAuthController extends Controller
 
     public function authen(Request $request, $team)
     {
+        if($team!='marketing' && $team!='content' && $team!='design') {
+            return response()->json(['error' => 'wrong team'], 500);
+        }
+
         $token = $request->input('access_token');
         $user = Socialite::driver('facebook')->userFromToken($token);
         $team_id = Teams::where('TeamName', $team)->first()['TeamID'];
         if(!Fbaccounts::where('FacebookUniqueID', $user->getId())->exists()) {
             Fbaccounts::create(['FacebookUniqueID'=>$user->getId(), 'FacebookName'=>$user->getName(), 'FacebookEmail'=>$user->getEmail(), 'FacebookAvatar'=>$user->getAvatar()]);
-            Campers::create(['FacebookUniqueID'=>$user->getId(), 'TeamID'=>$team_id]);
+            Campers::create(['FacebookUniqueID'=>$user->getId(), 'TeamID'=>$team_id, 'IsLock'=>false]);
+            Profiles::create(['CamperID'=>Campers::where('FacebookUniqueID', $user->getId())->first()['CamperID']]);
         }
         $fbaccount = Fbaccounts::where('FacebookUniqueID', $user->getId())->first();
+        $camper_id = Campers::where('FacebookUniqueID', $user->getId())->first()['CamperID'];
         try {
             // attempt to verify the credentials and create a token for the user
-            if (! $token = JWTAuth::fromUser($fbaccount)) {
+            if (!$token = JWTAuth::fromUser($fbaccount)) {
                 return response()->json(['error' => 'invalid_credentials'], 401);
             }
         } catch (JWTException $e) {
@@ -64,6 +71,6 @@ class SocialAuthController extends Controller
         }
 
         // all good so return the token
-        return response()->json(compact('token', 'team'));
+        return response()->json(compact('token', 'team', 'camper_id'));
     }
 }

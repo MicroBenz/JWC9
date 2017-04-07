@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         Teams::create(['TeamName'=>'content']);
         Teams::create(['TeamName'=>'design']);
         Teams::create(['TeamName'=>'marketing']);
+        Teams::create(['TeamName'=>'central']);
     }
 }
