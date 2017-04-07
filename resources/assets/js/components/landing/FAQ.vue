@@ -45,14 +45,15 @@
           autoplay: true,
           arrows: true,
           dots: true,
+          adaptiveHeight: true,
           responsive: [{
-            breakpoint: 500,
+            breakpoint: 1024,
             settings: {
               dots: false,
-              arrows: true,
+              arrows: false,
               infinite: false,
               slidesToShow: 1,
-              slidesToScroll: 1
+              slidesToScroll: 1,
             }
           }]
         });
@@ -60,6 +61,15 @@
   }
 </script>
 <style lang="scss" scoped>
+  h4 {
+    font-size: 19px;
+  }
+  .slick-arrow {
+    @media(max-width: 768px) {
+      display: none;    
+      // visibility: hidden;  
+    }
+  }
   .qaCard{
     padding: 15px 24px;
     border-radius: 15px;
@@ -67,10 +77,18 @@
     margin-right: 10%;
     background-color: #1e1e1e;
     font-style: italic;
+    @media(max-width: 768px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
   .faqCarousel{
     margin-left: 20%;
     margin-right: 20%;
+    @media(max-width: 768px) {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
   }
   .faqContainer{
     padding-top: 2em;
