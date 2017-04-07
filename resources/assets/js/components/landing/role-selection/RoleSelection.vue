@@ -112,7 +112,7 @@ export default {
                 that.$store.dispatch('setSelectedRole', {
                     selectedRole: that.selectedRole
                 })
-                that.$router.push('/register/step1')
+                
             }
             
         },
@@ -170,6 +170,7 @@ export default {
                             })
                         }
                         component.facebookGetLoginStatus()
+                        component.$router.push('/register/step1')
 
                     });
                 } else {

@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
                         <label for="thai-name">ชื่อ (ภาษาไทย)</label>
-                        <input v-model="firstnameTH" type="text" class="form-control" id="thai-name">
+                        <input v-model="firstnameTH"  type="text" class="form-control" id="thai-name">
                     </div>    
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
                         <label for="thai-name">นามสกุล (ภาษาไทย)</label>
@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
                         <label for="thai-name">ชื่อ (ภาษาอังกฤษ)</label>
-                        <input v-model="firstnameEN" type="text" class="form-control" id="thai-name">
+                        <input v-model="firstnameENX"  type="text" class="form-control" id="thai-name">
                     </div>    
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
                         <label for="thai-name">นามสกุล (ภาษาอังกฤษ)</label>
@@ -175,7 +175,7 @@ import { mapGetters } from 'vuex'
       
     data(){
         return {
-            
+            firstnameENX:this.$store.getters.firstnameEN
         }
     },
     computed: mapGetters({
@@ -194,7 +194,9 @@ import { mapGetters } from 'vuex'
     },
     methods: {
         goNext() {
-            this.$router.push('/register/step2');
+            console.log('go next')
+            console.log(this.firstnameENX);
+            // this.$router.push('/register/step2');
         }
     }
   }
