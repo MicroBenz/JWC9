@@ -2,7 +2,7 @@
 <div class="about-jwc">
   <div class="container">
     <img class="about-title" src="./about-title.png">
-    <div class="col-md-5">
+    <div class="col-md-5 img-wrapper">
       <img class="about-img" src="./about.png">
     </div>
     <div class="col-md-7 about-jwc-text">
@@ -25,18 +25,61 @@ export default {
   padding-bottom: $section-padding;
   text-align: left;
   @include background('/img/bg/blue.png');
+  .container {
+    @media(max-width: 1024px) {
+      text-align: center;
+    }
+  }
   .about-title {
     width: 700px;
     margin-bottom: 23px;
+    @media(max-width: 768px) {
+      width: 97%;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+      width: 75%;
+    }
   }
-  .about-img {
-    width: 100%;
+  .img-wrapper {
+    @media(max-width: 768px) {
+      padding-top: 5px;
+      padding-bottom: 15px;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) {
+      padding-top: 20px;
+      padding-bottom: 45px;
+    }
+    .about-img {
+      width: 100%;
+      @media(max-width: 768px) {
+        width: 95%;
+      }
+      @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px)  {
+        width: 75%;
+      }
+    }
   }
   .about-jwc-text {
     padding: 15px 24px;
     border-radius: 15px;
     background-color: #1e1e1e;
     font-style: italic;
+    p {
+      @media(max-width: 768px) {
+        font-size: 20px;
+      }
+      @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px)  {
+        font-size: 27px;        
+      }
+    }
     .role-text {
       color: #fcc111;
     }

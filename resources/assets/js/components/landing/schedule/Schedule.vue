@@ -90,9 +90,27 @@ export default {
       color: $yellow;
       font-size: 88px;
       line-height: 68px;
+      @media(max-width: 768px) {
+        font-size: 64px;
+        line-height: 45px;
+      }
+      @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px)  {
+        font-size: 88px;
+        line-height: 68px;
+      }
     }
     .title-thai {
       font-size: 44px;
+      @media(max-width: 768px) {
+        font-size: 35px;
+      }
+      @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px)  {
+        font-size: 44px;
+      }
     }
   }
   .schedule-item {
