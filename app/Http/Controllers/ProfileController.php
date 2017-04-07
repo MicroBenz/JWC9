@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use JWTAuth;
 use Tymon\JWTAuthExceptions\JWTException;
 use App\Profiles;
@@ -15,6 +16,7 @@ class ProfileController extends Controller
     public function getProfile() {
         $user = JWTAuth::parseToken()->authenticate();
         $profile = $user->profile()->first();
+        $profile['ProfilePicture'] = Storage::url('public'.'/'.$profile->ProfilePicture);
         return response()->json(compact('profile'));
     }
 
@@ -198,12 +200,19 @@ class ProfileController extends Controller
             return response()->json(['error'=> "ไฟล์ภาพต้องไม่ใหญ่กว่า 2MB"]);
         }
 
-        $path = $file->storeAs('ProfilePictures', $user->FacebookUniqueID);
-
         $user = JWTAuth::parseToken()->authenticate();
         $profile = $user->profile()->first();
+
+        if(!is_null($profile['ProfilePicture'])){
+            Storage::delete('public/'.$profile->ProfilePicture);
+        }
+
+        $filename = $user->FacebookUniqueID.date("YmdHis");
+
+        $path = $file->storeAs('public', $filename);
+
         try {
-            $profile->update(['ProfilePicture'=>$user->FacebookUniqueID]);
+            $profile->update(['ProfilePicture'=>$filename]);
         }
         catch(Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
