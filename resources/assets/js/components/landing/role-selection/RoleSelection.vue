@@ -1,42 +1,76 @@
 <template>
     <div class="jobs-screen-container">
-    <div class="jobs-screen" style="">
+        <div class="mobile">
+            <div class="section-heading">Job Intro</div>
+            <div class="section-desc">เลือกอาชีพ</div>
+        </div>
+        <div class="jobs-screen" style="">
 
-        <!-- Left Section: Job Description -->
-        <div class="section-heading">Job Intro</div>
-        <div class="section-desc">เลือกอาชีพ</div>
-        <div class="selected-role-title">DESIGN</div>
-        <div class="selected-role-desc">
-            <p class="desc-head">คำอธิบาย</p>
-            <p>
-                ชื่นชอบการออกแบบและเฉดสีที่หลากหลาย รวมกับจินตนาการที่แปลเปลี่ยนลายเส้น และรูปร่าง พร้อมสามารถนำไปใช้ได้จริง
-            </p>
-            <p class="desc-head">สกิล</p>
-            <p>
-                <img class="skill-icon active" src="/img/characters/Design_Skill_1.png">
-                <img class="skill-icon" src="/img/characters/Design_Skill_2.png">
-                <img class="skill-icon" src="/img/characters/Design_Skill_3.png">
-            </p>
-            <div class="skill-box">
-                <div class="skill-name">DESIGN SKILL</div>
-                <div class="skill-info">ความเป็นเลิศด้านการออกแบบ</div>
+            <!-- Left Section: Job Description -->
+            <div class="section-heading">Job Intro</div>
+            <div class="section-desc">เลือกอาชีพ</div>
+            <div class="selected-role-title">DESIGN</div>
+            <div class="selected-role-desc">
+                <p class="desc-head">คำอธิบาย</p>
+                <p>
+                    ชื่นชอบการออกแบบและเฉดสีที่หลากหลาย รวมกับจินตนาการที่แปลเปลี่ยนลายเส้น และรูปร่าง พร้อมสามารถนำไปใช้ได้จริง
+                </p>
+                <p class="desc-head">สกิล</p>
+                <p>
+                    <img class="skill-icon active" src="/img/characters/Design_Skill_1.png">
+                    <img class="skill-icon" src="/img/characters/Design_Skill_2.png">
+                    <img class="skill-icon" src="/img/characters/Design_Skill_3.png">
+                </p>
+                <div class="skill-box">
+                    <div class="skill-name">DESIGN SKILL</div>
+                    <div class="skill-info">ความเป็นเลิศด้านการออกแบบ</div>
+                </div>
+            </div>
+
+            <!-- Middle Section: Stage & Presenter -->
+            <div class="presenter">
+                <img class="presenter-body" src="/img/characters/Human_Design.png">
+                <img class="presenter-light" src="/img/characters/Light-Design.png">
+                <div class="btn-join">สมัครเลย</div>
+            </div>
+
+            <!-- Right Section: Job Selector -->
+            <div class="job-picker">
+                <img class="job-banner" src="/img/characters/R-DesignButton.png">
+                <img class="job-banner" src="/img/characters/R-ContentButton.png">
+                <img class="job-banner" src="/img/characters/R-MarketingButton.png">
+            </div>
+
+            <div class="counter desktop">
+                <b style="color: #fac61f;">Design</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count }}</span> คน<br>
+                <b style="color: #fac61f;">Content</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count }}</span> คน<br>
+                <b style="color: #fac61f;">Marketing</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count }}</span> คน<br>
             </div>
         </div>
-
-        <!-- Middle Section: Stage & Presenter -->
-        <div class="presenter">
-            <img class="presenter-body" src="/img/characters/Human_Design.png">
-            <img class="presenter-light" src="/img/characters/Light-Design.png">
-            <div class="btn-join">สมัครเลย</div>
+        <div class="mobile">
+            <div class="selected-role-title">DESIGN</div>
+            <div class="selected-role-desc">
+                <p class="desc-head">คำอธิบาย</p>
+                <p>
+                    ชื่นชอบการออกแบบและเฉดสีที่หลากหลาย รวมกับจินตนาการที่แปลเปลี่ยนลายเส้น และรูปร่าง พร้อมสามารถนำไปใช้ได้จริง
+                </p>
+                <p class="desc-head">สกิล</p>
+                <p>
+                    <img class="skill-icon active" src="/img/characters/Design_Skill_1.png">
+                    <img class="skill-icon" src="/img/characters/Design_Skill_2.png">
+                    <img class="skill-icon" src="/img/characters/Design_Skill_3.png">
+                </p>
+                <div class="skill-box">
+                    <div class="skill-name">DESIGN SKILL</div>
+                    <div class="skill-info">ความเป็นเลิศด้านการออกแบบ</div>
+                </div>
+                <div class="counter mobile">
+                    <b style="color: #fac61f;">Design</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count }}</span> คน<br>
+                    <b style="color: #fac61f;">Content</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count }}</span> คน<br>
+                    <b style="color: #fac61f;">Marketing</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count }}</span> คน<br>
+                </div>
+            </div>
         </div>
-
-        <!-- Right Section: Job Selector -->
-        <div class="job-picker">
-            <img class="job-banner" src="/img/characters/R-DesignButton.png">
-            <img class="job-banner" src="/img/characters/R-ContentButton.png">
-            <img class="job-banner" src="/img/characters/R-MarketingButton.png">
-        </div>
-    </div>
     </div>
 </template>
 
@@ -50,7 +84,8 @@ export default {
             screenWidth: 1600,
             screenHeight: 900,
             scaleX: 1,
-            scaleY: 1
+            scaleY: 1,
+            count: 0
         };
     },
     components: {
@@ -74,8 +109,9 @@ export default {
             $('.jobs-screen').css('height', height)
             $('.presenter-body').css('height', height-140)
             $('.presenter-light').css('height', height-70)
+            $('.job-picker').css('top', '')
             if (width <= 1199) {
-                $('.jobs-screen').css('height', '1000px')
+                $('.jobs-screen').css('height', height+410)
                 $('.jobs-screen').css('min-height', height)
                 $('.presenter-body').css('height', height-75)
                 $('.presenter-light').css('height', height-10)
@@ -97,6 +133,7 @@ export default {
         font-size: 60pt;
         position: absolute;
         font-weight: bold;
+        font-style: italic;
         top: 0px;
         line-height: 120px;
         left: 95px;
@@ -242,6 +279,26 @@ export default {
         line-height: 36px;
     }
 
+    .counter{
+        position: absolute;
+        top: auto;
+        right: 60px;
+        bottom: 100px;
+        left: auto;
+        background: rgba(0,0,0,0.7);
+        padding: 15px 30px;
+        font-size: 32px;
+        border: 2px solid #ddd;
+        line-height: 40px;
+    }
+
+    .mobile{
+        display: none;
+    }
+    .counter.mobile{
+        display: none;
+    }
+
     @media all and (max-width: 1199px){
         .section-heading{
             display: none;
@@ -249,19 +306,22 @@ export default {
         .section-desc{
             display: none;
         }
+        .mobile{
+            display: block;
+            background: #342327;
+        }
+        .mobile .section-heading{
+            position: static;
+            display: block;
+        }
+        .mobile .section-desc{
+            position: static;
+            display: block;
+        }
         .jobs-screen{
             background-size: 100%;
             background-repeat: no-repeat;
             background-position: top;
-        }
-        .presenter{
-            /**/
-        }
-        .presenter-body{
-            /**/
-        }
-        .presenter-light{
-            /**/
         }
         .btn-join{
             position: static;
@@ -281,58 +341,56 @@ export default {
         }
         .job-banner{
             width: 100%;
-            margin: 0;
+            max-width: 300px;
+            max-height: 100px;
+            margin: auto;
             margin-bottom: 10px;
         }
-        .job-banner:hover, .job-banner.active{
-
-        }
-        .selected-role-title{
+        .selected-role-desc, .selected-role-title{
             display: none;
         }
-        .selected-role-desc{
+        .mobile .section-heading{
+            font-size: 72px;
+            font-style: italic;
+            line-height: 52px;
+            text-align: center;
+            padding-top: 5px;
+        }
+        .mobile .section-desc{
+            line-height: 32px;
+            text-align: center;
+            padding-bottom: 5px;
+        }
+        .mobile .selected-role-title{
+            top: auto;
+            bottom: 480px;
+            width: 100%;
+            left: 0;
+            right: 0;
+            padding: 0px;
+            position: static;
+            display: block;
+        }
+        .mobile .selected-role-desc{
+            top: auto;
+            bottom: 60px;
+            width: 100%;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            position: static;
+            display: block;
+        }
+        .counter.desktop{
             display: none;
         }
-        .desc-head{
-            display: none;
+        .counter.mobile{
+            display: block;
+            position: static;
+            margin-top: 15px;
+            text-align: center;
+            background: rgba(0,0,0,0.3)
         }
-        .skill-icon{
-            display: none;
-        }
-        .skill-icon:hover, .skill-icon.active{
-            display: none;
-        }
-        .skill-box{
-
-        }
-        .skill-name{
-
-        }
-        .skill-info{
-            
-        }
-    }
-
-    @media all and (max-width: 480px){
-        .section-heading{}
-        .section-desc{}
-        .jobs-screen{}
-        .presenter{}
-        .presenter-body{}
-        .presenter-light{}
-        .btn-join{}
-        .btn-join:hover{}
-        .job-picker{}
-        .job-banner{}
-        .job-banner:hover, .job-banner.active{}
-        .selected-role-title{}
-        .selected-role-desc{}
-        .desc-head{}
-        .skill-icon{}
-        .skill-icon:hover, .skill-icon.active{}
-        .skill-box{}
-        .skill-name{}
-        .skill-info{}
     }
 
 </style>
