@@ -20,7 +20,7 @@ class ProfileController extends Controller
 
     public function createProfile(Request $request) {
         $user = JWTAuth::parseToken()->authenticate();
-        $camper_id = ($user->camper)['CamperID'];
+        $camper_id = $user->camper->first()['CamperID'];
 
         $data = $request->all();
         
