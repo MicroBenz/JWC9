@@ -9,11 +9,13 @@ use App\Teams;
 
 class QuestionController extends Controller
 {
-    public function getCentralQuestion(){
-       $questions =  Teams::where('TeamName', 'central')->first()->question()->get();
+    public function getTeamQuestion($team){
+       $questions =  Teams::where('TeamName', $team)->first()->question()->get();
        foreach($questions as $question){
            unset($question['TeamID']);
        }
        return $questions;
     }
+
+
 }
