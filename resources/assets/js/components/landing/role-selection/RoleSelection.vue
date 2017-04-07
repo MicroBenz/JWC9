@@ -1,10 +1,11 @@
 <template>
-    <div class="jobs-screen" style="transform: scale(1)">
+    <div class="jobs-screen-container">
+    <div class="jobs-screen" style="">
 
         <!-- Left Section: Job Description -->
         <div class="section-heading">Job Intro</div>
         <div class="section-desc">เลือกอาชีพ</div>
-        <div class="selected-role-title">DESIGNER</div>
+        <div class="selected-role-title">DESIGN</div>
         <div class="selected-role-desc">
             <p class="desc-head">คำอธิบาย</p>
             <p>
@@ -36,6 +37,7 @@
             <img class="job-banner" src="/img/characters/R-MarketingButton.png">
         </div>
     </div>
+    </div>
 </template>
 
 <script>
@@ -66,9 +68,19 @@ export default {
         screenConstruct () {
             let width = $(window).width()
             let height = this.calculateHeightFromWidth(width)
+
+            console.log(width)
+
             $('.jobs-screen').css('height', height)
             $('.presenter-body').css('height', height-140)
             $('.presenter-light').css('height', height-70)
+            if (width <= 1199) {
+                $('.jobs-screen').css('height', '1000px')
+                $('.jobs-screen').css('min-height', height)
+                $('.presenter-body').css('height', height-75)
+                $('.presenter-light').css('height', height-10)
+                $('.job-picker').css('top', height+40)
+            }
         },
 
         calculateHeightFromWidth (width) {
@@ -101,7 +113,7 @@ export default {
 
     .jobs-screen{
         width: 100%;
-        background: url('/img/characters/bg-character.png') no-repeat;
+        background: #342327 url('/img/characters/bg-character.png') no-repeat;
         background-size: cover;
         position: relative;
     }
@@ -228,6 +240,99 @@ export default {
         color: black;
         font-size: 16pt;
         line-height: 36px;
+    }
+
+    @media all and (max-width: 1199px){
+        .section-heading{
+            display: none;
+        }
+        .section-desc{
+            display: none;
+        }
+        .jobs-screen{
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top;
+        }
+        .presenter{
+            /**/
+        }
+        .presenter-body{
+            /**/
+        }
+        .presenter-light{
+            /**/
+        }
+        .btn-join{
+            position: static;
+            margin-top: 20px;
+        }
+        .btn-join:hover{
+            display: none;
+        }
+        .job-picker{
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+            margin-top: 30px;
+        }
+        .job-banner{
+            width: 100%;
+            margin: 0;
+            margin-bottom: 10px;
+        }
+        .job-banner:hover, .job-banner.active{
+
+        }
+        .selected-role-title{
+            display: none;
+        }
+        .selected-role-desc{
+            display: none;
+        }
+        .desc-head{
+            display: none;
+        }
+        .skill-icon{
+            display: none;
+        }
+        .skill-icon:hover, .skill-icon.active{
+            display: none;
+        }
+        .skill-box{
+
+        }
+        .skill-name{
+
+        }
+        .skill-info{
+            
+        }
+    }
+
+    @media all and (max-width: 480px){
+        .section-heading{}
+        .section-desc{}
+        .jobs-screen{}
+        .presenter{}
+        .presenter-body{}
+        .presenter-light{}
+        .btn-join{}
+        .btn-join:hover{}
+        .job-picker{}
+        .job-banner{}
+        .job-banner:hover, .job-banner.active{}
+        .selected-role-title{}
+        .selected-role-desc{}
+        .desc-head{}
+        .skill-icon{}
+        .skill-icon:hover, .skill-icon.active{}
+        .skill-box{}
+        .skill-name{}
+        .skill-info{}
     }
 
 </style>
