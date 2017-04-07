@@ -66,7 +66,7 @@
   }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   .gallery{
     margin-left: 10%;
     margin-right: 10%;
@@ -96,11 +96,29 @@
     text-transform: uppercase;
     font-size: 88px;
     line-height: 68px;
+    @media(max-width: 768px) {
+      font-size: 64px;
+      line-height: 45px;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+      font-size: 88px;
+      line-height: 68px;
+    }
   }
   .topicSubheader{
     font-style: bold;
     color: #5e4239;
     font-size: 44px;
+    @media(max-width: 768px) {
+      font-size: 35px;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+      font-size: 44px;
+    }
   }
   .galleryContainer{
     padding-top: 2em;

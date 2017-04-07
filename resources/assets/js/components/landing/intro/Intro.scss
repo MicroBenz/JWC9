@@ -12,6 +12,11 @@
   .jwc-logo {
     width: 320px;
   }
+  @media( max-width : 650px){
+     .jwc-logo {
+        width: 50%;
+     }
+  }
   .date-and-place {
     padding-top: 15px;
     padding-bottom: 25px;
@@ -31,6 +36,14 @@
     margin: 0;
     font-weight: normal;
   }
+  @media( max-width : 700px){
+      .camp-date{
+        font-size: 60px;
+      }
+      .camp-place{
+        font-size: 30px;
+      }
+  }
   .scroll-down-text {
     color: #000000;
     font-weight: bold;
@@ -43,7 +56,19 @@
     font-size: 37px;
     line-height: 37px;
     animation: blinker 1s linear infinite;
+    .arrow{
+      display: none;
+    }
+    @media( max-width: 470px){
+      .text {
+        display: none;
+      }
+      .arrow{
+        display: unset;
+      }
+    }
   }
+  
   .login-with-fb-button {
     width: 250px;
     cursor: pointer;
@@ -63,7 +88,17 @@
       left: 8%;
     }
     &.kid-right {
-      right: 8%;
+      right: 5%;
     }
+  }
+  @media( max-width : 1075px){
+      .kid{
+        height: 220px;
+      }
+  }
+  @media( max-width : 750px){
+      .kid{
+        height: 150px;
+      }
   }
 }
