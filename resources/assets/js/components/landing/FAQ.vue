@@ -59,7 +59,7 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   .qaCard{
     padding: 15px 24px;
     border-radius: 15px;
@@ -83,8 +83,26 @@
     font-style: italic;
     font-size: 88px;
     line-height: 68px;
+    @media(max-width: 768px) {
+      font-size: 64px;
+      line-height: 45px;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+      font-size: 88px;
+      line-height: 68px;
+    }
   }
   .topicSubheader {
     font-size: 44px;
+    @media(max-width: 768px) {
+      font-size: 35px;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+      font-size: 44px;
+    }
   }
 </style>
