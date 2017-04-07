@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!--<h1 class="text-center">Profile</h1>-->
+    <h1 class="text-center">Contact</h1>
     <div class="questionContainer">
         <div class="row">
             <div class="questionsDiv col-xs-12">
@@ -90,8 +90,8 @@
         margin-right:3%;
     }
     .questionContainer{
-        background: white;
-        color: black;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
         border-radius: 15px;
         padding-bottom: 1em;
         padding-top: 1em;

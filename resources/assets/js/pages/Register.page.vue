@@ -5,7 +5,7 @@
           <div class="col-xs-1">
           </div>
           <div class="col-xs-2 bs-wizard-step complete">
-            <div class="text-center bs-wizard-stepnum">Step 1</div>
+            <div class="text-center bs-wizard-stepnum">Step 1 {{test}}</div>
             <div class="progress"><div class="progress-bar"></div></div>
             <a href="#" class="bs-wizard-dot"></a>
           </div>
@@ -49,6 +49,12 @@
       return {
         currentStep: 'Profile'
       }
+    },
+    computed: {
+        currentStep() {
+            console.log(this.$route.path);
+            return this.$route.path;
+        }
     }
   }
 </script>
