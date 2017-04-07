@@ -36,32 +36,38 @@
                     </div>    
                     <div class="col-xs-6 col-sm-6 col-md-3 form-group">
                         <label for="sel1">เพศ</label>
-                        <select class="form-control setHeight" id="selSex">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>ชาย</option>
-                            <option>หญิง</option>
-                        </select>
+                        <div class="select-wrapper">                        
+                            <select class="form-control setHeight" id="selSex">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>ชาย</option>
+                                <option>หญิง</option>
+                            </select>
+                        </div>
                     </div>    
                     <div class="col-xs-6 col-sm-6 col-md-3 form-group">
                         <label for="thai-name">ศาสนา</label>
-                        <select class="form-control setHeight" id="selBelieve">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>พุทธ</option>
-                            <option>คริสต์</option>
-                            <option>อิสลาม</option>
-                            <option>พราหมณ์</option>
-                            <option>อื่น ๆ </option>
-                        </select>
+                        <div class="select-wrapper">                        
+                            <select class="form-control setHeight" id="selBelieve">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>พุทธ</option>
+                                <option>คริสต์</option>
+                                <option>อิสลาม</option>
+                                <option>พราหมณ์</option>
+                                <option>อื่น ๆ </option>
+                            </select>
+                        </div>
                     </div>    
                     <div class="col-xs-6 col-sm-6 col-md-3 form-group">
                         <label for="thai-name">กรุ๊ปเลือด</label>
-                        <select class="form-control setHeight" id="selBlood">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>A</option>
-                            <option>B</option>
-                            <option>AB</option>
-                            <option>O</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select class="form-control setHeight" id="selBlood">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>AB</option>
+                                <option>O</option>
+                            </select>
+                        </div>
                     </div> 
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
                         <label for="thai-name">วันเกิด</label>
@@ -71,86 +77,88 @@
                     </div> 
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
                         <label for="thai-name">จังหวัดที่อาศัยอยู่</label>
-                        <select class="form-control setHeight" id="selProvince">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>กระบี่</option>
-                            <option>กรุงเทพมหานคร</option>
-                            <option>กาญจนบุรี</option>
-                            <option>กาฬสินธุ์</option>
-                            <option>กำแพงเพชร</option>
-                            <option>ขอนแก่น</option>
-                            <option>จันทบุรี</option>
-                            <option>ฉะเชิงเทรา</option>
-                            <option>ชลบุรี</option>
-                            <option>ชัยนาท</option>
-                            <option>ชัยภูมิ</option>
-                            <option>ชุมพร</option>
-                            <option>ตรัง</option>
-                            <option>ตราด</option>
-                            <option>ตาก</option>
-                            <option>นครนายก</option>
-                            <option>นครปฐม</option>
-                            <option>นครพนม</option>
-                            <option>นครราชสีมา</option>
-                            <option>นครศรีธรรมราช</option>
-                            <option>นครสวรรค์</option>
-                            <option>นนทบุรี</option>
-                            <option>นราธิวาส</option>
-                            <option>น่าน</option>
-                            <option>บึงกาฬ</option>
-                            <option>บุรีรัมย์</option>
-                            <option>ปทุมธานี</option>
-                            <option>ประจวบคีรีขันธ์</option>
-                            <option>ปราจีนบุรี</option>
-                            <option>ปัตตานี</option>
-                            <option>พระนครศรีอยุธยา</option>
-                            <option>พะเยา</option>
-                            <option>พังงา</option>
-                            <option>พัทลุง</option>
-                            <option>พิจิตร</option>
-                            <option>พิษณุโลก</option>
-                            <option>ภูเก็ต</option>
-                            <option>มหาสารคาม</option>
-                            <option>มุกดาหาร</option>
-                            <option>ยะลา</option>
-                            <option>ยโสธร</option>
-                            <option>ระนอง</option>
-                            <option>ระยอง</option>
-                            <option>ราชบุรี</option>
-                            <option>ร้อยเอ็ด</option>
-                            <option>ลพบุรี</option>
-                            <option>ลำปาง</option>
-                            <option>ลำพูน</option>
-                            <option>ศรีสะเกษ</option>
-                            <option>สกลนคร</option>
-                            <option>สงขลา</option>
-                            <option>สตูล</option>
-                            <option>สมุทรปราการ</option>
-                            <option>สมุทรสงคราม</option>
-                            <option>สมุทรสาคร</option>
-                            <option>สระบุรี</option>
-                            <option>สระแก้ว</option>
-                            <option>สิงห์บุรี</option>
-                            <option>สุพรรณบุรี</option>
-                            <option>สุราษฎร์ธานี</option>
-                            <option>สุรินทร์</option>
-                            <option>สุโขทัย</option>
-                            <option>หนองคาย</option>
-                            <option>หนองบัวลำภู</option>
-                            <option>อำนาจเจริญ</option>
-                            <option>อุดรธานี</option>
-                            <option>อุตรดิตถ์</option>
-                            <option>อุทัยธานี</option>
-                            <option>อุบลราชธานี</option>
-                            <option>อ่างทอง</option>
-                            <option>เชียงราย</option>
-                            <option>เชียงใหม่</option>
-                            <option>เพชรบุรี</option>
-                            <option>เพชรบูรณ์</option>
-                            <option>เลย</option>
-                            <option>แพร่</option>
-                            <option>แม่ฮ่องสอน</option>
-                        </select>
+                        <div class="select-wrapper">                        
+                            <select class="form-control setHeight" id="selProvince">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>กระบี่</option>
+                                <option>กรุงเทพมหานคร</option>
+                                <option>กาญจนบุรี</option>
+                                <option>กาฬสินธุ์</option>
+                                <option>กำแพงเพชร</option>
+                                <option>ขอนแก่น</option>
+                                <option>จันทบุรี</option>
+                                <option>ฉะเชิงเทรา</option>
+                                <option>ชลบุรี</option>
+                                <option>ชัยนาท</option>
+                                <option>ชัยภูมิ</option>
+                                <option>ชุมพร</option>
+                                <option>ตรัง</option>
+                                <option>ตราด</option>
+                                <option>ตาก</option>
+                                <option>นครนายก</option>
+                                <option>นครปฐม</option>
+                                <option>นครพนม</option>
+                                <option>นครราชสีมา</option>
+                                <option>นครศรีธรรมราช</option>
+                                <option>นครสวรรค์</option>
+                                <option>นนทบุรี</option>
+                                <option>นราธิวาส</option>
+                                <option>น่าน</option>
+                                <option>บึงกาฬ</option>
+                                <option>บุรีรัมย์</option>
+                                <option>ปทุมธานี</option>
+                                <option>ประจวบคีรีขันธ์</option>
+                                <option>ปราจีนบุรี</option>
+                                <option>ปัตตานี</option>
+                                <option>พระนครศรีอยุธยา</option>
+                                <option>พะเยา</option>
+                                <option>พังงา</option>
+                                <option>พัทลุง</option>
+                                <option>พิจิตร</option>
+                                <option>พิษณุโลก</option>
+                                <option>ภูเก็ต</option>
+                                <option>มหาสารคาม</option>
+                                <option>มุกดาหาร</option>
+                                <option>ยะลา</option>
+                                <option>ยโสธร</option>
+                                <option>ระนอง</option>
+                                <option>ระยอง</option>
+                                <option>ราชบุรี</option>
+                                <option>ร้อยเอ็ด</option>
+                                <option>ลพบุรี</option>
+                                <option>ลำปาง</option>
+                                <option>ลำพูน</option>
+                                <option>ศรีสะเกษ</option>
+                                <option>สกลนคร</option>
+                                <option>สงขลา</option>
+                                <option>สตูล</option>
+                                <option>สมุทรปราการ</option>
+                                <option>สมุทรสงคราม</option>
+                                <option>สมุทรสาคร</option>
+                                <option>สระบุรี</option>
+                                <option>สระแก้ว</option>
+                                <option>สิงห์บุรี</option>
+                                <option>สุพรรณบุรี</option>
+                                <option>สุราษฎร์ธานี</option>
+                                <option>สุรินทร์</option>
+                                <option>สุโขทัย</option>
+                                <option>หนองคาย</option>
+                                <option>หนองบัวลำภู</option>
+                                <option>อำนาจเจริญ</option>
+                                <option>อุดรธานี</option>
+                                <option>อุตรดิตถ์</option>
+                                <option>อุทัยธานี</option>
+                                <option>อุบลราชธานี</option>
+                                <option>อ่างทอง</option>
+                                <option>เชียงราย</option>
+                                <option>เชียงใหม่</option>
+                                <option>เพชรบุรี</option>
+                                <option>เพชรบูรณ์</option>
+                                <option>เลย</option>
+                                <option>แพร่</option>
+                                <option>แม่ฮ่องสอน</option>
+                            </select>
+                        </div>
                     </div> 
                 </div>
             </div>
@@ -177,7 +185,7 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
     /*.bootstrap-select ul.dropdown-menu li:first-child {
         display: none;
     }*/
@@ -188,10 +196,27 @@
     input[type=submit] {
         line-height: 18px;
     }*/
-    input[type="text"]{
+    input, select {
         /*padding: 20px 10px; 
         line-height: 10px !important;*/
         height:1.5em;
+        border: 1px solid white;
+        background-color: transparent;
+        border-radius: 20px;
+        color: white;
+    }
+    .select-wrapper {
+        border-radius: 20px;
+        border: 1px solid white;
+        padding-left: 10px;
+        padding-right: 10px;
+        select {
+            border: 0;
+            outline: none;
+            &:focus {
+                outline: none;
+            }
+        }
     }
     .setHeight{
         height:1.5em;

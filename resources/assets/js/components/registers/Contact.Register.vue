@@ -27,22 +27,26 @@
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="sel1">เกี่ยวข้องเป็น</label>
-                        <select class="form-control setHeight" id="selSex">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>บิดา</option>
-                            <option>มารดา</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select class="form-control setHeight" id="selSex">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>บิดา</option>
+                                <option>มารดา</option>
+                            </select>
+                        </div>
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">รู้จักค่ายผ่านช่องทางไหน?</label>
-                        <select class="form-control setHeight" id="selBelieve">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>พุทธ</option>
-                            <option>คริสต์</option>
-                            <option>อิสลาม</option>
-                            <option>พราหมณ์</option>
-                            <option>อื่น ๆ </option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select class="form-control setHeight" id="selBelieve">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>พุทธ</option>
+                                <option>คริสต์</option>
+                                <option>อิสลาม</option>
+                                <option>พราหมณ์</option>
+                                <option>อื่น ๆ </option>
+                            </select>
+                        </div>
                     </div>    
                 </div>
             </div>
@@ -73,7 +77,7 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
     /*.bootstrap-select ul.dropdown-menu li:first-child {
         display: none;
     }*/
@@ -84,10 +88,27 @@
     input[type=submit] {
         line-height: 18px;
     }*/
-    input[type="text"]{
+    input, select {
         /*padding: 20px 10px; 
         line-height: 10px !important;*/
         height:1.5em;
+        border: 1px solid white;
+        background-color: transparent;
+        border-radius: 20px;
+        color: white;
+    }
+    .select-wrapper {
+        border-radius: 20px;
+        border: 1px solid white;
+        padding-left: 10px;
+        padding-right: 10px;
+        select {
+            border: 0;
+            outline: none;
+            &:focus {
+                outline: none;
+            }
+        }
     }
     .setHeight{
         height:1.5em;

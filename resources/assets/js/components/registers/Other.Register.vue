@@ -25,25 +25,29 @@
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-3 form-group">
                         <label for="thai-name">สายการเรียน</label>
-                        <select class="form-control setHeight" id="selBelieve">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>วิทย์ - คณิต</option>
-                            <option>ศิลป์- คำนวน</option>
-                            <option>ศิลป์- ภาษา</option>
-                            <option>วิทย์ - คอม</option>
-                            <option>ศิลป์ - สังคม</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select class="form-control setHeight" id="selBelieve">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>วิทย์ - คณิต</option>
+                                <option>ศิลป์- คำนวน</option>
+                                <option>ศิลป์- ภาษา</option>
+                                <option>วิทย์ - คอม</option>
+                                <option>ศิลป์ - สังคม</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-xs-4 col-sm-3 col-md-3 form-group">
                         <label for="thai-name">ไซส์เสื้อ</label>
-                        <select class="form-control setHeight" id="selBelieve">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
-                            <option>XL</option>
-                            <option>XXL</option>
-                        </select>
+                        <div class="select-wrapper">                        
+                            <select class="form-control setHeight" id="selBelieve">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                                <option>XXL</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-xs-8 col-sm-9 col-md-9 form-group">
                         <label for="thai-name">โรคประจำตัว</label>
@@ -51,13 +55,15 @@
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="sel1">อาหารที่รับประทาน</label>
-                        <select class="form-control setHeight" id="selSex">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>ปกติ</option>
-                            <option>เจ</option>
-                            <option>อิสลาม</option>
-                            <option>มังสวิรัต</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select class="form-control setHeight" id="selSex">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>ปกติ</option>
+                                <option>เจ</option>
+                                <option>อิสลาม</option>
+                                <option>มังสวิรัต</option>
+                            </select>
+                        </div>
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">อาหารที่แพ้/ไม่สามารถรับประทานได้</label>
@@ -96,7 +102,7 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
     /*.bootstrap-select ul.dropdown-menu li:first-child {
         display: none;
     }*/
@@ -107,10 +113,27 @@
     input[type=submit] {
         line-height: 18px;
     }*/
-    input[type="text"]{
+    input, select {
         /*padding: 20px 10px; 
         line-height: 10px !important;*/
         height:1.5em;
+        border: 1px solid white;
+        background-color: transparent;
+        border-radius: 20px;
+        color: white;
+    }
+    .select-wrapper {
+        border-radius: 20px;
+        border: 1px solid white;
+        padding-left: 10px;
+        padding-right: 10px;
+        select {
+            border: 0;
+            outline: none;
+            &:focus {
+                outline: none;
+            }
+        }
     }
     .setHeight{
         height:1.5em;
