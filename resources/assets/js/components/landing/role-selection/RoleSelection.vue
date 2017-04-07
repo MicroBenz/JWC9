@@ -230,7 +230,7 @@ export default {
                         access_token: this.facebookAccessToken
                     }).then(function(res){
                         console.log("Fuck Yeah!")
-                        console.log(res.data.token);
+                        console.log(res);
                         component.$store.dispatch('setAccessToken', {
                                 token: res.data.token
                             })

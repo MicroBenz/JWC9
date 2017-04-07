@@ -4,14 +4,26 @@ export default {
     firstnameEN: '',
     lastnameEN: '',
     firstnameTH: '',
-    lastnameTH: ''
+    lastnameTH: '',
+    nickname:'',
+    sex:'',
+    religion:'',
+    birthdate:'',
+    province:'',
+    bloodType:''
   },
   getters: {
     selectedRole: state => state.selectedRole,
     firstnameEN: state => state.firstnameEN,
     lastnameEN: state => state.lastnameEN,
     firstnameTH: state => state.firstnameTH,
-    lastnameTH: state => state.lastnameTH
+    lastnameTH: state => state.lastnameTH,
+    nickname: state => state.nickname,
+    sex: state => state.sex,
+    religion: state => state.religion,
+    birthdate: state => state.birthdate,
+    province: state => state.province,
+    bloodType: state => state.bloodType
   },
   mutations: {
     setSelectedRole(state, payload){
