@@ -50,6 +50,9 @@
     input[type=submit] {
         line-height: 18px;
     }*/
+    textarea {
+        border-radius: 12px;
+    }
     input[type="text"]{
         /*padding: 20px 10px; 
         line-height: 10px !important;*/
