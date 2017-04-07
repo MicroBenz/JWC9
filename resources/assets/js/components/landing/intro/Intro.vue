@@ -2,8 +2,9 @@
 <div class="intro">
   <img class="jwc-logo" src="/img/logo.png">
   <div class="date-and-place">
-    <h1 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h1>
-    <h3 class="camp-place">มหาวิทยาลัยราชภัฎจันทรเกษม</h3>
+    <h1 class="camp-slogan">คว้าโอกาสแล้วไปให้สุด</h1>
+    <h3 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h3>
+    <h4 class="camp-place">มหาวิทยาลัยราชภัฎจันทรเกษม</h4>
   </div>
   <img v-on:click="scrollDown" class="login-with-fb-button" src="./register-button.png">
   <!--<div class="countdown">

@@ -1,6 +1,6 @@
 <template>
   <div class = "faqContainer">
-    <img src="/img/crown.png" >
+    <img src="/img/crown.png" class="crown">
     <h1 class ="topicHeader">Question - Answer</h1>
     <h4 class ="topicSubheader">ถาม - ตอบ</h4>
     <br>
@@ -63,6 +63,9 @@
 <style lang="scss" scoped>
   h4 {
     font-size: 19px;
+  }
+  .crown {
+    padding-bottom: 15px;
   }
   .slick-arrow {
     @media(max-width: 768px) {
