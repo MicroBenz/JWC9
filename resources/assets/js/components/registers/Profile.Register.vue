@@ -5,10 +5,11 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4">
                 <img src="/img/profile-thumb.png" class="center-block img-circle img-thumbnail"  width="70%" height="auto" >
-                <br>
                 <div style="text-align:center;">
                     <input type="file" id="files" class="hidden"/>
-                    <label for="files" >Upload new profile picture</label>
+                    <label for="files">
+                        <img class="upload-btn" src="./upload.png">
+                    </label>
                 </div>
                 
             </div>
@@ -196,6 +197,12 @@
     input[type=submit] {
         line-height: 18px;
     }*/
+    .img-thumbnail {
+        margin-bottom: 15px;
+    }
+    .upload-btn {
+        width: 60%;
+    }
     input, select {
         /*padding: 20px 10px; 
         line-height: 10px !important;*/
@@ -217,6 +224,9 @@
                 outline: none;
             }
         }
+    }
+    input[type="date"] {
+        padding-left: 15px;
     }
     .setHeight{
         height:1.5em;

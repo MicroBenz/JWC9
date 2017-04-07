@@ -11,17 +11,19 @@
                     </div>    
                     <div class="col-xs-6 col-sm-3 col-md-3 form-group">
                         <label for="thai-name">ระดับชั้น</label>
-                        <select class="form-control setHeight" id="selBelieve">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>ม.3 ขึ้น ม.4</option>
-                            <option>ม.4 ขึ้น ม.5</option>
-                            <option>ม.5 ขึ้น ม.6</option>
-                            <option>ม.6 ขึ้นปี 1</option>
-                            <option>ม.3 ขึ้น ปวช. ปี 1</option>
-                            <option>ขึ้น ปวช. ปี 2</option>
-                            <option>ขึ้น ปวช. ปี 3</option>
-                            <option>ขึ้น ปวส.</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select class="form-control setHeight" id="selBelieve">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>ม.3 ขึ้น ม.4</option>
+                                <option>ม.4 ขึ้น ม.5</option>
+                                <option>ม.5 ขึ้น ม.6</option>
+                                <option>ม.6 ขึ้นปี 1</option>
+                                <option>ม.3 ขึ้น ปวช. ปี 1</option>
+                                <option>ขึ้น ปวช. ปี 2</option>
+                                <option>ขึ้น ปวช. ปี 3</option>
+                                <option>ขึ้น ปวส.</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-3 form-group">
                         <label for="thai-name">สายการเรียน</label>
