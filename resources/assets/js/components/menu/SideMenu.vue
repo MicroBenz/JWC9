@@ -62,23 +62,39 @@ h3 {
   background-color: $black-bg;
   text-align: center;
   overflow-y: scroll;
+  @media(max-width: 768px) {
+    width: 200px;
+  }
   .close-button {
     position: absolute;
     right: 15px;
     top: 15px;
     width: 30px;
+    @media(max-width: 768px) {
+      width: 20px;
+    }
   }
   .menu-title {
     color: $yellow-menu;
     font-style: italic;
     padding-top: 40px;
+    @media(max-width: 768px) {
+      font-size: 47px;
+    }
   }
   .menu-item {
     padding-top: 15px;
     padding-bottom: 15px;
+    @media(max-width: 768px) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
     h3 {
       color: #ffffff;
       font-style: italic;
+      @media(max-width: 768px) {
+        font-size: 30px;
+      }
     }
     .menu-thai, .selected {
       color: $yellow-menu;

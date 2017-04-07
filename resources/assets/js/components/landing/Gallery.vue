@@ -2,7 +2,6 @@
   <div class = "galleryContainer" >
     <h1 class ="topicHeader">Gallery</h1>
     <h4 class ="topicSubheader">ภาพกิจกรรม</h4>
-    <br>
     <div class="container">
         <section class='gallery' id="gallery">
           <div v-for="img in images">
@@ -67,11 +66,27 @@
   }
 </script>
 <style lang="scss" scoped>
+  .container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  }
   .gallery{
     margin-left: 10%;
     margin-right: 10%;
     padding-left: 10%;
     padding-right: 10%;
+    @media(max-width: 768px) {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   .imageInCarousel{
     margin: 0 auto; 

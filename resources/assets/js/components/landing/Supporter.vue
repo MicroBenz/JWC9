@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Supporter</h1>
+    <h1>Sponsor</h1>
   </div>
 </template>
 
