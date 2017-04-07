@@ -183,6 +183,14 @@ class ProfileController extends Controller
     }
 
     public function updateProfilePicture(Request $request) {
+
+        $user = JWTAuth::parseToken()->authenticate();
+        $profile = $user->profile()->first();
+
+        if($user->camper->first()['IsLock']){
+            return response()->json(['error'=> "ไม่สามารถแก้ไขข้อมูลได้"]);
+        }
+
         $file = $request->file('ProfilePicture');
         $data['errorMessage'] = '';
         $checkMimeType = false;
@@ -199,9 +207,6 @@ class ProfileController extends Controller
             // $data['errorMessage'] .= "ไฟล์ภาพต้องไม่ใหญ่กว่า 2MB";
             return response()->json(['error'=> "ไฟล์ภาพต้องไม่ใหญ่กว่า 2MB"]);
         }
-
-        $user = JWTAuth::parseToken()->authenticate();
-        $profile = $user->profile()->first();
 
         if(!is_null($profile['ProfilePicture'])){
             Storage::delete('public/'.$profile->ProfilePicture);

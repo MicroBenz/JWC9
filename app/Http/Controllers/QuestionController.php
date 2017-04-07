@@ -31,12 +31,16 @@ class QuestionController extends Controller
         $user = JWTAuth::parseToken()->authenticate();
         $profile = $user->profile()->first();
 
+        if($user->camper->first()['IsLock']){
+            return response()->json(['error'=> "ไม่สามารถแก้ไขข้อมูลได้"]);
+        }
+
         $answers = $request->all();
 
         $update_data = array();
         $create_data = array();
         
-        $recent_answers = Answers::where('CamperID', $profile['CamperID'])->pluck('QuestionID', 'AnswerID')->toArray();
+        $recent_answers = Answers::where('CamperID', $profile['CamperID'])->pluck('QuestionID')->toArray();
         $i = 0;
 
         foreach($answers as $answer){
