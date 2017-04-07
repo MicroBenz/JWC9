@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Questions extends Model
 {
     public $timestamps = false;
+    protected $primaryKey = 'QuestionID';
 }
