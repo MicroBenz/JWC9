@@ -46,11 +46,9 @@
                     </div>    
                 </div>
             </div>
-            <div class="col-xs-12">
-                <img src="/images/join-button.png" class="center-block pull-right nextButton" alt="Cinque Terre" width="20%;" height="auto">
-            </div>
         </div>
-        
+        <img v-on:click="goNext()" class="next-btn" src="./right-btn.png">
+        <img v-on:click="goBack()" class="back-btn" src="./left-btn.png">        
     </div>
   </div>
 </template>
@@ -64,6 +62,14 @@
     updated() {
         console.log('updated')
         
+    },
+    methods: {
+        goNext() {
+            this.$router.push('/register/step3');
+        },
+        goBack() {
+            this.$router.push('/register/step1');
+        }
     }
   }
 </script>
@@ -95,9 +101,25 @@
         border-radius: 15px;
         padding-bottom: 1em;
         padding-top: 1em;
+        position: relative;
+        margin-bottom: 75px;
     }
     .questionsDiv{
         padding-left: 10%;
         padding-right: 10%;
+    }
+    .next-btn {
+        width: 50px;
+        position: absolute;
+        bottom: -25px;
+        right: 35px;
+        cursor: pointer;
+    }
+    .back-btn {
+        width: 50px;
+        position: absolute;
+        bottom: -25px;
+        left: 35px;
+        cursor: pointer;                
     }
 </style>

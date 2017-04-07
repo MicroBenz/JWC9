@@ -223,5 +223,6 @@
         position: absolute;
         bottom: -25px;
         right: 35px;
+        cursor: pointer;
     }
 </style>
