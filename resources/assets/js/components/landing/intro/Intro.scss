@@ -6,7 +6,7 @@
 
 .intro {
   @include background('/img/bg/yellow.png');
-  padding-top: $section-padding;
+  padding-top: 1.2em;
   padding-bottom: $section-padding;
   position: relative;
   .jwc-logo {
@@ -42,7 +42,7 @@
     font-weight: normal;
   }
   .camp-slogan {
-    // font-size: 26px;
+     font-size: 60px;
     color: #442c1f;  
     font-style: italic;  
     margin: 0;
@@ -51,6 +51,7 @@
   @media( max-width : 700px) , (max-height: 720px){
       .camp-slogan {
         font-size: 50px;
+        margin-bottom: 20px;
       }
       .camp-date{
         font-size: 40px;
@@ -61,7 +62,7 @@
   }
   @media(max-height: 670px){
       .camp-date{
-        font-size: 40px;
+        font-size: 32px;
       }
   }
   @media(max-height: 650px){
@@ -69,10 +70,10 @@
         font-size: 40px;
       }
       .camp-date{
-        font-size: 30px;
+        font-size: 26px;
       }
       .camp-place{
-        font-size: 30px;
+        font-size: 22px;
       }
   }
   
@@ -83,9 +84,9 @@
   // }
   @media(max-width: 500px){
       .camp-slogan{
-        font-size: 45px;
+        font-size: 32px;
       }
-     
+
   }
   
   .scroll-down-text {

@@ -2,7 +2,7 @@
 <div class="intro">
   <img class="jwc-logo" src="/img/logo.png">
   <div class="date-and-place">
-    <h1 class="camp-slogan">คว้าโอกาสแล้วไปให้สุด</h1>
+    <h1 class="camp-slogan">Digital Web War<br>มหาสงครามคนดิจิตอล</h1>
     <h3 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h3>
     <h4 class="camp-place">มหาวิทยาลัยราชภัฎจันทรเกษม</h4>
   </div>
