@@ -2,7 +2,8 @@
     <div class="jobs-screen" style="transform: scale(1)">
 
         <!-- Left Section: Job Description -->
-        <div class="section-heading"></div>
+        <div class="section-heading">Job Intro</div>
+        <div class="section-desc">เลือกอาชีพ</div>
         <div class="selected-role-title">DESIGNER</div>
         <div class="selected-role-desc">
             <p class="desc-head">คำอธิบาย</p>
@@ -11,7 +12,7 @@
             </p>
             <p class="desc-head">สกิล</p>
             <p>
-                <img class="skill-icon" src="/img/characters/Design_Skill_1.png">
+                <img class="skill-icon active" src="/img/characters/Design_Skill_1.png">
                 <img class="skill-icon" src="/img/characters/Design_Skill_2.png">
                 <img class="skill-icon" src="/img/characters/Design_Skill_3.png">
             </p>
@@ -80,6 +81,24 @@ export default {
 
 <style type="text/css">
 
+    .section-heading{
+        font-size: 60pt;
+        position: absolute;
+        font-weight: bold;
+        top: 0px;
+        line-height: 120px;
+        left: 95px;
+        text-align: left;
+    }
+
+    .section-desc{
+        font-size: 24pt;
+        position: absolute;
+        top: 80px;
+        left: 95px;
+        text-align: left;
+    }
+
     .jobs-screen{
         width: 100%;
         background: url('/img/characters/bg-character.png') no-repeat;
@@ -113,9 +132,16 @@ export default {
         width: 200px;
         background: #3364a7;
         color: white;
-        border-radius: 10px;
+        border-radius: 30px;
+        border-bottom: 5px solid #1a40a7;
         margin: auto;
         margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .btn-join:hover{
+        margin-top: 13px;
+        border-bottom: 3px solid #2455a7;
     }
 
     .job-picker{
@@ -124,11 +150,26 @@ export default {
         top: 30px;
         right: 30px;
         position: absolute;
+        text-align: right;
     }
 
     .job-banner{
-        width: 400px;
-        padding: 15px 30px;
+        width: 340px;
+        margin-left: auto;
+        margin-right: 30px;
+        margin-top : 20px;
+        margin-bottom: 20px;
+        opacity: 0.6;
+        display: block;
+        transition: opacity, box-shadow;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+        cursor: pointer;
+    }
+
+    .job-banner:hover, .job-banner.active{
+        opacity: 1;
+        box-shadow: 0 0 30px #333;
     }
 
     .selected-role-title{
@@ -162,10 +203,13 @@ export default {
         border-radius: 32px;
         border: 5px solid transparent;
         transition: border 0.2s ease;
+        opacity: 0.6;
+        cursor: pointer;
     }
 
     .skill-icon:hover, .skill-icon.active{
         border: 5px solid #fdbe00;
+        opacity: 1;
     }
 
     .skill-box{
