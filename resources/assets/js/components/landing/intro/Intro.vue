@@ -2,15 +2,16 @@
 <div class="intro">
   <img class="jwc-logo" src="/img/logo.png">
   <div class="date-and-place">
-    <h1 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h1>
-    <h3 class="camp-place">มหาวิทยาลัยราชภัฎจันทรเกษม</h3>
+    <h1 class="camp-slogan">Digital Web War<br>มหาสงครามคนดิจิตอล</h1>
+    <h3 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h3>
+    <h4 class="camp-place">มหาวิทยาลัยราชภัฎจันทรเกษม</h4>
   </div>
   <img v-on:click="scrollDown" class="login-with-fb-button" src="./register-button.png">
   <!--<div class="countdown">
     <p>เหลือเวลาสมัครอีก</p>
     <p>{{countdownTime}}</p>
   </div>-->
-  <p class="scroll-down-text">scroll down</p>
+  <p class="scroll-down-text"><span class="text">scroll down</span><span class="arrow"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span></p>
   <img class="kid kid-left" src="./kid-left.png">
   <img class="kid kid-right" src="./kid-right.png">  
 </div>

@@ -1,6 +1,6 @@
 <template>
   <div class = "faqContainer">
-    <img src="/img/crown.png" >
+    <img src="/img/crown.png" class="crown">
     <h1 class ="topicHeader">Question - Answer</h1>
     <h4 class ="topicSubheader">ถาม - ตอบ</h4>
     <br>
@@ -45,21 +45,34 @@
           autoplay: true,
           arrows: true,
           dots: true,
+          adaptiveHeight: true,
           responsive: [{
-            breakpoint: 500,
+            breakpoint: 1024,
             settings: {
               dots: false,
-              arrows: true,
+              arrows: false,
               infinite: false,
               slidesToShow: 1,
-              slidesToScroll: 1
+              slidesToScroll: 1,
             }
           }]
         });
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
+  h4 {
+    font-size: 19px;
+  }
+  .crown {
+    padding-bottom: 15px;
+  }
+  .slick-arrow {
+    @media(max-width: 768px) {
+      display: none;    
+      // visibility: hidden;  
+    }
+  }
   .qaCard{
     padding: 15px 24px;
     border-radius: 15px;
@@ -67,10 +80,18 @@
     margin-right: 10%;
     background-color: #1e1e1e;
     font-style: italic;
+    @media(max-width: 768px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
   .faqCarousel{
     margin-left: 20%;
     margin-right: 20%;
+    @media(max-width: 768px) {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
   }
   .faqContainer{
     padding-top: 2em;
@@ -83,8 +104,26 @@
     font-style: italic;
     font-size: 88px;
     line-height: 68px;
+    @media(max-width: 768px) {
+      font-size: 64px;
+      line-height: 45px;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+      font-size: 88px;
+      line-height: 68px;
+    }
   }
   .topicSubheader {
     font-size: 44px;
+    @media(max-width: 768px) {
+      font-size: 35px;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+      font-size: 44px;
+    }
   }
 </style>

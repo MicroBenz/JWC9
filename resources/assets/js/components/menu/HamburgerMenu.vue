@@ -31,6 +31,9 @@ export default {
   z-index: 3;
   width: 80px;
   top: 25px;
+  @media(max-width: 768px) {
+    width: 50px;
+  }
   img {
     width: 100%
   }

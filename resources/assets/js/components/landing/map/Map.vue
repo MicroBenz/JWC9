@@ -1,18 +1,18 @@
 <template>
   <div class="map-wrapper">
     <div class="map-title">
-      <h1 class="map-eng">Map</h1>
-      <h1 class="map-thai">แผนที่การเดินทาง</h1>
+      <h1 class="map-eng">สถานที่จัดค่าย</h1>
+      <!--<h1 class="map-thai">แผนที่การเดินทาง</h1>-->
     </div>
     <div class="container">
-      <div class="how-to-go">
-        <div class="map-column">
-          <img class="map-image" src="./map.png">     
-          <img v-on:click="goToGoogleMap" class="go-to-ggmap-button" src="./google-map.png">   
+      <div class="row">
+        <div class="col-xs-12 col-md-6 map-column">
+          <img style="max-width: 100%;" class="map-image" src="./map.png">
+          <img style="max-width: 200px; margin: auto; margin-top: 20px;" v-on:click="goToGoogleMap" class="go-to-ggmap-button" src="./google-map.png">
         </div>
-        <div class="place-detail">
-          <img src="./place.png">
-          <img src="./transportation.png">        
+        <div class="col-xs-12 col-md-6">
+          <img style="max-width: 100%;" src="./place.png">
+          <img style="max-width: 100%;" src="./transportation.png">
         </div>
       </div>
     </div>
@@ -38,6 +38,9 @@ $yellow: #fbc80b;
   padding-top: $section-padding;
   padding-bottom: $section-padding;  
   @include background('/img/bg/blue.png');
+  .map-column {
+    padding-bottom: 25px;
+  }
   .map-title {
     padding-bottom: 40px;
     .map-eng {
@@ -46,9 +49,27 @@ $yellow: #fbc80b;
       text-transform: uppercase;
       font-size: 88px;
       line-height: 68px;
+      @media(max-width: 768px) {
+        font-size: 64px;
+        line-height: 45px;
+      }
+      @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px)  {
+        font-size: 88px;
+        line-height: 68px;
+      }
     }
     .map-thai {
       font-size: 44px;
+      @media(max-width: 768px) {
+        font-size: 35px;
+      }
+      @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px)  {
+        font-size: 44px;
+      }
     }
   }
   .how-to-go {
@@ -64,6 +85,9 @@ $yellow: #fbc80b;
       .go-to-ggmap-button {
         width: 180px;
         cursor: pointer;
+        @media(max-width: 768px) {
+          width: 140px;
+        }
       }
     }
     // .map {

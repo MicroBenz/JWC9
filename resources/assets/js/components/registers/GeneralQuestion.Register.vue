@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="text-center">คำถามส่วนกลาง</h1>
     <div class="questionContainer">
         <div class="row">
             <div class="questionsDiv col-xs-12">
@@ -23,15 +24,12 @@
                         <label for="thai-name">4. เล่าความสามารถพิเศษของน้อง</label>
                         <br>
                         <textarea style="width:100%;"></textarea>
-                    </div>    
-                    
+                    </div>      
                 </div>
             </div>
-            <div class="col-xs-12">
-                <img src="/images/join-button.png" class="center-block pull-right nextButton" alt="Cinque Terre" width="20%;" height="auto">
-            </div>
         </div>
-        
+        <img v-on:click="goBack()" class="back-btn" src="./left-btn.png">
+        <img v-on:click="goNext()" class="next-btn" src="./right-btn.png">
     </div>
   </div>
 </template>
@@ -44,7 +42,14 @@
     },
     updated() {
         console.log('updated')
-        
+    },
+    methods: {
+        goNext() {
+            
+        },
+        goBack() {
+            this.$router.push('/register/step3');
+        }
     }
   }
 </script>
@@ -59,10 +64,20 @@
     input[type=submit] {
         line-height: 18px;
     }*/
+    textarea {
+        border-radius: 12px;
+        border-color: black;
+        padding: 5px 10px;
+        color: black;
+    }
     input[type="text"]{
         /*padding: 20px 10px; 
         line-height: 10px !important;*/
         height:1.5em;
+        border: 1px solid white;
+        background-color: transparent;
+        border-radius: 20px;
+        color: white;
     }
     .setHeight{
         height:1.5em;
@@ -71,14 +86,30 @@
         margin-right:3%;
     }
     .questionContainer{
-        background: white;
-        color: black;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
         border-radius: 15px;
         padding-bottom: 1em;
         padding-top: 1em;
+        position: relative;
+        margin-bottom: 75px;
     }
     .questionsDiv{
         padding-left: 10%;
         padding-right: 10%;
+    }
+    .back-btn {
+        width: 50px;
+        position: absolute;
+        bottom: -25px;
+        left: 35px;
+        cursor: pointer;        
+    }
+    .next-btn {
+        width: 50px;
+        position: absolute;
+        bottom: -25px;
+        right: 35px;
+        cursor: pointer;
     }
 </style>

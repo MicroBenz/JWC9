@@ -34,6 +34,9 @@ export default {
       width: 55px;
       display: block;
       cursor: pointer;
+      @media(max-width: 768px) {
+        width: 37px;
+      }
     }
   }
 </style>

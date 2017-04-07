@@ -6,16 +6,26 @@
 
 .intro {
   @include background('/img/bg/yellow.png');
-  padding-top: $section-padding;
+  padding-top: 1.2em;
   padding-bottom: $section-padding;
   position: relative;
   .jwc-logo {
     width: 320px;
   }
+  @media( max-width : 650px){
+     .jwc-logo {
+        width: 50%;
+     }
+  }
   .date-and-place {
     padding-top: 15px;
     padding-bottom: 25px;
 
+  }
+  @media(max-height: 630px){
+    .date-and-place {
+      padding-bottom: 12px;
+    }
   }
   .camp-date {
     // font-size: 50px;
@@ -31,6 +41,54 @@
     margin: 0;
     font-weight: normal;
   }
+  .camp-slogan {
+     font-size: 60px;
+    color: #442c1f;  
+    font-style: italic;  
+    margin: 0;
+    font-weight: normal;
+  }
+  @media( max-width : 700px) , (max-height: 720px){
+      .camp-slogan {
+        font-size: 50px;
+        margin-bottom: 20px;
+      }
+      .camp-date{
+        font-size: 40px;
+      }
+      .camp-place{
+        font-size: 30px;
+      }
+  }
+  @media(max-height: 670px){
+      .camp-date{
+        font-size: 32px;
+      }
+  }
+  @media(max-height: 650px){
+      .camp-slogan {
+        font-size: 40px;
+      }
+      .camp-date{
+        font-size: 26px;
+      }
+      .camp-place{
+        font-size: 22px;
+      }
+  }
+  
+  // @media(max-height: 630px){
+  //     .camp-date{
+  //       font-size: 30px;
+  //     }
+  // }
+  @media(max-width: 500px){
+      .camp-slogan{
+        font-size: 32px;
+      }
+
+  }
+  
   .scroll-down-text {
     color: #000000;
     font-weight: bold;
@@ -43,10 +101,27 @@
     font-size: 37px;
     line-height: 37px;
     animation: blinker 1s linear infinite;
+    .arrow{
+      display: none;
+    }
+    @media( max-width: 470px){
+      .text {
+        display: none;
+      }
+      .arrow{
+        display: unset;
+      }
+    }
   }
+  
   .login-with-fb-button {
     width: 250px;
     cursor: pointer;
+  }
+  @media(max-height: 670px){
+    .login-with-fb-button {
+      width: 180px;
+    }
   }
   .countdown {
     padding-top: 10px;
@@ -63,7 +138,17 @@
       left: 8%;
     }
     &.kid-right {
-      right: 8%;
+      right: 5%;
     }
+  }
+  @media( max-width : 1075px){
+      .kid{
+        height: 220px;
+      }
+  }
+  @media( max-width : 750px),(max-height: 720px){
+      .kid{
+        height: 150px;
+      }
   }
 }
