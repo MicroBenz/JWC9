@@ -16,8 +16,8 @@ export default {
     facebookApiReady(state) {
       state.isFacebookApiReady = true;
     },
-    setAccessToken(state, token) {
-      state.accessToken = token;
+    setAccessToken(state, payload) {
+      state.accessToken = payload.token;
     }
   },
   actions: {
@@ -30,8 +30,8 @@ export default {
     setNotLogin({ commit }) {
       commit('setLoginStatus', false)
     },
-    setAccessToken({ commit }, token) {
-      commit('setAccessToken', token);
+    setAccessToken({ commit }, payload) {
+      commit('setAccessToken', payload);
     }
   }
 }
