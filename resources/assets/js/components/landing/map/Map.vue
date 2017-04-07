@@ -1,18 +1,18 @@
 <template>
   <div class="map-wrapper">
     <div class="map-title">
-      <h1 class="map-eng">Map</h1>
-      <h1 class="map-thai">แผนที่การเดินทาง</h1>
+      <h1 class="map-eng">สถานที่จัดค่าย</h1>
+      <!--<h1 class="map-thai">แผนที่การเดินทาง</h1>-->
     </div>
     <div class="container">
-      <div class="how-to-go">
-        <div class="map-column">
-          <img class="map-image" src="./map.png">     
-          <img v-on:click="goToGoogleMap" class="go-to-ggmap-button" src="./google-map.png">   
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <img style="max-width: 100%;" class="map-image" src="./map.png">
+          <img style="max-width: 200px; margin: auto; margin-top: 20px;" v-on:click="goToGoogleMap" class="go-to-ggmap-button" src="./google-map.png">
         </div>
-        <div class="place-detail">
-          <img src="./place.png">
-          <img src="./transportation.png">        
+        <div class="col-xs-12 col-md-6">
+          <img style="max-width: 100%;" src="./place.png">
+          <img style="max-width: 100%;" src="./transportation.png">
         </div>
       </div>
     </div>

@@ -389,7 +389,9 @@ export default {
             position: static;
             margin-top: 15px;
             text-align: center;
-            background: rgba(0,0,0,0.3)
+            background: rgba(0,0,0,0.3);
+            font-size: 24px;
+            line-height: 32px;
         }
     }
 

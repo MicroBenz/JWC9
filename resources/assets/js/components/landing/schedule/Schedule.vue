@@ -1,8 +1,8 @@
 <template>
   <div class="schedule">
     <div class="schedule-title">
-      <h1 class="title-eng">Schedule</h1>
-      <h1 class="title-thai">กำหนดการ</h1>
+      <h1 class="title-eng">Timeline</h1>
+      <!--<h1 class="title-thai">กำหนดการ</h1>-->
     </div>
     <div class="container">
       <div class="col-md-3 col-sm-6">
@@ -11,7 +11,6 @@
           <img v-if="isActiveClass(1)" src="./1-active.png">
           <h3 :class="isActiveClass(1) ? 'highlight' : ''">รับสมัคร</h3>
           <p>10 เมษายน - 1 พฤษภาคม</p>
-          <p>{{isActiveClass(1)}}</p>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
@@ -20,7 +19,6 @@
           <img v-if="isActiveClass(2)" src="./2-active.png">        
           <h3 :class="isActiveClass(2) ? 'highlight' : ''">ประกาศผล</h3>
           <p>5 พฤษภาคม</p>
-          <p>{{isActiveClass(2)}}</p>          
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
@@ -29,7 +27,6 @@
           <img v-if="isActiveClass(3)" src="./3-active.png">          
           <h3 :class="isActiveClass(3) ? 'highlight' : ''">ยืนยันสิทธิ์</h3>
           <p>5 - 10 พฤษภาคม</p>
-          <p>{{isActiveClass(3)}}</p>          
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
@@ -38,7 +35,6 @@
           <img v-if="isActiveClass(4)" src="./4-active.png">        
           <h3 :class="isActiveClass(4) ? 'highlight' : ''">วันค่าย</h3>
           <p>26 - 28 พฤษภาคม</p>
-          <p>{{isActiveClass(4)}}</p>          
         </div>
       </div>
     </div>
