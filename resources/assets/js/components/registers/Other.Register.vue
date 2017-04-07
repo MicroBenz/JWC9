@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="text-center">Other</h1>
     <div class="questionContainer">
         <div class="row">
             <div class="questionsDiv col-xs-12">
@@ -10,39 +11,45 @@
                     </div>    
                     <div class="col-xs-6 col-sm-3 col-md-3 form-group">
                         <label for="thai-name">ระดับชั้น</label>
-                        <select class="form-control setHeight" id="selBelieve">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>ม.3 ขึ้น ม.4</option>
-                            <option>ม.4 ขึ้น ม.5</option>
-                            <option>ม.5 ขึ้น ม.6</option>
-                            <option>ม.6 ขึ้นปี 1</option>
-                            <option>ม.3 ขึ้น ปวช. ปี 1</option>
-                            <option>ขึ้น ปวช. ปี 2</option>
-                            <option>ขึ้น ปวช. ปี 3</option>
-                            <option>ขึ้น ปวส.</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select class="form-control setHeight" id="selBelieve">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>ม.3 ขึ้น ม.4</option>
+                                <option>ม.4 ขึ้น ม.5</option>
+                                <option>ม.5 ขึ้น ม.6</option>
+                                <option>ม.6 ขึ้นปี 1</option>
+                                <option>ม.3 ขึ้น ปวช. ปี 1</option>
+                                <option>ขึ้น ปวช. ปี 2</option>
+                                <option>ขึ้น ปวช. ปี 3</option>
+                                <option>ขึ้น ปวส.</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-3 form-group">
                         <label for="thai-name">สายการเรียน</label>
-                        <select class="form-control setHeight" id="selBelieve">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>วิทย์ - คณิต</option>
-                            <option>ศิลป์- คำนวน</option>
-                            <option>ศิลป์- ภาษา</option>
-                            <option>วิทย์ - คอม</option>
-                            <option>ศิลป์ - สังคม</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select class="form-control setHeight" id="selBelieve">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>วิทย์ - คณิต</option>
+                                <option>ศิลป์- คำนวน</option>
+                                <option>ศิลป์- ภาษา</option>
+                                <option>วิทย์ - คอม</option>
+                                <option>ศิลป์ - สังคม</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-xs-4 col-sm-3 col-md-3 form-group">
                         <label for="thai-name">ไซส์เสื้อ</label>
-                        <select class="form-control setHeight" id="selBelieve">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
-                            <option>XL</option>
-                            <option>XXL</option>
-                        </select>
+                        <div class="select-wrapper">                        
+                            <select class="form-control setHeight" id="selBelieve">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                                <option>XXL</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="col-xs-8 col-sm-9 col-md-9 form-group">
                         <label for="thai-name">โรคประจำตัว</label>
@@ -50,13 +57,15 @@
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="sel1">อาหารที่รับประทาน</label>
-                        <select class="form-control setHeight" id="selSex">
-                            <option value="" selected disabled>เลือก</option>
-                            <option>ปกติ</option>
-                            <option>เจ</option>
-                            <option>อิสลาม</option>
-                            <option>มังสวิรัต</option>
-                        </select>
+                        <div class="select-wrapper">
+                            <select class="form-control setHeight" id="selSex">
+                                <option value="" selected disabled>เลือก</option>
+                                <option>ปกติ</option>
+                                <option>เจ</option>
+                                <option>อิสลาม</option>
+                                <option>มังสวิรัต</option>
+                            </select>
+                        </div>
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">อาหารที่แพ้/ไม่สามารถรับประทานได้</label>
@@ -68,11 +77,9 @@
                     </div>    
                 </div>
             </div>
-            <div class="col-xs-12">
-                <img src="/images/join-button.png" class="center-block pull-right nextButton" alt="Cinque Terre" width="20%;" height="auto">
-            </div>
         </div>
-        
+        <img v-on:click="goNext()" class="next-btn" src="./right-btn.png">
+        <img v-on:click="goBack()" class="back-btn" src="./left-btn.png">     
     </div>
   </div>
 </template>
@@ -86,10 +93,18 @@
     updated() {
         console.log('updated')
         
+    },
+    methods: {
+        goNext() {
+            this.$router.push('/register/step4');
+        },
+        goBack() {
+            this.$router.push('/register/step2');
+        }
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
     /*.bootstrap-select ul.dropdown-menu li:first-child {
         display: none;
     }*/
@@ -100,10 +115,27 @@
     input[type=submit] {
         line-height: 18px;
     }*/
-    input[type="text"]{
+    input, select {
         /*padding: 20px 10px; 
         line-height: 10px !important;*/
         height:1.5em;
+        border: 1px solid white;
+        background-color: transparent;
+        border-radius: 20px;
+        color: white;
+    }
+    .select-wrapper {
+        border-radius: 20px;
+        border: 1px solid white;
+        padding-left: 10px;
+        padding-right: 10px;
+        select {
+            border: 0;
+            outline: none;
+            &:focus {
+                outline: none;
+            }
+        }
     }
     .setHeight{
         height:1.5em;
@@ -112,14 +144,30 @@
         margin-right:3%;
     }
     .questionContainer{
-        background: white;
-        color: black;
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
         border-radius: 15px;
         padding-bottom: 1em;
         padding-top: 1em;
+        position: relative;
+        margin-bottom: 75px;
     }
     .questionsDiv{
         padding-left: 10%;
         padding-right: 10%;
+    }
+    .next-btn {
+        width: 50px;
+        position: absolute;
+        bottom: -25px;
+        right: 35px;
+        cursor: pointer;
+    }
+    .back-btn {
+        width: 50px;
+        position: absolute;
+        bottom: -25px;
+        left: 35px;
+        cursor: pointer;        
     }
 </style>
