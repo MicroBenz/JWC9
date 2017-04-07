@@ -113,9 +113,29 @@ export default {
                     FB.api('/me', function(response) {
                         component.facebookInfo = response
                         console.log('Good to see you, ' + response.name + '.');
-                        component.$store.dispatch('setName', {
-                            name: response.name
-                        })
+                        var fullname = response.name;
+                        var arrName = fullname.split(" ");
+                        // var aToZ = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+                        // if(aToZ.contains(arrName)){
+
+                        // }
+                        var charCode = fullname[0].charCodeAt(0);
+                        console.log(charCode);
+                        if(charCode > 64 && charCode < 123){
+                            // is english
+                            component.$store.dispatch('setNameEN', {
+                                firstnameEN: arrName[0],
+                                lastnameEN: arrName[1]
+                            })
+                        }
+                        else{
+                            console.log('not english name');
+                            component.$store.dispatch('setNameTH', {
+                                firstnameTH: arrName[0],
+                                lastnameTH: arrName[1]
+                            })
+                        }
+                        
                         component.facebookGetLoginStatus()
 
                     });

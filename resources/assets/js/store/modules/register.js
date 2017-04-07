@@ -1,26 +1,40 @@
 export default {
   state: {
     selectedRole: 'none',
-    name: ''
+    firstnameEN: '',
+    lastnameEN: '',
+    firstnameTH: '',
+    lastnameTH: ''
   },
   getters: {
     selectedRole: state => state.selectedRole,
-    name: state => state.selectedRole,
+    firstnameEN: state => state.firstnameEN,
+    lastnameEN: state => state.lastnameEN,
+    firstnameTH: state => state.firstnameTH,
+    lastnameTH: state => state.lastnameTH
   },
   mutations: {
-    setSelectedRole(state, selectedRole){
-        state.selectedRole = selectedRole;
+    setSelectedRole(state, payload){
+        state.selectedRole = payload.selectedRole;
     },
-    setName(state, name){
-        state.name = name;
+    setNameEN(state, payload){
+        state.firstnameEN = payload.firstnameEN;
+        state.lastnameEN = payload.lastnameEN;
+    },
+    setNameTH(state, payload){
+        state.firstnameTH = payload.firstnameTH;
+        state.lastnameTH = payload.lastnameTH;
     },
   },
   actions: {
     setSelectedRole({ commit }, payload){
-        commit('setSelectedRole', payload.selectedRole);
+        commit('setSelectedRole', payload);
     },
-    setName({ commit }, payload){
-        commit('setName', payload.name);
+    setNameEN({ commit }, payload){
+        commit('setNameEN', payload);
+    },
+    setNameTH({ commit }, payload){
+        commit('setNameTH', payload);
     },
   }
 }

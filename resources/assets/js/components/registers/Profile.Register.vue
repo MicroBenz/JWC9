@@ -17,19 +17,19 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
                         <label for="thai-name">ชื่อ (ภาษาไทย)</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="firstnameTH" type="text" class="form-control" id="thai-name">
                     </div>    
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
                         <label for="thai-name">นามสกุล (ภาษาไทย)</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="firstnameTH" type="text" class="form-control" id="thai-name">
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
                         <label for="thai-name">ชื่อ (ภาษาอังกฤษ)</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="firstnameEN" type="text" class="form-control" id="thai-name">
                     </div>    
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
                         <label for="thai-name">นามสกุล (ภาษาอังกฤษ)</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="lastnameEN" type="text" class="form-control" id="thai-name">
                     </div>
                     <div class="col-xs-6 col-sm-6 col-md-3 form-group">
                         <label for="thai-name">ชื่อเล่น</label>
@@ -170,7 +170,20 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
   export default {
+      
+    data(){
+        return {
+            
+        }
+    },
+    computed: mapGetters({
+        firstnameEN: 'firstnameEN',
+        lastnameEN: 'lastnameEN',
+        firstnameTH: 'firstnameTH',
+        lastnameTH: 'lastnameTH'
+    }),
     mounted() {
         
         
