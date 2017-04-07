@@ -26,25 +26,25 @@
         <div class="presenter">
             <img class="presenter-body" src="/img/characters/Human_Design.png">
             <img class="presenter-light" src="/img/characters/Light-Design.png">
-            <div class="btn-join">สมัครเลย</div>
+            <div v-on:click="chooseRole()" v-bind:class="{'btn-join':true, 'btn-join-disabled':selectedRole=='none'}" >สมัครเลย</div>
         </div>
 
         <!-- Right Section: Job Selector -->
         <div class="job-picker">
-            <img class="job-banner" src="/img/characters/R-DesignButton.png">
-            <img class="job-banner" src="/img/characters/R-ContentButton.png">
-            <img class="job-banner" src="/img/characters/R-MarketingButton.png">
+            <img v-on:click="selectJob('design')"  v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='design'}" src="/img/characters/R-DesignButton.png">
+            <img v-on:click="selectJob('content')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='content'}" src="/img/characters/R-ContentButton.png">
+            <img v-on:click="selectJob('marketing')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='marketing'}" src="/img/characters/R-MarketingButton.png">
         </div>
     </div>
 </template>
 
 <script>
-import RoleSelector from './RoleSelector';
 import roleConfig from '../../../configs/role';
 
 export default {
     data () {
         return {
+            selectedRole: 'none',
             screenWidth: 1600,
             screenHeight: 900,
             scaleX: 1,
@@ -52,7 +52,7 @@ export default {
         };
     },
     components: {
-        RoleSelector
+        
     },
     mounted () {
         /**
@@ -62,7 +62,24 @@ export default {
         window.addEventListener('resize', this.screenConstruct)
     },
     methods: {
+        chooseRole(){
+            var that = this;
+            console.log('choose role');
+            if(this.selectedRole == 'none'){
 
+            }
+            else{
+                this.facebookLogin();
+                that.$store.dispatch('setSelectedRole', {
+                    selectedRole: that.selectedRole
+                })
+                that.$router.push('/register/step1')
+            }
+            
+        },
+        selectJob(selectedRole){
+            this.selectedRole = selectedRole
+        },
         screenConstruct () {
             let width = $(window).width()
             let height = this.calculateHeightFromWidth(width)
@@ -75,6 +92,62 @@ export default {
             let height = width * 0.5625
             return height
         },
+        facebookLogin(){
+            let component = this
+            FB.login(function(response) {
+                if (response.authResponse) {
+                    console.log('Welcome!  Fetching your information.... ');
+
+                    FB.api('/me', function(response) {
+                        component.facebookInfo = response
+                        console.log('Good to see you, ' + response.name + '.');
+                        component.$store.dispatch('setName', {
+                            name: response.name
+                        })
+                        component.facebookGetLoginStatus()
+
+                    });
+                } else {
+                    console.log('User cancelled login or did not fully authorize.');
+                }
+            });
+        },
+        facebookGetLoginStatus(){
+            var component = this
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected') {
+                    // the user is logged in and has authenticated your
+                    // app, and response.authResponse supplies
+                    // the user's ID, a valid access token, a signed
+                    // request, and the time the access token
+                    // and signed request each expire
+                    component.facebookAccessToken = response.authResponse.accessToken;
+                } else if (response.status === 'not_authorized') {
+                    // the user is logged in to Facebook,
+                    // but has not authenticated your app
+                } else {
+                    // the user isn't logged in to Facebook.
+                }
+            });
+        },
+
+        setFacebookInfo (info) {
+            this.facebookInfo = info
+        },
+
+        authen(team){
+            let filter = ['design', 'content', 'marketing']
+            for(let i = 0; i < 3; i++){
+                if(team == filter[i]){
+                    console.log(this.facebookAccessToken)
+                    axios.post('/authen/'+team, {
+                        access_token: this.facebookAccessToken
+                    }).then(function(res){
+                        console.log("Fuck Yeah!")
+                    })
+                }
+            }
+        }
     }
 }
 </script>
@@ -144,6 +217,9 @@ export default {
         border-bottom: 3px solid #2455a7;
     }
 
+    .btn-join-disabled{
+        background: gray !important;    
+    }
     .job-picker{
         width: 400px;
         left: auto;
@@ -167,7 +243,7 @@ export default {
         cursor: pointer;
     }
 
-    .job-banner:hover, .job-banner.active{
+    .job-banner:hover, .job-banner.active, .job-banner-selected{
         opacity: 1;
         box-shadow: 0 0 30px #333;
     }

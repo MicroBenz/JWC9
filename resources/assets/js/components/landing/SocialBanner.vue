@@ -25,4 +25,7 @@
   padding-top: $section-padding;
   padding-bottom: $section-padding;
 }
+.fb-page{
+  margin-bottom: 10%;
+}
 </style>
