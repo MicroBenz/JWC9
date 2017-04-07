@@ -20,10 +20,11 @@ Route::group(['middleware' => 'jwt.auth'], function () {
     });
 
     Route::get('register/data', 'ProfileController@getProfile');
-    Route::post('register', 'ProfileController@createProfile');
+    // Route::post('register', 'ProfileController@createProfile');
     Route::put('register', 'ProfileController@updateProfile');
     Route::post('register/complete', 'ProfileController@lockProfile');
     Route::post('register/profilepicture', 'ProfileController@updateProfilePicture');
 
-    Route::get('questions/{team}', 'QuestionController@getTeamQuestion');
+    Route::get('questions/{team}', 'QuestionController@getTeamQuestionWithAnswer');
+    Route::post('questions', 'QuestionController@answer');
 });
