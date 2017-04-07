@@ -24,4 +24,6 @@ Route::group(['middleware' => 'jwt.auth'], function () {
     Route::put('register', 'ProfileController@updateProfile');
     Route::post('register/complete', 'ProfileController@lockProfile');
     Route::post('register/profilepicture', 'ProfileController@updateProfilePicture');
+
+    Route::get('questions/central', 'QuestionController@getCentralQuestion');
 });
