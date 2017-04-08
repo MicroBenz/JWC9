@@ -391,7 +391,7 @@ export default {
                             }
                             profile['emergencyTelephone'] = profile['EmergencyContact'];
                             profile['emergencyRelationship'] = profile['EmergencyRelation']
-                            // profile['jwcDiscoveryChannel']
+                            profile['jwcDiscoveryChannel'] = profile['JWCDiscoveryChannel']
                             profile['school'] = profile['SchoolName'];
                             profile['educationLevel'] = profile['EducationLevel']
                             profile['educationMajor'] = profile['EducationMajor']
@@ -423,7 +423,37 @@ export default {
                                 ansObj['generalAns3'] = arrAns[2]['answer']
                                 ansObj['generalAns4'] = arrAns[3]['answer']
                                 component.$store.dispatch('setDataStep4',ansObj);
-                                component.$router.push('/register/step1')
+                                console.log(`TEAM: ${profile['Team']}`)
+                                var teamQuesEndpoint =''
+                                var choosedTeam = profile['Team']
+                                axios({
+                                    method: 'get',
+                                    url:'/api/questions/'+choosedTeam,
+                                }).then((response) => {
+                                    console.log(response.data);
+                                    var arrLineAns = response.data;
+                                    var lineAnsObj = {};
+                                    if(choosedTeam == 'marketing'){
+                                        lineAnsObj['marketingAns1'] = arrLineAns[0]['answer'];
+                                        lineAnsObj['marketingAns2'] = arrLineAns[1]['answer'];
+                                        component.$store.dispatch('setDataStep5Marketing',lineAnsObj);
+                                    }
+                                    else if(choosedTeam == 'content'){
+                                        lineAnsObj['contentAns1'] = arrLineAns[0]['answer'];
+                                        lineAnsObj['contentAns2'] = arrLineAns[1]['answer'];
+                                        component.$store.dispatch('setDataStep5Content',lineAnsObj);
+                                    }
+                                    else if(choosedTeam == 'design'){
+                                        lineAnsObj['designAns1'] = arrLineAns[0]['answer'];
+                                        lineAnsObj['designAns2'] = arrLineAns[1]['answer'];
+                                        component.$store.dispatch('setDataStep5Design',lineAnsObj);
+                                    }
+                                    else{
+                                        console.log('err: no team')
+                                    }
+                                    component.$router.push('/register/step1')
+                                })
+                                
                             })
                             
                         })

@@ -112,7 +112,8 @@ import axios from 'axios'
                     Email: this.emailX,
                     EmergencyContact: this.emergencyFirstnameX+' '+this.emergencyLastnameX,
                     EmergencyTel: this.emergencyTelephoneX,
-                    EmergencyRelation: this.emergencyRelationshipX
+                    EmergencyRelation: this.emergencyRelationshipX,
+                    JWCDiscoveryChannel: this.jwcDiscoveryChannelX
                 }
             }).then((response) => {
                 console.log(response.data);
