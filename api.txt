@@ -33,13 +33,29 @@
 
 # ===== step 4 : ส่วนกลาง =====
 # ----- เอาคำตอบเก่ามา show
-[GET] /api/register/questions/central
+[GET] /api/questions/central
 /marketing
 /content
 /design
 
 # TODO ----- ส่งคำตอบ ----- 
-[POST]
+[POST] /api/questions
+ส่ง JSON Format ประมาณนี้
+
+[
+	{
+		"QuestionID": "3",
+		"AnswerText": "test6"
+	},
+	{
+		"QuestionID": "2",
+		"AnswerText": "test4"
+	},
+	{
+		"QuestionID": "1",
+		"AnswerText": "test2"
+	}
+]
 
 # ===== step 5 : เฉพาะสาขา =====
 # TODO
