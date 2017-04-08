@@ -58,6 +58,12 @@ class SocialAuthController extends Controller
             Campers::create(['FacebookUniqueID'=>$user->getId(), 'TeamID'=>$team_id, 'IsLock'=>false]);
             Profiles::create(['CamperID'=>Campers::where('FacebookUniqueID', $user->getId())->first()['CamperID']]);
         }
+        else {
+            $camper = Fbaccounts::where('FacebookUniqueID', $user->getId())->first()->camper()->first();
+            if(!$camper['IsLock'] && $camper['TeamID']!=$team_id){
+                Campers::where('FacebookUniqueID', $user->getId())->update(["TeamID"=>$team_id]);
+            }
+        }
         $fbaccount = Fbaccounts::where('FacebookUniqueID', $user->getId())->first();
         $camper_id = Campers::where('FacebookUniqueID', $user->getId())->first()['CamperID'];
         try {
