@@ -75,4 +75,7 @@ Return
   "marketing": 0
 }
 
+# ===== Lock Profile =====
+[GET] /api/register/complete
+
 
