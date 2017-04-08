@@ -40,9 +40,12 @@
                         <div class="select-wrapper">
                             <select v-model="jwcDiscoveryChannelX" class="form-control setHeight" id="selBelieve">
                                 <option value="" selected disabled>เลือก</option>
-                                <option value="facebook">เฟสบุค</option>
-                                <option value="twitter">ทวิตเตอร์</option>
-                                <option value="friend">เพื่อน</option>
+                                <option value="socials">Social Media (Facebook, Instagram)</option>
+                                <option value="websites">Website กิจกรรม</option>
+                                <option value="friends">มีคนบอกต่อ จากรุ่นพี่ เพื่อนๆ</option>
+                                <option value="posters">โปสเตอร์ หรือ ใบปลิว</option>
+                                <option value="teachers">ครู อาจารย์</option>
+                                <option value="parents">บิดา มารดา</option>
                                 <option value="etc">อื่น ๆ </option>
                             </select>
                         </div>
