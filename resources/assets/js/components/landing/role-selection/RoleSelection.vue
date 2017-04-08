@@ -403,10 +403,6 @@ export default {
                             component.$store.dispatch('setDataStep1',profile);
                             component.$store.dispatch('setDataStep2',profile);
                             component.$store.dispatch('setDataStep3',profile);
-                            // generalAns1:'',
-                            // generalAns2:'',
-                            // generalAns3:'',
-                            // generalAns4:'',
                             // marketingAns1:'',
                             // marketingAns2:'',
                             // contentAns1:'',
@@ -418,8 +414,8 @@ export default {
                                 method: 'get',
                                 url:'/api/questions/central',
                             }).then((response) => {
-                                console.log('!!!!central data');
-                                console.log(response.data)
+                                // console.log('!!!!central data');
+                                // console.log(response.data)
                                 var arrAns = response.data;
                                 var ansObj = {};
                                 ansObj['generalAns1'] = arrAns[0]['answer']

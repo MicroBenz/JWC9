@@ -243,7 +243,26 @@ import axios from 'axios'
     },
     methods: {
         submitAnswer() {
-            // TODO : lock database
+            //lock database
+            var component = this;
+            axios({
+                method: 'get',
+                url:'/api/register/complete',
+            }).then((response) => {
+                console.log('!!!!Lock!!!!!');
+                console.log(response.data)
+                
+                if(response.data.status == "OK"){
+                    // TODO : pop router stack till empty
+                    component.$router.push('/')
+                    component.$router.push('/register/step7')
+                }
+                else{
+                    console.log('something went wrong while locking')
+                }
+                
+            })
+
         },
         goBack() {
             if(this.$store.getters.selectedRole == 'marketing'){
