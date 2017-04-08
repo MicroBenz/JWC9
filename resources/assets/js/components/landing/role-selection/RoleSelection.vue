@@ -9,21 +9,21 @@
             <!-- Left Section: Job Description -->
             <div class="section-heading">Job Intro</div>
             <div class="section-desc">เลือกอาชีพ</div>
-            <div class="selected-role-title" v-bind:style="{ background: presentColor }">DESIGN</div>
+            <div class="selected-role-title" v-bind:style="{ background: presentColor }">{{ currentPick }}</div>
             <div class="selected-role-desc">
                 <p class="desc-head">คำอธิบาย</p>
                 <p>
-                    ชื่นชอบการออกแบบและเฉดสีที่หลากหลาย รวมกับจินตนาการที่แปลเปลี่ยนลายเส้น และรูปร่าง พร้อมสามารถนำไปใช้ได้จริง
+                    {{ jobDescription }}
                 </p>
                 <p class="desc-head">สกิล</p>
                 <p>
-                    <img class="skill-icon active" v-on:mouseover="this.style.borderColor = presentColor" src="/img/characters/Design_Skill_1.png">
-                    <img class="skill-icon" v-on:mouseover="this.style.borderColor = presentColor" src="/img/characters/Design_Skill_2.png">
-                    <img class="skill-icon" v-on:mouseover="this.style.borderColor = presentColor" src="/img/characters/Design_Skill_3.png">
+                    <img class="skill-icon active" id="skill-0" @click="activateSkill(skills[0].name, skills[0].desc, 'skill-0')" :src="skills[0].icon">
+                    <img class="skill-icon" id="skill-1" @click="activateSkill(skills[1].name, skills[1].desc, 'skill-1')" :src="skills[1].icon">
+                    <img class="skill-icon" id="skill-2" @click="activateSkill(skills[2].name, skills[2].desc, 'skill-2')" :src="skills[2].icon">
                 </p>
                 <div class="skill-box" v-bind:style="{ background: presentColor }">
-                    <div class="skill-name">DESIGN SKILL</div>
-                    <div class="skill-info">ความเป็นเลิศด้านการออกแบบ</div>
+                    <div class="skill-name">{{ skillName }}</div>
+                    <div class="skill-info">{{ skillDesc }}</div>
                 </div>
             </div>
 
@@ -37,9 +37,9 @@
 
         <!-- Right Section: Job Selector -->
         <div class="job-picker">
-            <img v-on:click="selectJob('design')" @click="setPresenter('/img/characters/Human_Design.png', '/img/characters/Light-Design.png', '#fac61f')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='design'}" src="/img/characters/R-DesignButton.png">
-            <img v-on:click="selectJob('content')" @click="setPresenter('/img/characters/Human_Content.png', '/img/characters/Light-Content.png', '#3364a7')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='content'}" src="/img/characters/R-ContentButton.png">
-            <img v-on:click="selectJob('marketing')" @click="setPresenter('/img/characters/Human_Marketing.png', '/img/characters/Light-Marketing.png', '#f14d50')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='marketing'}" src="/img/characters/R-MarketingButton.png">
+            <img v-on:click="selectJob('design')" @click="setPresenter('design')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='design'}" src="/img/characters/R-DesignButton.png">
+            <img v-on:click="selectJob('content')" @click="setPresenter('content')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='content'}" src="/img/characters/R-ContentButton.png">
+            <img v-on:click="selectJob('marketing')" @click="setPresenter('marketing')" v-bind:class="{'job-banner':true, 'job-banner-selected':selectedRole=='marketing'}" src="/img/characters/R-MarketingButton.png">
         </div>
 
             <div class="counter desktop">
@@ -97,6 +97,27 @@ export default {
                 light: '/img/characters/Light-Design.png'
             },
             presentColor: '',
+            jobDescription: 'ชื่นชอบการออกแบบและเฉดสีที่หลากหลาย รวมกับจินตนาการที่แปลเปลี่ยนลายเส้น และรูปร่าง พร้อมสามารถนำไปใช้ได้จริง',
+            skills: [
+                {
+                    icon: '/img/characters/Design_Skill_1.png',
+                    name: 'DESIGN SKILL',
+                    desc: 'ความเป็นเลิศด้านการออกแบบ',
+                },
+                {
+                    icon: '/img/characters/Design_Skill_2.png',
+                    name: 'IMAGINATION',
+                    desc: 'สามารถสร้างความคิดให้ออกมาเป็นภาพได้',
+                },
+                {
+                    icon: '/img/characters/Design_Skill_3.png',
+                    name: 'TEAM WORK',
+                    desc: 'สามารถทำงานร่วมกับผู้อื่นได้ สื่อสารได้',
+                },
+            ],
+            skillName: 'DESIGN SKILL',
+            skillDesc: 'ความเป็นเลิศด้านการออกแบบ',
+            currentPick: 'DESIGN',
         };
     },
     components: {
@@ -110,10 +131,92 @@ export default {
         window.addEventListener('resize', this.screenConstruct)
     },
     methods: {
-        setPresenter (body, light, color) {
-            this.presenter.body = body
-            this.presenter.light = light
-            this.presentColor = color
+        setPresenter (jobTeam) {
+            console.log('Setting...'+jobTeam)
+            if(jobTeam == 'design') this.design()
+            else if(jobTeam == 'content') this.content()
+            else if(jobTeam == 'marketing') this.marketing()
+        },
+        design () {
+            this.presenter.body = '/img/characters/Human_Design.png'
+            this.presenter.light = '/img/characters/Light-Design.png'
+            this.presentColor = '#fac61f'
+            this.currentPick = 'DESIGN'
+            this.jobDescription = 'ชื่นชอบการออกแบบและเฉดสีที่หลากหลาย รวมกับจินตนาการที่แปลเปลี่ยนลายเส้น และรูปร่าง พร้อมสามารถนำไปใช้ได้จริง'
+            this.skills = [
+                {
+                    icon: '/img/characters/Design_Skill_1.png',
+                    name: 'DESIGN SKILL',
+                    desc: 'ความเป็นเลิศด้านการออกแบบ',
+                },
+                {
+                    icon: '/img/characters/Design_Skill_2.png',
+                    name: 'IMAGINATION',
+                    desc: 'สามารถสร้างความคิดให้ออกมาเป็นภาพได้',
+                },
+                {
+                    icon: '/img/characters/Design_Skill_3.png',
+                    name: 'TEAM WORK',
+                    desc: 'สามารถทำงานร่วมกับผู้อื่นได้ สื่อสารได้',
+                },
+            ]
+            this.activateSkill(this.skills[0].name, this.skills[0].desc, 'skill-0')
+        },
+        content () {
+            this.presenter.body = '/img/characters/Human_Content.png'
+            this.presenter.light = '/img/characters/Light-Content.png'
+            this.presentColor = '#3364a7'
+            this.currentPick = 'CONTENT'
+            this.jobDescription = 'ไอเดียแปลกใหม่ต้องยกให้เธอ ชอบคิด ชอบทำ ชอบถ่ายทอดความสร้างสรรค์ผ่านตัวอักษร คำพูด และรูปภาพ'
+            this.skills = [
+                {
+                    icon: '/img/characters/Content_Skill_1.png',
+                    name: 'WRITING SKILL',
+                    desc: 'เขียนได้ไม่มีวันหยุด',
+                },
+                {
+                    icon: '/img/characters/Content_Skill_2.png',
+                    name: 'CREATIVITY',
+                    desc: 'คิดไอเดียแปลกใหม่อย่างสร้างสรรค์',
+                },
+                {
+                    icon: '/img/characters/Content_Skill_3.png',
+                    name: 'TEAM WORK',
+                    desc: 'สามารถทำงานร่วมกับผู้อื่นได้ สื่อสารได้',
+                },
+            ]
+            this.activateSkill(this.skills[0].name, this.skills[0].desc, 'skill-0')
+        },
+        marketing () {
+            this.presenter.body = '/img/characters/Human_Marketing.png'
+            this.presenter.light = '/img/characters/Light-Marketing.png'
+            this.presentColor = '#f14d50'
+            this.currentPick = 'MARKETING'
+            this.jobDescription = 'ถ้าชอบวางแผนใส่ใจและเข้าใจผู้อื่น น้องคือ web marketing เพราะการวางแผนการตลาดต้องเริ่มจากการเข้าใจลูกค้า'
+            this.skills = [
+                {
+                    icon: '/img/characters/Marketing_Skill_1.png',
+                    name: 'MARKETING SKILL',
+                    desc: 'สามารถวางแผนการตลาดได้',
+                },
+                {
+                    icon: '/img/characters/Marketing_Skill_2.png',
+                    name: 'ATTENTIVE',
+                    desc: 'สามารถใส่ใจและเข้าใจผู้อื่นได้',
+                },
+                {
+                    icon: '/img/characters/Marketing_Skill_3.png',
+                    name: 'TEAM WORK',
+                    desc: 'สามารถทำงานร่วมกับผู้อื่นได้ สื่อสารได้',
+                },
+            ]
+            this.activateSkill(this.skills[0].name, this.skills[0].desc, 'skill-0')
+        },
+        activateSkill (name, desc, id) {
+            this.skillName = name
+            this.skillDesc = desc
+            $('.skill-icon').removeClass('active')
+            $('#'+id).addClass('active')
         },
         chooseRole(){
             var that = this;
@@ -207,10 +310,16 @@ export default {
                     console.log(component.selectedRole)
                     component.authen(component.selectedRole);
                 } else if (response.status === 'not_authorized') {
-                    // the user is logged in to Facebook,
-                    // but has not authenticated your app
+                    console.log(`
+                    the user is logged in to Facebook,
+                    but has not authenticated your app
+                    `)
+                    
                 } else {
-                    // the user isn't logged in to Facebook.
+                    console.log(`
+                    the user isn't logged in to Facebook.
+                    `)
+                    
                 }
             });
         },
@@ -230,7 +339,7 @@ export default {
                         access_token: this.facebookAccessToken
                     }).then(function(res){
                         console.log("Fuck Yeah!")
-                        console.log(res.data.token);
+                        console.log(res);
                         component.$store.dispatch('setAccessToken', {
                                 token: res.data.token
                             })
@@ -358,12 +467,14 @@ export default {
         font-size: 16pt;
         text-align: left;
         z-index: 140;
+        color: #eee;
     }
 
     .desc-head{
         font-size: 22pt;
         font-weight: bold;
-        color: #fdbe00;
+        /*color: #fdbe00;*/
+        color: white;
     }
 
     .skill-icon{
@@ -376,7 +487,8 @@ export default {
     }
 
     .skill-icon:hover, .skill-icon.active{
-        border: 5px solid #fdbe00;
+        /*border: 5px solid #fdbe00;*/
+        border: 5px solid #c7ac96;
         opacity: 1;
     }
 

@@ -1,0 +1,52 @@
+# ===== เอาข้อมูล user ทั้งหมดมา =====
+[GET] api/register/data
+
+# ===== UPDATE PROFILE =====
+# step1, step2, step3
+[PUT] /api/register
+	
+    "FirstName": null,
+    "LastName": null,
+    "FirstNameEN": null,
+    "LastNameEN": null,
+    "Nickname": null,
+    "Birthday": null,
+    "Gender": null,
+    "Religion": null,
+    "SchoolID": null,
+    "EducationLevel": null,
+    "EducationMajor": null,
+    "ShirtSize": null,
+    "Allergy": null,
+    "DrugAllergic": null,
+    "FoodAllergic": null,
+    "FoodType": null,
+    "Email": null,
+    "Telephone": null,
+    "ProvinceID": null,
+    "BloodType": null,
+    "EmergencyContact": null,
+    "EmergencyTel": null,
+    "EmergencyRelation": null,
+    "Activities": null,
+    "CurrentStep": 1,2,3,4,5...
+
+# ===== step 4 : ส่วนกลาง =====
+# ----- เอาคำตอบเก่ามา show
+[GET] /api/register/questions/central
+/marketing
+/content
+/design
+
+# TODO ----- ส่งคำตอบ ----- 
+[POST]
+
+# ===== step 5 : เฉพาะสาขา =====
+# TODO
+
+
+# ====== Upload profile ======
+[POST] /api/register/profilepicture
+	ProfilePicture : theFile
+
+
