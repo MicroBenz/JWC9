@@ -271,12 +271,20 @@ import axios from 'axios'
             this.createImage(files[0]);
         },
         createImage(file) {
-            const image = new Image();
             const reader = new FileReader();
             const vm = this;
-            reader.onload = (e) => {
-                vm.img = e.target.result;
-                console.log('complete upload');
+            reader.onload = function (e) {
+                const image = new Image();
+                image.onload = () => {
+                    console.log('success', image.width, image.height);
+                    if (image.width / image.height === 1) {
+                        vm.img = e.target.result;                        
+                    }
+                    else {
+                        alert('Not square image');
+                    }
+                }
+                image.src = e.target.result;
             };
             reader.readAsDataURL(file);
         },
