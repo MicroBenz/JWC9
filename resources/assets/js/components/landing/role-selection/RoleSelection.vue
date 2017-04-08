@@ -341,8 +341,9 @@ export default {
                         console.log("Fuck Yeah!")
                         console.log(res);
                         component.$store.dispatch('setAccessToken', {
-                                token: res.data.token
-                            })
+                            token: res.data.token
+                        })
+                        localStorage.setItem('accessToken', res.data.token);
                     })
                 }
             }
