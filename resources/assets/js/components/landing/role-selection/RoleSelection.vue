@@ -345,7 +345,7 @@ export default {
         authen(team){
             console.log(`called: authen(${team})`)
             var component = this;
-            let filter = ['design', 'content', 'marketing']
+            const filter = ['design', 'content', 'marketing']
             for(let i = 0; i < 3; i++){
                 if(team == filter[i]){
                     console.log(this.facebookAccessToken)
