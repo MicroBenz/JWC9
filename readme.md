@@ -21,7 +21,19 @@ mkdir bootstrap/cache
 ```
 php artisan key:generate
 ```
+- Because we are using `Vue.js` for front-end so we need to install dependencies
+```
+npm install
+```
+- Then build it
+```
+npm run production // For Production
+npm run watch // For Development with watching source files
+```
 - Running up server! 
 ```
 php artisan serve
 ```
+
+## For Front-End Team
+Please visit `resources/assets/js/README/md` for more detail.
