@@ -7,73 +7,73 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">โรงเรียนที่อยู่</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="schoolX" type="text" class="form-control" id="thai-name">
                     </div>    
                     <div class="col-xs-6 col-sm-3 col-md-3 form-group">
                         <label for="thai-name">ระดับชั้น</label>
                         <div class="select-wrapper">
-                            <select class="form-control setHeight" id="selBelieve">
+                            <select v-model="educationLevelX" class="form-control setHeight" id="selBelieve">
                                 <option value="" selected disabled>เลือก</option>
-                                <option>ม.3 ขึ้น ม.4</option>
-                                <option>ม.4 ขึ้น ม.5</option>
-                                <option>ม.5 ขึ้น ม.6</option>
-                                <option>ม.6 ขึ้นปี 1</option>
-                                <option>ม.3 ขึ้น ปวช. ปี 1</option>
-                                <option>ขึ้น ปวช. ปี 2</option>
-                                <option>ขึ้น ปวช. ปี 3</option>
-                                <option>ขึ้น ปวส.</option>
+                                <option value="m3">ม.3 ขึ้น ม.4</option>
+                                <option value="m4">ม.4 ขึ้น ม.5</option>
+                                <option value="m5">ม.5 ขึ้น ม.6</option>
+                                <option value="m6">ม.6 ขึ้นปี 1</option>
+                                <option value="m3-pvc1">ม.3 ขึ้น ปวช. ปี 1</option>
+                                <option value="pvc1-pvc2">ขึ้น ปวช. ปี 2</option>
+                                <option value="pvc2-pvc3">ขึ้น ปวช. ปี 3</option>
+                                <option value="topvs">ขึ้ึ้น ปวส.</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-3 form-group">
                         <label for="thai-name">สายการเรียน</label>
                         <div class="select-wrapper">
-                            <select class="form-control setHeight" id="selBelieve">
+                            <select v-model="educationMajorX" class="form-control setHeight" id="selBelieve">
                                 <option value="" selected disabled>เลือก</option>
-                                <option>วิทย์ - คณิต</option>
-                                <option>ศิลป์- คำนวน</option>
-                                <option>ศิลป์- ภาษา</option>
-                                <option>วิทย์ - คอม</option>
-                                <option>ศิลป์ - สังคม</option>
+                                <option value="วิทย์ - คณิต">วิทย์ - คณิต</option>
+                                <option value="ศิลป์- คำนวน">ศิลป์- คำนวน</option>
+                                <option value="ศิลป์- ภาษา">ศิลป์- ภาษา</option>
+                                <option value="วิทย์ - คอม">วิทย์ - คอม</option>
+                                <option value="ศิลป์ - สังคม">ศิลป์ - สังคม</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-xs-4 col-sm-3 col-md-3 form-group">
                         <label for="thai-name">ไซส์เสื้อ</label>
                         <div class="select-wrapper">                        
-                            <select class="form-control setHeight" id="selBelieve">
+                            <select v-model="shirtSizeX" class="form-control setHeight" id="selBelieve">
                                 <option value="" selected disabled>เลือก</option>
-                                <option>S</option>
-                                <option>M</option>
-                                <option>L</option>
-                                <option>XL</option>
-                                <option>XXL</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option valueu="XXL">XXL</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-xs-8 col-sm-9 col-md-9 form-group">
                         <label for="thai-name">โรคประจำตัว</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="allergyX" type="text" class="form-control" id="thai-name">
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="sel1">อาหารที่รับประทาน</label>
                         <div class="select-wrapper">
-                            <select class="form-control setHeight" id="selSex">
+                            <select v-model="foodTypeX" class="form-control setHeight" id="selSex">
                                 <option value="" selected disabled>เลือก</option>
-                                <option>ปกติ</option>
-                                <option>เจ</option>
-                                <option>อิสลาม</option>
-                                <option>มังสวิรัต</option>
+                                <option value="ปกติ">ปกติ</option>
+                                <option value="เจ">เจ</option>
+                                <option value="อิสลาม">อิสลาม</option>
+                                <option value="มังสวิรัต">มังสวิรัต</option>
                             </select>
                         </div>
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">อาหารที่แพ้/ไม่สามารถรับประทานได้</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="foodAllergicX" type="text" class="form-control" id="thai-name">
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">ยาที่แพ้</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="drugAllergicX" type="text" class="form-control" id="thai-name">
                     </div>    
                 </div>
             </div>
@@ -85,7 +85,31 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import axios from 'axios'
   export default {
+    data(){
+        return {
+            schoolX: this.$store.getters.school,
+            educationLevelX: this.$store.getters.educationLevel,
+            educationMajorX: this.$store.getters.educationMajor,
+            shirtSizeX: this.$store.getters.shirtSize,
+            allergyX: this.$store.getters.allergy,
+            foodTypeX: this.$store.getters.foodType,
+            foodAllergicX: this.$store.getters.foodAllergic,
+            drugAllergicX: this.$store.getters.drugAllergic,
+        }
+    },
+    computed: mapGetters({
+        school:'school',
+        educationLevel:'educationLevel',
+        educationMajor:'educationMajor',
+        shirtSize:'shirtSize',
+        allergy:'allergy',
+        foodType:'foodType',
+        foodAllergic:'foodAllergic',
+        drugAllergic:'drugAllergic',
+    }),
     mounted() {
         
         
@@ -96,7 +120,41 @@
     },
     methods: {
         goNext() {
-            this.$router.push('/register/step4');
+            this.$store.dispatch('setDataStep3',{
+                school: this.schoolX,
+                educationLevel: this.educationLevelX,
+                educationMajor: this.educationMajorX,
+                shirtSize: this.shirtSizeX,
+                allergy: this.allergyX,
+                foodType: this.foodTypeX,
+                foodAllergic: this.foodAllergicX,
+                drugAllergic: this.drugAllergicX,
+            })
+            axios.defaults.headers.common['Authorization'] = 'Bearer '+this.$store.getters.accessToken;
+            axios({
+                method: 'put',
+                url:'/api/register',
+                data:{
+                    School: this.schoolX,
+                    EducationLevel: this.educationLevelX,
+                    EducationMajor: this.educationMajorX,
+                    ShirtSize: this.shirtSizeX,
+                    Allergy: this.allergyX,
+                    FoodType: this.foodTypeX,
+                    FoodAllergic: this.foodAllergicX,
+                    DrugAllergic: this.drugAllergicX,
+                }
+            }).then((response) => {
+                console.log(response.data);
+                if(response.data.status == 'OK'){
+                    this.$router.push('/register/step4');
+                }
+                else{
+                    console.log('something error in calling api in step3')
+                }
+                
+            })
+            // this.$router.push('/register/step4');
         },
         goBack() {
             this.$router.push('/register/step2');

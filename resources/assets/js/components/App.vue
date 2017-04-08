@@ -1,8 +1,6 @@
 <template>
   <div class="apps-container">
     <div v-if="isFacebookApiReady">
-      <apps-menu></apps-menu>
-      <social-group-button></social-group-button>
       <transition name="fade">
         <router-view></router-view>
       </transition>
@@ -14,8 +12,8 @@
 <script>
 import { mapGetters } from 'vuex'
 
-import HamburgerMenu from './menu/HamburgerMenu';
-import SocialGroupButton from './social-button/SocialGroupButton';
+// import HamburgerMenu from './menu/HamburgerMenu';
+// import SocialGroupButton from './social-button/SocialGroupButton';
 
 export default {
     data(){
@@ -132,10 +130,10 @@ export default {
             }
         }
     },
-  components: {
-    'apps-menu': HamburgerMenu,
-    SocialGroupButton
-  }
+//   components: {
+//     'apps-menu': HamburgerMenu,
+//     SocialGroupButton
+//   }
 }
 </script>
 
