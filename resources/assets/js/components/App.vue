@@ -117,7 +117,7 @@ export default {
         },
 
         authen(team){
-            let filter = ['design', 'content', 'marketing']
+            const filter = ['design', 'content', 'marketing']
             for(let i = 0; i < 3; i++){
                 if(team == filter[i]){
                     console.log(this.facebookAccessToken)

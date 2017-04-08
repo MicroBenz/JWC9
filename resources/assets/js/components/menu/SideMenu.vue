@@ -27,7 +27,7 @@
         <h3 class="menu-thai">ช่วงเวลา</h3>
       </div>
     </a>
-    <a class="side-menu-link" href="#location">
+    <a class="side-menu-link" href="#location" onclick="">
       <div class="menu-item">
         <h3>Location</h3>
         <h3 class="menu-thai">สถานที่จัดค่าย</h3>

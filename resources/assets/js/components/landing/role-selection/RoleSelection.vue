@@ -1,5 +1,5 @@
 <template>
-    <div class="jobs-screen-container">
+    <div class="jobs-screen-container" id="choose-a-job">
         <div class="mobile">
             <div class="section-heading">Choose a Job</div>
             <div class="section-desc">เลือกอาชีพ</div>
