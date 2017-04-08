@@ -18,6 +18,14 @@ export default {
     emergencyTelephone:'',
     emergencyRelationship:'',
     jwcDiscoveryChannel:'',
+    school:'',
+    educationLevel:'',
+    educationMajor:'',
+    shirtSize:'',
+    allergy:'',
+    foodType:'',
+    foodAllergic:'',
+    drugAllergic:'',
   },
   getters: {
     selectedRole: state => state.selectedRole,
@@ -38,6 +46,14 @@ export default {
     emergencyTelephone: state => state.emergencyTelephone,
     emergencyRelationship: state => state.emergencyRelationship,
     jwcDiscoveryChannel: state => state.jwcDiscoveryChannel,
+    school: state => state.school,
+    educationLevel: state => state.educationLevel,
+    educationMajor: state => state.educationMajor,
+    shirtSize: state => state.shirtSize,
+    allergy: state => state.allergy,
+    foodType: state => state.foodType,
+    foodAllergic: state => state.foodAllergic,
+    drugAllergic: state => state.drugAllergic,
   },
   mutations: {
     setSelectedRole(state, payload){
@@ -101,9 +117,31 @@ export default {
     },
     setJwcDiscoveryChannel(state, jwcDiscoveryChannel){
         state.jwcDiscoveryChannel = jwcDiscoveryChannel;
-    }
-
-    
+    },
+    setSchool(state, school){
+        state.school = school;
+    },
+    setEducationLevel(state, educationLevel){
+        state.educationLevel = educationLevel;
+    },
+    setEducationMajor(state, educationMajor){
+        state.educationMajor = educationMajor;
+    },
+    setShirtSize(state, shirtSize){
+        state.shirtSize = shirtSize;
+    },
+    setAllergy(state, allergy){
+        state.allergy = allergy;
+    },
+    setFoodType(state, foodType){
+        state.foodType = foodType;
+    },
+    setFoodAllergic(state, foodAllergic){
+        state.foodAllergic = foodAllergic;
+    },
+    setDrugAllergic(state, drugAllergic){
+        state.drugAllergic = drugAllergic;
+    },
   },
   actions: {
     setSelectedRole({ commit }, payload){
@@ -135,6 +173,16 @@ export default {
         commit('setEmergencyTelephone', payload.emergencyTelephone);
         commit('setEmergencyRelationship', payload.emergencyRelationship);
         commit('setJwcDiscoveryChannel', payload.jwcDiscoveryChannel);
+    },
+    setDataStep3({ commit }, payload){
+        commit('setSchool',payload.school);
+        commit('setEducationLevel',payload.educationLevel);
+        commit('setEducationMajor',payload.educationMajor);
+        commit('setShirtSize',payload.shirtSize);
+        commit('setAllergy',payload.allergy);
+        commit('setFoodType',payload.foodType);
+        commit('setFoodAllergic',payload.foodAllergic);
+        commit('setDrugAllergic',payload.drugAllergic);
     }
   }
 }
