@@ -1,5 +1,5 @@
 <template>
-<div class="about-jwc">
+<div class="about-jwc" id="jwc-story">
   <div class="container">
     <img class="about-title" src="./about-title.png">
     <div class="col-md-5 img-wrapper">

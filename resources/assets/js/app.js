@@ -1,6 +1,7 @@
 require('./bootstrap');
 import VueRouter from 'vue-router';
 import vueScrollTo from 'vue-scroll-to';
+//import VueScrollTo from 'vue-scrollto'
 
 import Landing from './pages/Landing.page.vue';
 import Register from './pages/Register.page.vue';
@@ -21,6 +22,8 @@ import Success from './components/registers/Success.Register.vue';
 
 Vue.use(VueRouter);
 Vue.use(vueScrollTo);
+//Vue.use(VueScrollTo);
+
 const router = new VueRouter({
   base: __dirname,
   routes: [

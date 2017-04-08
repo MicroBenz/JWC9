@@ -1,5 +1,5 @@
 <template>
-<div class="social-banner">
+<div class="social-banner" id="contact">
   <h1 class="topic-header">Contact us</h1>
   <h4 class="topic-subheader">ติดต่อเรา</h4>
   <br>

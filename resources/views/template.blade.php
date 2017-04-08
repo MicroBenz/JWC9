@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th" style="width: 100%; height: 100%">
+<html lang="th" style="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
@@ -48,9 +48,73 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
+    <style type="text/css">
+        .btn-game{
+            font-size: 48px;
+            background: #ee5d5f;
+            border-bottom: 10px solid #d7524e;
+            border-radius: 40px;
+            cursor: pointer;
+            max-width: 300px;
+            margin: auto;
+            font-weight: bold;
+        }
+
+        .btn-game:hover{
+            border-bottom: 5px solid #b74642;
+            margin-top: 5px;
+        }
+
+        a.btn-game{
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-game.small{
+            font-size: 32px;
+            max-width: 200px;
+            line-height: 48px;
+            border-bottom: 7px solid #d7524e;
+        }
+
+        .btn-game.small:hover{
+            margin-top: 4px;
+            border-bottom: 3px solid #d7524e;
+        }
+
+        .btn-game.arrow{
+            width: 50px;
+            height: 50px;
+            background: #ee5d5f;
+            line-height: 45px;
+            border-bottom: 5px solid #d7524e;
+            display: inline-block;
+            position: absolute;
+            z-index: 99;
+        }
+
+        .btn-game.arrow:hover{
+            margin-top: 1px;
+            background: #ee5d5f;
+            border-bottom: 2px solid #d7524e;
+        }
+
+        @media(max-width: 768px){
+            .btn-game{
+                max-width: 200px;
+                font-size: 24px;
+                border-bottom: 7px solid #d7524e;
+            }
+
+            .btn-game:hover{
+                border-bottom: 3px solid #b74642;
+                margin-top: 5px;
+            }
+        }
+    </style>
 </head>
-<body style="width: 100%; height: 100%">
-    <div id="app" style="width: 100%; height: 100%">@yield('content')</div>
+<body style="">
+    <div id="app" style="">@yield('content')</div>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

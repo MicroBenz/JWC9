@@ -145,8 +145,9 @@ export default {
     opacity: 0
     }
   .apps-container {
-    width: 100%;
+    /*width: 100%;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: scroll;*/
   }
+
 </style>
