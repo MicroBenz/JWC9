@@ -12,7 +12,16 @@
 */
 
 Route::get('/', function () {
+    return view('app');
+});
+
+Route::get('/coming-soon', function () {
     return view('landing');
 });
 
 Route::post('subscribe', 'SubscribeController@insert');
+// Route::get('/callback/{team}', 'SocialAuthController@callback');
+// Route::get('/login/{team}', 'SocialAuthController@redirect');
+Route::post('authen/{team}', 'SocialAuthController@authen');
+
+Route::get('/{any}', function() { return view('app'); })->where('any', '.*');
