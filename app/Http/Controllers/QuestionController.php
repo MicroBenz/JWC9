@@ -40,11 +40,13 @@ class QuestionController extends Controller
         $update_data = array();
         $create_data = array();
         
-        $recent_answers = Answers::where('CamperID', $profile['CamperID'])->pluck('QuestionID')->toArray();
+        $recent_answers = Answers::where('CamperID', $profile['CamperID'])->pluck('QuestionID')->unique()->toArray();
+
+        // dd($recent_answers);
         $i = 0;
 
         foreach($answers as $answer){
-            if(!array_search($answer['QuestionID'], $recent_answers)){
+            if(!in_array($answer['QuestionID'], $recent_answers)){
                 // $update_data[$i]['AnswerID'] = $answer['']
                 $update_data[$i]['QuestionID'] = $answer['QuestionID'];
                 $update_data[$i]['AnswerText'] = $answer['AnswerText'];
