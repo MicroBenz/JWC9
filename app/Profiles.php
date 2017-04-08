@@ -33,6 +33,7 @@ class Profiles extends Model
         'EmergencyContact',
         'EmergencyTel',
         'EmergencyRelation',
+        'JWCDiscoveryChannel',
         'ProfilePicture'
         ];
     
