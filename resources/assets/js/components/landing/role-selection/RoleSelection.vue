@@ -1,13 +1,13 @@
 <template>
     <div class="jobs-screen-container">
         <div class="mobile">
-            <div class="section-heading">Job Intro</div>
+            <div class="section-heading">Choose a Job</div>
             <div class="section-desc">เลือกอาชีพ</div>
         </div>
         <div class="jobs-screen" style="">
 
             <!-- Left Section: Job Description -->
-            <div class="section-heading">Job Intro</div>
+            <div class="section-heading">Choose a Job</div>
             <div class="section-desc">เลือกอาชีพ</div>
             <div class="selected-role-title" v-bind:style="{ background: presentColor }">{{ currentPick }}</div>
             <div class="selected-role-desc">
@@ -205,7 +205,7 @@ export default {
             this.presenter.light = '/img/characters/Light-Marketing.png'
             this.presentColor = '#f14d50'
             this.currentPick = 'MARKETING'
-            this.jobDescription = 'ถ้าชอบวางแผนใส่ใจและเข้าใจผู้อื่น น้องคือ web marketing เพราะการวางแผนการตลาดต้องเริ่มจากการเข้าใจลูกค้า'
+            this.jobDescription = 'ถ้าชอบวางแผนใส่ใจและเข้าใจผู้อื่น น้องคือ Marketing เพราะการวางแผนการตลาดต้องเริ่มจากการเข้าใจลูกค้า'
             this.skills = [
                 {
                     icon: '/img/characters/Marketing_Skill_1.png',
