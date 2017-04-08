@@ -33,8 +33,19 @@ class Profiles extends Model
         'EmergencyContact',
         'EmergencyTel',
         'EmergencyRelation',
-        'Activities',
+        'JWCDiscoveryChannel',
         'ProfilePicture'
         ];
-        
+    
+    public function school(){
+        return $this->belongsTo('App\Schools', 'SchoolID', 'SchoolID');
+    }
+
+    public function province(){
+        return $this->belongsTo('App\Provinces', 'ProvinceID', 'ProvinceID');
+    }
+
+    public function team() {
+        return $this->belongsToMany('App\Teams','campers', 'CamperID', 'TeamID');
+    }
 }

@@ -10,13 +10,20 @@ use App\Profiles;
 use App\Schools;
 use App\Provinces;
 use App\Campers;
+use App\Questions;
+use App\Teams;
 
 class ProfileController extends Controller
 {
     public function getProfile() {
         $user = JWTAuth::parseToken()->authenticate();
         $profile = $user->profile()->first();
+        $profile['SchoolName'] = $profile->school()->first()['SchoolName'];
+        $profile['ProvinceName'] = $profile->province()->first()['ProvinceName'];
+        $profile['Team'] = $profile->team()->first()['TeamName'];
         $profile['ProfilePicture'] = Storage::url('public'.'/'.$profile->ProfilePicture);
+        unset($profile['ProvinceID']);
+        unset($profile['SchoolID']);
         return response()->json(compact('profile'));
     }
 
@@ -225,16 +232,53 @@ class ProfileController extends Controller
         return response()->json(['status' => 'OK']);
     }
 
-    public function lockProfile($camper_id) {
+    public function lockProfile() {
+
+        $user = JWTAuth::parseToken()->authenticate();
+        $camper = $user->camper()->first();
+        $profile = $user->profile()->first()->toArray();
+
+        $can_lock = true;
+
+        $keys = array();
+        $values = array();
+
+        foreach($profile as $key=>$value) {
+            if($key != 'pivot') continue;
+            if(is_null($value))
+                $can_lock = false;
+        }
+
+        $central_questions =  Teams::where('TeamName', 'central')->first()->question()->get();
+        foreach($central_questions as $question){
+            $answer = $question->answer()->where('CamperID', $profile['CamperID'])->first();
+            if(is_null($answer)) 
+                $can_lock = false;
+        }
+
+        $team_questions = Teams::where('TeamID', $camper['TeamID'])->first()->question()->get();
+        foreach($team_questions as $question){
+            $answer = $question->answer()->where('CamperID', $profile['CamperID'])->first();
+            if(is_null($answer)) 
+                $can_lock = false;
+        }
+
+        if(!$can_lock) {
+            return response()->json(['error'=>'กรอกข้อมูลไม่ครบ']);
+        }
+            
+        $camper->isLock = true;
+        $camper->save();
+
         
-        try {
-            $camper = Campers::find($camper_id);
-            $camper->isLock = true;
-            $camper->save();
-        }
-        catch(Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
+        // try {
+        //     $camper = Campers::find($camper_id);
+        //     $camper->isLock = true;
+        //     $camper->save();
+        // }
+        // catch(Exception $e) {
+        //     return response()->json(['error' => $e->getMessage()], 500);
+        // }
 
         return response()->json(['status' => 'OK']);
 
