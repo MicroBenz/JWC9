@@ -31,7 +31,7 @@
       var that = this
       setTimeout(function() {
         for(let i=1;i<=5;i++){
-          that.images.push(`/img/jwc8/j8_${i}.jpg`);
+          that.images.push(`/img/jwc8/j8_${i}.JPG`);
         }
 
       }, 30)
