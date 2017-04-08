@@ -98,6 +98,29 @@ import axios from 'axios'
                 emergencyRelationship: this.emergencyRelationshipX,
                 jwcDiscoveryChannel: this.jwcDiscoveryChannelX
             })
+
+            // TODO : put jwc discovery channel
+            axios.defaults.headers.common['Authorization'] = 'Bearer '+this.$store.getters.accessToken;
+            axios({
+                method: 'put',
+                url:'/api/register',
+                data:{
+                    Telephone : this.telephoneX,
+                    Email: this.emailX,
+                    EmergencyContact: this.emergencyFirstnameX+' '+this.emergencyLastnameX,
+                    EmergencyTel: this.emergencyTelephoneX,
+                    EmergencyRelation: this.emergencyRelationshipX
+                }
+            }).then((response) => {
+                console.log(response.data);
+                if(response.data.status == 'OK'){
+                    this.$router.push('/register/step3');
+                }
+                else{
+                    console.log('something error in calling api in step2')
+                }
+                
+            })
             // this.$router.push('/register/step3');
         },
         goBack() {
