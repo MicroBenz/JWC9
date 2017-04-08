@@ -65,4 +65,14 @@
 [POST] /api/register/profilepicture
 	ProfilePicture : theFile
 
+# ====== Get Registrant amount ======
+[GET] /api/registrant_amount
+
+Return 
+{
+  "content": 0,
+  "design": 1,
+  "marketing": 0
+}
+
 

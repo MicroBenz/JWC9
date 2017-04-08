@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('registrant_amount', 'StatController@getTeamRegisterAmount');
+
 Route::group(['middleware' => 'jwt.auth'], function () {
     // This route group is protected by JWT Authentication. 
     Route::get('token_tests', function(){
