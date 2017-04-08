@@ -66,21 +66,52 @@ import axios from 'axios'
                 generalAns2: this.generalAns2X,
                 generalAns3: this.generalAns3X,
                 generalAns4: this.generalAns4X,
-            })      
-            // TODO : submit to api
-            if(this.$store.getters.selectedRole == 'marketing'){
-                this.$router.push('/register/step5-marketing');
-            }
-            else if(this.$store.getters.selectedRole == 'content'){
-                this.$router.push('/register/step5-content');
-            }
-            else if(this.$store.getters.selectedRole == 'design'){
-                this.$router.push('/register/step5-design');
-            }
-            else{
-                console.log('no state selectedRole')
-            }
-            console.log(`selectedRole: ${this.$store.getters.selectedRole}`);
+            })
+            axios.defaults.headers.common['Authorization'] = 'Bearer '+this.$store.getters.accessToken;
+            axios({
+                method: 'post',
+                url:'/api/questions',
+                data:[
+                    {
+                        QuestionID: '1',
+                        AnswerText: this.generalAns1X 
+                     },
+                     {
+                        QuestionID: '2',
+                        AnswerText: this.generalAns2X 
+                     },
+                     {
+                        QuestionID: '3',
+                        AnswerText: this.generalAns3X 
+                     },
+                     {
+                        QuestionID: '4',
+                        AnswerText: this.generalAns4X 
+                     }
+                ]
+            }).then((response) => {
+                console.log(response.data);
+                if(response.data.status == 'OK'){
+                    if(this.$store.getters.selectedRole == 'marketing'){
+                        this.$router.push('/register/step5-marketing');
+                    }
+                    else if(this.$store.getters.selectedRole == 'content'){
+                        this.$router.push('/register/step5-content');
+                    }
+                    else if(this.$store.getters.selectedRole == 'design'){
+                        this.$router.push('/register/step5-design');
+                    }
+                    else{
+                        console.log('no state selectedRole')
+                    }
+                    // console.log(`selectedRole: ${this.$store.getters.selectedRole}`);
+                }
+                else{
+                    console.log('something error in calling api in step4')
+                }
+                
+            })
+            
         },
         goBack() {
             this.$router.push('/register/step3');
