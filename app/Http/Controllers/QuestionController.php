@@ -41,8 +41,6 @@ class QuestionController extends Controller
         $create_data = array();
         
         $recent_answers = Answers::where('CamperID', $profile['CamperID'])->pluck('QuestionID')->unique()->toArray();
-
-        // dd($recent_answers);
         $i = 0;
 
         foreach($answers as $answer){
