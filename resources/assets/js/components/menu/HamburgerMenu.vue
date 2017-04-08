@@ -99,11 +99,11 @@ export default {
           //console.log('toggleMenu Invoked')
           if(this.isShowMenu) {
               //console.log('true: show')
-              $('#menu').show('slow')
+              $('#menu').show('fast')
           }
           else {
               //console.log('false: hide')
-              $('#menu').hide('slow')
+              $('#menu').hide('fast')
           }
       },
   },

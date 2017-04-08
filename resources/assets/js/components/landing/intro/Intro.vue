@@ -6,13 +6,13 @@
     <h3 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h3>
     <h4 class="camp-place">มหาวิทยาลัยราชภัฎจันทรเกษม</h4>
   </div>
-  <a class="btn-game" href="#choose-a-job"><div class="btn-game">สมัครเลย</div></a>
+  <a class="btn-game" href="#choose-a-job"><div class="btn-game" @click="scrollDown('#choose-a-job')">สมัครเลย</div></a>
   <!--<img v-on:click="scrollDown" class="login-with-fb-button" src="./register-button.png">-->
   <!--<div class="countdown">
     <p>เหลือเวลาสมัครอีก</p>
     <p>{{countdownTime}}</p>
   </div>-->
-  <p class="scroll-down-text" @click="scrollDown()"><span class="text">scroll down</span><span class="arrow"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span></p>
+  <p class="scroll-down-text" @click="scrollDown('#jwc-story')"><span class="text">scroll down</span><span class="arrow"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span></p>
   <img class="kid kid-left" src="./kid-left.png">
   <img class="kid kid-right" src="./kid-right.png">  
 </div>
@@ -38,9 +38,9 @@ export default {
     }
   },
   methods: {
-    scrollDown () {
+    scrollDown (target) {
       $('html, body').animate({
-        scrollTop: $('#jwc-story').offset().top
+        scrollTop: $(target).offset().top
       });
     }
   }
