@@ -414,7 +414,22 @@ export default {
                             // designAns1:'',
                             // designAns2:'',
                             console.log(profile);
-                            component.$router.push('/register/step1')
+                            axios({
+                                method: 'get',
+                                url:'/api/questions/central',
+                            }).then((response) => {
+                                console.log('!!!!central data');
+                                console.log(response.data)
+                                var arrAns = response.data;
+                                var ansObj = {};
+                                ansObj['generalAns1'] = arrAns[0]['answer']
+                                ansObj['generalAns2'] = arrAns[1]['answer']
+                                ansObj['generalAns3'] = arrAns[2]['answer']
+                                ansObj['generalAns4'] = arrAns[3]['answer']
+                                component.$store.dispatch('setDataStep4',ansObj);
+                                component.$router.push('/register/step1')
+                            })
+                            
                         })
                         localStorage.setItem('accessToken', res.data.token);
                     })
