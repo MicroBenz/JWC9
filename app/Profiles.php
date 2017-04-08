@@ -33,7 +33,6 @@ class Profiles extends Model
         'EmergencyContact',
         'EmergencyTel',
         'EmergencyRelation',
-        'Activities',
         'ProfilePicture'
         ];
         
