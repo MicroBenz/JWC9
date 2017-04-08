@@ -59,6 +59,10 @@ const router = new VueRouter({
           {
             path: 'step5-marketing',
             component: Marketer
+          },
+          {
+            path: 'step6',
+            component: Confirm
           }
           ]
       },
