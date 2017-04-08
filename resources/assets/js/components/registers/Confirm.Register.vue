@@ -3,53 +3,145 @@
     <h1 class="text-center">Check & Confirm</h1>
     <div class="questionContainer">
         <div class="row">
-            <div class="questionsDiv col-xs-12">
+            <div class="questionsDiv col-xs-12">                
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-6 form-group">
-                        <label for="thai-name">เบอร์โทรศัพท์ติดต่อ</label>
-                        <input v-model="telephoneX" type="text" class="form-control" id="thai-name">
-                    </div>    
-                    <div class="col-xs-12 col-sm-6 col-md-6 form-group">
-                        <label for="thai-name">อีเมล</label>
-                        <input v-model="emailX" type="text" class="form-control" id="thai-name">
+                    <div class="col-xs-12">
+                        <h3>Profile</h3>
+                        <ul>
+                            <li>
+                                <p><b>ชื่อ (ภาษาไทย): </b>{{firstnameTHX}}</p>
+                            </li>
+                            <li>
+                                <p><b>นามสกุล (ภาษาไทย): </b>{{lastnameTHX}}</p>
+                            </li>
+                            <li>
+                                <p><b>ชื่อ (ภาษาอังกฤษ): </b>{{firstnameENX}}</p>
+                            </li>
+                            <li>
+                                <p><b>นามสกุล (ภาษาอังกฤษ): </b>{{lastnameENX}}</p>
+                            </li>
+                            <li>
+                                <p><b>ชื่อเล่น: </b>{{nicknameX}}</p>
+                            </li>
+                            <li>
+                                <p><b>เพศ: </b>{{sexX}}</p>
+                            </li>
+                            <li>
+                                <p><b>ศาสนา: </b>{{religionX}}</p>
+                            </li>
+                            <li>
+                                <p><b>กรุ๊ปเลือด: </b>{{bloodTypeX}}</p>
+                            </li>
+                            <li>
+                                <p><b>วันเกิด: </b>{{birthdateX}}</p>
+                            </li>
+                            <li>
+                                <p><b>จังหวัดที่อาศัยอยู่: </b>{{provinceX}}</p>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 form-group">
-                        <label for="thai-name">ชื่อผู้ปกครอง</label>
-                        <input v-model="emergencyFirstnameX" type="text" class="form-control" id="thai-name">
-                    </div>    
-                    <div class="col-xs-12 col-sm-6 col-md-6 form-group">
-                        <label for="thai-name">นามสกุลผู้ปกครอง</label>
-                        <input v-model="emergencyLastnameX" type="text" class="form-control" id="thai-name">
+                    <div class="col-xs-12">
+                        <h3>Contact</h3>
+                        <ul>
+                            <li>
+                                <p><b>เบอร์โทรศัพท์ติดต่อ: </b>{{telephoneX}}</p>
+                            </li>
+                            <li>
+                                <p><b>อีเมล: </b>{{emailX}}</p>
+                            </li>
+                            <li>
+                                <p><b>ชื่อผู้ปกครอง: </b>{{emergencyFirstnameX}}</p>
+                            </li>
+                            <li>
+                                <p><b>นามสกุลผู้ปกครอง: </b>{{emergencyLastnameX}}</p>
+                            </li>
+                            <li>
+                                <p><b>เบอร์โทรศัพท์ติดต่อ(ผู้ปกครอง): </b>{{emergencyTelephoneX}}</p>
+                            </li>
+                            <li>
+                                <p><b>เกี่ยวข้องเป็น: </b>{{emergencyRelationshipX}}</p>
+                            </li>
+                            <li>
+                                <p><b>รู้จักค่ายผ่านช่องทางไหน?: </b>{{jwcDiscoveryChannelX}}</p>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 form-group">
-                        <label for="thai-name">เบอร์โทรศัพท์ติดต่อ</label>
-                        <input v-model="emergencyTelephoneX" type="text" class="form-control" id="thai-name">
-                    </div>    
-                    <div class="col-xs-12 col-sm-6 col-md-6 form-group">
-                        <label for="sel1">เกี่ยวข้องเป็น</label>
-                        <div class="select-wrapper">
-                            <select v-model="emergencyRelationshipX" class="form-control setHeight" id="selSex">
-                                <option value="" selected disabled>เลือก</option>
-                                <option value="father">บิดา</option>
-                                <option value="mother">มารดา</option>
-                            </select>
-                        </div>
-                    </div>    
-                    <div class="col-xs-12 col-sm-6 col-md-6 form-group">
-                        <label for="thai-name">รู้จักค่ายผ่านช่องทางไหน?</label>
-                        <div class="select-wrapper">
-                            <select v-model="jwcDiscoveryChannelX" class="form-control setHeight" id="selBelieve">
-                                <option value="" selected disabled>เลือก</option>
-                                <option value="socials">Social Media (Facebook, Instagram)</option>
-                                <option value="websites">Website กิจกรรม</option>
-                                <option value="friends">มีคนบอกต่อ จากรุ่นพี่ เพื่อนๆ</option>
-                                <option value="posters">โปสเตอร์ หรือ ใบปลิว</option>
-                                <option value="teachers">ครู อาจารย์</option>
-                                <option value="parents">บิดา มารดา</option>
-                                <option value="etc">อื่น ๆ </option>
-                            </select>
-                        </div>
-                    </div>    
+                    <div class="col-xs-12">
+                        <h3>Other</h3>
+                        <ul>
+                            <li>
+                                <p><b>โรงเรียนที่อยู่: </b>{{schoolX}}</p>
+                            </li>
+                            <li>
+                                <p><b>ระดับชั้น: </b>{{educationLevelX}}</p>
+                            </li>
+                            <li>
+                                <p><b>สายการเรียน: </b>{{educationMajorX}}</p>
+                            </li>
+                            <li>
+                                <p><b>ไซส์เสื้อ: </b>{{shirtSizeX}}</p>
+                            </li>
+                            <li>
+                                <p><b>โรคประจำตัว: </b>{{allergyX}}</p>
+                            </li>
+                            <li>
+                                <p><b>อาหารที่รับประทาน: </b>{{foodTypeX}}</p>
+                            </li>
+                            <li>
+                                <p><b>อาหารที่แพ้/ไม่สามารถรับประทานได้: </b>{{foodAllergicX}}</p>
+                            </li>
+                            <li>
+                                <p><b>ยาที่แพ้: </b>{{drugAllergicX}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12">
+                        <h3>คำถามส่วนกลาง</h3>
+                        <ul>
+                            <li>
+                                <p><b>ทำไมถึงอยากจะมาเข้าค่าย JWC และคาดหวังอะไรจากค่าย ในครั้งนี้ ? : </b> <br>{{generalAns1X}}</p>
+                            </li>
+                            <li>
+                                <p><b>เว็บไซต์อะไรที่น้องอยากสร้างในอนาคต พร้อมเหตุผล : </b> <br>{{generalAns2X}}</p>
+                            </li>
+                            <li>
+                                <p><b>เล่าประสบการณ์ กิจกรรมและผลงานของน้อง : </b> <br>{{generalAns3X}}</p>
+                            </li>
+                            <li>
+                                <p><b>เล่าความสามารถพิเศษของน้อง : </b> <br>{{generalAns4X}}</p>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                    <div class="col-xs-12">
+                        <h3 v-if="selectedRoleX ==='marketing'">คำถาม Marketing</h3>
+                        <h3 v-else-if="selectedRoleX ==='content'">คำถาม Content</h3>
+                        <h3 v-else-if="selectedRoleX ==='design'">คำถาม Design</h3>
+                        <ul v-if="selectedRoleX ==='marketing'">
+                            <li>
+                                <p><b>สมมุติว่า ถ้าหากวันนี้น้องบังเอิญเก็บไอเท็มลับในตำนานอยู่ในถ้ำลับ ซึ่งไอเท็มนั้นยังไม่มีใครเคยพบเจอ และ ไม่รู้จักมาก่อน จงบอกชื่อไอเท็มที่น้องพบเจอและ จงตั้งราคาของไอเท็มนี้ และจะนำเสนอขายไอเท็มนี้อย่างไร ( ไม่จำกัดไอเดีย ): </b> <br>{{marketingAns1X}}</p>
+                            </li>
+                            <li>
+                                <p><b>น้องจะทำอย่างไร ถ้าน้องเป็นเจ้าของเว็บไซต์เกี่ยวกับเกมส์ นักรบที่เปิดเป็นวันแรก น้องจะมีวิธีการนำเสนอเว็บไซต์อย่างไร เพื่อที่จะดึงคนเข้าชมเว็บไซต์ พร้อมเหตุผล ( ไม่จำกัดไอเดีย ): </b> <br>{{marketingAns2X}}</p>
+                            </li>
+                        </ul>
+                        <ul v-else-if="selectedRoleX ==='content'">
+                            <li>
+                                <p><b>สมมุติว่ามีนักรบกำลังจะออกเดินทางไปช่วยเจ้าหญิงที่ปราสาทของบอส ซึ่งสามารถหยิบของได้เพียง 3 ชิ้นเท่านั้น น้องจะเลือกหยิบอะไรไป เพราะอะไร และจงเล่าเรื่องราวการการผจญภัยเพื่อไปช่วยเจ้าหญิงจากตัวร้าย ( ไม่จำกัดไอเดีย ): </b> <br>{{contentAns1X}}</p>
+                            </li>
+                            <li>
+                                <p><b>จากเรื่องที่แต่งมา จงย่อให้เหลืออย่างน้อย 120 คำและไม่เกิน 150 คำ: </b> <br>{{contentAns2X}}</p>
+                            </li>
+                        </ul>
+                        <ul v-else-if="selectedRoleX ==='design'">
+                            <li>
+                                <p><b>จงออกแบบนักรบในรูปแบบที่ตัวเองชื่นชอบมา 1 ตัวละคร โดยไม่จำกัดไอเดีย และ สามารถใช้โปรแกรมอะไรก็ได้ เมื่อเสร็จให้อัพโหลดไฟล์ที่บนเว็บไซต์ ด้วยนามสกุลไฟล์เป็น .png .jpg หรือ .gif ก็ได้โดยขนาดไม่เกิน 2 MB. และ จงอธิบายรูปภาพที่ได้ออกแบบมา: </b> <br>{{designAns1X}}</p>
+                            </li>
+                            <li>
+                                <p><b>จงบอกชื่อเว็บไซต์ที่น้องชื่นชอบดีไซต์มากที่สุด เพราะอะไร และน้องชอบส่วนไหนของเว็บนั้นมากที่สุด และอยากจะแก้ไข ปรับปรุงส่วนไหนมากที่สุด: </b> <br>{{designAns2X}}</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -66,6 +158,17 @@ import axios from 'axios'
   export default {
     data(){
         return {
+            selectedRoleX: this.$store.getters.selectedRole,
+            firstnameENX: this.$store.getters.firstnameEN,
+            lastnameENX: this.$store.getters.lastnameEN,
+            firstnameTHX: this.$store.getters.firstnameTH,
+            lastnameTHX: this.$store.getters.lastnameTH,
+            nicknameX: this.$store.getters.nickname,
+            sexX:this.$store.getters.sex,
+            religionX: this.$store.getters.religion,
+            birthdateX:this.$store.getters.birthdate,
+            provinceX: this.$store.getters.province,
+            bloodTypeX: this.$store.getters.bloodType,
             telephoneX: this.$store.getters.telephone,
             emailX: this.$store.getters.email,
             emergencyFirstnameX: this.$store.getters.emergencyFirstname,
@@ -73,16 +176,63 @@ import axios from 'axios'
             emergencyTelephoneX: this.$store.getters.emergencyTelephone,
             emergencyRelationshipX: this.$store.getters.emergencyRelationship,
             jwcDiscoveryChannelX: this.$store.getters.jwcDiscoveryChannel,
+            schoolX: this.$store.getters.school,
+            educationLevelX: this.$store.getters.educationLevel,
+            educationMajorX: this.$store.getters.educationMajor,
+            shirtSizeX: this.$store.getters.shirtSize,
+            allergyX: this.$store.getters.allergy,
+            foodTypeX: this.$store.getters.foodType,
+            foodAllergicX: this.$store.getters.foodAllergic,
+            drugAllergicX: this.$store.getters.drugAllergic,
+            generalAns1X: this.$store.getters.generalAns1,
+            generalAns2X: this.$store.getters.generalAns2,
+            generalAns3X: this.$store.getters.generalAns3,
+            generalAns4X: this.$store.getters.generalAns4,
+            marketingAns1X: this.$store.getters.marketingAns1,
+            marketingAns2X: this.$store.getters.marketingAns2,
+            contentAns1X: this.$store.getters.contentAns1,
+            contentAns2X: this.$store.getters.contentAns2,
+            designAns1X: this.$store.getters.designAns1,
+            designAns2X: this.$store.getters.designAns2,
         }
     },
     computed: mapGetters({
+        selectedRole: 'none',
+        firstnameEN: 'firstnameEN',
+        lastnameEN: 'lastnameEN',
+        firstnameTH: 'firstnameTH',
+        lastnameTH: 'lastnameTH',
+        nickname: 'nickname',
+        sex: 'sex',
+        religion:'religion',
+        birthdate:'birthdate',
+        province:'province',
+        bloodType:'bloodType',
         telephone:'telephone',
         email:'email',
         emergencyFirstname:'emergencyFirstname',
         emergencyLastname:'emergencyLastname',
         emergencyTelephone:'emergencyTelephone',
         emergencyRelationship:'emergencyRelationship',
-        jwcDiscoveryChannel:'jwcDiscoveryChannel', 
+        jwcDiscoveryChannel:'jwcDiscoveryChannel',
+        school:'school',
+        educationLevel:'educationLevel',
+        educationMajor:'educationMajor',
+        shirtSize:'shirtSize',
+        allergy:'allergy',
+        foodType:'foodType',
+        foodAllergic:'foodAllergic',
+        drugAllergic:'drugAllergic',
+        generalAns1:'generalAns1',
+        generalAns2:'generalAns2',
+        generalAns3:'generalAns3',
+        generalAns4:'generalAns4',
+        marketingAns1:'marketingAns1',
+        marketingAns2:'marketingAns2',
+        contentAns1:'contentAns1',
+        contentAns2:'contentAns2',
+        designAns1:'designAns1',
+        designAns2:'designAns2',
     }),
     mounted() {
 
@@ -92,40 +242,8 @@ import axios from 'axios'
         
     },
     methods: {
-        goNext() {
-            this.$store.dispatch('setDataStep2',{
-                telephone: this.telephoneX,
-                email: this.emailX,
-                emergencyFirstname: this.emergencyFirstnameX,
-                emergencyLastname: this.emergencyLastnameX,
-                emergencyTelephone: this.emergencyTelephoneX,
-                emergencyRelationship: this.emergencyRelationshipX,
-                jwcDiscoveryChannel: this.jwcDiscoveryChannelX
-            })
-
-            // TODO : put jwc discovery channel
-            axios.defaults.headers.common['Authorization'] = 'Bearer '+this.$store.getters.accessToken;
-            axios({
-                method: 'put',
-                url:'/api/register',
-                data:{
-                    Telephone : this.telephoneX,
-                    Email: this.emailX,
-                    EmergencyContact: this.emergencyFirstnameX+' '+this.emergencyLastnameX,
-                    EmergencyTel: this.emergencyTelephoneX,
-                    EmergencyRelation: this.emergencyRelationshipX
-                }
-            }).then((response) => {
-                console.log(response.data);
-                if(response.data.status == 'OK'){
-                    this.$router.push('/register/step3');
-                }
-                else{
-                    console.log('something error in calling api in step2')
-                }
-                
-            })
-            // this.$router.push('/register/step3');
+        submitAnswer() {
+            // TODO : lock database
         },
         goBack() {
             if(this.$store.getters.selectedRole == 'marketing'){
