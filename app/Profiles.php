@@ -33,8 +33,14 @@ class Profiles extends Model
         'EmergencyContact',
         'EmergencyTel',
         'EmergencyRelation',
-        'Activities',
         'ProfilePicture'
         ];
-        
+    
+    public function school(){
+        return $this->belongsTo('App\Schools', 'SchoolID', 'SchoolID');
+    }
+
+    public function province(){
+        return $this->belongsTo('App\Provinces', 'ProvinceID', 'ProvinceID');
+    }
 }
