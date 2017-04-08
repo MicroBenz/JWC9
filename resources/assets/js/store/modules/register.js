@@ -10,7 +10,14 @@ export default {
     religion:'',
     birthdate:'',
     province:'',
-    bloodType:''
+    bloodType:'',
+    telephone:'',
+    email:'',
+    emergencyFirstname:'',
+    emergencyLastname:'',
+    emergencyTelephone:'',
+    emergencyRelationship:'',
+    jwcDiscoveryChannel:'',
   },
   getters: {
     selectedRole: state => state.selectedRole,
@@ -23,7 +30,14 @@ export default {
     religion: state => state.religion,
     birthdate: state => state.birthdate,
     province: state => state.province,
-    bloodType: state => state.bloodType
+    bloodType: state => state.bloodType,
+    telephone: state => state.telephone,
+    email: state => state.email,
+    emergencyFirstname: state => state.emergencyFirstname,
+    emergencyLastname: state => state.emergencyLastname,
+    emergencyTelephone: state => state.emergencyTelephone,
+    emergencyRelationship: state => state.emergencyRelationship,
+    jwcDiscoveryChannel: state => state.jwcDiscoveryChannel,
   },
   mutations: {
     setSelectedRole(state, payload){
@@ -67,6 +81,28 @@ export default {
     setBloodType(state, bloodType){
         state.bloodType = bloodType;
     },
+    setTelephone(state, telephone){
+        state.telephone = telephone;
+    },
+    setEmail(state, email){
+        state.email = email;
+    },
+    setEmergencyFirstname(state, emergencyFirstname){
+        state.emergencyFirstname = emergencyFirstname;
+    },
+    setEmergencyLastname(state, emergencyLastname){
+        state.emergencyLastname = emergencyLastname;
+    },
+    setEmergencyTelephone(state, emergencyTelephone){
+        state.emergencyTelephone = emergencyTelephone;
+    },
+    setEmergencyRelationship(state, emergencyRelationship){
+        state.emergencyRelationship = emergencyRelationship;
+    },
+    setJwcDiscoveryChannel(state, jwcDiscoveryChannel){
+        state.jwcDiscoveryChannel = jwcDiscoveryChannel;
+    }
+
     
   },
   actions: {
@@ -90,6 +126,15 @@ export default {
         commit('setBirthDate', payload.birthdate);
         commit('setProvince', payload.province);
         commit('setBloodType', payload.bloodType);
+    },
+    setDataStep2({ commit }, payload){
+        commit('setTelephone', payload.telephone);
+        commit('setEmail', payload.email);
+        commit('setEmergencyFirstname', payload.emergencyFirstname);
+        commit('setEmergencyLastname', payload.emergencyLastname);
+        commit('setEmergencyTelephone', payload.emergencyTelephone);
+        commit('setEmergencyRelationship', payload.emergencyRelationship);
+        commit('setJwcDiscoveryChannel', payload.jwcDiscoveryChannel);
     }
   }
 }

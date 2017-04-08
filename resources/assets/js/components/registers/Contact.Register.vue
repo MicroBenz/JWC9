@@ -7,44 +7,43 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">เบอร์โทรศัพท์ติดต่อ</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="telephoneX" type="text" class="form-control" id="thai-name">
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">อีเมล</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="emailX" type="text" class="form-control" id="thai-name">
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">ชื่อผู้ปกครอง</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="emergencyFirstnameX" type="text" class="form-control" id="thai-name">
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">นามสกุลผู้ปกครอง</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="emergencyLastnameX" type="text" class="form-control" id="thai-name">
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">เบอร์โทรศัพท์ติดต่อ</label>
-                        <input type="text" class="form-control" id="thai-name">
+                        <input v-model="emergencyTelephoneX" type="text" class="form-control" id="thai-name">
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="sel1">เกี่ยวข้องเป็น</label>
                         <div class="select-wrapper">
-                            <select class="form-control setHeight" id="selSex">
+                            <select v-model="emergencyRelationshipX" class="form-control setHeight" id="selSex">
                                 <option value="" selected disabled>เลือก</option>
-                                <option>บิดา</option>
-                                <option>มารดา</option>
+                                <option value="father">บิดา</option>
+                                <option value="mother">มารดา</option>
                             </select>
                         </div>
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">รู้จักค่ายผ่านช่องทางไหน?</label>
                         <div class="select-wrapper">
-                            <select class="form-control setHeight" id="selBelieve">
+                            <select v-model="jwcDiscoveryChannelX" class="form-control setHeight" id="selBelieve">
                                 <option value="" selected disabled>เลือก</option>
-                                <option>พุทธ</option>
-                                <option>คริสต์</option>
-                                <option>อิสลาม</option>
-                                <option>พราหมณ์</option>
-                                <option>อื่น ๆ </option>
+                                <option value="facebook">เฟสบุค</option>
+                                <option value="twitter">ทวิตเตอร์</option>
+                                <option value="friend">เพื่อน</option>
+                                <option value="etc">อื่น ๆ </option>
                             </select>
                         </div>
                     </div>    
@@ -58,10 +57,31 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import axios from 'axios'
   export default {
+    data(){
+        return {
+            telephoneX: this.$store.getters.telephone,
+            emailX: this.$store.getters.email,
+            emergencyFirstnameX: this.$store.getters.emergencyFirstname,
+            emergencyLastnameX: this.$store.getters.emergencyLastname,
+            emergencyTelephoneX: this.$store.getters.emergencyTelephone,
+            emergencyRelationshipX: this.$store.getters.emergencyRelationship,
+            jwcDiscoveryChannelX: this.$store.getters.jwcDiscoveryChannel,
+        }
+    },
+    computed: mapGetters({
+        telephone:'telephone',
+        email:'email',
+        emergencyFirstname:'emergencyFirstname',
+        emergencyLastname:'emergencyLastname',
+        emergencyTelephone:'emergencyTelephone',
+        emergencyRelationship:'emergencyRelationship',
+        jwcDiscoveryChannel:'jwcDiscoveryChannel', 
+    }),
     mounted() {
-        
-        
+
     },
     updated() {
         console.log('updated')
@@ -69,7 +89,16 @@
     },
     methods: {
         goNext() {
-            this.$router.push('/register/step3');
+            this.$store.dispatch('setDataStep2',{
+                telephone: this.telephoneX,
+                email: this.emailX,
+                emergencyFirstname: this.emergencyFirstnameX,
+                emergencyLastname: this.emergencyLastnameX,
+                emergencyTelephone: this.emergencyTelephoneX,
+                emergencyRelationship: this.emergencyRelationshipX,
+                jwcDiscoveryChannel: this.jwcDiscoveryChannelX
+            })
+            // this.$router.push('/register/step3');
         },
         goBack() {
             this.$router.push('/register/step1');

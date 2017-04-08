@@ -229,7 +229,7 @@ import axios from 'axios'
                 lastnameTH: this.lastnameTHX,
                 nickname: this.nicknameX,
                 sex: this.sexX,
-                religion: this.religion,
+                religion: this.religionX,
                 birthdate: this.birthdateX,
                 province: this.provinceX,
                 bloodType: this.bloodTypeX
