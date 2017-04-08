@@ -222,6 +222,18 @@ import axios from 'axios'
             // console.log(this.provinceX);
             // console.log(this.bloodTypeX);
             // this.$router.push('/register/step2');
+            this.$store.dispatch('setDataStep1', {
+                firstnameEN: this.firstnameENX,
+                lastnameEN: this.lastnameENX,
+                firstnameTH: this.firstnameTHX,
+                lastnameTH: this.lastnameTHX,
+                nickname: this.nicknameX,
+                sex: this.sexX,
+                religion: this.religion,
+                birthdate: this.birthdateX,
+                province: this.provinceX,
+                bloodType: this.bloodTypeX
+            })
             axios.defaults.headers.common['Authorization'] = 'Bearer '+this.$store.getters.accessToken;
             
             axios({
@@ -241,6 +253,13 @@ import axios from 'axios'
                 }
             }).then((response) => {
                 console.log(response.data);
+                if(response.data.status == 'OK'){
+                    this.$router.push('/register/step2');
+                }
+                else{
+                    console.log('something error in calling api in step1')
+                }
+                
             })
         }
     }

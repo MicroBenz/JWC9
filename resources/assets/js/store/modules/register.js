@@ -37,6 +37,37 @@ export default {
         state.firstnameTH = payload.firstnameTH;
         state.lastnameTH = payload.lastnameTH;
     },
+    setFirstnameEN(state, firstnameEN){
+        state.firstnameEN = firstnameEN;
+    },
+    setLastNameEN(state, lastnameEN){
+        state.lastnameEN = lastnameEN;
+    },
+    setFirstNameTH(state, firstnameTH){
+        state.firstnameTH = firstnameTH;
+    },
+    setLastNameTH(state, lastnameTH){
+        state.lastnameTH = lastnameTH;
+    },
+    setNickname(state, nickname){
+        state.nickname = nickname;
+    },
+    setSex(state, sex){
+        state.sex = sex;
+    },
+    setReligion(state, religion){
+        state.religion = religion;
+    },
+    setBirthDate(state, birthdate){
+        state.birthdate = birthdate;
+    },
+    setProvince(state, province){
+        state.province = province;
+    },
+    setBloodType(state, bloodType){
+        state.bloodType = bloodType;
+    },
+    
   },
   actions: {
     setSelectedRole({ commit }, payload){
@@ -48,5 +79,17 @@ export default {
     setNameTH({ commit }, payload){
         commit('setNameTH', payload);
     },
+    setDataStep1({ commit }, payload){
+        commit('setFirstnameEN', payload.firstnameEN);
+        commit('setLastNameEN', payload.lastnameEN);
+        commit('setFirstNameTH', payload.firstnameTH);
+        commit('setLastNameTH', payload.lastnameTH);
+        commit('setNickname', payload.nickname);
+        commit('setSex', payload.sex);
+        commit('setReligion', payload.religion);
+        commit('setBirthDate', payload.birthdate);
+        commit('setProvince', payload.province);
+        commit('setBloodType', payload.bloodType);
+    }
   }
 }
