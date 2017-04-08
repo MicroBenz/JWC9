@@ -8,22 +8,22 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
                         <label for="thai-name">1. ทำไมถึงอยากจะมาเข้าค่าย JWC และคาดหวังอะไรจากค่าย ในครั้งนี้ ?</label>
                         <br>
-                        <textarea style="width:100%;"></textarea>
+                        <textarea v-model="generalAns1X" style="width:100%;"></textarea>
                     </div>    
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
                         <label for="thai-name">2. เว็บไซต์อะไรที่น้องอยากสร้างในอนาคต พร้อมเหตุผล</label>
                         <br>
-                        <textarea style="width:100%;"></textarea>
+                        <textarea v-model="generalAns2X" style="width:100%;"></textarea>
                     </div>    
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
                         <label for="thai-name">3. เล่าประสบการณ์ กิจกรรมและผลงานของน้อง</label>
                         <br>
-                        <textarea style="width:100%;"></textarea>
+                        <textarea v-model="generalAns3X" style="width:100%;"></textarea>
                     </div>    
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
                         <label for="thai-name">4. เล่าความสามารถพิเศษของน้อง</label>
                         <br>
-                        <textarea style="width:100%;"></textarea>
+                        <textarea v-model="generalAns4X" style="width:100%;"></textarea>
                     </div>      
                 </div>
             </div>
@@ -35,7 +35,23 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import axios from 'axios'
   export default {
+    data(){
+        return {
+            generalAns1X: this.$store.getters.generalAns1,
+            generalAns2X: this.$store.getters.generalAns2,
+            generalAns3X: this.$store.getters.generalAns3,
+            generalAns4X: this.$store.getters.generalAns4,
+        }
+    },
+    computed: mapGetters({
+        generalAns1:'generalAns1',
+        generalAns2:'generalAns2',
+        generalAns3:'generalAns3',
+        generalAns4:'generalAns4',
+    }),
     mounted() {
         
         
@@ -45,7 +61,26 @@
     },
     methods: {
         goNext() {
-            
+            this.$store.dispatch('setDataStep4',{
+                generalAns1: this.generalAns1X,
+                generalAns2: this.generalAns2X,
+                generalAns3: this.generalAns3X,
+                generalAns4: this.generalAns4X,
+            })      
+            // TODO : submit to api
+            if(this.$store.getters.selectedRole == 'marketing'){
+                this.$router.push('/register/step5-marketing');
+            }
+            else if(this.$store.getters.selectedRole == 'content'){
+                this.$router.push('/register/step5-content');
+            }
+            else if(this.$store.getters.selectedRole == 'design'){
+                this.$router.push('/register/step5-design');
+            }
+            else{
+                console.log('no state selectedRole')
+            }
+            console.log(`selectedRole: ${this.$store.getters.selectedRole}`);
         },
         goBack() {
             this.$router.push('/register/step3');

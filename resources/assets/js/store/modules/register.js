@@ -26,6 +26,10 @@ export default {
     foodType:'',
     foodAllergic:'',
     drugAllergic:'',
+    generalAns1:'',
+    generalAns2:'',
+    generalAns3:'',
+    generalAns4:'',
   },
   getters: {
     selectedRole: state => state.selectedRole,
@@ -54,6 +58,10 @@ export default {
     foodType: state => state.foodType,
     foodAllergic: state => state.foodAllergic,
     drugAllergic: state => state.drugAllergic,
+    generalAns1: state => state.generalAns1,
+    generalAns2: state => state.generalAns2,
+    generalAns3: state => state.generalAns3,
+    generalAns4: state => state.generalAns4,
   },
   mutations: {
     setSelectedRole(state, payload){
@@ -142,6 +150,18 @@ export default {
     setDrugAllergic(state, drugAllergic){
         state.drugAllergic = drugAllergic;
     },
+    setGeneralAns1(state, generalAns1){
+        state.generalAns1 = generalAns1;
+    },
+    setGeneralAns2(state, generalAns2){
+        state.generalAns2 = generalAns2;
+    },
+    setGeneralAns3(state, generalAns3){
+        state.generalAns3 = generalAns3;
+    },
+    setGeneralAns4(state, generalAns4){
+        state.generalAns4 = generalAns4;
+    },
   },
   actions: {
     setSelectedRole({ commit }, payload){
@@ -183,6 +203,12 @@ export default {
         commit('setFoodType',payload.foodType);
         commit('setFoodAllergic',payload.foodAllergic);
         commit('setDrugAllergic',payload.drugAllergic);
+    },
+    setDataStep4({ commit }, payload){
+        commit('setGeneralAns1', payload.generalAns1);
+        commit('setGeneralAns2', payload.generalAns2);
+        commit('setGeneralAns3', payload.generalAns3);
+        commit('setGeneralAns4', payload.generalAns4);
     }
   }
 }

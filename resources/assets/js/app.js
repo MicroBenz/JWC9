@@ -46,7 +46,7 @@ const router = new VueRouter({
               component: GeneralQuestion
             },
             {
-              path: 'step5-designer',
+              path: 'step5-design',
               component: Designer
             },
             {
@@ -54,7 +54,7 @@ const router = new VueRouter({
               component: Content
             },
             {
-              path: 'step5-marketer',
+              path: 'step5-marketing',
               component: Marketer
             }
             ]
