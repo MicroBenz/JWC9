@@ -302,7 +302,7 @@ export default {
                             })
                         }
                         component.facebookGetLoginStatus()
-                        component.$router.push('/register/step1')
+                        
 
                     });
                 } else {
@@ -356,6 +356,55 @@ export default {
                         console.log(res);
                         component.$store.dispatch('setAccessToken', {
                             token: res.data.token
+                        })
+                        axios.defaults.headers.common['Authorization'] = 'Bearer '+res.data.token
+                        axios({
+                            method: 'get',
+                            url:'/api/register/data',
+                        }).then((response) => {
+                            // console.log(response.data);
+                            var profile = response.data.profile;
+                            profile['firstnameEN'] = profile['FirstNameEN'];
+                            profile['lastnameEN'] = profile ['LastNameEN'];
+                            profile['firstnameTH'] = profile['FirstName'];
+                            profile['lastnameTH'] = profile['LastName'];
+                            profile['nickname'] = profile['Nickname'];
+                            profile['sex'] = profile['Gender'];
+                            profile['religion'] = profile['Religion'];
+                            profile['birthdate'] = profile['Birthday'];
+                            profile['province'] = profile['ProvinceID'];//TODO :ask Fong to join the table
+                            profile['bloodType'] = profile['BloodType'];
+                            profile['telephone'] = profile['Telephone'];
+                            profile['email'] = profile['Email'];
+                            var emerContact = profile['EmergencyContact'].split(" ")
+                            profile['emergencyFirstname'] = emerContact[0];
+                            profile['emergencyLastname'] = emerContact[1];
+                            profile['emergencyTelephone'] = profile['EmergencyContact'];
+                            profile['emergencyRelationship'] = profile['EmergencyRelation']
+                            // profile['jwcDiscoveryChannel']
+                            profile['school'] = 'wait for fong';//TODO :ask Fong to join the table
+                            profile['educationLevel'] = profile['EducationLevel']
+                            profile['educationMajor'] = profile['EducationMajor']
+                            profile['shirtSize'] = profile['ShirtSize']
+                            profile['allergy'] = profile['Allergy']
+                            profile['foodType'] = profile['FoodType']
+                            profile['foodAllergic'] = profile['FoodAllergic']
+                            profile['drugAllergic'] = profile['DrugAllergic']
+                            component.$store.dispatch('setDataStep1',profile);
+                            component.$store.dispatch('setDataStep2',profile);
+                            component.$store.dispatch('setDataStep3',profile);
+                            // generalAns1:'',
+                            // generalAns2:'',
+                            // generalAns3:'',
+                            // generalAns4:'',
+                            // marketingAns1:'',
+                            // marketingAns2:'',
+                            // contentAns1:'',
+                            // contentAns2:'',
+                            // designAns1:'',
+                            // designAns2:'',
+                            console.log(profile);
+                            component.$router.push('/register/step1')
                         })
                         localStorage.setItem('accessToken', res.data.token);
                     })
