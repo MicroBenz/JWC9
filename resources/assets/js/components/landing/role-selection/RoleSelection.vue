@@ -17,9 +17,9 @@
                 </p>
                 <p class="desc-head">สกิล</p>
                 <p>
-                    <img class="skill-icon active" id="skill-0" @click="activateSkill(skills[0].name, skills[0].desc, 'skill-0')" :src="skills[0].icon">
-                    <img class="skill-icon" id="skill-1" @click="activateSkill(skills[1].name, skills[1].desc, 'skill-1')" :src="skills[1].icon">
-                    <img class="skill-icon" id="skill-2" @click="activateSkill(skills[2].name, skills[2].desc, 'skill-2')" :src="skills[2].icon">
+                    <img class="skill-icon active" id="skill-0" @click="activateSkill(skills[0].name, skills[0].desc, 'skill-0', 'skill-m0')" :src="skills[0].icon">
+                    <img class="skill-icon" id="skill-1" @click="activateSkill(skills[1].name, skills[1].desc, 'skill-1', 'skill-m1')" :src="skills[1].icon">
+                    <img class="skill-icon" id="skill-2" @click="activateSkill(skills[2].name, skills[2].desc, 'skill-2', 'skill-m2')" :src="skills[2].icon">
                 </p>
                 <div class="skill-box" v-bind:style="{ background: presentColor }">
                     <div class="skill-name">{{ skillName }}</div>
@@ -49,26 +49,26 @@
             </div>
         </div>
         <div class="mobile">
-            <div class="selected-role-title">DESIGN</div>
+            <div class="selected-role-title" v-bind:style="{ background: presentColor }">{{ currentPick }}</div>
             <div class="selected-role-desc">
                 <p class="desc-head">คำอธิบาย</p>
                 <p>
-                    ชื่นชอบการออกแบบและเฉดสีที่หลากหลาย รวมกับจินตนาการที่แปลเปลี่ยนลายเส้น และรูปร่าง พร้อมสามารถนำไปใช้ได้จริง
+                    {{ jobDescription }}
                 </p>
                 <p class="desc-head">สกิล</p>
                 <p>
-                    <img class="skill-icon active" src="/img/characters/Design_Skill_1.png">
-                    <img class="skill-icon" src="/img/characters/Design_Skill_2.png">
-                    <img class="skill-icon" src="/img/characters/Design_Skill_3.png">
+                    <img class="skill-icon active" id="skill-m0" @click="activateSkill(skills[0].name, skills[0].desc, 'skill-0','skill-m0')" :src="skills[0].icon">
+                    <img class="skill-icon" id="skill-m1" @click="activateSkill(skills[1].name, skills[1].desc, 'skill-1', 'skill-m1')" :src="skills[1].icon">
+                    <img class="skill-icon" id="skill-m2" @click="activateSkill(skills[2].name, skills[2].desc, 'skill-2', 'skill-m2')" :src="skills[2].icon">
                 </p>
-                <div class="skill-box">
-                    <div class="skill-name">DESIGN SKILL</div>
-                    <div class="skill-info">ความเป็นเลิศด้านการออกแบบ</div>
+                <div class="skill-box" v-bind:style="{ background: presentColor }">
+                    <div class="skill-name">{{ skillName }}</div>
+                    <div class="skill-info">{{ skillDesc }}</div>
                 </div>
                 <div class="counter mobile">
                     <b style="color: #fac61f;">Design</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count.design }}</span> คน<br>
-                    <b style="color: #fac61f;">Content</b> มีผู้เข้าร่วมแล้ว <span class="color: #3364a7">{{ count.content }}</span> คน<br>
-                    <b style="color: #fac61f;">Marketing</b> มีผู้เข้าร่วมแล้ว <span class="color: #f14d50">{{ count.marketing }}</span> คน<br>
+                    <b style="color: #3364a7;">Content</b> มีผู้เข้าร่วมแล้ว <span class="color: #3364a7">{{ count.content }}</span> คน<br>
+                    <b style="color: #f14d50;">Marketing</b> มีผู้เข้าร่วมแล้ว <span class="color: #f14d50">{{ count.marketing }}</span> คน<br>
                 </div>
             </div>
 
@@ -77,7 +77,8 @@
 </template>
 
 <script>
-import roleConfig from '../../../configs/role';
+import roleConfig from '../../../configs/role'
+import axios from 'axios'
 
 export default {
     data () {
@@ -127,10 +128,18 @@ export default {
         /**
          * Screen Constructor
          */
+        this.fetchTotalRegistrant()
         this.screenConstruct()
         window.addEventListener('resize', this.screenConstruct)
     },
     methods: {
+        fetchTotalRegistrant () {
+            axios.get('/api/register/total').then(function (res) {
+                console.log(res)
+            }).catch(function () {
+                console.log('Cannot fetch total registrants')
+            })
+        },
         setPresenter (jobTeam) {
             console.log('Setting...'+jobTeam)
             if(jobTeam == 'design') this.design()
@@ -160,7 +169,7 @@ export default {
                     desc: 'สามารถทำงานร่วมกับผู้อื่นได้ สื่อสารได้',
                 },
             ]
-            this.activateSkill(this.skills[0].name, this.skills[0].desc, 'skill-0')
+            this.activateSkill(this.skills[0].name, this.skills[0].desc, 'skill-0', 'skill-m0')
         },
         content () {
             this.presenter.body = '/img/characters/Human_Content.png'
@@ -185,7 +194,7 @@ export default {
                     desc: 'สามารถทำงานร่วมกับผู้อื่นได้ สื่อสารได้',
                 },
             ]
-            this.activateSkill(this.skills[0].name, this.skills[0].desc, 'skill-0')
+            this.activateSkill(this.skills[0].name, this.skills[0].desc, 'skill-0', 'skill-m0')
         },
         marketing () {
             this.presenter.body = '/img/characters/Human_Marketing.png'
@@ -210,13 +219,14 @@ export default {
                     desc: 'สามารถทำงานร่วมกับผู้อื่นได้ สื่อสารได้',
                 },
             ]
-            this.activateSkill(this.skills[0].name, this.skills[0].desc, 'skill-0')
+            this.activateSkill(this.skills[0].name, this.skills[0].desc, 'skill-0', 'skill-m0')
         },
-        activateSkill (name, desc, id) {
+        activateSkill (name, desc, id, idMobile) {
             this.skillName = name
             this.skillDesc = desc
             $('.skill-icon').removeClass('active')
             $('#'+id).addClass('active')
+            $('#'+idMobile).addClass('active')
         },
         chooseRole(){
             var that = this;
