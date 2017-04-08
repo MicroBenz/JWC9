@@ -78,6 +78,9 @@ import axios from 'axios'
                 }
                 
             })
+        },
+        goBack() {
+            this.$router.push('/register/step4');
         }
     }
   }
