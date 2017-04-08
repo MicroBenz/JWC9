@@ -1,6 +1,8 @@
 <template>
   <div class="landing">
-    <intro class="intro"></intro>
+    <apps-menu></apps-menu>
+    <social-group-button></social-group-button>
+   <intro class="intro"></intro>
     <about-jwc></about-jwc>
     <role-selection></role-selection>
     <schedule></schedule>

@@ -1,5 +1,5 @@
 <template>
-  <div class="schedule">
+  <div class="schedule" id="timeline">
     <div class="schedule-title">
       <h1 class="title-eng">Timeline</h1>
       <!--<h1 class="title-thai">กำหนดการ</h1>-->

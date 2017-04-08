@@ -4,9 +4,10 @@
     <div class="questionContainer">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4">
-                <img src="/img/profile-thumb.png" class="center-block img-circle img-thumbnail"  width="70%" height="auto" >
+                <img v-if="img === ''" src="/img/profile-thumb.png" class="center-block img-circle img-thumbnail"  width="70%" height="auto" >
+                <img v-else :src="img" class="center-block img-circle img-thumbnail"  width="70%" height="auto" >
                 <div style="text-align:center;">
-                    <input type="file" id="files" class="hidden"/>
+                    <input type="file" id="files" class="hidden" v-on:change="onFileChange"/>
                     <label for="files">
                         <img class="upload-btn" src="./upload.png">
                     </label>
@@ -185,7 +186,8 @@ import axios from 'axios'
             religionX:this.$store.getters.religion,
             bloodTypeX:this.$store.getters.bloodType,
             birthdateX:this.$store.getters.birthdate,
-            provinceX:this.$store.getters.province
+            provinceX:this.$store.getters.province,
+            img: ''
         }
     },
     computed: mapGetters({
@@ -261,7 +263,31 @@ import axios from 'axios'
                 }
                 
             })
-        }
+        },
+        onFileChange(e) {
+            const files = e.target.files || e.dataTransfer.files;
+            if (!files.length)
+                return;
+            this.createImage(files[0]);
+        },
+        createImage(file) {
+            const reader = new FileReader();
+            const vm = this;
+            reader.onload = function (e) {
+                const image = new Image();
+                image.onload = () => {
+                    console.log('success', image.width, image.height);
+                    if (image.width / image.height === 1) {
+                        vm.img = e.target.result;                        
+                    }
+                    else {
+                        alert('Not square image');
+                    }
+                }
+                image.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        },
     }
   }
 </script>
@@ -281,6 +307,7 @@ import axios from 'axios'
     }
     .upload-btn {
         width: 60%;
+        cursor: pointer;
     }
     input, select {
         /*padding: 20px 10px; 
