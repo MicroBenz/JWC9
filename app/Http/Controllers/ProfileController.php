@@ -18,7 +18,11 @@ class ProfileController extends Controller
     public function getProfile() {
         $user = JWTAuth::parseToken()->authenticate();
         $profile = $user->profile()->first();
+        $profile['SchoolName'] = $profile->school()->first()['SchoolName'];
+        $profile['ProvinceName'] = $profile->province()->first()['ProvinceName'];
         $profile['ProfilePicture'] = Storage::url('public'.'/'.$profile->ProfilePicture);
+        unset($profile['ProvinceID']);
+        unset($profile['SchoolID']);
         return response()->json(compact('profile'));
     }
 

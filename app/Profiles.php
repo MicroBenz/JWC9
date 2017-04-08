@@ -35,5 +35,12 @@ class Profiles extends Model
         'EmergencyRelation',
         'ProfilePicture'
         ];
-        
+    
+    public function school(){
+        return $this->belongsTo('App\Schools', 'SchoolID', 'SchoolID');
+    }
+
+    public function province(){
+        return $this->belongsTo('App\Provinces', 'ProvinceID', 'ProvinceID');
+    }
 }
