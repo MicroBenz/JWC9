@@ -15,6 +15,7 @@ import Designer from './components/registers/roles/Designer.Register.vue';
 import Content from './components/registers/roles/Content.Register.vue';
 import Marketer from './components/registers/roles/Marketing.Register.vue';
 import store from './store/index';
+import Confirm from './components/registers/Confirm.Register.vue';
 // import 'loaders.css';
 
 Vue.use(VueRouter);

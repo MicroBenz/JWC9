@@ -8,33 +8,80 @@
                         <label for="thai-name">1. สมมุติว่า ถ้าหากวันนี้น้องบังเอิญเก็บไอเท็มลับในตำนานอยู่ในถ้ำลับ ซึ่งไอเท็มนั้นยังไม่มีใครเคยพบเจอ และ ไม่รู้จักมาก่อน จงบอกชื่อไอเท็มที่น้องพบเจอและ จงตั้งราคาของไอเท็มนี้ และจะนำเสนอขายไอเท็มนี้อย่างไร ( ไม่จำกัดไอเดีย ) 
                         </label>
                         <br>
-                        <textarea style="width:100%;"></textarea>
+                        <textarea v-model="marketingAns1X" style="width:100%;"></textarea>
                     </div>    
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
                         <label for="thai-name">2. น้องจะทำอย่างไร ถ้าน้องเป็นเจ้าของเว็บไซต์เกี่ยวกับเกมส์ นักรบที่เปิดเป็นวันแรก น้องจะมีวิธีการนำเสนอเว็บไซต์อย่างไร เพื่อที่จะดึงคนเข้าชมเว็บไซต์ พร้อมเหตุผล
                         ( ไม่จำกัดไอเดีย ) 
                         </label>
                         <br>
-                        <textarea style="width:100%;"></textarea>
+                        <textarea v-model="marketingAns2X" style="width:100%;"></textarea>
                     </div>    
                 </div>
             </div>
         </div>
-        <img v-on:click="goBack()" class="back-btn" src="../left-btn.png">  
-        <img v-on:click="submitAnswer()" class="send-btn" src="./answer.png">      
+        <img v-on:click="goBack()" class="back-btn" src="../left-btn.png">   
+        <img v-on:click="goNext()" class="next-btn" src="../right-btn.png">   
+        <!--<img v-on:click="submitAnswer()" class="send-btn" src="./answer.png">      -->
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import axios from 'axios'
   export default {
+    data(){
+        return {
+            marketingAns1X: this.$store.getters.marketingAns1,
+            marketingAns2X: this.$store.getters.marketingAns2
+        }
+    },
+    computed: mapGetters({
+        marketingAns1: 'marketingAns1',
+        marketingAns2: 'marketingAns2'
+    }),
     mounted() {
         
         
     },
     updated() {
-        console.log('updated')
-        
+
+    },
+    methods:{
+        goNext(){
+            this.$store.dispatch('setDataStep5Marketing',{
+                marketingAns1: this.marketingAns1X,
+                marketingAns2: this.marketingAns2X
+            })
+            axios.defaults.headers.common['Authorization'] = 'Bearer '+this.$store.getters.accessToken;
+            axios({
+                method: 'post',
+                url:'/api/questions',
+                data:[
+                    {
+                        QuestionID: '9',
+                        AnswerText: this.marketingAns1X 
+                     },
+                     {
+                        QuestionID: '10',
+                        AnswerText: this.marketingAns2X 
+                     }
+                ]
+            }).then((response) => {
+                console.log(response.data);
+                if(response.data.status == 'OK'){
+                    this.$router.push('/register/step6');
+                }
+                else{
+                    console.log('something error in calling api in step5-marketing')
+                }
+                
+            })
+        },
+        goBack() {
+            this.$router.push('/register/step4');
+        }
     }
   }
 </script>
@@ -51,6 +98,9 @@
     }*/
     textarea {
         border-radius: 12px;
+        border-color: black;
+        padding: 5px 10px;
+        color: black;
     }
     input[type="text"]{
         /*padding: 20px 10px; 
@@ -92,5 +142,12 @@
         right: 0;
         margin-left: auto;
         margin-right: auto;
+    }
+    .next-btn {
+        width: 50px;
+        position: absolute;
+        bottom: -25px;
+        right: 35px;
+        cursor: pointer;
     }
 </style>

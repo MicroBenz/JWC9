@@ -10,17 +10,18 @@
                         <input type="file">
                       <label>จงอธิบายรูปภาพที่ได้ออกแบบมา</label>
                         <br>
-                        <textarea style="width:100%;"></textarea>
+                        <textarea v-model="designAns1X" style="width:100%;"></textarea>
                     </div>    
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
                         <label for="thai-name">2. จงบอกชื่อเว็บไซต์ที่น้องชื่นชอบดีไซต์มากที่สุด เพราะอะไร และน้องชอบส่วนไหนของเว็บนั้นมากที่สุด และอยากจะแก้ไข ปรับปรุงส่วนไหนมากที่สุด</label>
                         <br>
-                        <textarea style="width:100%;"></textarea>
+                        <textarea v-model="designAns2X" style="width:100%;"></textarea>
                     </div>    
                 </div>
             </div>
             <img v-on:click="goBack()" class="back-btn" src="../left-btn.png">  
-            <img v-on:click="submitAnswer()" class="send-btn" src="./answer.png">   
+            <img v-on:click="goNext()" class="next-btn" src="../right-btn.png">   
+            <!--<img v-on:click="submitAnswer()" class="send-btn" src="./answer.png">   -->
         </div>
         
     </div>
@@ -28,14 +29,61 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import axios from 'axios'
   export default {
+    data(){
+        return {
+            designAns1X: this.$store.getters.designAns1,
+            designAns2X: this.$store.getters.designAns2,
+        }
+    },
+    computed: mapGetters({
+        designAns1: 'designAns1',
+        designAns2: 'designAns2'
+    }),
     mounted() {
         
         
     },
     updated() {
-        console.log('updated')
         
+    },
+    methods: {
+        goNext(){
+            this.$store.dispatch('setDataStep5Design',{
+                designAns1: this.designAns1X,
+                designAns2: this.designAns2X
+            })
+            // TODO : api upload file !!!!!
+            axios.defaults.headers.common['Authorization'] = 'Bearer '+this.$store.getters.accessToken;
+            axios({
+                method: 'post',
+                url:'/api/questions',
+                data:[
+                    {
+                        QuestionID: '7',
+                        AnswerText: this.designAns1X 
+                     },
+                     {
+                        QuestionID: '8',
+                        AnswerText: this.designAns2X 
+                     }
+                ]
+            }).then((response) => {
+                console.log(response.data);
+                if(response.data.status == 'OK'){
+                    this.$router.push('/register/step6');
+                }
+                else{
+                    console.log('something error in calling api in step5-marketing')
+                }
+                
+            })
+        },
+        goBack() {
+            this.$router.push('/register/step4');
+        }
     }
   }
 </script>
@@ -52,6 +100,9 @@
     }*/
     textarea {
         border-radius: 12px;
+        border-color: black;
+        padding: 5px 10px;
+        color: black;
     }
     input[type="text"]{
         /*padding: 20px 10px; 
@@ -93,5 +144,12 @@
         right: 0;
         margin-left: auto;
         margin-right: auto;
+    }
+    .next-btn {
+        width: 50px;
+        position: absolute;
+        bottom: -25px;
+        right: 35px;
+        cursor: pointer;
     }
 </style>

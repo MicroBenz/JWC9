@@ -8,31 +8,79 @@
                         <label for="thai-name">1. สมมุติว่ามีนักรบกำลังจะออกเดินทางไปช่วยเจ้าหญิงที่ปราสาทของบอส ซึ่งสามารถหยิบของได้เพียง 3 ชิ้นเท่านั้น น้องจะเลือกหยิบอะไรไป เพราะอะไร และจงเล่าเรื่องราวการการผจญภัยเพื่อไปช่วยเจ้าหญิงจากตัวร้าย ( ไม่จำกัดไอเดีย )
                         </label>
                         <br>
-                        <textarea style="width:100%;"></textarea>
+                        <textarea v-model="contentAns1X" style="width:100%;"></textarea>
                     </div>    
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
                         <label for="thai-name">2. จากเรื่องที่แต่งมา จงย่อให้เหลืออย่างน้อย 120 คำและไม่เกิน 150 คำ</label>
                         <br>
-                        <textarea style="width:100%;"></textarea>
+                        <textarea v-model="contentAns2X" style="width:100%;"></textarea>
                     </div>    
                 </div>
             </div>
         </div>
         <img v-on:click="goBack()" class="back-btn" src="../left-btn.png">
-        <img v-on:click="submitAnswer()" class="send-btn" src="./answer.png">
+        <img v-on:click="goNext()" class="next-btn" src="../right-btn.png">   
+        <!--<img v-on:click="submitAnswer()" class="send-btn" src="./answer.png">-->
+
     </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import axios from 'axios'
   export default {
+    data(){
+        return {
+            contentAns1X: this.$store.getters.contentAns1,
+            contentAns2X: this.$store.getters.contentAns2,
+        }
+    },
+    computed: mapGetters({
+        contentAns1: 'contentAns1',
+        contentAns2: 'contentAns2'
+    }),
     mounted() {
         
         
     },
     updated() {
-        console.log('updated')
         
+    },
+    methods:{
+        goNext(){
+            this.$store.dispatch('setDataStep5Content',{
+                contentAns1: this.contentAns1X,
+                contentAns2: this.contentAns2X,
+            })
+            axios.defaults.headers.common['Authorization'] = 'Bearer '+this.$store.getters.accessToken;
+            axios({
+                method: 'post',
+                url:'/api/questions',
+                data:[
+                    {
+                        QuestionID: '5',
+                        AnswerText: this.contentAns1X 
+                     },
+                     {
+                        QuestionID: '6',
+                        AnswerText: this.contentAns2X
+                     }
+                ]
+            }).then((response) => {
+                console.log(response.data);
+                if(response.data.status == 'OK'){
+                    this.$router.push('/register/step6');
+                }
+                else{
+                    console.log('something error in calling api in step5-marketing')
+                }
+                
+            })
+        },
+        goBack() {
+            this.$router.push('/register/step4');
+        }
     }
   }
 </script>
@@ -49,6 +97,9 @@
     }*/
     textarea {
         border-radius: 12px;
+        border-color: black;
+        padding: 5px 10px;
+        color: black;
     }
     input[type="text"]{
         /*padding: 20px 10px; 
@@ -90,5 +141,12 @@
         right: 0;
         margin-left: auto;
         margin-right: auto;
+    }
+    .next-btn {
+        width: 50px;
+        position: absolute;
+        bottom: -25px;
+        right: 35px;
+        cursor: pointer;
     }
 </style>
