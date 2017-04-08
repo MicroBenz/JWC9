@@ -28,7 +28,7 @@ export default {
 <style lang="scss" scoped>
 .menu-container {
   position: fixed;
-  z-index: 3;
+  z-index: 200;
   width: 80px;
   top: 25px;
   @media(max-width: 768px) {
