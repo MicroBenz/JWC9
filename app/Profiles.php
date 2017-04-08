@@ -43,4 +43,8 @@ class Profiles extends Model
     public function province(){
         return $this->belongsTo('App\Provinces', 'ProvinceID', 'ProvinceID');
     }
+
+    public function team() {
+        return $this->belongsToMany('App\Teams','campers', 'CamperID', 'TeamID');
+    }
 }
