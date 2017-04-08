@@ -89,9 +89,9 @@ export default {
             scaleX: 1,
             scaleY: 1,
             count: {
-                design: 0,
-                content: 0,
-                marketing: 0,
+                design: '?',
+                content: '?',
+                marketing: '?',
             },
             presenter: {
                 body: '/img/characters/Human_Design.png',
@@ -134,11 +134,15 @@ export default {
     },
     methods: {
         fetchTotalRegistrant () {
-            axios.get('/api/register/total').then(function (res) {
-                console.log(res)
-            }).catch(function () {
-                console.log('Cannot fetch total registrants')
+            let counter = this.count
+            axios.get('/api/registrant_amount').then(function (res) {
+                counter.design = res.data.design
+                counter.content = res.data.content
+                counter.marketing = res.data.marketing
             })
+        },
+        setCount (data) {
+
         },
         setPresenter (jobTeam) {
             console.log('Setting...'+jobTeam)
