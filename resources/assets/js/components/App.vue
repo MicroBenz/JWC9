@@ -117,7 +117,7 @@ export default {
         },
 
         authen(team){
-            let filter = ['design', 'content', 'marketing']
+            const filter = ['design', 'content', 'marketing']
             for(let i = 0; i < 3; i++){
                 if(team == filter[i]){
                     console.log(this.facebookAccessToken)
@@ -145,8 +145,9 @@ export default {
     opacity: 0
     }
   .apps-container {
-    width: 100%;
+    /*width: 100%;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: scroll;*/
   }
+
 </style>

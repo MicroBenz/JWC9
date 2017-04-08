@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:style="{ backgroundColor: bgColor }" class="social-button-container">
+  <div v-bind:style="{ backgroundColor: bgColor }" class="social-button-container" id="timeline">
     <i v-bind:class="computedIconClass"></i>   
   </div>
 </template>

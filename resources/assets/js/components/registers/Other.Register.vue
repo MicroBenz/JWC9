@@ -135,7 +135,7 @@ import axios from 'axios'
                 method: 'put',
                 url:'/api/register',
                 data:{
-                    School: this.schoolX,
+                    SchoolName: this.schoolX,
                     EducationLevel: this.educationLevelX,
                     EducationMajor: this.educationMajorX,
                     ShirtSize: this.shirtSizeX,
