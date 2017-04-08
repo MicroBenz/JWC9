@@ -364,25 +364,35 @@ export default {
                         }).then((response) => {
                             // console.log(response.data);
                             var profile = response.data.profile;
-                            profile['firstnameEN'] = profile['FirstNameEN'];
-                            profile['lastnameEN'] = profile ['LastNameEN'];
-                            profile['firstnameTH'] = profile['FirstName'];
-                            profile['lastnameTH'] = profile['LastName'];
+                            if(profile['FirstNameEN']!=null)
+                                profile['firstnameEN'] = profile['FirstNameEN'];
+                            if(profile ['LastNameEN']!=null)
+                                profile['lastnameEN'] = profile ['LastNameEN'];
+                            if(profile['FirstName']!=null)
+                                profile['firstnameTH'] = profile['FirstName'];
+                            if(profile['LastName']!=null)
+                                profile['lastnameTH'] = profile['LastName'];
                             profile['nickname'] = profile['Nickname'];
                             profile['sex'] = profile['Gender'];
                             profile['religion'] = profile['Religion'];
                             profile['birthdate'] = profile['Birthday'];
-                            profile['province'] = profile['ProvinceID'];//TODO :ask Fong to join the table
+                            profile['province'] = profile['ProvinceName'];
                             profile['bloodType'] = profile['BloodType'];
                             profile['telephone'] = profile['Telephone'];
                             profile['email'] = profile['Email'];
-                            var emerContact = profile['EmergencyContact'].split(" ")
-                            profile['emergencyFirstname'] = emerContact[0];
-                            profile['emergencyLastname'] = emerContact[1];
+                            if(profile['EmergencyContact']!=null){
+                                var emerContact = profile['EmergencyContact'].split(" ")
+                                profile['emergencyFirstname'] = emerContact[0];
+                                profile['emergencyLastname'] = emerContact[1];
+                            }
+                            else{
+                                profile['emergencyFirstname'] = null;
+                                profile['emergencyLastname'] = null;
+                            }
                             profile['emergencyTelephone'] = profile['EmergencyContact'];
                             profile['emergencyRelationship'] = profile['EmergencyRelation']
                             // profile['jwcDiscoveryChannel']
-                            profile['school'] = 'wait for fong';//TODO :ask Fong to join the table
+                            profile['school'] = profile['SchoolName'];
                             profile['educationLevel'] = profile['EducationLevel']
                             profile['educationMajor'] = profile['EducationMajor']
                             profile['shirtSize'] = profile['ShirtSize']
