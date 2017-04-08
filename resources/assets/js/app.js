@@ -12,6 +12,7 @@ import GeneralQuestion from './components/registers/GeneralQuestion.Register.vue
 import Designer from './components/registers/roles/Designer.Register.vue';
 import Content from './components/registers/roles/Content.Register.vue';
 import Marketer from './components/registers/roles/Marketing.Register.vue';
+import Confirm from './components/registers/Confirm.Register.vue';
 
 // import 'loaders.css';
 
@@ -56,6 +57,10 @@ const router = new VueRouter({
             {
               path: 'step5-marketing',
               component: Marketer
+            },
+            {
+              path: 'step6',
+              component: Confirm
             }
             ]
        },
