@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="text-center">คำถามประจำสาขา Design</h1>
     <div class="questionContainer">
         <div class="row">
             <div class="questionsDiv col-xs-12">
