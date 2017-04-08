@@ -38,6 +38,7 @@ class CreateProfilesTable extends Migration
             $table->string('EmergencyContact')->nullable();
             $table->string('EmergencyTel')->nullable();
             $table->string('EmergencyRelation')->nullable();
+            $table->string('JWCDiscoveryChannel')->nullable();
             $table->mediumText('ProfilePicture')->nullable();
 
             $table->foreign('CamperID')->references('CamperID')->on('campers');

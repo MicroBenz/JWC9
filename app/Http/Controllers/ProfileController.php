@@ -20,6 +20,7 @@ class ProfileController extends Controller
         $profile = $user->profile()->first();
         $profile['SchoolName'] = $profile->school()->first()['SchoolName'];
         $profile['ProvinceName'] = $profile->province()->first()['ProvinceName'];
+        $profile['Team'] = $profile->team()->first()['TeamName'];
         $profile['ProfilePicture'] = Storage::url('public'.'/'.$profile->ProfilePicture);
         unset($profile['ProvinceID']);
         unset($profile['SchoolID']);
