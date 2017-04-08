@@ -30,6 +30,8 @@ export default {
     generalAns2:'',
     generalAns3:'',
     generalAns4:'',
+    marketingAns1:'',
+    marketingAns2:'',
   },
   getters: {
     selectedRole: state => state.selectedRole,
@@ -62,6 +64,8 @@ export default {
     generalAns2: state => state.generalAns2,
     generalAns3: state => state.generalAns3,
     generalAns4: state => state.generalAns4,
+    marketingAns1: state => state.marketingAns1,
+    marketingAns2: state => state.marketingAns2,
   },
   mutations: {
     setSelectedRole(state, payload){
@@ -162,6 +166,12 @@ export default {
     setGeneralAns4(state, generalAns4){
         state.generalAns4 = generalAns4;
     },
+    setMarketingAns1(state, marketingAns1){
+        state.marketingAns1 = marketingAns1;
+    },
+    setMarketingAns2(state, marketingAns2){
+        state.marketingAns2 = marketingAns2;
+    }
   },
   actions: {
     setSelectedRole({ commit }, payload){
@@ -209,6 +219,11 @@ export default {
         commit('setGeneralAns2', payload.generalAns2);
         commit('setGeneralAns3', payload.generalAns3);
         commit('setGeneralAns4', payload.generalAns4);
+    },
+    setDataStep5Marketing({ commit }, payload){
+        commit('setMarketingAns1', payload.marketingAns1);
+        commit('setMarketingAns2', payload.marketingAns2);
     }
+    
   }
 }
