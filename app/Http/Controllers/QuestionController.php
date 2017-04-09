@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use JWTAuth;
 use Tymon\JWTAuthExceptions\JWTException;
+use Storage;
 
 use App\Questions;
 use App\Answers;
@@ -22,6 +23,8 @@ class QuestionController extends Controller
             unset($question['TeamID']);
             $answer = $question->answer()->where('CamperID', $profile['CamperID'])->first();
             $question['answer'] = $answer['AnswerText'];
+            if($question['QuestionID'] == 7) 
+                $question['answer'] = Storage::url('public'.'/'.$answer['AnswerText']);
         }
         return $questions;
     }
@@ -67,5 +70,50 @@ class QuestionController extends Controller
         }
 
         return response()->json(['status'=>'OK']);
+    }
+
+    public function uploadPictureAnswer(Request $request){
+        $user = JWTAuth::parseToken()->authenticate();
+        $profile = $user->profile()->first();
+
+        if($user->camper->first()['IsLock']){
+            return response()->json(['error'=> "ไม่สามารถแก้ไขข้อมูลได้"]);
+        }
+
+        $file = $request->file('designAttachment');
+        $data['errorMessage'] = '';
+        $checkMimeType = false;
+        $allowMimeType = ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/png', 'image/gif'];
+
+        foreach($allowMimeType as $mime){
+            $checkMimeType = $checkMimeType || ($file->getMimeType() == $mime);
+        }
+        if(!$checkMimeType){
+            // $data['errorMessage'] .= "ไฟล์ภาพต้องเป็น JPG, PNG หรือ GIF เท่านั้น<br>";
+            return response()->json(['error'=> "ไฟล์ภาพต้องเป็น JPG, PNG หรือ GIF เท่านั้น"]);
+        }
+        if($file->getClientSize() > 2100000){
+            // $data['errorMessage'] .= "ไฟล์ภาพต้องไม่ใหญ่กว่า 2MB";
+            return response()->json(['error'=> "ไฟล์ภาพต้องไม่ใหญ่กว่า 2MB"]);
+        }
+
+        $design_answer = Answers::where('QuestionID', 7)->where('CamperID', $profile['CamperID'])->first();
+
+        if(!is_null($design_answer)){
+            Storage::delete('public/'.$design_answer->AnswerText);
+        }
+
+        $filename = "Design-".$user->FacebookUniqueID.date("YmdHis");
+
+        $path = $file->storeAs('public', $filename.".".$file->getClientOriginalExtension());
+
+        try {
+            Answers::create(['QuestionID'=>7, 'CamperID'=>$profile['CamperID'], 'AnswerText'=> $filename.".".$file->getClientOriginalExtension()]);
+            // $profile->update(['ProfilePicture'=>$filename.".".$file->getClientOriginalExtension()]);
+        }
+        catch(Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+        return response()->json(['status' => 'OK']);
     }
 }
