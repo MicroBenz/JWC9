@@ -362,7 +362,7 @@ export default {
                         if(res.data.isLock) {
                             console.log('LOCKED!! - REDIRECTING')
                             // component.$router.push('/')
-                            component.$router.push('/register/step7')
+                            component.$router.push('/register/success')
                         }
                         else {
                             axios({

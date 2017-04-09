@@ -1,11 +1,11 @@
 <template>
   <div class="registerContainer">
-    <div v-if="currentStep !== 7" class="logo-wrapper">
+    <div v-if="currentStep !== 7 && currentStep !== -1" class="logo-wrapper">
         <!--<img class="jwc-logo" src="/img/logo.png">-->
         <p style="text-align: center;">สาขาที่กำลังสมัคร: {{currentRole}}</p>
     </div>
     <div class="container">
-      <div class="row bs-wizard" style="border-bottom:0;" v-if="currentStep !== 7">
+      <div class="row bs-wizard" style="border-bottom:0;" v-if="currentStep !== 7 && currentStep !== -1">
           <div class="col-xs-2 bs-wizard-step"
             v-bind:class="{ 'complete': currentStep > 1, 'active': currentStep === 1, 'disabled': currentStep < 1 }"
           >
@@ -73,6 +73,9 @@ export default {
         currentStep() {
             // console.log(this.$route.path);
             const routeArr = this.$route.path.split('/');
+            if (routeArr[routeArr.length - 1] === 'success') {
+                return -1;
+            }
             const currentStep = routeArr[routeArr.length - 1].split('step')[1];
             // console.log(currentStep[0]);
             return Number(currentStep[0]);
