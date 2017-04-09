@@ -22,6 +22,7 @@ class ProfileController extends Controller
         $profile['ProvinceName'] = $profile->province()->first()['ProvinceName'];
         $profile['Team'] = $profile->team()->first()['TeamName'];
         $profile['ProfilePicture'] = is_null($profile->ProfilePicture)? null:Storage::url('public'.'/'.$profile->ProfilePicture);
+        $profile['IsLock'] = (bool)$user->camper()->first()['IsLock'];
         unset($profile['ProvinceID']);
         unset($profile['SchoolID']);
         return response()->json(compact('profile'));
