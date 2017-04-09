@@ -250,7 +250,7 @@ class ProfileController extends Controller
         // $can_lock = true;
 
         foreach($profile as $key=>$value) {
-            if($key == 'pivot') continue;
+            if($key == 'pivot' || $key == 'Allergy' || $key == 'DrugAllergic' || $key == 'FoodType') continue;
             if($key == 'ProfilePicture' && is_null($value))
                 return response()->json(['error'=>'ยังไม่ได้อัพโหลดรูปโปรไฟล์']);
             if(is_null($value))
