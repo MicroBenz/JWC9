@@ -44,6 +44,7 @@ class QuestionController extends Controller
         $i = 0;
 
         foreach($answers as $answer){
+            if(is_null($answer['AnswerText'])) continue;
             if(!in_array($answer['QuestionID'], $recent_answers)){
                 // $update_data[$i]['AnswerID'] = $answer['']
                 $update_data[$i]['QuestionID'] = $answer['QuestionID'];
