@@ -283,6 +283,7 @@ import axios from 'axios'
                     else {
                         alert('Not square image');
                     }*/
+                    console.log(file.size)
                     if(file.size <= 2){
                         vm.img = e.target.result;
                     }
