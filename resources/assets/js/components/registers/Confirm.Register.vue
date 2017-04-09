@@ -247,19 +247,25 @@ import axios from 'axios'
     beforeMount () {
     },
     mounted() {
+        console.log('fetching data from server')
         axios.get('/api/register/data').then(function (res) {
+            console.log(res.data)
             this.res = res.data
         })
         axios.get('/api/questions/central').then(function (res) {
+            console.log(res.data)
             this.answer.central = res.data
         })
         axios.get('/api/questions/design').then(function (res) {
+            console.log(res.data)
             this.answer.design = res.data
         })
         axios.get('/api/questions/content').then(function (res) {
+            console.log(res.data)
             this.answer.content = res.data
         })
         axios.get('/api/questions/marketing').then(function (res) {
+            console.log(res.data)
             this.answer.marketing = res.data
         })
 
