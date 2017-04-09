@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1 class="text-center">คำถามประจำสาขา Design</h1>
+    <h1 class="text-center"><span style="font-family: 'ThaiSans Neue'">คำถามประจำสาขา</span> Design</h1>
     <div class="questionContainer">
         <div class="row">
             <div class="questionsDiv col-xs-12">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
-                        <label for="thai-name">1. จงออกแบบนักรบในรูปแบบที่ตัวเองชื่นชอบมา 1 ตัวละคร โดยไม่จำกัดไอเดีย และ สามารถใช้โปรแกรมอะไรก็ได้ เมื่อเสร็จให้อัพโหลดไฟล์ที่บนเว็บไซต์ ด้วยนามสกุลไฟล์เป็น .png .jpg หรือ .gif ก็ได้โดยขนาดไม่เกิน 2 MB.
+                        <label for="thai-name">1. จงออกแบบผู้กล้าในรูปแบบที่ตัวเองชื่นชอบมา 1 ตัวละคร โดยไม่จำกัดไอเดีย และ สามารถใช้โปรแกรมอะไรก็ได้ เมื่อเสร็จให้อัพโหลดไฟล์ที่บนเว็บไซต์ ด้วยนามสกุลไฟล์เป็น .png .jpg หรือ .gif ก็ได้โดยขนาดไม่เกิน 2 MB.
                         </label>
                         <input type="file">
                       <label>จงอธิบายรูปภาพที่ได้ออกแบบมา</label>
@@ -108,10 +108,7 @@ import axios from 'axios'
         line-height: 18px;
     }*/
     textarea {
-        border-radius: 12px;
-        border-color: black;
-        padding: 5px 10px;
-        color: black;
+        @include registerTextArea();
     }
     input[type="text"]{
         /*padding: 20px 10px; 
@@ -157,6 +154,9 @@ import axios from 'axios'
     }
     .back-to-menu {
         @include registerBack();
+    }
+    .text-center {
+        font-family: 'Tw Cen MT';
     }
     // .text-center {
     //     @media(max-width: 768px) {

@@ -1,5 +1,9 @@
 <template>
   <div class="registerContainer">
+    <div class="logo-wrapper">
+        <!--<img class="jwc-logo" src="/img/logo.png">-->
+        <p style="text-align: center;">สาขาที่กำลังสมัคร: {{currentRole}}</p>
+    </div>
     <div class="container">
       <div class="row bs-wizard" style="border-bottom:0;">
           <div class="col-xs-2 bs-wizard-step"
@@ -48,7 +52,6 @@
             <a href="#" class="bs-wizard-dot step-6"></a>
           </div>
       </div>
-
       <!--<h3 class="stepHeader">{{currentStep}}</h3>-->
       <router-view></router-view>
 
@@ -57,42 +60,77 @@
 </template>
 
 <script>
-  export default {
+import { mapGetters } from 'vuex'
+
+export default {
+    mounted() {
+        console.log('register mount', this.$store.state.register.selectedRole);
+        if (this.$store.state.register.selectedRole === 'none') {
+            // this.$router.push('/'); // uncomment this on production
+        }
+    },
     computed: {
         currentStep() {
             // console.log(this.$route.path);
             const routeArr = this.$route.path.split('/');
             const currentStep = routeArr[routeArr.length - 1].split('step')[1];
-            console.log(currentStep[0]);
+            // console.log(currentStep[0]);
             return Number(currentStep[0]);
+        },
+        currentRole() {
+            switch (this.$store.getters.selectedRole) {
+                case 'none':
+                    return 'none';
+                case 'design':
+                    return 'Design';
+                case 'marketing':
+                    return 'Marketing';
+                case 'content':
+                    return 'Content';
+            }
         }
     },
     methods: {
         getClass(step) {
             const routeArr = this.$route.path.split('/');
             const currentStep = routeArr[routeArr.length - 1].split('step')[1];
-            console.log(currentStep);
+            // console.log(currentStep);
         }
     }
-  }
+}
 </script>
 <style lang="scss" scoped>
   .registerContainer{
     background-image: url("/img/bg/blue.png");
     background-repeat: repeat;
     min-height: 100vh;
+    .logo-wrapper {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @media(max-width: 768px) {
+            padding-top: 10px;
+            padding-bottom: 0px;
+        }
+        .jwc-logo {
+            width: 150px;
+            @media(max-width: 768px) {
+                width: 45%;
+            }
+        }
+    }
   }
   .stepHeader{
     text-align: center;
   }
-  .bs-wizard {margin-top: 40px;}
+//   .bs-wizard {margin-top: 40px;}
 
 /*Form Wizard*/
 .bs-wizard {
     border-bottom: solid 1px #e0e0e0;
     padding: 0 0 25px 0;
     @media(max-width: 768px) {
-        padding: 0 0 5px 0;
+        padding: 0;
     }
     @media only screen 
     and (min-device-width : 768px) 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center">คำถามประจำสาขา Marketing</h1>
+    <h1 class="text-center"><span style="font-family: 'ThaiSans Neue'">คำถามประจำสาขา</span> Marketing</h1>
     <div class="questionContainer">
         <div class="row">
             <div class="questionsDiv col-xs-12">
@@ -12,7 +12,7 @@
                         <textarea v-model="marketingAns1X" style="width:100%;"></textarea>
                     </div>    
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
-                        <label for="thai-name">2. น้องจะทำอย่างไร ถ้าน้องเป็นเจ้าของเว็บไซต์เกี่ยวกับเกมส์ นักรบที่เปิดเป็นวันแรก น้องจะมีวิธีการนำเสนอเว็บไซต์อย่างไร เพื่อที่จะดึงคนเข้าชมเว็บไซต์ พร้อมเหตุผล
+                        <label for="thai-name">2. น้องจะทำอย่างไร ถ้าน้องเป็นเจ้าของเว็บไซต์เกี่ยวกับเกมส์ ผู้กล้าที่เปิดเป็นวันแรก น้องจะมีวิธีการนำเสนอเว็บไซต์อย่างไร เพื่อที่จะดึงคนเข้าชมเว็บไซต์ พร้อมเหตุผล
                         ( ไม่จำกัดไอเดีย ) 
                         </label>
                         <br>
@@ -106,10 +106,7 @@ import axios from 'axios'
         line-height: 18px;
     }*/
     textarea {
-        border-radius: 12px;
-        border-color: black;
-        padding: 5px 10px;
-        color: black;
+        @include registerTextArea();
     }
     input[type="text"]{
         /*padding: 20px 10px; 
@@ -155,6 +152,9 @@ import axios from 'axios'
     }
     .back-to-menu {
         @include registerBack();
+    }
+    .text-center {
+        font-family: 'Tw Cen MT';
     }
     // .text-center {
     //     @media(max-width: 768px) {

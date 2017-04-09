@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h1 class="text-center">คำถามประจำสาขา Content</h1>
+    <h1 class="text-center"><span style="font-family: 'ThaiSans Neue'">คำถามประจำสาขา</span> Content</h1>
     <div class="questionContainer">
         <div class="row">
             <div class="questionsDiv col-xs-12">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
-                        <label for="thai-name">1. สมมุติว่ามีนักรบกำลังจะออกเดินทางไปช่วยเจ้าหญิงที่ปราสาทของบอส ซึ่งสามารถหยิบของได้เพียง 3 ชิ้นเท่านั้น น้องจะเลือกหยิบอะไรไป เพราะอะไร และจงเล่าเรื่องราวการการผจญภัยเพื่อไปช่วยเจ้าหญิงจากตัวร้าย ( ไม่จำกัดไอเดีย )
+                        <label for="thai-name">1. สมมุติว่ามีผู้กล้ากำลังจะออกเดินทางไปช่วยเจ้าหญิงที่ปราสาทของบอส ซึ่งสามารถหยิบของได้เพียง 3 ชิ้นเท่านั้น น้องจะเลือกหยิบอะไรไป เพราะอะไร และจงเล่าเรื่องราวการการผจญภัยเพื่อไปช่วยเจ้าหญิงจากตัวร้าย ( ไม่จำกัดไอเดีย )
                         </label>
                         <br>
                         <textarea v-model="contentAns1X" style="width:100%;"></textarea>
@@ -104,10 +104,7 @@ import axios from 'axios'
         line-height: 18px;
     }*/
     textarea {
-        border-radius: 12px;
-        border-color: black;
-        padding: 5px 10px;
-        color: black;
+        @include registerTextArea();
     }
     input[type="text"]{
         /*padding: 20px 10px; 
@@ -153,6 +150,9 @@ import axios from 'axios'
     }
     .back-to-menu {
         @include registerBack();
+    }
+    .text-center {
+        font-family: 'Tw Cen MT';
     }
     // .text-center {
     //     @media(max-width: 768px) {
