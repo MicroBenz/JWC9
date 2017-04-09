@@ -278,24 +278,23 @@ import axios from 'axios'
         submitAnswer() {
             //lock database
             var component = this;
-            axios({
-                method: 'get',
-                url:'/api/register/complete',
-            }).then((response) => {
-                console.log('!!!!Lock!!!!!');
-                console.log(response.data)
-                
-                if(response.data.status == "OK"){
-                    // TODO : pop router stack till empty
-                    component.$router.push('/')
-                    component.$router.push('/register/step7')
-                }
-                else{
-                    console.log('something went wrong while locking')
-                }
-                
-            })
+            let reallyConfirm = confirm('หากยืนยันการสมัครแล้วจะไม่สามารถแก้ไขข้อมูลได้, ยืนยันการสมัคร?')
+            if(reallyConfirm){
+                axios.post('/api/register/complete').then((response) => {
+                    console.log('!!!!Lock!!!!!');
+                    console.log(response.data)
 
+                    if(response.data.status == "OK"){
+                        // TODO : pop router stack till empty
+                        component.$router.push('/')
+                        component.$router.push('/register/step7')
+                    }
+                    else{
+                        console.log('something went wrong while locking')
+                    }
+
+                })
+            }
         },
         goBack() {
             if(this.$store.getters.selectedRole == 'marketing'){

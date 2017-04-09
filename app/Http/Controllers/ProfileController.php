@@ -112,10 +112,14 @@ class ProfileController extends Controller
         $profile = $user->profile()->first();
 
         $data = $request->all();
-        var_dump($user); // Return Fbaccounts Object
+        //var_dump($user); // Return Fbaccounts Object
 	    $camper = Campers::where('FacebookUniqueID', $user->FacebookUniqueID)->first();
-	    var_dump($camper);
-	    var_dump($camper->isLock);
+	    //var_dump($camper);
+	    //var_dump($camper->IsLock);
+
+	    if($camper->IsLock){
+	    	return ['error' => 'คุณได้ยืนยันการสมัครแล้ว เพื่อความปลอดภัยจึงไม่สามารถแก้ไขข้อมูลได้ หากพบข้อผิดพลาดโปรดติดต่อผู้ดูแลระบบผ่านทาง fb.me/jwcth'];
+	    }
 
         if(array_key_exists('SchoolName', $data)) {
             if(!Schools::where('SchoolName', $data['SchoolName'])->exists()) {
@@ -236,7 +240,7 @@ class ProfileController extends Controller
         return response()->json(['status' => 'OK']);
     }
 
-    public function lockProfile() {
+    public function lockProfile(Request $request) {
 
         $user = JWTAuth::parseToken()->authenticate();
         $camper = $user->camper()->first();
