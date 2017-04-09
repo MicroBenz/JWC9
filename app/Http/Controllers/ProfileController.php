@@ -221,10 +221,10 @@ class ProfileController extends Controller
 
         $filename = $user->FacebookUniqueID.date("YmdHis");
 
-        $path = $file->storeAs('public', $filename);
+        $path = $file->storeAs('public', $filename.".".$file->getClientOriginalExtension());
 
         try {
-            $profile->update(['ProfilePicture'=>$filename]);
+            $profile->update(['ProfilePicture'=>$filename.".".$file->getClientOriginalExtension()]);
         }
         catch(Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
