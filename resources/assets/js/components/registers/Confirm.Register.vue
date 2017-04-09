@@ -293,7 +293,7 @@ import axios from 'axios'
                     if(response.data.status == "OK"){
                         // TODO : pop router stack till empty
                         component.$router.push('/')
-                        component.$router.push('/register/step7')
+                        component.$router.push('/register/success')
                     }
                     else{
                         console.log('something went wrong while locking')
