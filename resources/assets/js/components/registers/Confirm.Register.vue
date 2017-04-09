@@ -50,7 +50,7 @@
                                 <p><b>เบอร์โทรศัพท์ติดต่อ: </b>{{ res.profile.Telephone }}</p>
                             </li>
                             <li>
-                                <p><b>อีเมล: </b>{{ res.profile.Emal }}</p>
+                                <p><b>อีเมล: </b>{{ res.profile.Email }}</p>
                             </li>
                             <li>
                                 <p><b>ผู้ปกครอง: </b>{{ res.profile.EmergencyContact }}</p>
