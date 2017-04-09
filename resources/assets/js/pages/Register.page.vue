@@ -2,8 +2,6 @@
   <div class="registerContainer">
     <div class="container">
       <div class="row bs-wizard" style="border-bottom:0;">
-          <div class="col-xs-1">
-          </div>
           <div class="col-xs-2 bs-wizard-step"
             v-bind:class="{ 'complete': currentStep > 1, 'active': currentStep === 1, 'disabled': currentStep < 1 }"
           >
@@ -42,7 +40,12 @@
             <div class="progress"><div class="progress-bar"></div></div>
             <a href="#" class="bs-wizard-dot step-5"></a>
           </div>
-          <div class="col-xs-1">
+          <div class="col-xs-2 bs-wizard-step"
+            v-bind:class="{ 'complete': currentStep > 6, 'active': currentStep === 6, 'disabled': currentStep < 6 }"
+          ><!-- active -->
+            <!--<div class="text-center bs-wizard-stepnum">Step 5</div>-->
+            <div class="progress"><div class="progress-bar"></div></div>
+            <a href="#" class="bs-wizard-dot step-6"></a>
           </div>
       </div>
 
@@ -118,9 +121,13 @@
     background-color: #543224;
     color: white;
     top: -7px;
-    left: 50%;
+    // left: 50%;
     /*margin-top: -15px;*/
-    margin-left: -15px;
+    // margin-left: -15px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 50%;
     text-align: center;
     font-size: 43px;
@@ -194,6 +201,9 @@
 .bs-wizard > .bs-wizard-step > .bs-wizard-dot.step-5:after {
     content: '5';
 }
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot.step-6:after {
+    content: '6';
+}
 .bs-wizard > .bs-wizard-step > .progress {
     position: relative;
     border-radius: 0px;
@@ -214,18 +224,19 @@
 .bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {
     width: 50%;
 }
-/*.bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {
-    width: 0%;
-}*/
-.bs-wizard > .bs-wizard-step:nth-child(2).active > .progress > .progress-bar {
-    width: 0%;
+.bs-wizard > .bs-wizard-step:first-child > .progress {
+    width: 50%;
+    margin-left: 50%;
 }
+// .bs-wizard > .bs-wizard-step:nth-child(2).active > .progress > .progress-bar {
+//     width: 0%;
+// }
 /*.bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {
     width: 100%;
 }*/
-.bs-wizard > .bs-wizard-step:nth-last-child(2).active > .progress > .progress-bar {
-    width: 100%;
-}
+// .bs-wizard > .bs-wizard-step:nth-last-child(2).active > .progress > .progress-bar {
+//     width: 100%;
+// }
 /*.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {
     background-color: #f5f5f5;
 }*/
@@ -236,16 +247,16 @@
     left: 50%;
     width: 50%;
 }*/
-.bs-wizard > .bs-wizard-step:nth-child(2) > .progress {
-    left: 50%;
+// .bs-wizard > .bs-wizard-step:nth-child(2) > .progress {
+//     left: 50%;
+//     width: 50%;
+// }
+.bs-wizard > .bs-wizard-step:last-child > .progress {
     width: 50%;
 }
-/*.bs-wizard > .bs-wizard-step:last-child > .progress {
-    width: 50%;
-}*/
-.bs-wizard > .bs-wizard-step:nth-last-child(2) > .progress {
-    width: 50%;
-}
+// .bs-wizard > .bs-wizard-step:nth-last-child(2) > .progress {
+//     width: 50%;
+// }
 .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot {
     pointer-events: none;
 }
