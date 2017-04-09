@@ -194,7 +194,7 @@ import axios from 'axios'
             bloodTypeX:this.$store.getters.bloodType,
             birthdateX:this.$store.getters.birthdate,
             provinceX:this.$store.getters.province,
-            img: ''
+            img: this.$store.getters.profileImg,
         }
     },
     computed: mapGetters({

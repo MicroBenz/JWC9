@@ -36,6 +36,7 @@ export default {
     contentAns2:'',
     designAns1:'',
     designAns2:'',
+    profileImg: '',
   },
   getters: {
     selectedRole: state => state.selectedRole,
@@ -74,6 +75,7 @@ export default {
     contentAns2: state => state.contentAns2,
     designAns1: state => state.designAns1,
     designAns2: state => state.designAns2,
+    profileImg: state => state.profileImg,
   },
   mutations: {
     setSelectedRole(state, payload){
@@ -191,6 +193,9 @@ export default {
     },
     setDesignAns2(state, designAns2){
         state.designAns2 = designAns2;
+    },
+    setProfileImg(state, profileImg) {
+        state.profileImg = profileImg;
     }
   },
   actions: {
@@ -214,6 +219,7 @@ export default {
         commit('setBirthDate', payload.birthdate);
         commit('setProvince', payload.province);
         commit('setBloodType', payload.bloodType);
+        commit('setProfileImg', payload.profilePicture);
     },
     setDataStep2({ commit }, payload){
         commit('setTelephone', payload.telephone);
