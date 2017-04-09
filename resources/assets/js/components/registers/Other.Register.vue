@@ -21,7 +21,7 @@
                                 <option value="จบ ม.3 (ขึ้น ปวช. ปี 1)">จบ ม.3 (ขึ้น ปวช. ปี 1)</option>
                                 <option value="จบ ปวช. ปี1 (ขึ้น ปวช. ปี 2)">จบ ปวช. ปี1 (ขึ้น ปวช. ปี 2)</option>
                                 <option value="จบ ปวช. ปี2 (ขึ้น ปวช. ปี 3)">จบ ปวช. ปี2 (ขึ้น ปวช. ปี 3)</option>
-                                <option value="จบ ปวช. ขึ้น ปวส.">จบ ปวช. ขึ้น ปวส.</option>
+                                <option value="จบ ปวช.">จบ ปวช.</option>
                             </select>
                         </div>
                     </div>
@@ -55,8 +55,8 @@
                         </div>
                     </div>
                     <div class="col-xs-8 col-sm-9 col-md-9 form-group">
-                        <label for="thai-name">โรคประจำตัว (ไม่มีใส่ -)</label>
-                        <input v-model="allergyX" type="text" class="form-control" id="thai-name">
+                        <label for="thai-name">โรคประจำตัว</label>
+                        <input v-model="allergyX" type="text" class="form-control" id="thai-name" placeholder="ไม่มีให้ใส่ -">
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="sel1">อาหารที่รับประทาน</label>
@@ -71,12 +71,12 @@
                         </div>
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
-                        <label for="thai-name">อาหารที่แพ้/ไม่สามารถรับประทานได้ (ไม่มีใส่ -)</label>
-                        <input v-model="foodAllergicX" type="text" class="form-control" id="thai-name">
+                        <label for="thai-name">อาหารที่แพ้/ไม่สามารถรับประทานได้</label>
+                        <input v-model="foodAllergicX" type="text" class="form-control" id="thai-name" placeholder="ไม่มีให้ใส่ -">
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
-                        <label for="thai-name">ยาที่แพ้ (ไม่มีใส่ -)</label>
-                        <input v-model="drugAllergicX" type="text" class="form-control" id="thai-name">
+                        <label for="thai-name">ยาที่แพ้</label>
+                        <input v-model="drugAllergicX" type="text" class="form-control" id="thai-name" placeholder="ไม่มีให้ใส่ -">
                     </div>    
                 </div>
             </div>
