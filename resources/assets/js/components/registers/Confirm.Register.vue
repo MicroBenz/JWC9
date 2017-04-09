@@ -245,23 +245,30 @@ import axios from 'axios'
         designAns2:'designAns2',
     }),
     beforeMount () {
-        axios.get('/api/register/data').then(function (res) {
-            this.res = res.data
-        })
-        axios.get('/api/questions/central').then(function (res) {
-            this.answer.central = res.data
-        })
-        axios.get('/api/questions/design').then(function (res) {
-            this.answer.design = res.data
-        })
-        axios.get('/api/questions/content').then(function (res) {
-            this.answer.content = res.data
-        })
-        axios.get('/api/questions/marketing').then(function (res) {
-            this.answer.marketing = res.data
-        })
     },
     mounted() {
+        let component = this
+        console.log('fetching data from server')
+        axios.get('/api/register/data').then(function (res) {
+            console.log(res.data)
+            component.res = res.data
+        })
+        axios.get('/api/questions/central').then(function (res) {
+            console.log(res.data)
+            component.answer.central = res.data
+        })
+        axios.get('/api/questions/design').then(function (res) {
+            console.log(res.data)
+            component.answer.design = res.data
+        })
+        axios.get('/api/questions/content').then(function (res) {
+            console.log(res.data)
+            component.answer.content = res.data
+        })
+        axios.get('/api/questions/marketing').then(function (res) {
+            console.log(res.data)
+            component.answer.marketing = res.data
+        })
 
     },
     updated() {
