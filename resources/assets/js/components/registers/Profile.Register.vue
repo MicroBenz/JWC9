@@ -4,7 +4,7 @@
     <div class="questionContainer">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4">
-                <img v-if="img === ''" src="/img/profile-thumb.png" class="center-block img-circle img-thumbnail"  width="70%" height="auto" >
+                <img v-if="img === '' || img === null" src="/img/profile-thumb.png" class="center-block img-circle img-thumbnail"  width="70%" height="auto" >
                 <img v-else :src="img" class="center-block img-circle img-thumbnail"  width="70%" height="auto" >
                 <div style="text-align:center;">
                     <input type="file" id="files" class="hidden" v-on:change="onFileChange"/>

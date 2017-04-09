@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <div class="col-xs-8 col-sm-9 col-md-9 form-group">
-                        <label for="thai-name">โรคประจำตัว</label>
+                        <label for="thai-name">โรคประจำตัว (ไม่มีใส่ -)</label>
                         <input v-model="allergyX" type="text" class="form-control" id="thai-name">
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
@@ -71,11 +71,11 @@
                         </div>
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
-                        <label for="thai-name">อาหารที่แพ้/ไม่สามารถรับประทานได้</label>
+                        <label for="thai-name">อาหารที่แพ้/ไม่สามารถรับประทานได้ (ไม่มีใส่ -)</label>
                         <input v-model="foodAllergicX" type="text" class="form-control" id="thai-name">
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
-                        <label for="thai-name">ยาที่แพ้</label>
+                        <label for="thai-name">ยาที่แพ้ (ไม่มีใส่ -)</label>
                         <input v-model="drugAllergicX" type="text" class="form-control" id="thai-name">
                     </div>    
                 </div>
