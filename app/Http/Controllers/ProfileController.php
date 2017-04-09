@@ -21,7 +21,7 @@ class ProfileController extends Controller
         $profile['SchoolName'] = $profile->school()->first()['SchoolName'];
         $profile['ProvinceName'] = $profile->province()->first()['ProvinceName'];
         $profile['Team'] = $profile->team()->first()['TeamName'];
-        $profile['ProfilePicture'] = Storage::url('public'.'/'.$profile->ProfilePicture);
+        $profile['ProfilePicture'] = is_null($profile->ProfilePicture)? null:Storage::url('public'.'/'.$profile->ProfilePicture);
         unset($profile['ProvinceID']);
         unset($profile['SchoolID']);
         return response()->json(compact('profile'));
