@@ -119,26 +119,26 @@
                         <h3 v-else-if="selectedRoleX ==='design'">คำถาม Design</h3>
                         <ul v-if="selectedRoleX ==='marketing'">
                             <li>
-                                <p><b>{{ answer.marketing[0].QuestionText }}: </b> <br>{{ answer.marketing[0] }}</p>
+                                <p><b>{{ answer.marketing[0].QuestionText }}: </b> <br>{{ answer.marketing[0].answer }}</p>
                             </li>
                             <li>
-                                <p><b>{{ answer.marketing[1].QuestionText }}: </b> <br>{{ answer.marketing[1] }}</p>
+                                <p><b>{{ answer.marketing[1].QuestionText }}: </b> <br>{{ answer.marketing[1].answer }}</p>
                             </li>
                         </ul>
                         <ul v-else-if="selectedRoleX ==='content'">
                             <li>
-                                <p><b>{{ answer.content[0].QuestionText }}: </b> <br>{{ answer.content[0] }}</p>
+                                <p><b>{{ answer.content[0].QuestionText }}: </b> <br>{{ answer.content[0].answer }}</p>
                             </li>
                             <li>
-                                <p><b>{{ answer.content[1].QuestionText }}: </b> <br>{{ answer.content[1] }}</p>
+                                <p><b>{{ answer.content[1].QuestionText }}: </b> <br>{{ answer.content[1].answer }}</p>
                             </li>
                         </ul>
                         <ul v-else-if="selectedRoleX ==='design'">
                             <li>
-                                <p><b>{{ answer.design[0].QuestionText }}: </b> <br>{{ answer.design[0] }}</p>
+                                <p><b>{{ answer.design[0].QuestionText }}: </b> <br>{{ answer.design[0].answer }}</p>
                             </li>
                             <li>
-                                <p><b>{{ answer.design[1].QuestionText }}: </b> <br>{{ answer.design[1] }}</p>
+                                <p><b>{{ answer.design[1].QuestionText }}: </b> <br>{{ answer.design[1].answer }}</p>
                             </li>
                         </ul>
                     </div>
