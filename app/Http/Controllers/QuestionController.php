@@ -34,7 +34,7 @@ class QuestionController extends Controller
         $user = JWTAuth::parseToken()->authenticate();
         $profile = $user->profile()->first();
 
-        if($user->camper->first()['IsLock']){
+        if($user->camper()->first()['IsLock']){
             return response()->json(['error'=> "ไม่สามารถแก้ไขข้อมูลได้"]);
         }
 
@@ -76,7 +76,7 @@ class QuestionController extends Controller
         $user = JWTAuth::parseToken()->authenticate();
         $profile = $user->profile()->first();
 
-        if($user->camper->first()['IsLock']){
+        if($user->camper()->first()['IsLock']){
             return response()->json(['error'=> "ไม่สามารถแก้ไขข้อมูลได้"]);
         }
 
