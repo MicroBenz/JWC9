@@ -53,7 +53,7 @@ export default {
         case 1:
           startDate = moment('2017-04-10');
           endDate = moment('2017-05-01');
-          today = moment('2017-04-15');
+          // today = moment('2017-04-15');
           return startDate.isSameOrBefore(today) && today.isSameOrBefore(endDate); 
         case 2:
           startDate = moment('2017-05-05');
