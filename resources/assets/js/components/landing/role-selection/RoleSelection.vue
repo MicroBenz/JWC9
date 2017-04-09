@@ -356,6 +356,14 @@ export default {
                         component.$store.dispatch('setAccessToken', {
                             token: res.data.token
                         })
+
+                        console.log('LOCKED!!')
+                        if(res.data.isLock) {
+                            console.log('LOCKED!! - REDIRECTING')
+                            component.$router.push('/')
+                            component.$router.push('/register/step7')
+                        }
+
                         axios.defaults.headers.common['Authorization'] = 'Bearer '+res.data.token
 
                         axios({
@@ -460,13 +468,6 @@ export default {
                             
                         })
                         localStorage.setItem('accessToken', res.data.token);
-
-                        console.log('LOCKED!!')
-                        if(res.data.isLock){
-                            console.log('LOCKED!! - REDIRECTING')
-                            component.$router.push('/')
-                            component.$router.push('/register/step7')
-                        }
                     })
                 }
             }
