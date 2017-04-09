@@ -277,7 +277,7 @@ import axios from 'axios'
                 return;
             this.createImage(files[0]);
 
-            formData = new FormData()
+            let formData = new FormData()
             formData.append('ProfilePicture', files[0])
 
             axios.post('/api/register/profilepicture', formData).then(function (res) {
