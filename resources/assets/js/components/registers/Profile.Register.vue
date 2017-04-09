@@ -276,6 +276,13 @@ import axios from 'axios'
             if (!files.length)
                 return;
             this.createImage(files[0]);
+
+            formData = new FormData()
+            formData.append('ProfilePicture', files[0])
+
+            axios.post('/api/register/profilepicture', formData).then(function (res) {
+                console.log(res.data)
+            })
         },
         createImage(file) {
             const reader = new FileReader();
@@ -301,9 +308,6 @@ import axios from 'axios'
                 image.src = e.target.result;
             };
             reader.readAsDataURL(file);
-            axios.post('/api/register/profilepicture', {
-
-            })
         },
     }
   }
