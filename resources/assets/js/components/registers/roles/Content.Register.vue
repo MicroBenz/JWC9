@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center">คำถามประจำสาขา Content</h1>
+    <h1 class="text-center"><span style="font-family: 'ThaiSans Neue'">คำถามประจำสาขา</span> Content</h1>
     <div class="questionContainer">
         <div class="row">
             <div class="questionsDiv col-xs-12">
