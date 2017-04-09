@@ -94,7 +94,7 @@ export default {
                 marketing: '?',
             },
             presenter: {
-                body: '/img/characters/Human_Design.png',
+                body: '/img/characters/design.gif',
                 light: '/img/characters/Light-Design.png'
             },
             presentColor: '',
@@ -151,7 +151,7 @@ export default {
             else if(jobTeam == 'marketing') this.marketing()
         },
         design () {
-            this.presenter.body = '/img/characters/Human_Design.png'
+            this.presenter.body = '/img/characters/design.gif'
             this.presenter.light = '/img/characters/Light-Design.png'
             this.presentColor = '#fac61f'
             this.currentPick = 'DESIGN'
@@ -176,7 +176,7 @@ export default {
             this.activateSkill(this.skills[0].name, this.skills[0].desc, 'skill-0', 'skill-m0')
         },
         content () {
-            this.presenter.body = '/img/characters/Human_Content.png'
+            this.presenter.body = '/img/characters/content.gif'
             this.presenter.light = '/img/characters/Light-Content.png'
             this.presentColor = '#3364a7'
             this.currentPick = 'CONTENT'
@@ -201,7 +201,7 @@ export default {
             this.activateSkill(this.skills[0].name, this.skills[0].desc, 'skill-0', 'skill-m0')
         },
         marketing () {
-            this.presenter.body = '/img/characters/Human_Marketing.png'
+            this.presenter.body = '/img/characters/marketing.gif'
             this.presenter.light = '/img/characters/Light-Marketing.png'
             this.presentColor = '#f14d50'
             this.currentPick = 'MARKETING'
