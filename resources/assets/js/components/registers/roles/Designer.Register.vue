@@ -8,7 +8,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
                         <label for="thai-name">1. จงออกแบบผู้กล้าในรูปแบบที่ตัวเองชื่นชอบมา 1 ตัวละคร โดยไม่จำกัดไอเดีย และ สามารถใช้โปรแกรมอะไรก็ได้ เมื่อเสร็จให้อัพโหลดไฟล์ที่บนเว็บไซต์ ด้วยนามสกุลไฟล์เป็น .png .jpg หรือ .gif ก็ได้โดยขนาดไม่เกิน 2 MB.
                         </label>
-                        <img v-if="designAns1X.attachment != '/storage/" :src="designAns1X.attachment" style="border: none; width: 100%; max-width: 500px;">
+                        <img v-if="designAns1X.attachment !== '/storage/'" :src="designAns1X.attachment" style="border: none; width: 100%; max-width: 500px;">
                         <input type="file" id="files" v-on:change="onFileChange">
                       <label>จงอธิบายรูปภาพที่ได้ออกแบบมา</label>
                         <br>
