@@ -332,6 +332,11 @@ import axios from 'axios'
     }
     .img-thumbnail {
         margin-bottom: 15px;
+        @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px)  {
+            width: 40%;
+        }
     }
     // .upload-btn {
     //     width: 60%;
@@ -406,5 +411,18 @@ import axios from 'axios'
     }
     .back-to-menu {
         @include registerBack();
+    }
+    .text-center {
+        @media(max-width: 768px) {
+            // font-size: 35px;
+            font-size: 40px;
+            padding-bottom: 65px;
+        }
+        @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px)  {
+            font-size: 70px;
+            padding-bottom: 0px;
+        }
     }
 </style>

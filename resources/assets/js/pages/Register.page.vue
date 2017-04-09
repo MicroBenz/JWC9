@@ -73,7 +73,7 @@
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
   .registerContainer{
     background-image: url("/img/bg/blue.png");
     background-repeat: repeat;
@@ -88,6 +88,14 @@
 .bs-wizard {
     border-bottom: solid 1px #e0e0e0;
     padding: 0 0 25px 0;
+    @media(max-width: 768px) {
+        padding: 0 0 5px 0;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+        padding: 0 0 25px 0;
+    }
 }
 .bs-wizard > .bs-wizard-step {
     padding: 0;
@@ -117,6 +125,22 @@
     text-align: center;
     font-size: 43px;
     line-height: 60px;
+    @media(max-width: 768px) {
+        width: 30px;
+        height: 30px;
+        top: 7px;
+        font-size: 23px;
+        line-height: 30px;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+        width: 60px;
+        height: 60px;
+        top: -7px;
+        font-size: 33px;
+        line-height: 60px;
+    }
 }
 .bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {
     content: '';
@@ -129,6 +153,22 @@
     position: absolute;
     top: 5px;
     left: 5px;
+    @media(max-width: 768px) {
+        line-height: 25px;
+        width: 25px;
+        height: 25px;
+        top: 3px;
+        left: 3px;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+        line-height: 50px;
+        width: 50px;
+        height: 50px;
+        top: 5px;
+        left: 5px;
+    }
 }
 .bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {
     background-color: #543224;
