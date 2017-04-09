@@ -369,6 +369,7 @@ export default {
                                 method: 'get',
                                 url:'/api/register/data',
                             }).then((response) => {
+                                console.log('response.data')
                                  console.log(response.data);
                                 var profile = response.data.profile;
                                 if(profile['FirstNameEN']!=null)
@@ -407,7 +408,6 @@ export default {
                                 profile['foodType'] = profile['FoodType']
                                 profile['foodAllergic'] = profile['FoodAllergic']
                                 profile['drugAllergic'] = profile['DrugAllergic']
-                                profile['profileImg'] = profile['ProfilePicture'];
                                 if(profile['FirstNameEN']!=null)
                                     component.$store.dispatch('setDataStep1',profile);
                                 component.$store.dispatch('setDataStep2',profile);
@@ -418,6 +418,7 @@ export default {
                                 // contentAns2:'',
                                 // designAns1:'',
                                 // designAns2:'',
+                                console.log('profile')
                                 console.log(profile);
                                 axios({
                                     method: 'get',

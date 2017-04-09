@@ -219,7 +219,7 @@ export default {
         commit('setBirthDate', payload.birthdate);
         commit('setProvince', payload.province);
         commit('setBloodType', payload.bloodType);
-        commit('setProfileImg', payload.profilePicture);
+        commit('setProfileImg', payload.ProfilePicture);
     },
     setDataStep2({ commit }, payload){
         commit('setTelephone', payload.telephone);

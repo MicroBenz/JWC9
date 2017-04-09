@@ -2,7 +2,16 @@
   <div class="registerContainer">
     <div v-if="currentStep !== 7 && currentStep !== -1" class="logo-wrapper">
         <!--<img class="jwc-logo" src="/img/logo.png">-->
-        <p style="text-align: center;">สาขาที่กำลังสมัคร: {{currentRole}}</p>
+        <p style="text-align: center;text-align: center;
+    width: 300px;
+    margin: auto;
+    background: rgba(0,0,0,0.3);
+    border-radius: 20px;">สาขาที่กำลังสมัคร:
+            <b style="color: #fac720" v-if="currentRole === 'Design'">{{currentRole}}</b>
+            <b style="color: rgb(241, 77, 80)" v-else-if="currentRole === 'Content'">{{currentRole}}</b>
+            <b style="color: rgb(5, 16, 181)" v-else-if="currentRole === 'Marketing'">{{currentRole}}</b>
+
+        </p>
     </div>
     <div class="container">
       <div class="row bs-wizard" style="border-bottom:0;" v-if="currentStep !== 7 && currentStep !== -1">
