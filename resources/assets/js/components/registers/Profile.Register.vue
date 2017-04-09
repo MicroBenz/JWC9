@@ -11,7 +11,7 @@
                     <label for="files">
                         <!--<img class="upload-btn" src="./upload.png">-->
                         <a class="btn-game">
-                            <div class="btn-game">อัพโหลดรูป</div>
+                            <div class="btn-game upload-btn">อัพโหลดรูป</div>
                         </a>
                     </label>
                 </div>
@@ -168,7 +168,10 @@
                 </div>
             </div>
         </div>
-        <img v-on:click="goNext()" class="next-btn" src="./right-btn.png">
+        <!--<img v-on:click="goNext()" class="next-btn" src="./right-btn.png">-->
+        <a class="next-btn" v-on:click="goNext()">
+            <i class="fa fa-angle-right" />
+        </a>
     </div>
   </div>
 </template>
@@ -312,13 +315,13 @@ import axios from 'axios'
     input[type=submit] {
         line-height: 18px;
     }*/
-    .btn-game {
+    .upload-btn {
         border-bottom: none;
     }
-    .btn-game:hover {
+    .upload-btn:hover {
         margin-top: 0px;
     }
-    div.btn-game {
+    .upload-btn {
         font-size: 32px;
         padding-left: 16px;
         padding-right: 16px;
@@ -327,10 +330,10 @@ import axios from 'axios'
     .img-thumbnail {
         margin-bottom: 15px;
     }
-    .upload-btn {
-        width: 60%;
-        cursor: pointer;
-    }
+    // .upload-btn {
+    //     width: 60%;
+    //     cursor: pointer;
+    // }
     input, select {
         /*padding: 20px 10px; 
         line-height: 10px !important;*/
@@ -383,9 +386,19 @@ import axios from 'axios'
     }
     .next-btn {
         width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: #ee5d5f;
+        // border-bottom: 10px solid #d7524e;
         position: absolute;
         bottom: -25px;
         right: 35px;
         cursor: pointer;
+        text-align: center;
+        i {
+            font-size: 35px;
+            line-height: 50px;
+            color: white;
+        }
     }
 </style>

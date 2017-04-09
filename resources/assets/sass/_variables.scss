@@ -40,3 +40,22 @@ $navbar-default-bg: #fff;
 @mixin background($imgUrl) {
   background: url($imgUrl) repeat center;
 }
+
+@mixin circleButton() {
+   width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #ee5d5f;
+    // border-bottom: 10px solid #d7524e;
+    position: absolute;
+    bottom: -25px;
+    // right: 35px;
+    cursor: pointer;
+    text-align: center;
+    i {
+        font-size: 35px;
+        line-height: 50px;
+        color: white;
+    }
+
+}
