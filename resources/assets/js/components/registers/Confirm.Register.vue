@@ -53,7 +53,7 @@
                                 <p><b>อีเมล: </b>{{ res.profile.Emal }}</p>
                             </li>
                             <li>
-                                <p><b>ผู้ปกครอง: </b>{{ res.proflie.EmergencyContact }}</p>
+                                <p><b>ผู้ปกครอง: </b>{{ res.profile.EmergencyContact }}</p>
                             </li>
                             <li>
                                 <p><b>เบอร์โทรศัพท์ติดต่อ(ผู้ปกครอง): </b>{{ res.profile.EmergencyTel }}</p>
