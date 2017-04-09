@@ -357,16 +357,14 @@ export default {
                         component.$store.dispatch('setAccessToken', {
                             token: res.data.token
                         })
-
+                        axios.defaults.headers.common['Authorization'] = 'Bearer '+res.data.token                        
                         console.log('LOCKED!!')
                         if(res.data.isLock) {
                             console.log('LOCKED!! - REDIRECTING')
-                            component.$router.push('/')
+                            // component.$router.push('/')
                             component.$router.push('/register/step7')
                         }
                         else {
-                            axios.defaults.headers.common['Authorization'] = 'Bearer '+res.data.token
-
                             axios({
                                 method: 'get',
                                 url:'/api/register/data',
