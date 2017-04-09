@@ -78,4 +78,8 @@ Return
 # ===== Lock Profile =====
 [GET] /api/register/complete
 
+# ===== Upload Design Picture Answer =====
+[POST] /api/questions/design_picture
+  designAttachment : TheFile
+
 
