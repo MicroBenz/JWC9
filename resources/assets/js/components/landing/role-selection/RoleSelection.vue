@@ -454,7 +454,6 @@ export default {
                                         }
                                         else if(choosedTeam == 'design'){
                                             lineAnsObj['designAns1'] = arrLineAns[0]['answer'];
-                                            lineAnsObj['designAns1'] = arrLineAns[0]['answer'];
                                             lineAnsObj['designAns2'] = arrLineAns[1]['answer'];
                                             console.log(lineAnsObj)
                                             component.$store.dispatch('setDataStep5Design',lineAnsObj);
