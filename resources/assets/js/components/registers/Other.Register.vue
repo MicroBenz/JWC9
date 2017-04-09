@@ -6,28 +6,29 @@
             <div class="questionsDiv col-xs-12">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
-                        <label for="thai-name">โรงเรียนที่อยู่</label>
+                        <label for="thai-name">โรงเรียนที่จบการศึกษาชั้นปีล่าสุด</label>
                         <input v-model="schoolX" type="text" class="form-control" id="thai-name">
                     </div>    
                     <div class="col-xs-6 col-sm-3 col-md-3 form-group">
-                        <label for="thai-name">ระดับชั้น</label>
+                        <label for="thai-name">ระดับชั้นที่จบ</label>
                         <div class="select-wrapper">
                             <select v-model="educationLevelX" class="form-control setHeight" id="selBelieve">
                                 <option value="" selected disabled>เลือก</option>
-                                <option value="m3">ม.3 ขึ้น ม.4</option>
-                                <option value="m4">ม.4 ขึ้น ม.5</option>
-                                <option value="m5">ม.5 ขึ้น ม.6</option>
-                                <option value="m6">ม.6 ขึ้นปี 1</option>
-                                <option value="m3-pvc1">ม.3 ขึ้น ปวช. ปี 1</option>
-                                <option value="pvc1-pvc2">ขึ้น ปวช. ปี 2</option>
-                                <option value="pvc2-pvc3">ขึ้น ปวช. ปี 3</option>
-                                <option value="topvs">ขึ้ึ้น ปวส.</option>
+                                <option value="m3">จบ ม.3 (ขึ้น ม.4)</option>
+                                <option value="m4">จบ ม.4 (ขึ้น ม.5)</option>
+                                <option value="m5">จบ ม.5 (ขึ้น ม.6)</option>
+                                <option value="m6">จบ ม.6</option>
+                                <option value="m3-pvc1">จบ ม.3 (ขึ้น ปวช. ปี 1)</option>
+                                <option value="pvc1-pvc2">จบ ปวช. ปี1 (ขึ้น ปวช. ปี 2)</option>
+                                <option value="pvc2-pvc3">จบ ปวช. ปี2 (ขึ้น ปวช. ปี 3)</option>
+                                <option value="topvs">จบ ปวช. ขึ้น ปวส.</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-xs-6 col-sm-3 col-md-3 form-group">
                         <label for="thai-name">สายการเรียน</label>
-                        <div class="select-wrapper">
+                        <input v-model="educationMajorX" type="text" class="form-control" id="setBelieve">
+                        <!--<div class="select-wrapper">
                             <select v-model="educationMajorX" class="form-control setHeight" id="selBelieve">
                                 <option value="" selected disabled>เลือก</option>
                                 <option value="วิทย์ - คณิต">วิทย์ - คณิต</option>
@@ -36,18 +37,20 @@
                                 <option value="วิทย์ - คอม">วิทย์ - คอม</option>
                                 <option value="ศิลป์ - สังคม">ศิลป์ - สังคม</option>
                             </select>
-                        </div>
+                        </div>-->
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-xs-4 col-sm-3 col-md-3 form-group">
                         <label for="thai-name">ไซส์เสื้อ</label>
                         <div class="select-wrapper">                        
                             <select v-model="shirtSizeX" class="form-control setHeight" id="selBelieve">
                                 <option value="" selected disabled>เลือก</option>
-                                <option value="S">S</option>
-                                <option value="M">M</option>
-                                <option value="L">L</option>
-                                <option value="XL">XL</option>
-                                <option valueu="XXL">XXL</option>
+                                <option value="S">S (รอบอก 36")</option>
+                                <option value="M">M (รอบอก 38")</option>
+                                <option value="L">L (รอบอก 40")</option>
+                                <option value="XL">XL (รอบอก 42")</option>
+                                <option value="XXL">XXL (รอบอก 44")</option>
                             </select>
                         </div>
                     </div>
