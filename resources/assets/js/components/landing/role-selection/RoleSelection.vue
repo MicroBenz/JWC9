@@ -1,13 +1,13 @@
 <template>
-    <div class="jobs-screen-container">
+    <div class="jobs-screen-container" id="choose-a-job">
         <div class="mobile">
-            <div class="section-heading">Job Intro</div>
+            <div class="section-heading">Choose a Job</div>
             <div class="section-desc">เลือกอาชีพ</div>
         </div>
         <div class="jobs-screen" style="">
 
             <!-- Left Section: Job Description -->
-            <div class="section-heading">Job Intro</div>
+            <div class="section-heading">Choose a Job</div>
             <div class="section-desc">เลือกอาชีพ</div>
             <div class="selected-role-title" v-bind:style="{ background: presentColor }">{{ currentPick }}</div>
             <div class="selected-role-desc">
@@ -205,7 +205,7 @@ export default {
             this.presenter.light = '/img/characters/Light-Marketing.png'
             this.presentColor = '#f14d50'
             this.currentPick = 'MARKETING'
-            this.jobDescription = 'ถ้าชอบวางแผนใส่ใจและเข้าใจผู้อื่น น้องคือ web marketing เพราะการวางแผนการตลาดต้องเริ่มจากการเข้าใจลูกค้า'
+            this.jobDescription = 'ถ้าชอบวางแผนใส่ใจและเข้าใจผู้อื่น น้องคือ Marketing เพราะการวางแผนการตลาดต้องเริ่มจากการเข้าใจลูกค้า'
             this.skills = [
                 {
                     icon: '/img/characters/Marketing_Skill_1.png',
@@ -302,7 +302,7 @@ export default {
                             })
                         }
                         component.facebookGetLoginStatus()
-                        component.$router.push('/register/step1')
+                        
 
                     });
                 } else {
@@ -345,7 +345,7 @@ export default {
         authen(team){
             console.log(`called: authen(${team})`)
             var component = this;
-            let filter = ['design', 'content', 'marketing']
+            const filter = ['design', 'content', 'marketing']
             for(let i = 0; i < 3; i++){
                 if(team == filter[i]){
                     console.log(this.facebookAccessToken)
@@ -356,6 +356,106 @@ export default {
                         console.log(res);
                         component.$store.dispatch('setAccessToken', {
                             token: res.data.token
+                        })
+                        axios.defaults.headers.common['Authorization'] = 'Bearer '+res.data.token
+                        axios({
+                            method: 'get',
+                            url:'/api/register/data',
+                        }).then((response) => {
+                            // console.log(response.data);
+                            var profile = response.data.profile;
+                            if(profile['FirstNameEN']!=null)
+                                profile['firstnameEN'] = profile['FirstNameEN'];
+                            if(profile ['LastNameEN']!=null)
+                                profile['lastnameEN'] = profile ['LastNameEN'];
+                            if(profile['FirstName']!=null)
+                                profile['firstnameTH'] = profile['FirstName'];
+                            if(profile['LastName']!=null)
+                                profile['lastnameTH'] = profile['LastName'];
+                            profile['nickname'] = profile['Nickname'];
+                            profile['sex'] = profile['Gender'];
+                            profile['religion'] = profile['Religion'];
+                            profile['birthdate'] = profile['Birthday'];
+                            profile['province'] = profile['ProvinceName'];
+                            profile['bloodType'] = profile['BloodType'];
+                            profile['telephone'] = profile['Telephone'];
+                            profile['email'] = profile['Email'];
+                            if(profile['EmergencyContact']!=null){
+                                var emerContact = profile['EmergencyContact'].split(" ")
+                                profile['emergencyFirstname'] = emerContact[0];
+                                profile['emergencyLastname'] = emerContact[1];
+                            }
+                            else{
+                                profile['emergencyFirstname'] = null;
+                                profile['emergencyLastname'] = null;
+                            }
+                            profile['emergencyTelephone'] = profile['EmergencyContact'];
+                            profile['emergencyRelationship'] = profile['EmergencyRelation']
+                            profile['jwcDiscoveryChannel'] = profile['JWCDiscoveryChannel']
+                            profile['school'] = profile['SchoolName'];
+                            profile['educationLevel'] = profile['EducationLevel']
+                            profile['educationMajor'] = profile['EducationMajor']
+                            profile['shirtSize'] = profile['ShirtSize']
+                            profile['allergy'] = profile['Allergy']
+                            profile['foodType'] = profile['FoodType']
+                            profile['foodAllergic'] = profile['FoodAllergic']
+                            profile['drugAllergic'] = profile['DrugAllergic']
+                            component.$store.dispatch('setDataStep1',profile);
+                            component.$store.dispatch('setDataStep2',profile);
+                            component.$store.dispatch('setDataStep3',profile);
+                            // marketingAns1:'',
+                            // marketingAns2:'',
+                            // contentAns1:'',
+                            // contentAns2:'',
+                            // designAns1:'',
+                            // designAns2:'',
+                            console.log(profile);
+                            axios({
+                                method: 'get',
+                                url:'/api/questions/central',
+                            }).then((response) => {
+                                // console.log('!!!!central data');
+                                // console.log(response.data)
+                                var arrAns = response.data;
+                                var ansObj = {};
+                                ansObj['generalAns1'] = arrAns[0]['answer']
+                                ansObj['generalAns2'] = arrAns[1]['answer']
+                                ansObj['generalAns3'] = arrAns[2]['answer']
+                                ansObj['generalAns4'] = arrAns[3]['answer']
+                                component.$store.dispatch('setDataStep4',ansObj);
+                                console.log(`TEAM: ${profile['Team']}`)
+                                var teamQuesEndpoint =''
+                                var choosedTeam = profile['Team']
+                                axios({
+                                    method: 'get',
+                                    url:'/api/questions/'+choosedTeam,
+                                }).then((response) => {
+                                    console.log(response.data);
+                                    var arrLineAns = response.data;
+                                    var lineAnsObj = {};
+                                    if(choosedTeam == 'marketing'){
+                                        lineAnsObj['marketingAns1'] = arrLineAns[0]['answer'];
+                                        lineAnsObj['marketingAns2'] = arrLineAns[1]['answer'];
+                                        component.$store.dispatch('setDataStep5Marketing',lineAnsObj);
+                                    }
+                                    else if(choosedTeam == 'content'){
+                                        lineAnsObj['contentAns1'] = arrLineAns[0]['answer'];
+                                        lineAnsObj['contentAns2'] = arrLineAns[1]['answer'];
+                                        component.$store.dispatch('setDataStep5Content',lineAnsObj);
+                                    }
+                                    else if(choosedTeam == 'design'){
+                                        lineAnsObj['designAns1'] = arrLineAns[0]['answer'];
+                                        lineAnsObj['designAns2'] = arrLineAns[1]['answer'];
+                                        component.$store.dispatch('setDataStep5Design',lineAnsObj);
+                                    }
+                                    else{
+                                        console.log('err: no team')
+                                    }
+                                    component.$router.push('/register/step1')
+                                })
+                                
+                            })
+                            
                         })
                         localStorage.setItem('accessToken', res.data.token);
                     })

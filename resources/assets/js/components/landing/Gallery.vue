@@ -1,5 +1,5 @@
 <template>
-  <div class = "galleryContainer" >
+  <div class = "galleryContainer" id="jwc-gallery">
     <h1 class ="topicHeader">Gallery</h1>
     <h4 class ="topicSubheader">ภาพกิจกรรม</h4>
     <div class="container">
@@ -31,15 +31,17 @@
       var that = this
       setTimeout(function() {
         for(let i=1;i<=5;i++){
-          that.images.push(`/img/jwc8/j8_${i}.jpg`);
+          that.images.push(`/img/jwc8/j8_${i}.JPG`);
         }
 
       }, 30)
     },
     updated () {
         $('.gallery').slick({
-          prevArrow:"<img class='a-left control-c prev slick-prev' src='/img/Button<.png' style='height:15%; width:auto;'>",
-          nextArrow:"<img class='a-right control-c next slick-next' src='/img/Button>.png' style='height:15%; width:auto;'>",
+          /*prevArrow:"<img class='a-left control-c prev slick-prev' src='/img/Button<.png' style='height:15%; width:auto;'>",
+          nextArrow:"<img class='a-right control-c next slick-next' src='/img/Button>.png' style='height:15%; width:auto;'>",*/
+          prevArrow:"<div class='btn-game arrow a-left control-c prev slick-prev'></div>",
+          nextArrow:"<div class='btn-game arrow a-right control-c next slick-next'></div>",
           autoplay: true,
           dots: false,
           responsive: [{

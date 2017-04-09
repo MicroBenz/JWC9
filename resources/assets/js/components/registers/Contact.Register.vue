@@ -28,11 +28,12 @@
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="sel1">เกี่ยวข้องเป็น</label>
                         <div class="select-wrapper">
-                            <select v-model="emergencyRelationshipX" class="form-control setHeight" id="selSex">
+                            <!--<select v-model="emergencyRelationshipX" class="form-control setHeight" id="selSex">
                                 <option value="" selected disabled>เลือก</option>
                                 <option value="father">บิดา</option>
                                 <option value="mother">มารดา</option>
-                            </select>
+                            </select>-->
+                            <input v-model="emergencyTelephoneX" type="text" class="form-control" id="selSex">
                         </div>
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
@@ -112,7 +113,8 @@ import axios from 'axios'
                     Email: this.emailX,
                     EmergencyContact: this.emergencyFirstnameX+' '+this.emergencyLastnameX,
                     EmergencyTel: this.emergencyTelephoneX,
-                    EmergencyRelation: this.emergencyRelationshipX
+                    EmergencyRelation: this.emergencyRelationshipX,
+                    JWCDiscoveryChannel: this.jwcDiscoveryChannelX
                 }
             }).then((response) => {
                 console.log(response.data);
