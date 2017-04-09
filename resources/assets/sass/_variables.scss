@@ -79,3 +79,33 @@ $navbar-default-bg: #fff;
     font-size: 27px;
   }
 }
+
+@mixin registerTextbox() {
+  height: 1.5em;
+  border: none;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+}
+@mixin registerTextArea() {
+  border-radius: 12px;
+  border: none;
+  padding: 5px 10px;
+  color: black;
+}
+
+@mixin selectWrapper() {
+  border-radius: 20px;
+  // border: 1px solid white;
+  border: none;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  select {
+      border: 0;
+      outline: none;
+      &:focus {
+          outline: none;
+      }
+  }
+}
