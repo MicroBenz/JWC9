@@ -60,15 +60,15 @@ $navbar-default-bg: #fff;
 }
 
 @mixin registerBack() {
-  background-color: #fac720;
-  color: #543224;
+  background-color: #ee5d5f;
+  color: #ffffff;
   text-decoration: none;
   padding-left: 20px;
   padding-right: 20px;
   border-radius: 13px;
   position: absolute;
-  top: -55px;
-  right: 0;
+  bottom: -25px;
+  left: 35px;
   cursor: pointer;
   @media(max-width: 768px) {
     font-size: 20px;

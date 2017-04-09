@@ -172,7 +172,10 @@
         <a class="next-btn" v-on:click="goNext()">
             <i class="fa fa-angle-right" />
         </a>
-        <router-link to="/" class="back-to-menu">กลับสู่หน้าหลัก</router-link>
+        <a v-on:click="goHome()" class="back-to-menu">
+        <i class="fa fa-angle-left" />
+        กลับสู่หน้าหลัก
+        </a>
     </div>
   </div>
 </template>
@@ -218,19 +221,7 @@ import axios from 'axios'
         
     },
     methods: {
-        goNext() {
-            console.log('go next')
-            // console.log(this.firstnameENX);
-            // console.log(this.lastnameENX);
-            // console.log(this.firstnameTHX);
-            // console.log(this.lastnameTHX);
-            // console.log(this.nicknameX);
-            // console.log(this.sexX);
-            // console.log(this.religionX);
-            // console.log(this.birthdateX);
-            // console.log(this.provinceX);
-            // console.log(this.bloodTypeX);
-            // this.$router.push('/register/step2');
+        saveStateToStore(){
             this.$store.dispatch('setDataStep1', {
                 firstnameEN: this.firstnameENX,
                 lastnameEN: this.lastnameENX,
@@ -243,6 +234,14 @@ import axios from 'axios'
                 province: this.provinceX,
                 bloodType: this.bloodTypeX
             })
+        },
+        goHome(){
+            this.saveStateToStore();
+            this.$router.push('/');
+        },
+        goNext() {
+            console.log('go next')
+            this.saveStateToStore();
             axios.defaults.headers.common['Authorization'] = 'Bearer '+this.$store.getters.accessToken;
             
             axios({
