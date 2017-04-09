@@ -200,7 +200,7 @@ import Flatpickr from 'flatpickr';
             bloodTypeX:this.$store.getters.bloodType,
             birthdateX:this.$store.getters.birthdate,
             provinceX:this.$store.getters.province,
-            img: this.$store.getters.profileImg,
+            img: this.$store.getters.profilePicture,
         }
     },
     computed: mapGetters({

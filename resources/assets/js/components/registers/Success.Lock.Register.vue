@@ -71,10 +71,10 @@
                         <h3>Other</h3>
                         <ul>
                             <li>
-                                <p><b>โรงเรียนที่อยู่: </b>{{ res.profile.SchoolName }}</p>
+                                <p><b>โรงเรียนที่จบการศึกษาชั้นล่าสุด: </b>{{ res.profile.SchoolName }}</p>
                             </li>
                             <li>
-                                <p><b>ระดับชั้น: </b>{{ res.profile.EducationLevel }}</p>
+                                <p><b>ระดับชั้นที่จบ: </b>{{ res.profile.EducationLevel }}</p>
                             </li>
                             <li>
                                 <p><b>สายการเรียน: </b>{{ res.profile.EducationMajor }}</p>
