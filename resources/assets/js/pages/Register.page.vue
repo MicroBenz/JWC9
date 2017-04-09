@@ -1,9 +1,11 @@
 <template>
   <div class="registerContainer">
+    <div class="logo-wrapper">
+        <!--<img class="jwc-logo" src="/img/logo.png">-->
+        <p style="text-align: center;">สาขาที่กำลังสมัคร: {{currentRole}}</p>
+    </div>
     <div class="container">
       <div class="row bs-wizard" style="border-bottom:0;">
-          <div class="col-xs-1">
-          </div>
           <div class="col-xs-2 bs-wizard-step"
             v-bind:class="{ 'complete': currentStep > 1, 'active': currentStep === 1, 'disabled': currentStep < 1 }"
           >
@@ -42,10 +44,14 @@
             <div class="progress"><div class="progress-bar"></div></div>
             <a href="#" class="bs-wizard-dot step-5"></a>
           </div>
-          <div class="col-xs-1">
+          <div class="col-xs-2 bs-wizard-step"
+            v-bind:class="{ 'complete': currentStep > 6, 'active': currentStep === 6, 'disabled': currentStep < 6 }"
+          ><!-- active -->
+            <!--<div class="text-center bs-wizard-stepnum">Step 5</div>-->
+            <div class="progress"><div class="progress-bar"></div></div>
+            <a href="#" class="bs-wizard-dot step-6"></a>
           </div>
       </div>
-
       <!--<h3 class="stepHeader">{{currentStep}}</h3>-->
       <router-view></router-view>
 
@@ -54,40 +60,83 @@
 </template>
 
 <script>
-  export default {
+import { mapGetters } from 'vuex'
+
+export default {
+    mounted() {
+        console.log('register mount', this.$store.state.register.selectedRole);
+        if (this.$store.state.register.selectedRole === 'none') {
+            // this.$router.push('/'); // uncomment this on production
+        }
+    },
     computed: {
         currentStep() {
             // console.log(this.$route.path);
             const routeArr = this.$route.path.split('/');
             const currentStep = routeArr[routeArr.length - 1].split('step')[1];
-            console.log(currentStep[0]);
+            // console.log(currentStep[0]);
             return Number(currentStep[0]);
+        },
+        currentRole() {
+            switch (this.$store.getters.selectedRole) {
+                case 'none':
+                    return 'none';
+                case 'design':
+                    return 'Design';
+                case 'marketing':
+                    return 'Marketing';
+                case 'content':
+                    return 'Content';
+            }
         }
     },
     methods: {
         getClass(step) {
             const routeArr = this.$route.path.split('/');
             const currentStep = routeArr[routeArr.length - 1].split('step')[1];
-            console.log(currentStep);
+            // console.log(currentStep);
         }
     }
-  }
+}
 </script>
-<style scoped>
+<style lang="scss" scoped>
   .registerContainer{
     background-image: url("/img/bg/blue.png");
     background-repeat: repeat;
     min-height: 100vh;
+    .logo-wrapper {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @media(max-width: 768px) {
+            padding-top: 10px;
+            padding-bottom: 0px;
+        }
+        .jwc-logo {
+            width: 150px;
+            @media(max-width: 768px) {
+                width: 45%;
+            }
+        }
+    }
   }
   .stepHeader{
     text-align: center;
   }
-  .bs-wizard {margin-top: 40px;}
+//   .bs-wizard {margin-top: 40px;}
 
 /*Form Wizard*/
 .bs-wizard {
     border-bottom: solid 1px #e0e0e0;
     padding: 0 0 25px 0;
+    @media(max-width: 768px) {
+        padding: 0;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+        padding: 0 0 25px 0;
+    }
 }
 .bs-wizard > .bs-wizard-step {
     padding: 0;
@@ -110,13 +159,33 @@
     background-color: #543224;
     color: white;
     top: -7px;
-    left: 50%;
+    // left: 50%;
     /*margin-top: -15px;*/
-    margin-left: -15px;
+    // margin-left: -15px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 50%;
     text-align: center;
     font-size: 43px;
     line-height: 60px;
+    @media(max-width: 768px) {
+        width: 30px;
+        height: 30px;
+        top: 7px;
+        font-size: 23px;
+        line-height: 30px;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+        width: 60px;
+        height: 60px;
+        top: -7px;
+        font-size: 33px;
+        line-height: 60px;
+    }
 }
 .bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {
     content: '';
@@ -129,6 +198,22 @@
     position: absolute;
     top: 5px;
     left: 5px;
+    @media(max-width: 768px) {
+        line-height: 25px;
+        width: 25px;
+        height: 25px;
+        top: 3px;
+        left: 3px;
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+        line-height: 50px;
+        width: 50px;
+        height: 50px;
+        top: 5px;
+        left: 5px;
+    }
 }
 .bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {
     background-color: #543224;
@@ -154,6 +239,9 @@
 .bs-wizard > .bs-wizard-step > .bs-wizard-dot.step-5:after {
     content: '5';
 }
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot.step-6:after {
+    content: '6';
+}
 .bs-wizard > .bs-wizard-step > .progress {
     position: relative;
     border-radius: 0px;
@@ -174,18 +262,19 @@
 .bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {
     width: 50%;
 }
-/*.bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {
-    width: 0%;
-}*/
-.bs-wizard > .bs-wizard-step:nth-child(2).active > .progress > .progress-bar {
-    width: 0%;
+.bs-wizard > .bs-wizard-step:first-child > .progress {
+    width: 50%;
+    margin-left: 50%;
 }
+// .bs-wizard > .bs-wizard-step:nth-child(2).active > .progress > .progress-bar {
+//     width: 0%;
+// }
 /*.bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {
     width: 100%;
 }*/
-.bs-wizard > .bs-wizard-step:nth-last-child(2).active > .progress > .progress-bar {
-    width: 100%;
-}
+// .bs-wizard > .bs-wizard-step:nth-last-child(2).active > .progress > .progress-bar {
+//     width: 100%;
+// }
 /*.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {
     background-color: #f5f5f5;
 }*/
@@ -196,16 +285,16 @@
     left: 50%;
     width: 50%;
 }*/
-.bs-wizard > .bs-wizard-step:nth-child(2) > .progress {
-    left: 50%;
+// .bs-wizard > .bs-wizard-step:nth-child(2) > .progress {
+//     left: 50%;
+//     width: 50%;
+// }
+.bs-wizard > .bs-wizard-step:last-child > .progress {
     width: 50%;
 }
-/*.bs-wizard > .bs-wizard-step:last-child > .progress {
-    width: 50%;
-}*/
-.bs-wizard > .bs-wizard-step:nth-last-child(2) > .progress {
-    width: 50%;
-}
+// .bs-wizard > .bs-wizard-step:nth-last-child(2) > .progress {
+//     width: 50%;
+// }
 .bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot {
     pointer-events: none;
 }

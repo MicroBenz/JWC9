@@ -40,3 +40,72 @@ $navbar-default-bg: #fff;
 @mixin background($imgUrl) {
   background: url($imgUrl) repeat center;
 }
+
+@mixin circleButton() {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #ee5d5f;
+  // border-bottom: 10px solid #d7524e;
+  position: absolute;
+  bottom: -25px;
+  // right: 35px;
+  cursor: pointer;
+  text-align: center;
+  i {
+      font-size: 35px;
+      line-height: 50px;
+      color: white;
+  }
+}
+
+@mixin registerBack() {
+  background-color: #fac720;
+  color: #543224;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 13px;
+  position: absolute;
+  top: -55px;
+  right: 0;
+  cursor: pointer;
+  @media(max-width: 768px) {
+    font-size: 20px;
+  }
+  @media only screen 
+  and (min-device-width : 768px) 
+  and (max-device-width : 1024px)  {
+    font-size: 27px;
+  }
+}
+
+@mixin registerTextbox() {
+  height: 1.5em;
+  border: none;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+}
+@mixin registerTextArea() {
+  border-radius: 12px;
+  border: none;
+  padding: 5px 10px;
+  color: black;
+}
+
+@mixin selectWrapper() {
+  border-radius: 20px;
+  // border: 1px solid white;
+  border: none;
+  background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  select {
+      border: 0;
+      outline: none;
+      &:focus {
+          outline: none;
+      }
+  }
+}
