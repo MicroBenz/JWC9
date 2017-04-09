@@ -1,7 +1,8 @@
 <template>
   <div class="registerContainer">
     <div class="logo-wrapper">
-        <img class="jwc-logo" src="/img/logo.png">
+        <!--<img class="jwc-logo" src="/img/logo.png">-->
+        <p style="text-align: center;">สาขาที่กำลังสมัคร: {{currentRole}}</p>
     </div>
     <div class="container">
       <div class="row bs-wizard" style="border-bottom:0;">
@@ -51,7 +52,6 @@
             <a href="#" class="bs-wizard-dot step-6"></a>
           </div>
       </div>
-      <p style="text-align: center;">สาขาที่กำลังสมัคร: {{currentRole}}</p>
       <!--<h3 class="stepHeader">{{currentStep}}</h3>-->
       <router-view></router-view>
 
@@ -74,7 +74,7 @@ export default {
             // console.log(this.$route.path);
             const routeArr = this.$route.path.split('/');
             const currentStep = routeArr[routeArr.length - 1].split('step')[1];
-            console.log(currentStep[0]);
+            // console.log(currentStep[0]);
             return Number(currentStep[0]);
         },
         currentRole() {
@@ -94,7 +94,7 @@ export default {
         getClass(step) {
             const routeArr = this.$route.path.split('/');
             const currentStep = routeArr[routeArr.length - 1].split('step')[1];
-            console.log(currentStep);
+            // console.log(currentStep);
         }
     }
 }
