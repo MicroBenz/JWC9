@@ -86,7 +86,7 @@
                                 <p><b>ไซส์เสื้อ: </b>{{ res.profile.ShirtSize }}</p>
                             </li>
                             <li>
-                                <p><b>โรคประจำตัว: </b>{{ res.profile.Allery }}</p>
+                                <p><b>โรคประจำตัว: </b>{{ res.profile.Allergy }}</p>
                             </li>
                             <li>
                                 <p><b>อาหารที่รับประทาน: </b>{{ res.profile.FoodType }}</p>
