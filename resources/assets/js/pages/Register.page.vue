@@ -1,5 +1,8 @@
 <template>
   <div class="registerContainer">
+    <div class="logo-wrapper">
+        <img class="jwc-logo" src="/img/logo.png">
+    </div>
     <div class="container">
       <div class="row bs-wizard" style="border-bottom:0;">
           <div class="col-xs-2 bs-wizard-step"
@@ -48,7 +51,7 @@
             <a href="#" class="bs-wizard-dot step-6"></a>
           </div>
       </div>
-
+      <p style="text-align: center;">สาขาที่กำลังสมัคร: Design</p>
       <!--<h3 class="stepHeader">{{currentStep}}</h3>-->
       <router-view></router-view>
 
@@ -88,11 +91,26 @@
     background-image: url("/img/bg/blue.png");
     background-repeat: repeat;
     min-height: 100vh;
+    .logo-wrapper {
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @media(max-width: 768px) {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .jwc-logo {
+            width: 150px;
+            @media(max-width: 768px) {
+                width: 45%;
+            }
+        }
+    }
   }
   .stepHeader{
     text-align: center;
   }
-  .bs-wizard {margin-top: 40px;}
+//   .bs-wizard {margin-top: 40px;}
 
 /*Form Wizard*/
 .bs-wizard {

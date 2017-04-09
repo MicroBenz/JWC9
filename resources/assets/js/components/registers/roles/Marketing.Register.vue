@@ -106,10 +106,7 @@ import axios from 'axios'
         line-height: 18px;
     }*/
     textarea {
-        border-radius: 12px;
-        border-color: black;
-        padding: 5px 10px;
-        color: black;
+        @include registerTextArea();
     }
     input[type="text"]{
         /*padding: 20px 10px; 
