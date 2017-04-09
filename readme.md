@@ -34,6 +34,10 @@ npm run watch // For Development with watching source files
 ```
 php artisan serve
 ```
+- Linking `storage` folder to `public` folder
+```
+php artisan storage:link
+```
 
 ## For Front-End Team
 Please visit `resources/assets/js/README/md` for more detail.
