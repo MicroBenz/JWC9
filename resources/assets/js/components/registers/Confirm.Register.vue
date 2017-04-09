@@ -42,7 +42,7 @@
                     </div>
                     <div class="col-xs-12 col-md-4">
                         <img :src="res.profile.ProfilePicture" style="max-width: 100%;">
-                        <div v-if="res.profile.ProfilePicture === '' || res.profile.ProfilePicture === undefined" style="background: #ddd; min-height:200px; padding-top: 20px;">
+                        <div v-if="res.profile.ProfilePicture == null" style="background: #ddd; min-height:200px; padding-top: 20px;">
                             คุณยังไม่ได้อัพโหลดรูปประจำตัว<br>
                             กรุณาย้อนกลับไปอัพโหลดที่ขั้นตอนที่ 1
                         </div>
