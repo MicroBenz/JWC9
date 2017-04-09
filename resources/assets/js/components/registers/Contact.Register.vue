@@ -27,14 +27,14 @@
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="sel1">เกี่ยวข้องเป็น</label>
-                        <div class="select-wrapper">
-                            <!--<select v-model="emergencyRelationshipX" class="form-control setHeight" id="selSex">
+                        <input v-model="emergencyRelationshipX" type="text" class="form-control" id="selSex">
+                        <!--<div class="select-wrapper">
+                            <select v-model="emergencyRelationshipX" class="form-control setHeight" id="selSex">
                                 <option value="" selected disabled>เลือก</option>
                                 <option value="father">บิดา</option>
                                 <option value="mother">มารดา</option>
-                            </select>-->
-                            <input v-model="emergencyTelephoneX" type="text" class="form-control" id="selSex">
-                        </div>
+                            </select>
+                        </div>-->
                     </div>    
                     <div class="col-xs-12 col-sm-6 col-md-6 form-group">
                         <label for="thai-name">รู้จักค่ายผ่านช่องทางไหน?</label>
