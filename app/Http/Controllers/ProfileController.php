@@ -112,7 +112,10 @@ class ProfileController extends Controller
         $profile = $user->profile()->first();
 
         $data = $request->all();
-        var_dump($user);
+        var_dump($user); // Return Fbaccounts Object
+	    $camper = Campers::where('FacebookUniqueID', $user->FacebookUniqueID)->first();
+	    var_dump($camper);
+	    var_dump($camper->isLock);
 
         if(array_key_exists('SchoolName', $data)) {
             if(!Schools::where('SchoolName', $data['SchoolName'])->exists()) {
