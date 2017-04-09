@@ -139,7 +139,7 @@
                         </ul>
                         <ul v-else-if="selectedRoleX ==='design'">
                             <li>
-                                <p><b>{{ answer.design[0].QuestionText }}: </b> <span class="red" v-if="answer.design[0].answer.attachment === '/storage/'">ยังไม่ได้อัพโหลดรูปตัวละคร</span><img style="width: 100%; max-width: 500px;" v-if="answer.design[0].answer.attachment != '/storage/'" :src="answer.design[0].answer.attachment"> <br>{{ answer.design[0].answer.text }}</p>
+                                <p><b>{{ answer.design[0].QuestionText }}: </b> <br> <span style="color: red; font-weight: bold; text-decoration: underline;" v-if="answer.design[0].answer.attachment === '/storage/'">ยังไม่ได้อัพโหลดรูปตัวละคร</span><img style="width: 100%; max-width: 500px;" v-if="answer.design[0].answer.attachment != '/storage/'" :src="answer.design[0].answer.attachment"> <br>{{ answer.design[0].answer.text }}</p>
                             </li>
                             <li>
                                 <p><b>{{ answer.design[1].QuestionText }}: </b> <br>{{ answer.design[1].answer }}</p>
