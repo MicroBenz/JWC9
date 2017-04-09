@@ -14,14 +14,14 @@
                         <div class="select-wrapper">
                             <select v-model="educationLevelX" class="form-control setHeight" id="selBelieve">
                                 <option value="" selected disabled>เลือก</option>
-                                <option value="m3">จบ ม.3 (ขึ้น ม.4)</option>
-                                <option value="m4">จบ ม.4 (ขึ้น ม.5)</option>
-                                <option value="m5">จบ ม.5 (ขึ้น ม.6)</option>
-                                <option value="m6">จบ ม.6</option>
-                                <option value="m3-pvc1">จบ ม.3 (ขึ้น ปวช. ปี 1)</option>
-                                <option value="pvc1-pvc2">จบ ปวช. ปี1 (ขึ้น ปวช. ปี 2)</option>
-                                <option value="pvc2-pvc3">จบ ปวช. ปี2 (ขึ้น ปวช. ปี 3)</option>
-                                <option value="topvs">จบ ปวช. ขึ้น ปวส.</option>
+                                <option value="จบ ม.3 (ขึ้น ม.4)">จบ ม.3 (ขึ้น ม.4)</option>
+                                <option value="จบ ม.4 (ขึ้น ม.5)">จบ ม.4 (ขึ้น ม.5)</option>
+                                <option value="จบ ม.5 (ขึ้น ม.6)">จบ ม.5 (ขึ้น ม.6)</option>
+                                <option value="จบ ม.6">จบ ม.6</option>
+                                <option value="จบ ม.3 (ขึ้น ปวช. ปี 1)">จบ ม.3 (ขึ้น ปวช. ปี 1)</option>
+                                <option value="จบ ปวช. ปี1 (ขึ้น ปวช. ปี 2)">จบ ปวช. ปี1 (ขึ้น ปวช. ปี 2)</option>
+                                <option value="จบ ปวช. ปี2 (ขึ้น ปวช. ปี 3)">จบ ปวช. ปี2 (ขึ้น ปวช. ปี 3)</option>
+                                <option value="จบ ปวช. ขึ้น ปวส.">จบ ปวช. ขึ้น ปวส.</option>
                             </select>
                         </div>
                     </div>
@@ -46,11 +46,11 @@
                         <div class="select-wrapper">                        
                             <select v-model="shirtSizeX" class="form-control setHeight" id="selBelieve">
                                 <option value="" selected disabled>เลือก</option>
-                                <option value="S">S (รอบอก 36")</option>
-                                <option value="M">M (รอบอก 38")</option>
-                                <option value="L">L (รอบอก 40")</option>
-                                <option value="XL">XL (รอบอก 42")</option>
-                                <option value="XXL">XXL (รอบอก 44")</option>
+                                <option value='S (รอบอก 36")'>S (รอบอก 36")</option>
+                                <option value='M (รอบอก 38")'>M (รอบอก 38")</option>
+                                <option value='L (รอบอก 40")'>L (รอบอก 40")</option>
+                                <option value='XL (รอบอก 42")'>XL (รอบอก 42")</option>
+                                <option value='XXL (รอบอก 44)'>XXL (รอบอก 44")</option>
                             </select>
                         </div>
                     </div>
