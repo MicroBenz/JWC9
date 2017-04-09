@@ -42,7 +42,7 @@
                     </div>
                     <div class="col-xs-12 col-md-4">
                         <img :src="res.profile.ProfilePicture" style="max-width: 100%;">
-                        <div v-if="res.profile.ProfilePicture === '/store/'" style="background: #ddd; min-height:200px; padding-top: 20px;">
+                        <div v-if="res.profile.ProfilePicture === '/storage/'" style="background: #ddd; min-height:200px; padding-top: 20px;">
                             คุณยังไม่ได้อัพโหลดรูปประจำตัว<br>
                             กรุณาย้อนกลับไปอัพโหลดที่ขั้นตอนที่ 1
                         </div>
@@ -139,7 +139,9 @@
                         </ul>
                         <ul v-else-if="selectedRoleX ==='design'">
                             <li>
-                                <p><b>{{ answer.design[0].QuestionText }}: </b> <br> <span style="color: red; font-weight: bold; text-decoration: underline;" v-if="answer.design[0].answer.attachment === '/storage/'">ยังไม่ได้อัพโหลดรูปตัวละคร</span><img style="width: 100%; max-width: 500px;" v-if="answer.design[0].answer.attachment != '/storage/'" :src="answer.design[0].answer.attachment"> <br>{{ answer.design[0].answer.text }}</p>
+                                <p><b>{{ answer.design[0].QuestionText }}: </b> <br>
+                                    <span style="color: red; font-weight: bold; text-decoration: underline;" v-if="answer.design[0].answer.attachment === '/storage/'">ยังไม่ได้อัพโหลดรูปตัวละคร</span>
+                                    <img style="width: 100%; max-width: 500px;" v-if="answer.design[0].answer.attachment != '/storage/'" :src="answer.design[0].answer.attachment"> <br>{{ answer.design[0].answer.text }}</p>
                             </li>
                             <li>
                                 <p><b>{{ answer.design[1].QuestionText }}: </b> <br>{{ answer.design[1].answer }}</p>
