@@ -176,6 +176,9 @@ import axios from 'axios'
     .back-to-menu {
         @include registerBack();
     }
+    .text-center {
+        font-family: 'Tw Cen MT';
+    }
     // .text-center {
     //     @media(max-width: 768px) {
     //         // font-size: 35px;

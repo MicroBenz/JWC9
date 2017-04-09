@@ -406,6 +406,7 @@ import axios from 'axios'
         @include registerBack();
     }
     .text-center {
+        font-family: 'Tw Cen MT';
         @media(max-width: 768px) {
             // font-size: 35px;
             font-size: 40px;

@@ -58,6 +58,13 @@
 
 <script>
   export default {
+    mounted() {
+        console.log('register mount', this.$store.state.register.selectedRole);
+        if (this.$store.state.register.selectedRole === 'none') {
+            // MAYBE? REDIRECT TO FIRST PAGE
+            // this.$router.push('/');
+        }
+    },
     computed: {
         currentStep() {
             // console.log(this.$route.path);
