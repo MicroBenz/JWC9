@@ -77,7 +77,8 @@
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
                         <label for="thai-name">วันเกิด</label>
                         <div class="form-group">
-                            <input v-model="birthdateX" type="date" name="bday">
+                            <input v-model="birthdateX" type="date" name="bday" id="bdate">
+                            <!--<p>{{birthdateX}}</p>-->
                         </div>
                     </div> 
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
@@ -183,6 +184,8 @@
 <script>
 import { mapGetters } from 'vuex'
 import axios from 'axios'
+import Flatpickr from 'flatpickr';
+
   export default {
       
     data(){
@@ -213,8 +216,7 @@ import axios from 'axios'
         province: 'province'
     }),
     mounted() {
-        
-        
+        new Flatpickr(document.getElementById('bdate'));
     },
     updated() {
         console.log('updated')
