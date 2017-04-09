@@ -111,6 +111,9 @@
                 margin-top: 5px;
             }
         }
+        .flatpickr-calendar {
+            font-family: 'Libre Franklin', Helvetica, Arial, sans-serif
+        }
     </style>
 </head>
 <body style="">

@@ -1,6 +1,14 @@
 require('./bootstrap');
 import VueRouter from 'vue-router';
 import vueScrollTo from 'vue-scroll-to';
+import Flatpickr from 'flatpickr';
+// import VueFlatpickr from 'vue-flatpickr'
+// import 'vue-flatpickr/theme/airbnb.css'
+import 'flatpickr/dist/flatpickr.css';
+import 'flatpickr/dist/themes/material_blue.css';
+import { th } from 'flatpickr/dist/l10n/th.js';
+
+Flatpickr.localize(th);
 //import VueScrollTo from 'vue-scrollto'
 
 import Landing from './pages/Landing.page.vue';
@@ -23,6 +31,7 @@ import SuccessLock from './components/registers/Success.Lock.Register.vue';
 
 Vue.use(VueRouter);
 Vue.use(vueScrollTo);
+// Vue.use(VueFlatpickr);
 //Vue.use(VueScrollTo);
 
 const router = new VueRouter({
