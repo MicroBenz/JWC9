@@ -27,6 +27,9 @@
   .container {
     // display: table-cell;
     // vertical-align: middle;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     @media(max-width: 768px) {
       padding-top: 30px;
     }
@@ -36,6 +39,7 @@
       padding-top: 50px;
     }
     .img-col {
+      text-align: right;
       @media(max-width: 768px) {
         text-align: center;
         padding-bottom: 20px;
@@ -82,6 +86,7 @@
       font-size: 39px;
       line-height: 36px;
       text-shadow: 2px -2px 0px rgba(0, 0, 0, 0.2); 
+      padding-bottom: 20px;
       @media(max-width: 768px) {
         padding-bottom: 13px;
       }
@@ -101,6 +106,8 @@
   // }
 }
 .btn-game {
+  font-size: 29px;
+  max-width: 240px;
   @media(max-width: 768px) {
     font-size: 29px;
   }

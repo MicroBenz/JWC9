@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <h1 class="text-center">Check & Confirm</h1>
+  <div class="success-lock-container">
+    <h1 class="text-center">ลงทะเบียนสำเร็จแล้ว</h1>
+    <p class="text-center">สามารถตรวจสอบข้อมูลการลงทะเบียนตามด้านล่างนี้ได้</p>    
     <div class="questionContainer">
         <div class="row">
             <div class="questionsDiv col-xs-12">                
@@ -135,7 +136,7 @@
                         </ul>
                         <ul v-else-if="selectedRoleX ==='design'">
                             <li>
-                                <p><b>{{ answer.design[0].QuestionText }}: </b> <img src=""> <br>{{ answer.design[0].answer }}</p>
+                                <p><b>{{ answer.design[0].QuestionText }}: </b> <br>{{ answer.design[0].answer }}</p>
                             </li>
                             <li>
                                 <p><b>{{ answer.design[1].QuestionText }}: </b> <br>{{ answer.design[1].answer }}</p>
@@ -148,12 +149,6 @@
         <!--<img v-on:click="goNext()" class="next-btn" src="./right-btn.png">-->
         <!--<img v-on:click="goBack()" class="back-btn" src="./left-btn.png">     -->
         <!--<img v-on:click="submitAnswer()" class="send-btn" src="./roles/answer.png">         -->
-        <a class="back-btn" v-on:click="goBack()">
-            <i class="fa fa-angle-left" />
-        </a>
-        <a class="btn-game btn-game-wrapper">
-            <div class="btn-game" v-on:click="submitAnswer()">ส่งคำตอบ</div>
-        </a>
     </div>
   </div>
 </template>
@@ -332,6 +327,9 @@ import axios from 'axios'
     input[type=submit] {
         line-height: 18px;
     }*/
+    .success-lock-container {
+      padding-top: 25px;
+    }
     input, select {
         /*padding: 20px 10px; 
         line-height: 10px !important;*/

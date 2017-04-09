@@ -345,6 +345,7 @@ export default {
         authen(team){
             //console.log(`called: authen(${team})`)
             var component = this;
+            console.log(this.$router);
             const filter = ['design', 'content', 'marketing']
             for(let i = 0; i < 3; i++){
                 if(team == filter[i]){
@@ -356,118 +357,118 @@ export default {
                         component.$store.dispatch('setAccessToken', {
                             token: res.data.token
                         })
-
+                        axios.defaults.headers.common['Authorization'] = 'Bearer '+res.data.token                        
                         console.log('LOCKED!!')
                         if(res.data.isLock) {
                             console.log('LOCKED!! - REDIRECTING')
-                            component.$router.push('/')
-                            component.$router.push('/register/step7')
+                            // component.$router.push('/')
+                            component.$router.push('/register/success')
                         }
-
-                        axios.defaults.headers.common['Authorization'] = 'Bearer '+res.data.token
-
-                        axios({
-                            method: 'get',
-                            url:'/api/register/data',
-                        }).then((response) => {
-                            // console.log(response.data);
-                            var profile = response.data.profile;
-                            if(profile['FirstNameEN']!=null)
-                                profile['firstnameEN'] = profile['FirstNameEN'];
-                            if(profile ['LastNameEN']!=null)
-                                profile['lastnameEN'] = profile ['LastNameEN'];
-                            if(profile['FirstName']!=null)
-                                profile['firstnameTH'] = profile['FirstName'];
-                            if(profile['LastName']!=null)
-                                profile['lastnameTH'] = profile['LastName'];
-                            profile['nickname'] = profile['Nickname'];
-                            profile['sex'] = profile['Gender'];
-                            profile['religion'] = profile['Religion'];
-                            profile['birthdate'] = profile['Birthday'];
-                            profile['province'] = profile['ProvinceName'];
-                            profile['bloodType'] = profile['BloodType'];
-                            profile['telephone'] = profile['Telephone'];
-                            profile['email'] = profile['Email'];
-                            if(profile['EmergencyContact']!=null){
-                                var emerContact = profile['EmergencyContact'].split(" ")
-                                profile['emergencyFirstname'] = emerContact[0];
-                                profile['emergencyLastname'] = emerContact[1];
-                            }
-                            else{
-                                profile['emergencyFirstname'] = null;
-                                profile['emergencyLastname'] = null;
-                            }
-                            profile['emergencyTelephone'] = profile['EmergencyTel'];
-                            profile['emergencyRelationship'] = profile['EmergencyRelation']
-                            profile['jwcDiscoveryChannel'] = profile['JWCDiscoveryChannel']
-                            profile['school'] = profile['SchoolName'];
-                            profile['educationLevel'] = profile['EducationLevel']
-                            profile['educationMajor'] = profile['EducationMajor']
-                            profile['shirtSize'] = profile['ShirtSize']
-                            profile['allergy'] = profile['Allergy']
-                            profile['foodType'] = profile['FoodType']
-                            profile['foodAllergic'] = profile['FoodAllergic']
-                            profile['drugAllergic'] = profile['DrugAllergic']
-                            profile['profilePicture'] = profile['ProfilePicture'];
-                            
-                            component.$store.dispatch('setDataStep1',profile);
-                            component.$store.dispatch('setDataStep2',profile);
-                            component.$store.dispatch('setDataStep3',profile);
-                            // marketingAns1:'',
-                            // marketingAns2:'',
-                            // contentAns1:'',
-                            // contentAns2:'',
-                            // designAns1:'',
-                            // designAns2:'',
-                            console.log(profile);
+                        else {
                             axios({
                                 method: 'get',
-                                url:'/api/questions/central',
+                                url:'/api/register/data',
                             }).then((response) => {
-                                // console.log('!!!!central data');
-                                // console.log(response.data)
-                                var arrAns = response.data;
-                                var ansObj = {};
-                                ansObj['generalAns1'] = arrAns[0]['answer']
-                                ansObj['generalAns2'] = arrAns[1]['answer']
-                                ansObj['generalAns3'] = arrAns[2]['answer']
-                                ansObj['generalAns4'] = arrAns[3]['answer']
-                                component.$store.dispatch('setDataStep4',ansObj);
-                                console.log(`TEAM: ${profile['Team']}`)
-                                var teamQuesEndpoint =''
-                                var choosedTeam = profile['Team']
+                                // console.log(response.data);
+                                var profile = response.data.profile;
+                                if(profile['FirstNameEN']!=null)
+                                    profile['firstnameEN'] = profile['FirstNameEN'];
+                                if(profile ['LastNameEN']!=null)
+                                    profile['lastnameEN'] = profile ['LastNameEN'];
+                                if(profile['FirstName']!=null)
+                                    profile['firstnameTH'] = profile['FirstName'];
+                                if(profile['LastName']!=null)
+                                    profile['lastnameTH'] = profile['LastName'];
+                                profile['nickname'] = profile['Nickname'];
+                                profile['sex'] = profile['Gender'];
+                                profile['religion'] = profile['Religion'];
+                                profile['birthdate'] = profile['Birthday'];
+                                profile['province'] = profile['ProvinceName'];
+                                profile['bloodType'] = profile['BloodType'];
+                                profile['telephone'] = profile['Telephone'];
+                                profile['email'] = profile['Email'];
+                                if(profile['EmergencyContact']!=null){
+                                    var emerContact = profile['EmergencyContact'].split(" ")
+                                    profile['emergencyFirstname'] = emerContact[0];
+                                    profile['emergencyLastname'] = emerContact[1];
+                                }
+                                else{
+                                    profile['emergencyFirstname'] = null;
+                                    profile['emergencyLastname'] = null;
+                                }
+                                profile['emergencyTelephone'] = profile['EmergencyTel'];
+                                profile['emergencyRelationship'] = profile['EmergencyRelation']
+                                profile['jwcDiscoveryChannel'] = profile['JWCDiscoveryChannel']
+                                profile['school'] = profile['SchoolName'];
+                                profile['educationLevel'] = profile['EducationLevel']
+                                profile['educationMajor'] = profile['EducationMajor']
+                                profile['shirtSize'] = profile['ShirtSize']
+                                profile['allergy'] = profile['Allergy']
+                                profile['foodType'] = profile['FoodType']
+                                profile['foodAllergic'] = profile['FoodAllergic']
+                                profile['drugAllergic'] = profile['DrugAllergic']
+                                profile['profilePicture'] = profile['ProfilePicture'];
+                                
+                                component.$store.dispatch('setDataStep1',profile);
+                                component.$store.dispatch('setDataStep2',profile);
+                                component.$store.dispatch('setDataStep3',profile);
+                                // marketingAns1:'',
+                                // marketingAns2:'',
+                                // contentAns1:'',
+                                // contentAns2:'',
+                                // designAns1:'',
+                                // designAns2:'',
+                                console.log(profile);
                                 axios({
                                     method: 'get',
-                                    url:'/api/questions/'+choosedTeam,
+                                    url:'/api/questions/central',
                                 }).then((response) => {
-                                    console.log(response.data);
-                                    var arrLineAns = response.data;
-                                    var lineAnsObj = {};
-                                    if(choosedTeam == 'marketing'){
-                                        lineAnsObj['marketingAns1'] = arrLineAns[0]['answer'];
-                                        lineAnsObj['marketingAns2'] = arrLineAns[1]['answer'];
-                                        component.$store.dispatch('setDataStep5Marketing',lineAnsObj);
-                                    }
-                                    else if(choosedTeam == 'content'){
-                                        lineAnsObj['contentAns1'] = arrLineAns[0]['answer'];
-                                        lineAnsObj['contentAns2'] = arrLineAns[1]['answer'];
-                                        component.$store.dispatch('setDataStep5Content',lineAnsObj);
-                                    }
-                                    else if(choosedTeam == 'design'){
-                                        lineAnsObj['designAns1'] = arrLineAns[0]['answer'];
-                                        lineAnsObj['designAns2'] = arrLineAns[1]['answer'];
-                                        component.$store.dispatch('setDataStep5Design',lineAnsObj);
-                                    }
-                                    else{
-                                        console.log('err: no team')
-                                    }
-                                    component.$router.push('/register/step1')
+                                    // console.log('!!!!central data');
+                                    // console.log(response.data)
+                                    var arrAns = response.data;
+                                    var ansObj = {};
+                                    ansObj['generalAns1'] = arrAns[0]['answer']
+                                    ansObj['generalAns2'] = arrAns[1]['answer']
+                                    ansObj['generalAns3'] = arrAns[2]['answer']
+                                    ansObj['generalAns4'] = arrAns[3]['answer']
+                                    component.$store.dispatch('setDataStep4',ansObj);
+                                    console.log(`TEAM: ${profile['Team']}`)
+                                    var teamQuesEndpoint =''
+                                    var choosedTeam = profile['Team']
+                                    axios({
+                                        method: 'get',
+                                        url:'/api/questions/'+choosedTeam,
+                                    }).then((response) => {
+                                        console.log(response.data);
+                                        var arrLineAns = response.data;
+                                        var lineAnsObj = {};
+                                        if(choosedTeam == 'marketing'){
+                                            lineAnsObj['marketingAns1'] = arrLineAns[0]['answer'];
+                                            lineAnsObj['marketingAns2'] = arrLineAns[1]['answer'];
+                                            component.$store.dispatch('setDataStep5Marketing',lineAnsObj);
+                                        }
+                                        else if(choosedTeam == 'content'){
+                                            lineAnsObj['contentAns1'] = arrLineAns[0]['answer'];
+                                            lineAnsObj['contentAns2'] = arrLineAns[1]['answer'];
+                                            component.$store.dispatch('setDataStep5Content',lineAnsObj);
+                                        }
+                                        else if(choosedTeam == 'design'){
+                                            lineAnsObj['designAns1'] = arrLineAns[0]['answer'];
+                                            lineAnsObj['designAns2'] = arrLineAns[1]['answer'];
+                                            component.$store.dispatch('setDataStep5Design',lineAnsObj);
+                                        }
+                                        else{
+                                            console.log('err: no team')
+                                        }
+                                        component.$router.push('/register/step1')
+                                    })
+                                    
                                 })
                                 
                             })
-                            
-                        })
-                        localStorage.setItem('accessToken', res.data.token);
+                            localStorage.setItem('accessToken', res.data.token);
+                        }
+                        
                     })
                 }
             }

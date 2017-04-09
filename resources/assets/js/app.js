@@ -18,6 +18,7 @@ import Marketer from './components/registers/roles/Marketing.Register.vue';
 import store from './store/index';
 import Confirm from './components/registers/Confirm.Register.vue';
 import Success from './components/registers/Success.Register.vue';
+import SuccessLock from './components/registers/Success.Lock.Register.vue';
 // import 'loaders.css';
 
 Vue.use(VueRouter);
@@ -72,8 +73,12 @@ const router = new VueRouter({
           {
             path: 'step7',
             component: Success
+          },
+          {
+            path: 'success',
+            component: SuccessLock
           }
-          ]
+        ]
       },
       { path: '*', component: PageNotFound }
   ],
