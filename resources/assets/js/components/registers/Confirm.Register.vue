@@ -41,7 +41,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12 col-md-4 text-right">
-                        <div v-if="res.profile.ProfilePicture == null" style="background: rgba(0,0,0,0.7); min-height:200px; padding: 20px;">
+                        <div v-if="res.profile.ProfilePicture == null" style="background: rgba(0,0,0,0.7); min-height:200px; padding: 20px; text-align: center;">
                             คุณยังไม่ได้อัพโหลดรูปประจำตัว<br>
                             กรุณาย้อนกลับไปอัพโหลดที่ขั้นตอนที่ 1
                         </div>
@@ -86,7 +86,7 @@
                                 <p><b>ไซส์เสื้อ: </b>{{ res.profile.ShirtSize }}</p>
                             </li>
                             <li>
-                                <p><b>โรคประจำตัว: </b>{{ res.profile.ShirtSize }}</p>
+                                <p><b>โรคประจำตัว: </b>{{ res.profile.Allery }}</p>
                             </li>
                             <li>
                                 <p><b>อาหารที่รับประทาน: </b>{{ res.profile.FoodType }}</p>

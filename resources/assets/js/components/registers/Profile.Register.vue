@@ -55,11 +55,13 @@
                         <div class="select-wrapper">                        
                             <select v-model="religionX" class="form-control setHeight" id="selBelieve">
                                 <option value="" selected disabled>เลือก</option>
-                                <option value="buddism">พุทธ</option>
-                                <option value="chirst" >คริสต์</option>
-                                <option value="islam" >อิสลาม</option>
-                                <option value="hindu">พราหมณ์</option>
-                                <option value="etc">อื่น ๆ </option>
+                                <option value="ไม่นับถือศาสนา">ไม่นับถือศาสนา</option>
+                                <option value="พุทธ">พุทธ</option>
+                                <option value="คริสต์" >คริสต์</option>
+                                <option value="อิสลาม" >อิสลาม</option>
+                                <option value="พราหมณ์">พราหมณ์</option>
+                                <option value="ซิกข์">ซิกข์</option>
+                                <option value="อื่นๆ">อื่น ๆ </option>
                             </select>
                         </div>
                     </div>    
