@@ -41,7 +41,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12 col-md-4 text-right">
-                        <div v-if="res.profile.ProfilePicture == null" style="background: #ddd; min-height:200px; padding: 20px;">
+                        <div v-if="res.profile.ProfilePicture == null" style="background: rgba(0,0,0,0.7); min-height:200px; padding: 20px;">
                             คุณยังไม่ได้อัพโหลดรูปประจำตัว<br>
                             กรุณาย้อนกลับไปอัพโหลดที่ขั้นตอนที่ 1
                         </div>
