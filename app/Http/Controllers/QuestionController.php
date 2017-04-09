@@ -22,9 +22,14 @@ class QuestionController extends Controller
         foreach($questions as $question){
             unset($question['TeamID']);
             $answer = $question->answer()->where('CamperID', $profile['CamperID'])->first();
-            $question['answer'] = $answer['AnswerText'];
-            if($question['QuestionID'] == 7) 
-                $question['answer'] = Storage::url('public'.'/'.$answer['AnswerText']);
+            if($question['QuestionID'] == 7) {
+                $question['answer']['attachment'] = Storage::url('public'.'/'.$answer['Attachment']);
+                $question['answer']['text'] = $answer['AnswerText'];
+                unset($question['answer'][0]);
+            }
+            else {
+                $question['answer'] = $answer['AnswerText'];
+            }
         }
         return $questions;
     }
@@ -99,8 +104,8 @@ class QuestionController extends Controller
 
         $design_answer = Answers::where('QuestionID', 7)->where('CamperID', $profile['CamperID'])->first();
 
-        if(!is_null($design_answer)){
-            Storage::delete('public/'.$design_answer->AnswerText);
+        if(!is_null($design_answer['Attachment'])){
+            Storage::delete('public/'.$design_answer['Attachment']);
         }
 
         $filename = "Design-".$user->FacebookUniqueID.date("YmdHis");
@@ -108,7 +113,7 @@ class QuestionController extends Controller
         $path = $file->storeAs('public', $filename.".".$file->getClientOriginalExtension());
 
         try {
-            Answers::create(['QuestionID'=>7, 'CamperID'=>$profile['CamperID'], 'AnswerText'=> $filename.".".$file->getClientOriginalExtension()]);
+            Answers::create(['QuestionID'=>7, 'CamperID'=>$profile['CamperID'], 'Attachment'=> $filename.".".$file->getClientOriginalExtension()]);
             // $profile->update(['ProfilePicture'=>$filename.".".$file->getClientOriginalExtension()]);
         }
         catch(Exception $e) {

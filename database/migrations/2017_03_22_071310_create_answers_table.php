@@ -17,7 +17,8 @@ class CreateAnswersTable extends Migration
             $table->increments('AnswerID');
             $table->unsignedInteger('CamperID');
             $table->unsignedInteger('QuestionID');
-            $table->text('AnswerText');
+            $table->text('AnswerText')->nullable();
+            $table->string('Attachment')->nullable();
 
             $table->foreign('CamperID')->references('CamperID')->on('campers');
             $table->foreign('QuestionID')->references('QuestionID')->on('questions');
