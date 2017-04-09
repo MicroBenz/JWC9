@@ -21,9 +21,16 @@
                 </div>
             </div>
         </div>
-        <img v-on:click="goBack()" class="back-btn" src="../left-btn.png">   
-        <img v-on:click="goNext()" class="next-btn" src="../right-btn.png">   
+        <!--<img v-on:click="goBack()" class="back-btn" src="../left-btn.png">   -->
+        <!--<img v-on:click="goNext()" class="next-btn" src="../right-btn.png">   -->
         <!--<img v-on:click="submitAnswer()" class="send-btn" src="./answer.png">      -->
+        <a class="next-btn" v-on:click="goNext()">
+            <i class="fa fa-angle-right" />
+        </a>
+        <a class="back-btn" v-on:click="goBack()">
+            <i class="fa fa-angle-left" />
+        </a>
+        <!--<router-link to="/" class="back-to-menu">กลับสู่หน้าหลัก</router-link>-->
     </div>
   </div>
 </template>
@@ -86,7 +93,8 @@ import axios from 'axios'
     }
   }
 </script>
-<style scoped>
+<style lang="scss" scoped>
+@import '../../../../sass/_variables.scss';
     /*.bootstrap-select ul.dropdown-menu li:first-child {
         display: none;
     }*/
@@ -127,13 +135,6 @@ import axios from 'axios'
         padding-left: 10%;
         padding-right: 10%;
     }
-    .back-btn {
-        width: 50px;
-        position: absolute;
-        bottom: -25px;
-        left: 35px;
-        cursor: pointer;        
-    }
     .send-btn {
         height: 50px;
         position: absolute;
@@ -145,10 +146,27 @@ import axios from 'axios'
         margin-right: auto;
     }
     .next-btn {
-        width: 50px;
-        position: absolute;
-        bottom: -25px;
-        right: 35px;
-        cursor: pointer;
+        @include circleButton();
+        right: 35px;   
     }
+    .back-btn {
+        @include circleButton();
+        left: 35px;
+    }
+    .back-to-menu {
+        @include registerBack();
+    }
+    // .text-center {
+    //     @media(max-width: 768px) {
+    //         // font-size: 35px;
+    //         font-size: 40px;
+    //         padding-bottom: 65px;
+    //     }
+    //     @media only screen 
+    //     and (min-device-width : 768px) 
+    //     and (max-device-width : 1024px)  {
+    //         font-size: 70px;
+    //         padding-bottom: 70px;
+    //     }
+    // }
 </style>

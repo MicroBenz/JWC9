@@ -12,12 +12,12 @@
 
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="Junior Webmaster Camp #9">
-    <meta itemprop="description" content="คว้าโอกาสแล้วเปลี่ยนเป็นสุดยอด Class Digital">
+    <meta itemprop="description" content="Digital Web War - มหาสงครามคนดิจิตอล">
     <meta itemprop="image" content="{{URL::asset('img/cover.png')}}">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:description" content="คว้าโอกาสแล้วเปลี่ยนเป็นสุดยอด Class Digital"/>
+    <meta name="twitter:description" content="Digital Web War - มหาสงครามคนดิจิตอล"/>
     <meta name="twitter:title" content="Junior Webmaster Camp #9"/>
     <meta name="twitter:site" content="@jwcth"/>
     <meta name="twitter:image" content="https://jwc9.jwc.in.th/img/cover.png"/>
@@ -28,13 +28,13 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://jwc9.jwc.in.th" />
     <meta property="og:image" content="https://jwc9.jwc.in.th/img/cover.png" />
-    <meta property="og:description" content="คว้าโอกาสแล้วเปลี่ยนเป็นสุดยอด Class Digital" />
+    <meta property="og:description" content="Digital Web War - มหาสงครามคนดิจิตอล" />
     <meta property="og:site_name" content="Junior Webmaster Camp #9" />
-    <meta property="article:published_time" content="2017-03-25T05:59:00+07:00" />
-    <meta property="article:modified_time" content="2017-03-25T19:10:20+07:00" />
-    <meta property="article:section" content="Article Section" />
+    <meta property="article:published_time" content="2017-04-09T05:59:00+07:00" />
+    <meta property="article:modified_time" content="2017-03-09T19:10:20+07:00" />
+    <!--<meta property="article:section" content="Article Section" />
     <meta property="article:tag" content="Article Tag" />
-    <meta property="fb:admins" content="Facebook numberic ID" />
+    <meta property="fb:admins" content="Facebook numberic ID" />-->
 
     <link href="{{URL::asset('css/app.css')}}" rel="stylesheet">
 
