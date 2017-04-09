@@ -244,7 +244,7 @@ import axios from 'axios'
         designAns1:'designAns1',
         designAns2:'designAns2',
     }),
-    beforeMounted () {
+    beforeMount () {
         axios.get('/api/register/data').then(function (res) {
             this.res = res.data
         })
