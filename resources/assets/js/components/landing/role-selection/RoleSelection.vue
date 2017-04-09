@@ -408,8 +408,8 @@ export default {
                                 profile['foodAllergic'] = profile['FoodAllergic']
                                 profile['drugAllergic'] = profile['DrugAllergic']
                                 profile['profilePicture'] = profile['ProfilePicture'];
-                                
-                                component.$store.dispatch('setDataStep1',profile);
+                                if(profile['FirstNameEN']!=null)
+                                    component.$store.dispatch('setDataStep1',profile);
                                 component.$store.dispatch('setDataStep2',profile);
                                 component.$store.dispatch('setDataStep3',profile);
                                 // marketingAns1:'',
