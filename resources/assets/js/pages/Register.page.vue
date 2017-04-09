@@ -51,7 +51,7 @@
             <a href="#" class="bs-wizard-dot step-6"></a>
           </div>
       </div>
-      <p style="text-align: center;">สาขาที่กำลังสมัคร: Design</p>
+      <p style="text-align: center;">สาขาที่กำลังสมัคร: {{currentRole}}</p>
       <!--<h3 class="stepHeader">{{currentStep}}</h3>-->
       <router-view></router-view>
 
@@ -60,12 +60,13 @@
 </template>
 
 <script>
-  export default {
+import { mapGetters } from 'vuex'
+
+export default {
     mounted() {
         console.log('register mount', this.$store.state.register.selectedRole);
         if (this.$store.state.register.selectedRole === 'none') {
-            // MAYBE? REDIRECT TO FIRST PAGE
-            // this.$router.push('/');
+            // this.$router.push('/'); // uncomment this on production
         }
     },
     computed: {
@@ -75,6 +76,18 @@
             const currentStep = routeArr[routeArr.length - 1].split('step')[1];
             console.log(currentStep[0]);
             return Number(currentStep[0]);
+        },
+        currentRole() {
+            switch (this.$store.getters.selectedRole) {
+                case 'none':
+                    return 'none';
+                case 'design':
+                    return 'Design';
+                case 'marketing':
+                    return 'Marketing';
+                case 'content':
+                    return 'Content';
+            }
         }
     },
     methods: {
@@ -84,7 +97,7 @@
             console.log(currentStep);
         }
     }
-  }
+}
 </script>
 <style lang="scss" scoped>
   .registerContainer{
@@ -97,7 +110,7 @@
         padding-bottom: 20px;
         @media(max-width: 768px) {
             padding-top: 10px;
-            padding-bottom: 10px;
+            padding-bottom: 0px;
         }
         .jwc-logo {
             width: 150px;
@@ -117,7 +130,7 @@
     border-bottom: solid 1px #e0e0e0;
     padding: 0 0 25px 0;
     @media(max-width: 768px) {
-        padding: 0 0 5px 0;
+        padding: 0;
     }
     @media only screen 
     and (min-device-width : 768px) 
