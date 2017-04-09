@@ -41,7 +41,7 @@
                         </ul>
                     </div>
                     <div class="col-xs-12 col-md-4">
-                        <img :src="ProfilePicture" style="max-width: 100%;">
+                        <img :src="res.profile.ProfilePicture" style="max-width: 100%;">
                     </div>
                     <div class="col-xs-12">
                         <h3>Contact</h3>
