@@ -357,6 +357,12 @@ export default {
                             token: res.data.token
                         })
                         axios.defaults.headers.common['Authorization'] = 'Bearer '+res.data.token
+
+                        if(res.data.isLock){
+                            component.$router.push('/')
+                            component.$router.push('/register/step7')
+                        }
+
                         axios({
                             method: 'get',
                             url:'/api/register/data',
