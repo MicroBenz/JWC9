@@ -135,7 +135,7 @@
                         </ul>
                         <ul v-else-if="selectedRoleX ==='design'">
                             <li>
-                                <p><b>{{ answer.design[0].QuestionText }}: </b> <br>{{ answer.design[0].answer }}</p>
+                                <p><b>{{ answer.design[0].QuestionText }}: </b> <img src=""> <br>{{ answer.design[0].answer }}</p>
                             </li>
                             <li>
                                 <p><b>{{ answer.design[1].QuestionText }}: </b> <br>{{ answer.design[1].answer }}</p>
