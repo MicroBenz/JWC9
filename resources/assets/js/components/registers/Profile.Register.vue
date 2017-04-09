@@ -172,6 +172,7 @@
         <a class="next-btn" v-on:click="goNext()">
             <i class="fa fa-angle-right" />
         </a>
+        <router-link to="/" class="back-to-menu">กลับสู่หน้าหลัก</router-link>
     </div>
   </div>
 </template>
@@ -305,6 +306,8 @@ import axios from 'axios'
   }
 </script>
 <style lang="scss" scoped>
+@import '../../../sass/_variables.scss';
+
     /*.bootstrap-select ul.dropdown-menu li:first-child {
         display: none;
     }*/
@@ -400,5 +403,8 @@ import axios from 'axios'
             line-height: 50px;
             color: white;
         }
+    }
+    .back-to-menu {
+        @include registerBack();
     }
 </style>

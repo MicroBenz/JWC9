@@ -62,6 +62,7 @@
         <a class="back-btn" v-on:click="goBack()">
             <i class="fa fa-angle-left" />
         </a>
+        <router-link to="/" class="back-to-menu">กลับสู่หน้าหลัก</router-link>
     </div>
   </div>
 </template>
@@ -200,5 +201,8 @@ import axios from 'axios'
     .back-btn {
         @include circleButton();
         left: 35px;
+    }
+    .back-to-menu {
+        @include registerBack();
     }
 </style>
