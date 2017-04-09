@@ -89,7 +89,7 @@
                                 <p><b>อาหารที่รับประทาน: </b>{{ res.profile.FoodType }}</p>
                             </li>
                             <li>
-                                <p><b>อาหารที่แพ้/ไม่สามารถรับประทานได้: </b>{{ res.profile.FootAllergic }}</p>
+                                <p><b>อาหารที่แพ้/ไม่สามารถรับประทานได้: </b>{{ res.profile.FoodAllergic }}</p>
                             </li>
                             <li>
                                 <p><b>ยาที่แพ้: </b>{{ res.profile.DrugAllergic }}</p>
