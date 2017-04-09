@@ -5,64 +5,64 @@
         <div class="row">
             <div class="questionsDiv col-xs-12">                
                 <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-xs-12 col-md-8">
                         <h3>Profile</h3>
                         <ul>
                             <li>
-                                <p><b>ชื่อ (ภาษาไทย): </b>{{firstnameTHX}}</p>
+                                <p><b>ชื่อ (ภาษาไทย): </b>{{ res.profile.FirstName }}</p>
                             </li>
                             <li>
-                                <p><b>นามสกุล (ภาษาไทย): </b>{{lastnameTHX}}</p>
+                                <p><b>นามสกุล (ภาษาไทย): </b>{{ res.profile.LastName }}</p>
                             </li>
                             <li>
-                                <p><b>ชื่อ (ภาษาอังกฤษ): </b>{{firstnameENX}}</p>
+                                <p><b>ชื่อ (ภาษาอังกฤษ): </b>{{ res.profile.FirstNameEN }}</p>
                             </li>
                             <li>
-                                <p><b>นามสกุล (ภาษาอังกฤษ): </b>{{lastnameENX}}</p>
+                                <p><b>นามสกุล (ภาษาอังกฤษ): </b>{{ res.profile.LastNameEN }}</p>
                             </li>
                             <li>
-                                <p><b>ชื่อเล่น: </b>{{nicknameX}}</p>
+                                <p><b>ชื่อเล่น: </b>{{ res.profile.Nickname }}</p>
                             </li>
                             <li>
-                                <p><b>เพศ: </b>{{sexX}}</p>
+                                <p><b>เพศ: </b>{{ (res.profile.Gender == 'M')? 'ชาย' : 'หญิง' }}</p>
                             </li>
                             <li>
-                                <p><b>ศาสนา: </b>{{religionX}}</p>
+                                <p><b>ศาสนา: </b>{{ res.profile.Religion }}</p>
                             </li>
                             <li>
-                                <p><b>กรุ๊ปเลือด: </b>{{bloodTypeX}}</p>
+                                <p><b>กรุ๊ปเลือด: </b>{{ res.profile.BloodType }}</p>
                             </li>
                             <li>
-                                <p><b>วันเกิด: </b>{{birthdateX}}</p>
+                                <p><b>วันเกิด: </b>{{ res.profile.Birthday }}</p>
                             </li>
                             <li>
-                                <p><b>จังหวัดที่อาศัยอยู่: </b>{{provinceX}}</p>
+                                <p><b>จังหวัดที่อาศัยอยู่: </b>{{ res.profile.ProvinceName }}</p>
                             </li>
                         </ul>
+                    </div>
+                    <div class="col-xs-12 col-md-4">
+                        <img :src="res.profile.ProfilePicture" style="max-width: 100%;">
                     </div>
                     <div class="col-xs-12">
                         <h3>Contact</h3>
                         <ul>
                             <li>
-                                <p><b>เบอร์โทรศัพท์ติดต่อ: </b>{{telephoneX}}</p>
+                                <p><b>เบอร์โทรศัพท์ติดต่อ: </b>{{ res.profile.Telephone }}</p>
                             </li>
                             <li>
-                                <p><b>อีเมล: </b>{{emailX}}</p>
+                                <p><b>อีเมล: </b>{{ res.profile.Email }}</p>
                             </li>
                             <li>
-                                <p><b>ชื่อผู้ปกครอง: </b>{{emergencyFirstnameX}}</p>
+                                <p><b>ผู้ปกครอง: </b>{{ res.profile.EmergencyContact }}</p>
                             </li>
                             <li>
-                                <p><b>นามสกุลผู้ปกครอง: </b>{{emergencyLastnameX}}</p>
+                                <p><b>เบอร์โทรศัพท์ติดต่อ(ผู้ปกครอง): </b>{{ res.profile.EmergencyTel }}</p>
                             </li>
                             <li>
-                                <p><b>เบอร์โทรศัพท์ติดต่อ(ผู้ปกครอง): </b>{{emergencyTelephoneX}}</p>
+                                <p><b>เกี่ยวข้องเป็น: </b>{{ res.profile.EmergencyRelation }}</p>
                             </li>
                             <li>
-                                <p><b>เกี่ยวข้องเป็น: </b>{{emergencyRelationshipX}}</p>
-                            </li>
-                            <li>
-                                <p><b>รู้จักค่ายผ่านช่องทางไหน?: </b>{{jwcDiscoveryChannelX}}</p>
+                                <p><b>รู้จักค่ายผ่านช่องทางไหน?: </b>{{ res.profile.JWCDiscoveryChannel }}</p>
                             </li>
                         </ul>
                     </div>
@@ -70,28 +70,28 @@
                         <h3>Other</h3>
                         <ul>
                             <li>
-                                <p><b>โรงเรียนที่อยู่: </b>{{schoolX}}</p>
+                                <p><b>โรงเรียนที่อยู่: </b>{{ res.profile.SchoolName }}</p>
                             </li>
                             <li>
-                                <p><b>ระดับชั้น: </b>{{educationLevelX}}</p>
+                                <p><b>ระดับชั้น: </b>{{ res.profile.EducationLevel }}</p>
                             </li>
                             <li>
-                                <p><b>สายการเรียน: </b>{{educationMajorX}}</p>
+                                <p><b>สายการเรียน: </b>{{ res.profile.EducationMajor }}</p>
                             </li>
                             <li>
-                                <p><b>ไซส์เสื้อ: </b>{{shirtSizeX}}</p>
+                                <p><b>ไซส์เสื้อ: </b>{{ res.profile.ShirtSize }}</p>
                             </li>
                             <li>
-                                <p><b>โรคประจำตัว: </b>{{allergyX}}</p>
+                                <p><b>โรคประจำตัว: </b>{{ res.profile.ShirtSize }}</p>
                             </li>
                             <li>
-                                <p><b>อาหารที่รับประทาน: </b>{{foodTypeX}}</p>
+                                <p><b>อาหารที่รับประทาน: </b>{{ res.profile.FoodType }}</p>
                             </li>
                             <li>
-                                <p><b>อาหารที่แพ้/ไม่สามารถรับประทานได้: </b>{{foodAllergicX}}</p>
+                                <p><b>อาหารที่แพ้/ไม่สามารถรับประทานได้: </b>{{ res.profile.FootAllergic }}</p>
                             </li>
                             <li>
-                                <p><b>ยาที่แพ้: </b>{{drugAllergicX}}</p>
+                                <p><b>ยาที่แพ้: </b>{{ res.profile.DrugAllergic }}</p>
                             </li>
                         </ul>
                     </div>
@@ -99,16 +99,16 @@
                         <h3>คำถามส่วนกลาง</h3>
                         <ul>
                             <li>
-                                <p><b>ทำไมถึงอยากจะมาเข้าค่าย JWC และคาดหวังอะไรจากค่าย ในครั้งนี้ ? : </b> <br>{{generalAns1X}}</p>
+                                <p><b>ทำไมถึงอยากจะมาเข้าค่าย JWC และคาดหวังอะไรจากค่าย ในครั้งนี้ ? : </b> <br>{{ answer.central[0].answer }}</p>
                             </li>
                             <li>
-                                <p><b>เว็บไซต์อะไรที่น้องอยากสร้างในอนาคต พร้อมเหตุผล : </b> <br>{{generalAns2X}}</p>
+                                <p><b>เว็บไซต์อะไรที่น้องอยากสร้างในอนาคต พร้อมเหตุผล : </b> <br>{{ answer.central[1].answer }}</p>
                             </li>
                             <li>
-                                <p><b>เล่าประสบการณ์ กิจกรรมและผลงานของน้อง : </b> <br>{{generalAns3X}}</p>
+                                <p><b>เล่าประสบการณ์ กิจกรรมและผลงานของน้อง : </b> <br>{{ answer.central[2].answer }}</p>
                             </li>
                             <li>
-                                <p><b>เล่าความสามารถพิเศษของน้อง : </b> <br>{{generalAns4X}}</p>
+                                <p><b>เล่าความสามารถพิเศษของน้อง : </b> <br>{{ answer.central[3].answer }}</p>
                             </li>
                             
                         </ul>
@@ -119,26 +119,26 @@
                         <h3 v-else-if="selectedRoleX ==='design'">คำถาม Design</h3>
                         <ul v-if="selectedRoleX ==='marketing'">
                             <li>
-                                <p><b>สมมุติว่า ถ้าหากวันนี้น้องบังเอิญเก็บไอเท็มลับในตำนานอยู่ในถ้ำลับ ซึ่งไอเท็มนั้นยังไม่มีใครเคยพบเจอ และ ไม่รู้จักมาก่อน จงบอกชื่อไอเท็มที่น้องพบเจอและ จงตั้งราคาของไอเท็มนี้ และจะนำเสนอขายไอเท็มนี้อย่างไร ( ไม่จำกัดไอเดีย ): </b> <br>{{marketingAns1X}}</p>
+                                <p><b>{{ answer.marketing[0].QuestionText }}: </b> <br>{{ answer.marketing[0].answer }}</p>
                             </li>
                             <li>
-                                <p><b>น้องจะทำอย่างไร ถ้าน้องเป็นเจ้าของเว็บไซต์เกี่ยวกับเกมส์ นักรบที่เปิดเป็นวันแรก น้องจะมีวิธีการนำเสนอเว็บไซต์อย่างไร เพื่อที่จะดึงคนเข้าชมเว็บไซต์ พร้อมเหตุผล ( ไม่จำกัดไอเดีย ): </b> <br>{{marketingAns2X}}</p>
+                                <p><b>{{ answer.marketing[1].QuestionText }}: </b> <br>{{ answer.marketing[1].answer }}</p>
                             </li>
                         </ul>
                         <ul v-else-if="selectedRoleX ==='content'">
                             <li>
-                                <p><b>สมมุติว่ามีนักรบกำลังจะออกเดินทางไปช่วยเจ้าหญิงที่ปราสาทของบอส ซึ่งสามารถหยิบของได้เพียง 3 ชิ้นเท่านั้น น้องจะเลือกหยิบอะไรไป เพราะอะไร และจงเล่าเรื่องราวการการผจญภัยเพื่อไปช่วยเจ้าหญิงจากตัวร้าย ( ไม่จำกัดไอเดีย ): </b> <br>{{contentAns1X}}</p>
+                                <p><b>{{ answer.content[0].QuestionText }}: </b> <br>{{ answer.content[0].answer }}</p>
                             </li>
                             <li>
-                                <p><b>จากเรื่องที่แต่งมา จงย่อให้เหลืออย่างน้อย 120 คำและไม่เกิน 150 คำ: </b> <br>{{contentAns2X}}</p>
+                                <p><b>{{ answer.content[1].QuestionText }}: </b> <br>{{ answer.content[1].answer }}</p>
                             </li>
                         </ul>
                         <ul v-else-if="selectedRoleX ==='design'">
                             <li>
-                                <p><b>จงออกแบบนักรบในรูปแบบที่ตัวเองชื่นชอบมา 1 ตัวละคร โดยไม่จำกัดไอเดีย และ สามารถใช้โปรแกรมอะไรก็ได้ เมื่อเสร็จให้อัพโหลดไฟล์ที่บนเว็บไซต์ ด้วยนามสกุลไฟล์เป็น .png .jpg หรือ .gif ก็ได้โดยขนาดไม่เกิน 2 MB. และ จงอธิบายรูปภาพที่ได้ออกแบบมา: </b> <br>{{designAns1X}}</p>
+                                <p><b>{{ answer.design[0].QuestionText }}: </b> <br>{{ answer.design[0].answer }}</p>
                             </li>
                             <li>
-                                <p><b>จงบอกชื่อเว็บไซต์ที่น้องชื่นชอบดีไซต์มากที่สุด เพราะอะไร และน้องชอบส่วนไหนของเว็บนั้นมากที่สุด และอยากจะแก้ไข ปรับปรุงส่วนไหนมากที่สุด: </b> <br>{{designAns2X}}</p>
+                                <p><b>{{ answer.design[1].QuestionText }}: </b> <br>{{ answer.design[1].answer }}</p>
                             </li>
                         </ul>
                     </div>
@@ -158,12 +158,21 @@ import axios from 'axios'
   export default {
     data(){
         return {
+            res: {},
+            answer: {
+                central: {},
+                design: {},
+                content: {},
+                marketing: {},
+            },
+
             selectedRoleX: this.$store.getters.selectedRole,
             firstnameENX: this.$store.getters.firstnameEN,
             lastnameENX: this.$store.getters.lastnameEN,
             firstnameTHX: this.$store.getters.firstnameTH,
             lastnameTHX: this.$store.getters.lastnameTH,
             nicknameX: this.$store.getters.nickname,
+            profilePicture: this.$store.getters.profilePicture,
             sexX:this.$store.getters.sex,
             religionX: this.$store.getters.religion,
             birthdateX:this.$store.getters.birthdate,
@@ -203,6 +212,7 @@ import axios from 'axios'
         firstnameTH: 'firstnameTH',
         lastnameTH: 'lastnameTH',
         nickname: 'nickname',
+        profilePicture: 'profilePicture',
         sex: 'sex',
         religion:'religion',
         birthdate:'birthdate',
@@ -234,12 +244,35 @@ import axios from 'axios'
         designAns1:'designAns1',
         designAns2:'designAns2',
     }),
+    beforeMount () {
+    },
     mounted() {
+        let component = this
+        console.log('fetching data from server')
+        axios.get('/api/register/data').then(function (res) {
+            console.log(res.data)
+            component.res = res.data
+        })
+        axios.get('/api/questions/central').then(function (res) {
+            console.log(res.data)
+            component.answer.central = res.data
+        })
+        axios.get('/api/questions/design').then(function (res) {
+            console.log(res.data)
+            component.answer.design = res.data
+        })
+        axios.get('/api/questions/content').then(function (res) {
+            console.log(res.data)
+            component.answer.content = res.data
+        })
+        axios.get('/api/questions/marketing').then(function (res) {
+            console.log(res.data)
+            component.answer.marketing = res.data
+        })
 
     },
     updated() {
         console.log('updated')
-        
     },
     methods: {
         submitAnswer() {

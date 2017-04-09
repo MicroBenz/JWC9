@@ -21,11 +21,15 @@ export default {
 @import '../../../../sass/_variables.scss';
 
 .about-jwc {
-  padding-top: $section-padding;
-  padding-bottom: $section-padding;
+  // padding-top: $section-padding;
+  // padding-bottom: $section-padding;
+  height: 100vh;
   text-align: left;
   @include background('/img/bg/blue.png');
   .container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     @media(max-width: 1024px) {
       text-align: center;
     }

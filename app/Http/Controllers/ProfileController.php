@@ -113,6 +113,7 @@ class ProfileController extends Controller
         $profile = $user->profile()->first();
 
         $data = $request->all();
+        var_dump($user);
 
         if(array_key_exists('SchoolName', $data)) {
             if(!Schools::where('SchoolName', $data['SchoolName'])->exists()) {

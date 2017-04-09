@@ -9,7 +9,10 @@
                 <div style="text-align:center;">
                     <input type="file" id="files" class="hidden" v-on:change="onFileChange"/>
                     <label for="files">
-                        <img class="upload-btn" src="./upload.png">
+                        <!--<img class="upload-btn" src="./upload.png">-->
+                        <a class="btn-game">
+                            <div class="btn-game upload-btn">อัพโหลดรูป</div>
+                        </a>
                     </label>
                 </div>
                 
@@ -165,7 +168,11 @@
                 </div>
             </div>
         </div>
-        <img v-on:click="goNext()" class="next-btn" src="./right-btn.png">
+        <!--<img v-on:click="goNext()" class="next-btn" src="./right-btn.png">-->
+        <a class="next-btn" v-on:click="goNext()">
+            <i class="fa fa-angle-right" />
+        </a>
+        <router-link to="/" class="back-to-menu">กลับสู่หน้าหลัก</router-link>
     </div>
   </div>
 </template>
@@ -269,6 +276,13 @@ import axios from 'axios'
             if (!files.length)
                 return;
             this.createImage(files[0]);
+
+            let formData = new FormData()
+            formData.append('ProfilePicture', files[0])
+
+            axios.post('/api/register/profilepicture', formData).then(function (res) {
+                console.log(res.data)
+            })
         },
         createImage(file) {
             const reader = new FileReader();
@@ -299,6 +313,8 @@ import axios from 'axios'
   }
 </script>
 <style lang="scss" scoped>
+@import '../../../sass/_variables.scss';
+
     /*.bootstrap-select ul.dropdown-menu li:first-child {
         display: none;
     }*/
@@ -309,34 +325,37 @@ import axios from 'axios'
     input[type=submit] {
         line-height: 18px;
     }*/
-    .img-thumbnail {
-        margin-bottom: 15px;
+    .upload-btn {
+        border-bottom: none;
+    }
+    .upload-btn:hover {
+        margin-top: 0px;
     }
     .upload-btn {
-        width: 60%;
-        cursor: pointer;
+        font-size: 32px;
+        padding-left: 16px;
+        padding-right: 16px;
+        border-bottom: none;
     }
+    .img-thumbnail {
+        margin-bottom: 15px;
+        @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px)  {
+            width: 40%;
+        }
+    }
+    // .upload-btn {
+    //     width: 60%;
+    //     cursor: pointer;
+    // }
     input, select {
         /*padding: 20px 10px; 
         line-height: 10px !important;*/
-        height:1.5em;
-        border: 1px solid white;
-        background-color: transparent;
-        border-radius: 20px;
-        color: white;
+        @include registerTextbox();
     }
     .select-wrapper {
-        border-radius: 20px;
-        border: 1px solid white;
-        padding-left: 10px;
-        padding-right: 10px;
-        select {
-            border: 0;
-            outline: none;
-            &:focus {
-                outline: none;
-            }
-        }
+        @include selectWrapper();
     }
     input[type="date"] {
         padding-left: 15px;
@@ -368,9 +387,36 @@ import axios from 'axios'
     }
     .next-btn {
         width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        background-color: #ee5d5f;
+        // border-bottom: 10px solid #d7524e;
         position: absolute;
         bottom: -25px;
         right: 35px;
         cursor: pointer;
+        text-align: center;
+        i {
+            font-size: 35px;
+            line-height: 50px;
+            color: white;
+        }
+    }
+    .back-to-menu {
+        @include registerBack();
+    }
+    .text-center {
+        font-family: 'Tw Cen MT';
+        @media(max-width: 768px) {
+            // font-size: 35px;
+            font-size: 40px;
+            padding-bottom: 65px;
+        }
+        @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px)  {
+            font-size: 70px;
+            padding-bottom: 0px;
+        }
     }
 </style>
