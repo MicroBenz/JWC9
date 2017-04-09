@@ -8,8 +8,7 @@
       <div class="not-found-text">
         <h1 class="four-o-four">404</h1>
         <h2 class="not-found-eng">Page Not Found</h2>
-        <router-link to="/">กลับสู่หน้าหลัก</router-link>
-        <a class="btn-game" href="#choose-a-job"><div class="btn-game" @click="scrollDown('#choose-a-job')">สมัครเลย</div></a>
+        <router-link to="/" class="btn-game" href="#choose-a-job"><div class="btn-game" @click="scrollDown('#choose-a-job')">กลับสู่หน้าหลัก</div></router-link>
       </div>    
     </div>
   </div>
@@ -31,23 +30,31 @@
     @media(max-width: 768px) {
       padding-top: 30px;
     }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px)  {
+      padding-top: 50px;
+    }
     .img-col {
       @media(max-width: 768px) {
         text-align: center;
         padding-bottom: 20px;
-        img {
-          width: 50%;
-        }
       }
+      @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px)  {
+        text-align: center;        
+        padding-bottom: 20px;
+      }
+      img {
+        width: 50%;
+        @media only screen 
+        and (min-device-width : 768px) 
+        and (max-device-width : 1024px)  {
+          width: 35%;
+        }
+      } 
     }
-  }
-  > div {
-    // height: 100%;
-    // flex: 1;
-    // display: flex;
-  }
-  .not-found-text-column {
-    // flex: 2;
   }
   .not-found-text {
     // align-self: center;
@@ -62,6 +69,12 @@
         font-size: 92px;
         line-height: 72px;
       } 
+      @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px)  {
+        font-size: 200px;
+        line-height: 125px;
+      }
     }
     .not-found-eng {
       color: #fcc111;
@@ -69,6 +82,15 @@
       font-size: 39px;
       line-height: 36px;
       text-shadow: 2px -2px 0px rgba(0, 0, 0, 0.2); 
+      @media(max-width: 768px) {
+        padding-bottom: 13px;
+      }
+      @media only screen 
+      and (min-device-width : 768px) 
+      and (max-device-width : 1024px)  {
+        font-size: 55px;
+        line-height: 70px;
+      }
     }
   }
   // display: table;
@@ -77,6 +99,11 @@
   //   vertical-align: middle;
   //   text-align: center;
   // }
+}
+.btn-game {
+  @media(max-width: 768px) {
+    font-size: 29px;
+  }
 }
 .not-found-image {
   width: 100%;
