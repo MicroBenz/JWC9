@@ -66,7 +66,7 @@ export default {
     mounted() {
         console.log('register mount', this.$store.state.register.selectedRole);
         if (this.$store.state.register.selectedRole === 'none') {
-            // this.$router.push('/'); // uncomment this on production
+            this.$router.push('/'); // uncomment this on production
         }
     },
     computed: {
