@@ -139,19 +139,12 @@ import axios from 'axios'
         line-height: 18px;
     }*/
     textarea {
-        border-radius: 12px;
-        border-color: black;
-        padding: 5px 10px;
-        color: black;
+        @include registerTextArea();
     }
     input[type="text"]{
         /*padding: 20px 10px; 
         line-height: 10px !important;*/
-        height:1.5em;
-        border: 1px solid white;
-        background-color: transparent;
-        border-radius: 20px;
-        color: white;
+        @include registerTextbox();
     }
     .setHeight{
         height:1.5em;

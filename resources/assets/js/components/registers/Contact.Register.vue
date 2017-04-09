@@ -156,24 +156,10 @@ import axios from 'axios'
     input, select {
         /*padding: 20px 10px; 
         line-height: 10px !important;*/
-        height:1.5em;
-        border: 1px solid white;
-        background-color: transparent;
-        border-radius: 20px;
-        color: white;
+        @include registerTextbox();
     }
     .select-wrapper {
-        border-radius: 20px;
-        border: 1px solid white;
-        padding-left: 10px;
-        padding-right: 10px;
-        select {
-            border: 0;
-            outline: none;
-            &:focus {
-                outline: none;
-            }
-        }
+        @include selectWrapper();
     }
     .setHeight{
         height:1.5em;
