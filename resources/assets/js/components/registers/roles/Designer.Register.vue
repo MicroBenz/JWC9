@@ -72,7 +72,7 @@ import axios from 'axios'
                 data:[
                     {
                         QuestionID: '7',
-                        AnswerText: this.designAns1X 
+                        AnswerText: this.designAns1X.text
                      },
                      {
                         QuestionID: '8',
