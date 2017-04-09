@@ -277,11 +277,18 @@ import axios from 'axios'
                 const image = new Image();
                 image.onload = () => {
                     console.log('success', image.width, image.height);
-                    if (image.width / image.height === 1) {
+                    /*if (image.width / image.height === 1) {
                         vm.img = e.target.result;                        
                     }
                     else {
                         alert('Not square image');
+                    }*/
+                    console.log(file.size)
+                    if(file.size <= 2100000){
+                        vm.img = e.target.result;
+                    }
+                    else{
+                        alert('ขนาดไฟล์เกิน 2 MB')
                     }
                 }
                 image.src = e.target.result;

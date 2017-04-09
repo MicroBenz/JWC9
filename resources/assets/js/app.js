@@ -1,6 +1,7 @@
 require('./bootstrap');
 import VueRouter from 'vue-router';
 import vueScrollTo from 'vue-scroll-to';
+//import VueScrollTo from 'vue-scrollto'
 
 import Landing from './pages/Landing.page.vue';
 import Register from './pages/Register.page.vue';
@@ -16,14 +17,18 @@ import Content from './components/registers/roles/Content.Register.vue';
 import Marketer from './components/registers/roles/Marketing.Register.vue';
 import store from './store/index';
 import Confirm from './components/registers/Confirm.Register.vue';
+import Success from './components/registers/Success.Register.vue';
 // import 'loaders.css';
 
 Vue.use(VueRouter);
 Vue.use(vueScrollTo);
+//Vue.use(VueScrollTo);
+
 const router = new VueRouter({
   base: __dirname,
   routes: [
     { path: '/', component: Landing },
+    { path: 'success', component: Success},
     {
       path: '/register',
       component: Register,
@@ -63,6 +68,10 @@ const router = new VueRouter({
           {
             path: 'step6',
             component: Confirm
+          },
+          {
+            path: 'step7',
+            component: Success
           }
           ]
       },
