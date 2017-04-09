@@ -30,7 +30,7 @@ class ProfileController extends Controller
 
     public function createProfile(Request $request) {
         $user = JWTAuth::parseToken()->authenticate();
-        $camper_id = $user->camper->first()['CamperID'];
+        $camper_id = $user->camper()->first()['CamperID'];
 
         $data = $request->all();
         
@@ -196,7 +196,7 @@ class ProfileController extends Controller
         $user = JWTAuth::parseToken()->authenticate();
         $profile = $user->profile()->first();
 
-        if($user->camper->first()['IsLock']){
+        if($user->camper()->first()['IsLock']){
             return response()->json(['error'=> "ไม่สามารถแก้ไขข้อมูลได้"]);
         }
 
