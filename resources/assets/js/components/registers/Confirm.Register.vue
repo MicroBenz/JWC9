@@ -245,6 +245,8 @@ import axios from 'axios'
         designAns2:'designAns2',
     }),
     beforeMount () {
+    },
+    mounted() {
         axios.get('/api/register/data').then(function (res) {
             this.res = res.data
         })
@@ -260,8 +262,6 @@ import axios from 'axios'
         axios.get('/api/questions/marketing').then(function (res) {
             this.answer.marketing = res.data
         })
-    },
-    mounted() {
 
     },
     updated() {
