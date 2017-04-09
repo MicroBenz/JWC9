@@ -22,6 +22,7 @@ class ProfileController extends Controller
         $profile['ProvinceName'] = $profile->province()->first()['ProvinceName'];
         $profile['Team'] = $profile->team()->first()['TeamName'];
         $profile['ProfilePicture'] = is_null($profile->ProfilePicture)? null:Storage::url('public'.'/'.$profile->ProfilePicture);
+        $profile['IsLock'] = (bool)$user->camper()->first()['IsLock'];
         unset($profile['ProvinceID']);
         unset($profile['SchoolID']);
         return response()->json(compact('profile'));
@@ -229,10 +230,10 @@ class ProfileController extends Controller
 
         $filename = $user->FacebookUniqueID.date("YmdHis");
 
-        $path = $file->storeAs('public', $filename);
+        $path = $file->storeAs('public', $filename.".".$file->getClientOriginalExtension());
 
         try {
-            $profile->update(['ProfilePicture'=>$filename]);
+            $profile->update(['ProfilePicture'=>$filename.".".$file->getClientOriginalExtension()]);
         }
         catch(Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
@@ -246,34 +247,33 @@ class ProfileController extends Controller
         $camper = $user->camper()->first();
         $profile = $user->profile()->first()->toArray();
 
-        $can_lock = true;
-
-        $keys = array();
-        $values = array();
+        // $can_lock = true;
 
         foreach($profile as $key=>$value) {
-            if($key != 'pivot') continue;
+            if($key == 'pivot') continue;
+            if($key == 'ProfilePicture' && is_null($value))
+                return response()->json(['error'=>'ยังไม่ได้อัพโหลดรูปโปรไฟล์']);
             if(is_null($value))
-                $can_lock = false;
+                return response()->json(['error'=>'กรอกข้อมูลไม่ครบ']);
         }
 
         $central_questions =  Teams::where('TeamName', 'central')->first()->question()->get();
         foreach($central_questions as $question){
             $answer = $question->answer()->where('CamperID', $profile['CamperID'])->first();
             if(is_null($answer)) 
-                $can_lock = false;
+                return response()->json(['error'=>'กรอกข้อมูลไม่ครบ']);
         }
 
         $team_questions = Teams::where('TeamID', $camper['TeamID'])->first()->question()->get();
         foreach($team_questions as $question){
             $answer = $question->answer()->where('CamperID', $profile['CamperID'])->first();
             if(is_null($answer)) 
-                $can_lock = false;
+                return response()->json(['error'=>'กรอกข้อมูลไม่ครบ']);
         }
 
-        if(!$can_lock) {
-            return response()->json(['error'=>'กรอกข้อมูลไม่ครบ']);
-        }
+        // if(!$can_lock) {
+        //     return response()->json(['error'=>'กรอกข้อมูลไม่ครบ']);
+        // }
             
         $camper->isLock = true;
         $camper->save();
