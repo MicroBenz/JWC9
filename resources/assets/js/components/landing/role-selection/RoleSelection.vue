@@ -343,7 +343,7 @@ export default {
         },
 
         authen(team){
-            console.log(`called: authen(${team})`)
+            //console.log(`called: authen(${team})`)
             var component = this;
             const filter = ['design', 'content', 'marketing']
             for(let i = 0; i < 3; i++){
