@@ -348,12 +348,11 @@ export default {
             const filter = ['design', 'content', 'marketing']
             for(let i = 0; i < 3; i++){
                 if(team == filter[i]){
-                    console.log(this.facebookAccessToken)
+                    //console.log(this.facebookAccessToken)
                     axios.post('/authen/'+team, {
                         access_token: this.facebookAccessToken
                     }).then(function(res){
-                        console.log("Fuck Yeah!")
-                        console.log(res);
+                        //console.log(res);
                         component.$store.dispatch('setAccessToken', {
                             token: res.data.token
                         })
@@ -389,7 +388,7 @@ export default {
                                 profile['emergencyFirstname'] = null;
                                 profile['emergencyLastname'] = null;
                             }
-                            profile['emergencyTelephone'] = profile['EmergencyContact'];
+                            profile['emergencyTelephone'] = profile['EmergencyTel'];
                             profile['emergencyRelationship'] = profile['EmergencyRelation']
                             profile['jwcDiscoveryChannel'] = profile['JWCDiscoveryChannel']
                             profile['school'] = profile['SchoolName'];
