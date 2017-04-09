@@ -358,13 +358,6 @@ export default {
                         })
                         axios.defaults.headers.common['Authorization'] = 'Bearer '+res.data.token
 
-                        console.log('LOCKED!!')
-                        if(res.data.isLock){
-                            console.log('LOCKED!! - REDIRECTING')
-                            component.$router.push('/')
-                            component.$router.push('/register/step7')
-                        }
-
                         axios({
                             method: 'get',
                             url:'/api/register/data',
@@ -467,6 +460,13 @@ export default {
                             
                         })
                         localStorage.setItem('accessToken', res.data.token);
+
+                        console.log('LOCKED!!')
+                        if(res.data.isLock){
+                            console.log('LOCKED!! - REDIRECTING')
+                            component.$router.push('/')
+                            component.$router.push('/register/step7')
+                        }
                     })
                 }
             }
