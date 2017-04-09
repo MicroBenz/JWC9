@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="text-center">Profile</h1>
+      <h1 class="text-center">Profile</h1>
     <div class="questionContainer">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-4">
@@ -8,6 +8,7 @@
                 <img v-else :src="img" class="center-block img-circle img-thumbnail"  width="70%" height="auto" >
                 <div style="text-align:center;">
                     <input type="file" id="files" class="hidden" v-on:change="onFileChange"/>
+                    <p><small>รูปประจำตัว ไม่จำเป็นต้องเป็นรูปทางการ<br>แต่ต้องเห็นหน้าชัดเจน</small></p>
                     <label for="files">
                         <!--<img class="upload-btn" src="./upload.png">-->
                         <a class="btn-game">
@@ -77,7 +78,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-6 form-group">
                         <label for="thai-name">วันเกิด</label>
                         <div class="form-group">
-                            <input v-model="birthdateX" type="date" name="bday" id="bdate">
+                            <input v-model="birthdateX" type="date" name="bday" id="bdate" placeholder="ปปปป/ดด/วว">
                             <!--<p>{{birthdateX}}</p>-->
                         </div>
                     </div> 
@@ -223,6 +224,19 @@ import Flatpickr from 'flatpickr';
         
     },
     methods: {
+
+        currentRole() {
+            switch (this.$store.getters.selectedRole) {
+                case 'none':
+                    return 'none';
+                case 'design':
+                    return 'Design';
+                case 'marketing':
+                    return 'Marketing';
+                case 'content':
+                    return 'Content';
+            }
+        },
         saveStateToStore(){
             this.$store.dispatch('setDataStep1', {
                 firstnameEN: this.firstnameENX,
