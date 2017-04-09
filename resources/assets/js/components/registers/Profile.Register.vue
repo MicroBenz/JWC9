@@ -301,6 +301,9 @@ import axios from 'axios'
                 image.src = e.target.result;
             };
             reader.readAsDataURL(file);
+            axios.post('/api/register/profilepicture', {
+
+            })
         },
     }
   }
