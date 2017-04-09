@@ -9,7 +9,10 @@
                 <div style="text-align:center;">
                     <input type="file" id="files" class="hidden" v-on:change="onFileChange"/>
                     <label for="files">
-                        <img class="upload-btn" src="./upload.png">
+                        <!--<img class="upload-btn" src="./upload.png">-->
+                        <a class="btn-game">
+                            <div class="btn-game">อัพโหลดรูป</div>
+                        </a>
                     </label>
                 </div>
                 
@@ -309,6 +312,18 @@ import axios from 'axios'
     input[type=submit] {
         line-height: 18px;
     }*/
+    .btn-game {
+        border-bottom: none;
+    }
+    .btn-game:hover {
+        margin-top: 0px;
+    }
+    div.btn-game {
+        font-size: 32px;
+        padding-left: 16px;
+        padding-right: 16px;
+        border-bottom: none;
+    }
     .img-thumbnail {
         margin-bottom: 15px;
     }

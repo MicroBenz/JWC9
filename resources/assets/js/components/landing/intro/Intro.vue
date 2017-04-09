@@ -23,13 +23,13 @@ import moment from 'moment';
 
 export default {
   mounted() {
-    console.log(this.countdownTime);
-    setInterval(() => {
-      const deadline = moment('2017-05-01 23:59:59');
-      const today = moment();
-      const dateDiff = deadline.diff(today);
-      this.countdownTime = moment(dateDiff).format('M เดือน D วัน HH:mm:ss');
-    }, 1000);
+    // console.log(this.countdownTime);
+    // setInterval(() => {
+    //   const deadline = moment('2017-05-01 23:59:59');
+    //   const today = moment();
+    //   const dateDiff = deadline.diff(today);
+    //   this.countdownTime = moment(dateDiff).format('M เดือน D วัน HH:mm:ss');
+    // }, 1000);
     document.querySelector('.scroll-down-text').addEventListener('click', this.scrollDown)
   },
   data() {
