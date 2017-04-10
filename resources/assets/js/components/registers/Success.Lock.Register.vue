@@ -4,7 +4,7 @@
         <div class="questionDiv" style="padding: 30px;">
             <div class="row">
                 <div class="col-xs-12 col-md-6 text-center">
-                    <img src="/img/succress3.png" style="height: 200px;">
+                    <img src="/img/success3.png" style="height: 200px;">
                 </div>
                 <div class="col-xs-12 col-md-6">
                     <div style="display: table; width: 100%; height: 100%;">
