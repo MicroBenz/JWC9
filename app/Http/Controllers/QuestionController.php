@@ -23,7 +23,7 @@ class QuestionController extends Controller
             unset($question['TeamID']);
             $answer = $question->answer()->where('CamperID', $profile['CamperID'])->first();
             if($question['QuestionID'] == 7) {
-                $question['answer']['attachment'] = Storage::url('public'.'/'.$answer['Attachment']);
+                $question['answer']['attachment'] = is_null($answer['Attachment'])? null:Storage::url('public'.'/'.$answer['Attachment']);
                 $question['answer']['text'] = $answer['AnswerText'];
                 unset($question['answer'][0]);
             }
@@ -104,7 +104,7 @@ class QuestionController extends Controller
 
         $design_answer = Answers::where('QuestionID', 7)->where('CamperID', $profile['CamperID'])->first();
 
-        if(!is_null($design_answer['Attachment'])){
+        if(!is_null($design_answer) && !is_null($design_answer['Attachment'])){
             Storage::delete('public/'.$design_answer['Attachment']);
         }
 
@@ -113,7 +113,13 @@ class QuestionController extends Controller
         $path = $file->storeAs('public', $filename.".".$file->getClientOriginalExtension());
 
         try {
-            Answers::create(['QuestionID'=>7, 'CamperID'=>$profile['CamperID'], 'Attachment'=> $filename.".".$file->getClientOriginalExtension()]);
+            if(!is_null($design_answer)){
+                $design_answer['Attachment'] = $filename.".".$file->getClientOriginalExtension();
+                $design_answer->save();
+            }
+            else {
+                Answers::create(['QuestionID'=>7, 'CamperID'=>$profile['CamperID'], 'Attachment'=> $filename.".".$file->getClientOriginalExtension()]);
+            }
             // $profile->update(['ProfilePicture'=>$filename.".".$file->getClientOriginalExtension()]);
         }
         catch(Exception $e) {
