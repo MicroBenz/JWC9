@@ -8,7 +8,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 form-group">
                         <label for="thai-name">1. จงออกแบบผู้กล้าในรูปแบบที่ตัวเองชื่นชอบมา 1 ตัวละคร โดยไม่จำกัดไอเดีย และ สามารถใช้โปรแกรมอะไรก็ได้ เมื่อเสร็จให้อัพโหลดไฟล์ที่บนเว็บไซต์ ด้วยนามสกุลไฟล์เป็น .png .jpg หรือ .gif ก็ได้โดยขนาดไม่เกิน 2 MB.
                         </label>
-                        <img v-if="designAns1X.attachment !== '/storage/' && uploadedFile == ''" :src="designAns1X.attachment" style="border: none; width: 100%; max-width: 500px;">
+                        <img v-if="designAns1X.attachment !== '/storage/' && (uploadedFile == '' || uploadedFile == null || uploadedFile == undefined)" :src="designAns1X.attachment" style="border: none; width: 100%; max-width: 500px;">
                         <img v-if="uploadedFile != ''" :src="uploadedFile" style="border: none; width: 100%; max-width: 500px;">
                         <input type="file" id="files" v-on:change="onFileChange">
                       <label>จงอธิบายรูปภาพที่ได้ออกแบบมา</label>
@@ -46,13 +46,16 @@ import axios from 'axios'
         return {
             designAns1X: this.$store.getters.designAns1,
             designAns2X: this.$store.getters.designAns2,
-            uploadedFile: ''
+            uploadedFile: this.$store.getters.designImg,
         }
     },
     computed: mapGetters({
         designAns1: 'designAns1',
         designAns2: 'designAns2'
     }),
+    beforeMount() {
+
+    },
     mounted() {
         
         
@@ -66,7 +69,6 @@ import axios from 'axios'
                 designAns1: this.designAns1X,
                 designAns2: this.designAns2X
             })
-            // TODO : api upload file !!!!!
             axios.defaults.headers.common['Authorization'] = 'Bearer '+this.$store.getters.accessToken;
             axios({
                 method: 'post',
@@ -123,7 +125,8 @@ import axios from 'axios'
                      }*/
                     console.log(file.size)
                     if(file.size <= 2100000){
-                        vm.uploadedFile = e.target.result;
+                        //vm.uploadedFile = e.target.result;
+                        this.$store.dispatch('setDesignImg', uploadedFile)
                     }
                     else{
                         alert('ขนาดไฟล์เกิน 2 MB')

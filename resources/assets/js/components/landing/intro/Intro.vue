@@ -4,7 +4,7 @@
   <div class="date-and-place">
     <h1 class="camp-slogan">Digital Web War<br>มหาสงครามคนดิจิตอล</h1>
     <h3 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h3>
-    <h4 class="camp-place">มหาวิทยาลัยราชภัฎจันทรเกษม</h4>
+    <h4 class="camp-place">จัดโดยสมาคมผู้ดูแลเว็บไทย</h4>
   </div>
   <a class="btn-game" href="#choose-a-job"><div class="btn-game" @click="scrollDown('#choose-a-job')">สมัครเลย</div></a>
   <!--<img v-on:click="scrollDown" class="login-with-fb-button" src="./register-button.png">-->
