@@ -15,7 +15,7 @@
                 <p>
                     {{ jobDescription }}
                 </p>
-                <p class="desc-head">สกิล</p>
+                <p class="desc-head">ทักษะ</p>
                 <p>
                     <img class="skill-icon active" id="skill-0" @click="activateSkill(skills[0].name, skills[0].desc, 'skill-0', 'skill-m0')" :src="skills[0].icon">
                     <img class="skill-icon" id="skill-1" @click="activateSkill(skills[1].name, skills[1].desc, 'skill-1', 'skill-m1')" :src="skills[1].icon">

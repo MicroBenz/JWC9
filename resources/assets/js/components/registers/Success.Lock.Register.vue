@@ -1,7 +1,23 @@
 <template>
   <div class="success-lock-container">
-    <h1 class="text-center">ลงทะเบียนสำเร็จแล้ว</h1>
-    <p class="text-center">สามารถตรวจสอบข้อมูลการลงทะเบียนตามด้านล่างนี้ได้</p>    
+    <div class="questionContainer">
+        <div class="questionDiv" style="padding: 30px;">
+            <div class="row">
+                <div class="col-xs-12 col-md-6 text-center">
+                    <img src="/img/succress3.png" style="height: 200px;">
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <div style="display: table; width: 100%; height: 100%;">
+                        <div class="display: table-cell; width: 100%; height: 100%; vertical-align: middle">
+                            <h1 class="text-center congrats">เย้!  น้องได้ส่งใบสมัครเสร็จแล้ว <br>
+                                ประกาศผลวันที่ 5 พฤษภาคม<br>
+                                ขอให้โชคดี เจอกันวันค่ายนะ</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="questionContainer">
         <div class="row">
             <div class="questionsDiv col-xs-12">                
@@ -403,5 +419,17 @@ import axios from 'axios'
             }
         }
     }
-    
+    .congrats{
+        font-size: 60px;
+    }
+    @media all and (max-width: 480px){
+        .congrats{
+            font-size: 32px;
+        }
+    }
+@media all and (max-width: 320px){
+    .congrats{
+        font-size: 26px;
+    }
+}
 </style>
