@@ -132,6 +132,9 @@
 <body style="">
     <img class="free-flag" style="" src="/img/free.png">
     <div id="app" style="">@yield('content')</div>
+    <div style="width: 100%; min-height: 60px; background: black; padding: 20px;" class="text-center">
+        <small>Copyright &copy; {{ date('Y') }}, Young Webmaster Camp, in association with Thai Webmaster Association. All right reserved.</small>
+    </div>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
