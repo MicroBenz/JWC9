@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-6 map-column">
-          <img style="max-width: 100%; margin-bottom: 20px;" class="map-image" src="./map.png">
+          <img style="max-width: 100%; margin-bottom: 20px;" class="map-image" src="/img/map.png">
           <div class="btn-game small" style="" @click="goToGoogleMap()">Google Map</div>
           <!--<img style="max-width: 200px; margin: auto; margin-top: 20px;" v-on:click="goToGoogleMap" class="go-to-ggmap-button" src="./google-map.png">-->
         </div>
