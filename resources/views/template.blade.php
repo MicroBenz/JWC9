@@ -137,7 +137,6 @@
     </style>
 </head>
 <body style="">
-    <div class="loading"></div>
     <img class="free-flag" style="" src="/img/free.png">
     <div id="app" style="">@yield('content')</div>
     <div style="width: 100%; min-height: 60px; background: black; padding: 20px;" class="text-center">
