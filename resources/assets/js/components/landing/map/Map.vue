@@ -1,8 +1,8 @@
 <template>
   <div class="map-wrapper" id="location">
     <div class="map-title">
-      <h1 class="map-eng">สถานที่จัดค่าย</h1>
-      <!--<h1 class="map-thai">แผนที่การเดินทาง</h1>-->
+      <h1 class="map-eng">Location</h1>
+      <h1 class="map-thai">สถานที่จัดค่าย</h1>
     </div>
     <div class="container">
       <div class="row">

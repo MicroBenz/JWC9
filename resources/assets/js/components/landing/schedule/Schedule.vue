@@ -2,7 +2,7 @@
   <div class="schedule" id="timeline">
     <div class="schedule-title">
       <h1 class="title-eng">Timeline</h1>
-      <!--<h1 class="title-thai">กำหนดการ</h1>-->
+      <h1 class="title-thai">ช่วงเวลา</h1>
     </div>
     <div class="container">
       <div class="col-md-3 col-sm-6">

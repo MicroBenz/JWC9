@@ -47,12 +47,12 @@
             <h3 class="menu-thai">คำถามที่พบบ่อย</h3>
           </div>
         </a>
-        <a class="side-menu-link" href="#sponsor" @click="scrollTo('#sponsor')">
+        <!--<a class="side-menu-link" href="#sponsor" @click="scrollTo('#sponsor')">
           <div class="menu-item">
             <h3>Sponsor</h3>
             <h3 class="menu-thai">ผู้สนับสนุน</h3>
           </div>
-        </a>
+        </a>-->
         <a class="side-menu-link" href="#contact" @click="scrollTo('#contact')">
           <div class="menu-item">
             <h3>Contact us</h3>
