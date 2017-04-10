@@ -125,8 +125,10 @@ import axios from 'axios'
                      }*/
                     console.log(file.size)
                     if(file.size <= 2100000){
-                        //vm.uploadedFile = e.target.result;
-                        this.$store.dispatch('setDesignImg', uploadedFile)
+                        vm.uploadedFile = e.target.result;
+                        this.$store.dispatch('setDesignImg', {
+                            designImg: vm.uploadedFile
+                        })
                     }
                     else{
                         alert('ขนาดไฟล์เกิน 2 MB')

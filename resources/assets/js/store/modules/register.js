@@ -214,7 +214,7 @@ export default {
         commit('setNameTH', payload);
     },
     setDesignImg({ commit }, payload){
-        commit('designImg', payload)
+        commit('designImg', payload.designImg)
     },
     setDataStep1({ commit }, payload){
         commit('setFirstnameEN', payload.firstnameEN);
