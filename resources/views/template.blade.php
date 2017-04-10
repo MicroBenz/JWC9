@@ -114,9 +114,23 @@
         .flatpickr-calendar {
             font-family: 'Libre Franklin', Helvetica, Arial, sans-serif
         }
+        .free-flag{
+            position: fixed;
+            top: 0;
+            left: auto;
+            right: 30px;
+            z-index: 999;
+            width: 100px;
+        }
+        @media all and (max-width: 768px){
+            .free-flag{
+                width: 80px;
+            }
+        }
     </style>
 </head>
 <body style="">
+    <img class="free-flag" style="" src="/img/free.png">
     <div id="app" style="">@yield('content')</div>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
