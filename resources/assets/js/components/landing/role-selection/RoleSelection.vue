@@ -642,7 +642,7 @@ export default {
         position: absolute;
         top: auto;
         right: 60px;
-        bottom: 100px;
+        bottom: 60px;
         left: auto;
         background: rgba(0,0,0,0.7);
         padding: 15px 30px;
