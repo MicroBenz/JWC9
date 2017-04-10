@@ -10,7 +10,7 @@
   padding-bottom: $section-padding;
   position: relative;
   .jwc-logo {
-    width: 320px;
+    width: 280px;
   }
   @media( max-width : 650px){
      .jwc-logo {
@@ -100,8 +100,8 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
-    font-size: 37px;
-    line-height: 37px;
+    font-size: 26px;
+    line-height: 26px;
     animation: blinker 1s linear infinite;
     cursor: pointer;
     @media( max-width: 470px){
