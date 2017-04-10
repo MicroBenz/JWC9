@@ -7,7 +7,8 @@
         <h1 class="menu-title" @click="$event.preventDefault()">Menu</h1>
         <a class="side-menu-link" href="#intro" @click="scrollTo('#intro')">
           <div class="menu-item">
-            <h3 class="selected">Home</h3>
+            <!--<h3 class="selected">Home</h3>-->
+            <h3>Home</h3>
             <h3 class="menu-thai">หน้าแรก</h3>
           </div>
         </a>
