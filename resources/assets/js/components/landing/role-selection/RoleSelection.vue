@@ -131,6 +131,7 @@ export default {
         this.fetchTotalRegistrant()
         this.screenConstruct()
         window.addEventListener('resize', this.screenConstruct)
+        this.selectJob('design')
     },
     methods: {
         fetchTotalRegistrant () {
@@ -145,7 +146,7 @@ export default {
 
         },
         setPresenter (jobTeam) {
-            console.log('Setting...'+jobTeam)
+            //console.log('Setting...'+jobTeam)
             if(jobTeam == 'design') this.design()
             else if(jobTeam == 'content') this.content()
             else if(jobTeam == 'marketing') this.marketing()
