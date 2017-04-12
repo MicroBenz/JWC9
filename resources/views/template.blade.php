@@ -49,6 +49,7 @@
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
     <style type="text/css">
+        body, input, textarea, select, button {text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;-moz-font-feature-settings: "liga", "kern";}
         .btn-game{
             font-size: 48px;
             background: #ee5d5f;
