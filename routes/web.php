@@ -24,4 +24,9 @@ Route::post('subscribe', 'SubscribeController@insert');
 // Route::get('/login/{team}', 'SocialAuthController@redirect');
 Route::post('authen/{team}', 'SocialAuthController@authen');
 
+Route::group(['prefix' => 'wearehiring'], function () {
+	Route::get('login', 'Grader\LoginController@getLogin');
+	// Route::post('login', 'Grader\LoginController@authenticate');
+});
+
 Route::get('/{any}', function() { return view('app'); })->where('any', '.*');
