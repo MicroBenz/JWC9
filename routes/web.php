@@ -27,6 +27,10 @@ Route::post('authen/{team}', 'SocialAuthController@authen');
 Route::group(['prefix' => 'wearehiring'], function () {
 	Route::get('login', 'Grader\LoginController@getLogin');
 	// Route::post('login', 'Grader\LoginController@authenticate');
+
+	Route::get('dashboard', 'Grader\DashboardController@getIndex');
+	Route::get('sneakpeek', 'Grader\SneakpeekController@getIndex');
+	Route::get('sneakpeek/{secret}', 'Grader\SneakpeekController@getInfo');
 });
 
 Route::get('/{any}', function() { return view('app'); })->where('any', '.*');

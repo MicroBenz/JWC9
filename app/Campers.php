@@ -13,4 +13,16 @@ class Campers extends Model
     public function team() {
         return $this->belongsTo('App\Teams', 'TeamID', 'TeamID');
     }
+
+    public function profile() {
+        return $this->hasOne('App\Profiles', 'CamperID');
+    }
+
+    public function fbaccount() {
+        return $this->belongsTo('App\Fbaccounts', 'FacebookUniqueID');
+    }
+
+    public function answers() {
+        return $this->hasMany('App\Answers', 'CamperID');
+    }
 }
