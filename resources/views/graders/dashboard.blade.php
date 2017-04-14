@@ -9,7 +9,7 @@
 <!-- BEGIN DASHBOARD STATS -->
 <div class="row">
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-		<div class="dashboard-stat dashboard-stat-light blue-soft">
+		<div class="dashboard-stat dashboard-stat-light purple-soft">
 			<div class="visual">
 				<i class="fa fa-globe"></i>
 			</div>
@@ -39,7 +39,7 @@
 		</div>
 	</div>
 	<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-		<div class="dashboard-stat dashboard-stat-light red-soft">
+		<div class="dashboard-stat dashboard-stat-light grey-silver">
 			<div class="visual">
 				<i class="fa fa-flag"></i>
 			</div>

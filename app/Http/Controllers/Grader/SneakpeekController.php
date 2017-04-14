@@ -12,7 +12,9 @@ class SneakpeekController extends Controller
     public function getIndex()
     {
     	$campers = Campers::where('IsLock', '1')->orderBy('TeamID')->get();
-        return view('graders.sneakpeek')->withCampers($campers);
+        $waitings = Campers::where('IsLock', 0)->orderBy('TeamID')->get();
+        return view('graders.sneakpeek')->withCampers($campers)
+                                        ->withWaitings($waitings);
     }
 
     public function getInfo($secret)
