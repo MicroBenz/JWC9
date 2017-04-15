@@ -26,6 +26,9 @@ Route::post('authen/{team}', 'SocialAuthController@authen');
 
 Route::group(['prefix' => 'wearehiring'], function () {
 	Route::get('login', 'Grader\LoginController@getLogin');
+	Route::get('logout', 'SocialAuthController@logout');
+	Route::get('login/redirect', 'SocialAuthController@redirect');
+	Route::get('login/callback', 'SocialAuthController@callback');
 	// Route::post('login', 'Grader\LoginController@authenticate');
 
 	Route::get('dashboard', 'Grader\DashboardController@getIndex');

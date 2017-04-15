@@ -11,15 +11,35 @@ use App\Campers;
 use App\Profiles;
 use \Config;
 use Socialite;
+use Auth;
 
 class SocialAuthController extends Controller
 {
-    // public function redirect($team)
-    // {
-    //     Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/'.$team);
-    //     return Socialite::driver('facebook')->redirect();   
-    // }   
+    public function redirect(/*$team*/)
+    {
+        // Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/'.$team);
+        return Socialite::driver('facebook')->redirect();   
+    }   
 
+    public function callback()
+    {
+        $fb_user = Socialite::driver('facebook')->stateless()->user();
+        $user = Fbaccounts::find($fb_user->getId());
+        $grader = $user->grader()->first();
+        if(is_null($grader)) return 
+
+        Auth::loginUsingId($user['FacebookUniqueID']);
+        return redirect('/wearehiring/dashboard');
+    }
+
+    public function logout() {
+        $user = Auth::user();
+        if(is_null($user)) return redirect('wearehiring/login');
+        Auth::logout();
+        Session::flush();
+        return redirect('wearehiring/login');
+
+    }
     // public function callback($team)
     // {
     //     Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/'.$team);

@@ -21,4 +21,8 @@ class Fbaccounts extends Authenticatable
     public function profile() {
         return $this->belongsToMany('App\Profiles', 'campers', 'FacebookUniqueID', 'CamperID');
     }
+
+    public function grader() {
+        return $this->hasOne('App\Graders', 'FacebookUniqueID', 'FacebookUniqueID');
+    }
 }

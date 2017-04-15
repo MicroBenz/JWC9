@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Grader;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Campers;
+use Auth;
 // use DB;
 
 class DashboardController extends Controller

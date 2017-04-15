@@ -46,9 +46,9 @@
 <!-- BEGIN LOGIN -->
 <div class="content">
 	<!-- BEGIN LOGIN FORM -->
-	<form class="login-form" action="login" method="post">
+	<form class="login-form" action="login/redirect" method="get">
 		<h3 class="form-title">Sign In | JWC#9 Management System</h3>
-		@if($errors->first())
+		<!--@if($errors->first())
 		<div class="alert alert-danger">
 			<button class="close" data-close="alert"></button>
 			<span>{{ $errors->first() }}</span>
@@ -60,15 +60,15 @@
 		        <span>{{ session('fail') }}</span>
 		    </div>
 		@endif
-		<div class="form-group">
+		<div class="form-group">-->
 			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-			<label class="control-label visible-ie8 visible-ie9">Username</label>
-			<input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" value="{{ old('username') }}" required />
+			<!--<label class="control-label visible-ie8 visible-ie9">Username</label>
+			<input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" value="{{ old('username') }}" />
 		</div>
 		<div class="form-group">
 			<label class="control-label visible-ie8 visible-ie9">Password</label>
 			<input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" required />
-		</div>
+		</div>-->
 		<div class="form-actions">
 			<button type="submit" class="btn btn-success uppercase">Login</button>
 			<label class="rememberme check">
