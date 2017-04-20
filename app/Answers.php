@@ -13,4 +13,10 @@ class Answers extends Model
     public function question() {
         return $this->belongsTo('App\Questions', 'QuestionID');
     }
+
+    public function scoreByGrader()
+	{
+		return $this->hasOne('App\Scores', 'AnswerID')
+					->where('GraderID', 2);
+	}
 }

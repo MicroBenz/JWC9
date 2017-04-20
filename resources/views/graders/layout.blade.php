@@ -21,9 +21,6 @@
 <link href="{{ url('graders/css/uniform.default.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ url('graders/css/bootstrap-switch.min.css') }}" rel="stylesheet" type="text/css"/>
 <!-- END GLOBAL MANDATORY STYLES -->
-<!-- BEGIN PAGE LEVEL STYLES -->
-@yield('style')
-<!-- END PAGE LEVEL STYLES -->
 <!-- BEGIN THEME STYLES -->
 <link href="{{ url('graders/css/components.css') }}" id="style_components" rel="stylesheet" type="text/css"/>
 <link href="{{ url('graders/css/plugins.css') }}" rel="stylesheet" type="text/css"/>
@@ -31,6 +28,9 @@
 <link id="style_color" href="{{ url('graders/css/grey.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ url('graders/css/custom.css') }}" rel="stylesheet" type="text/css"/>
 <!-- END THEME STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+@yield('style')
+<!-- END PAGE LEVEL STYLES -->
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->
@@ -61,17 +61,6 @@
 		<!-- END RESPONSIVE MENU TOGGLER -->
 		<!-- BEGIN PAGE TOP -->
 		<div class="page-top">
-			<!-- BEGIN HEADER SEARCH BOX -->
-			<!-- DOC: Apply "search-form-expanded" right after the "search-form" class to have half expanded search box -->
-			<form class="search-form search-form-expanded" action="extra_search.html" method="GET">
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search..." name="query">
-					<span class="input-group-btn">
-					<a href="javascript:;" class="btn submit"><i class="icon-magnifier"></i></a>
-					</span>
-				</div>
-			</form>
-			<!-- END HEADER SEARCH BOX -->
 			<!-- BEGIN TOP NAVIGATION MENU -->
 			<div class="top-menu">
 				<ul class="nav navbar-nav pull-right">
@@ -81,7 +70,7 @@
 						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
 						<img alt="" class="img-circle" src="../../assets/admin/layout2/img/avatar3_small.jpg"/>
 						<span class="username username-hide-on-mobile">
-						Nick </span>
+						{{-- {{ $title }} --}} </span>
 						<i class="fa fa-angle-down"></i>
 						</a>
 						<ul class="dropdown-menu dropdown-menu-default">
@@ -127,6 +116,12 @@
 					<a href="{{ url('wearehiring/sneakpeek') }}">
 					<i class="icon-user"></i>
 					<span class="title">Sneak Peek</span>
+					</a>
+				</li>
+				<li class="{{ (Request::is('*/grading') || Request::is('*/grading/*')) ? 'active open':'' }}">
+					<a href="{{ url('wearehiring/grading') }}">
+					<i class="icon-rocket"></i>
+					<span class="title">Grading</span>
 					</a>
 				</li>
 			</ul>

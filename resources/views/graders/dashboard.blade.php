@@ -1,4 +1,4 @@
-@extends('graders.layout')
+@extends('graders.layout', ['title' => 'ทดสอบ'])
 
 @section('content')
 <!-- BEGIN PAGE HEADER-->
