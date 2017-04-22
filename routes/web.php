@@ -12,6 +12,10 @@
 */
 
 Route::get('/', function () {
+	return;
+})->middleware('spider');
+
+Route::get('/', function () {
     return view('app');
 });
 
