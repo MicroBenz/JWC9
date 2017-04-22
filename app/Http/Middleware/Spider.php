@@ -24,7 +24,7 @@ class Spider
 
 		    ];
 
-	    echo $userAgent = $request->header('User-Agent');
+	    $userAgent = $request->header('User-Agent');
 	    foreach($bots as $bot){
 	    	if($userAgent == $bot){
 	    		return response(
