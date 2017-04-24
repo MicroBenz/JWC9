@@ -37,6 +37,7 @@ Route::group(['prefix' => 'wearehiring'], function () {
 	Route::get('grading', 'Grader\GradingController@getIndex');
 	Route::get('grading/{secret}', 'Grader\GradingController@getAnswer');
 	Route::post('grading', 'Grader\GradingController@postScore');
+	Route::get('rank', 'Grader\RankController@getIndex');
 });
 
 Route::get('/{any}', function() { return view('app'); })->where('any', '.*');
