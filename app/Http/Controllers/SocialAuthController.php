@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use JWTAuth;
 use Tymon\JWTAuthExceptions\JWTException;
 use App\Fbaccounts;
@@ -17,16 +18,17 @@ class SocialAuthController extends Controller
 {
     public function redirect(/*$team*/)
     {
-        // Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/'.$team);
+        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/login/callback');
         return Socialite::driver('facebook')->redirect();   
     }   
 
     public function callback()
     {
+        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/login/callback');
         $fb_user = Socialite::driver('facebook')->stateless()->user();
         $user = Fbaccounts::find($fb_user->getId());
         $grader = $user->grader()->first();
-        if(is_null($grader)) return 
+        if(is_null($grader)) return redirect('/wearehiring/login');
 
         Auth::loginUsingId($user['FacebookUniqueID']);
         return redirect('/wearehiring/dashboard');
@@ -40,6 +42,7 @@ class SocialAuthController extends Controller
         return redirect('wearehiring/login');
 
     }
+
     // public function callback($team)
     // {
     //     Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/'.$team);
