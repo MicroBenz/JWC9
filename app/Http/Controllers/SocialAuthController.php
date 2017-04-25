@@ -48,11 +48,15 @@ class SocialAuthController extends Controller
         $fb_user = Socialite::driver('facebook')->stateless()->user();
         $user = Fbaccounts::find($fb_user->getId());
         $team_id = Teams::where('TeamName', $team)->first()['TeamID'];
-        if(is_null($user)) {
+        if(is_null($user)) 
             Fbaccounts::create(['FacebookUniqueID'=>$fb_user->getId(), 'FacebookName'=>$fb_user->getName(), 'FacebookEmail'=>$fb_user->getEmail(), 'FacebookAvatar'=>$fb_user->getAvatar()]);
+        $grader = Graders::where('FacebookUniqueID', $fb_user->getId())->first();
+        if(is_null($grader))
             Graders::create(['FacebookUniqueID'=>$fb_user->getId(), 'TeamID'=>$team_id]);
+        else {
+            $grader->TeamID = $team_id;
+            $grader->save();
         }
-        
         return redirect('/wearehiring/login');
     }
 
