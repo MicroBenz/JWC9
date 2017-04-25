@@ -124,6 +124,12 @@
 					<span class="title">Grading</span>
 					</a>
 				</li>
+				<li class="{{ (Request::is('*/rank')) ? 'active open':'' }}">
+					<a href="{{ url('wearehiring/rank') }}">
+					<i class="icon-trophy"></i>
+					<span class="title">Rank</span>
+					</a>
+				</li>
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
@@ -193,6 +199,7 @@
 <script src="{{ url('graders/js/jquery.uniform.min.js') }}" type="text/javascript"></script>
 <script src="{{ url('graders/js/bootstrap-switch.min.js') }}" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
+<script type="text/javascript" src="{{ url('graders/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ url('graders/js/metronic.js') }}" type="text/javascript"></script>
 <script src="{{ url('graders/js/layout.js') }}" type="text/javascript"></script>
 <!-- <script src="{{ url('graders/js/demo.js') }}" type="text/javascript"></script> -->
@@ -202,7 +209,9 @@ Metronic.init(); // init metronic core components
 Layout.init(); // init current layout
 // Demo.init(); // init demo features
       });
+
    </script>
+@yield('script')
 <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
