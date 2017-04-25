@@ -7,7 +7,7 @@
        <img class="img-responsive" src="./TWA.png">
   </div>
   <div class="date-and-place">
-    <h1 class="camp-slogan">Digital Web War<br>มหาสงครามคนดิจิตอล</h1>
+    <h1 class="camp-slogan">Digital Web War<br>มหาสงครามคนดิจิทัล</h1>
     <h3 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h3>
     <h4 class="camp-place">จัดโดยสมาคมผู้ดูแลเว็บไทย</h4>
   </div>
