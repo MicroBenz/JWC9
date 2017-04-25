@@ -1,6 +1,11 @@
 <template>
 <div class="intro" id="intro">
   <img class="jwc-logo" src="/img/logo.png" style="max-width: 240px !important;">
+  <div class="main-img-sponsor">
+       <img class="img-responsive" src="./Chandrakasem.gif">
+       <img class="img-responsive" src="./cpall.png">
+       <img class="img-responsive" src="./TWA.png">
+  </div>
   <div class="date-and-place">
     <h1 class="camp-slogan">Digital Web War<br>มหาสงครามคนดิจิตอล</h1>
     <h3 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h3>

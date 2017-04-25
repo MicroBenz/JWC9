@@ -7,31 +7,13 @@
     </div>
     <div class="container">
       <div class="row">
-      <div class="box-sponsor-logoList">
-          <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive" src="./VIP/Chandrakasem.gif">
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive" src="./VIP/TWA.png">
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive" src="./SuperPartner/CampHUB.png">
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive" src="./SuperPartner/P and T.png">
-          </div>
-          <div class="col-xs-6 col-sm-3 col-md-3">
-              <img class="img-responsive" src="./SuperPartner/Witty.jpg">
-          </div>
-          <div class="col-xs-6 col-sm-3 col-md-3">
-              <img class="img-responsive" src="./Partner/LNW.png">
-          </div>
-          <div class="col-xs-6 col-sm-3 col-md-3">
-              <img class="img-responsive" src="./Partner/OnDemand.png">
-          </div>
-          <div class="col-xs-6 col-sm-3 col-md-3">
-              <img class="img-responsive" src="./Partner/Thumb.png">
-          </div>
+      <div>
+        <div class="col-xs-12 col-md-6">
+          
+        </div>
+        <div class="col-xs-12 col-md-6">
+          
+        </div>
       </div>
       </div>
     </div>
@@ -84,17 +66,9 @@
       }
     }
   }
-  .box-sponsor-logoList {
-    background-color:#fff;
-    border-radius:40px;
-
-  }
   h2, h4, p {
         margin: 0;
       }
-  .img-responsive {
-      max-width:100%;
-  }
 }
 
 </style>
