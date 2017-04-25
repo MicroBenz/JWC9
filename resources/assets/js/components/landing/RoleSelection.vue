@@ -21,7 +21,7 @@
       <div class="role-selection-item">
         <role-selector
           :on-select="onSelect.bind(this, 'design')"
-          role="Design"
+          role="Designer"
           description="Amet aute sunt nostrud ea irure quis. Duis do exercitation fugiat irure nostrud esse dolore. Do id reprehenderit deserunt qui commodo deserunt mollit et ut."
           :selected="this.selectedRole === 'design'">
         </role-selector>
