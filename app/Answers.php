@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Answers extends Model
 {
@@ -17,6 +18,6 @@ class Answers extends Model
     public function scoreByGrader()
 	{
 		return $this->hasOne('App\Scores', 'AnswerID')
-					->where('GraderID', 2);
+					->where('GraderID', Auth::user()->grader->GraderID);
 	}
 }

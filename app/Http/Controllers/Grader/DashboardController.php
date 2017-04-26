@@ -5,8 +5,6 @@ namespace App\Http\Controllers\Grader;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Campers;
-use Auth;
-// use DB;
 
 class DashboardController extends Controller
 {
@@ -18,7 +16,6 @@ class DashboardController extends Controller
     	$content = Campers::where('IsLock', 1)->where('TeamID', 1)->count();
     	$designer = Campers::where('IsLock', 1)->where('TeamID', 2)->count();
     	$marketing = Campers::where('IsLock', 1)->where('TeamID', 3)->count();
-        // return Auth::user();
         return view('graders.dashboard')->withAll($all)
         								->withSubmit($submit)
         								->withContent($content)

@@ -8,14 +8,23 @@ use App\Campers;
 use App\Questions;
 use App\Answers;
 use App\Scores;
+use Auth;
 use Illuminate\Contracts\Encryption\DecryptException;
 
 class GradingController extends Controller
 {
     public function getIndex()
     {
-    	$all = Campers::where('IsLock', '1')->where('TeamID', 3)->get();
-        $answers = Scores::where('GraderID', 2)->pluck('AnswerID');
+        $grader = Auth::user()->grader;
+        if($grader->TeamID == 4)
+        {
+            $all = Campers::where('IsLock', '1')->get();
+        }
+        else
+        {
+            $all = Campers::where('IsLock', '1')->where('TeamID', $grader->TeamID)->get();
+        }
+        $answers = Scores::where('GraderID', $grader->GraderID)->pluck('AnswerID');
         $campers = Answers::whereIn('AnswerID', $answers)->pluck('CamperID')->unique();
         $completed = Campers::whereIn('CamperID', $campers)->get();
         $waitings = $all->diff($completed);
@@ -30,17 +39,27 @@ class GradingController extends Controller
         } catch (DecryptException $e) {
             return redirect('404-notfound');
         }
+        $grader = Auth::user()->grader;
     	$camper = Campers::where('FacebookUniqueID', $fbaccount)->first();
-        if($camper->TeamID == 3)
+        if($grader->TeamID == 4)
         {
-            $questions = Questions::where('TeamID', $camper->TeamID)->pluck('QuestionID');
-            $answers = Answers::where('CamperID', $camper->CamperID)->whereIn('QuestionID', $questions)->get();
-            return view('graders.grading_check')->withCamper($camper)
-                                                ->withAnswers($answers);
+            $answers = Answers::where('CamperID', $camper->CamperID)->where('QuestionID', '<', 5)->get();
+            return view('graders.grading_central')->withCamper($camper)
+                                                    ->withAnswers($answers);
         }
         else
         {
-            return redirect('401-unauthorized');
+            if($camper->TeamID == $grader->TeamID)
+            {
+                $questions = Questions::where('TeamID', $camper->TeamID)->pluck('QuestionID');
+                $answers = Answers::where('CamperID', $camper->CamperID)->whereIn('QuestionID', $questions)->get();
+                return view('graders.grading_check')->withCamper($camper)
+                                                    ->withAnswers($answers);
+            }
+            else
+            {
+                return redirect('401-unauthorized');
+            }
         }
     }
 
@@ -51,6 +70,7 @@ class GradingController extends Controller
         } catch (DecryptException $e) {
             return redirect('404-notfound');
         }
+        $grader = Auth::user()->grader;
         foreach (array_combine($request->answers, $request->scores) as $answer => $score) {
             try {
                 $answer_id = decrypt($answer);
@@ -58,7 +78,7 @@ class GradingController extends Controller
                 return redirect('404-notfound');
             }
             $score = Scores::updateOrCreate(
-                ['AnswerID' => $answer_id, 'GraderID' => 2],
+                ['AnswerID' => $answer_id, 'GraderID' => $grader->GraderID],
                 ['ScoreValue' => $score]
             );
         }
