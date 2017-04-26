@@ -9,28 +9,28 @@
       <div class="row">
       <div class="box-sponsor-logoList">
           <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive" src="./VIP/Chandrakasem.gif">
+              <img class="img-responsive" src="./sponsor/VIP/Chandrakasem.gif">
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive" src="./VIP/TWA.png">
+              <img class="img-responsive" src="./sponsor/VIP/TWA.png">
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive" src="./SuperPartner/CampHUB.png">
+              <img class="img-responsive" src="./sponsor/SuperPartner/CampHUB.png">
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive" src="./SuperPartner/P and T.png">
+              <img class="img-responsive" src="./sponsor/SuperPartner/P and T.png">
           </div>
           <div class="col-xs-6 col-sm-3 col-md-3">
-              <img class="img-responsive" src="./SuperPartner/Witty.jpg">
+              <img class="img-responsive" src="./sponsor/SuperPartner/Witty.jpg">
           </div>
           <div class="col-xs-6 col-sm-3 col-md-3">
-              <img class="img-responsive" src="./Partner/LNW.png">
+              <img class="img-responsive" src="./sponsor/Partner/LNW.png">
           </div>
           <div class="col-xs-6 col-sm-3 col-md-3">
-              <img class="img-responsive" src="./Partner/OnDemand.png">
+              <img class="img-responsive" src="./sponsor/Partner/OnDemand.png">
           </div>
           <div class="col-xs-6 col-sm-3 col-md-3">
-              <img class="img-responsive" src="./Partner/Thumb.png">
+              <img class="img-responsive" src="./sponsor/Partner/Thumb.png">
           </div>
       </div>
       </div>
@@ -46,7 +46,7 @@
 
 
 <style lang="scss" scoped>
-	@import '../../../../sass/_variables.scss';
+	@import '../../../sass/_variables.scss';
 
 	$yellow: #fbc80b;
 .sponsor-wrapper {
