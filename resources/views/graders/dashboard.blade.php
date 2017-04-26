@@ -1,9 +1,9 @@
-@extends('graders.layout', ['title' => 'ทดสอบ'])
+@extends('graders.layout', ['title' => 'System Dashboard'])
 
 @section('content')
 <!-- BEGIN PAGE HEADER-->
 <h3 class="page-title">
-	Dashboard
+	System Dashboard
 </h3>
 <!-- END PAGE HEADER-->
 <!-- BEGIN DASHBOARD STATS -->

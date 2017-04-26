@@ -1,4 +1,4 @@
-@extends('graders.layout')
+@extends('graders.layout', ['title' => 'น้อง'.$camper->profile->Nickname])
 
 @section('style')
 <link href="{{ url('graders/css/profile-old.css') }}" rel="stylesheet" type="text/css"/>

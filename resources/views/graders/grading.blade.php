@@ -1,4 +1,4 @@
-@extends('graders.layout')
+@extends('graders.layout', ['title' => 'Grading System'])
 
 @section('content')
 <h3 class="page-title">
