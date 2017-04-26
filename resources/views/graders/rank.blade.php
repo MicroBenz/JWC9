@@ -1,5 +1,20 @@
-@extends('graders.layout')
+@extends('graders.layout', ['title' => 'Rank'])
 
+@section('style')
+<style type="text/css">
+	i.fa.fa-check-circle {
+		color: green;
+	}
+
+	i.fa.fa-times-circle {
+		color: red;
+	}
+
+	i.fa.fa-question-circle {
+		color: #c49f47;
+	}
+</style>
+@endsection
 @section('content')
 <h3 class="page-title">
 	Rank
@@ -31,6 +46,9 @@
 									Nickname
 								</th>
 								<th>
+									Profile
+								</th>
+								<th>
 									1st Score
 								</th>
 								<th>
@@ -55,6 +73,9 @@
 								</td>
 								<td>
 									{{ $content->profile->Nickname }}
+								</td>
+								<td>
+									<i class="fa fa-{{ $content->verify ? $content->verify == 'pass' ? 'check':'times':'question'}}-circle"></i>
 								</td>
 								@foreach($content->scores as $score)
 								<td>
@@ -101,6 +122,9 @@
 									Nickname
 								</th>
 								<th>
+									Profile
+								</th>
+								<th>
 									1st Score
 								</th>
 								<th>
@@ -125,6 +149,9 @@
 								</td>
 								<td>
 									{{ $design->profile->Nickname }}
+								</td>
+								<td>
+									<i class="fa fa-{{ $design->verify ? $design->verify == 'pass' ? 'check':'times':'question'}}-circle"></i>
 								</td>
 								@foreach($design->scores as $score)
 								<td>
@@ -171,6 +198,9 @@
 									Nickname
 								</th>
 								<th>
+									Profile
+								</th>
+								<th>
 									1st Score
 								</th>
 								<th>
@@ -195,6 +225,9 @@
 								</td>
 								<td>
 									{{ $market->profile->Nickname }}
+								</td>
+								<td>
+									<i class="fa fa-{{ $market->verify ? $market->verify == 'pass' ? 'check':'times':'question'}}-circle"></i>
 								</td>
 								@foreach($market->scores as $score)
 								<td>

@@ -16,6 +16,7 @@ class RankController extends Controller
         $campers = Campers::where('IsLock', 1)->get();
         foreach ($campers as $camper) {
             $answers = $camper->answers;
+            $verify = $answers->where('QuestionID', 1)->first();
             if($camper->TeamID == 1)
             {
                 $answers = $answers->whereIn('QuestionID', [5, 6]);
@@ -30,6 +31,8 @@ class RankController extends Controller
             }
             $answers_id = $answers->pluck('AnswerID');
             $scores = Scores::whereIn('AnswerID', $answers_id)->get();
+            $verify = Scores::where('AnswerID', $verify->AnswerID)->first();
+
             if(!$scores->isEmpty())
             {
                 $tmp_score = array();
@@ -44,6 +47,16 @@ class RankController extends Controller
                 }
                 $camper->scores = $tmp_score;
                 $camper->total = $total;
+
+                if($verify)
+                {
+                    $passed = 'fail';
+                    if($verify->ScoreValue == 1)
+                    {
+                        $passed = 'pass';
+                    }
+                    $camper->verify = $passed;
+                }
 
                 if($camper->TeamID == 1)
                 {
