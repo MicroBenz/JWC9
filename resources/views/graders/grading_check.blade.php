@@ -1,4 +1,4 @@
-@extends('graders.layout')
+@extends('graders.layout', ['title' => 'Grading System'])
 
 @section('style')
 <link href="{{ url('graders/css/profile-old.css') }}" rel="stylesheet" type="text/css"/>
@@ -37,6 +37,9 @@
 								</div>
 							</div>
 							<div class="portlet-body">
+								@if($answer->question->QuestionID == 7)
+								Attachment: <a href="//jwc.in.th/storage/{{ $answer->Attachment }}" target="_blank">{{ $answer->Attachment }}</a>
+								@endif
 								<h3>{{ $answer->AnswerText }}</h3>
 								<input type="hidden" name="answers[]" value="{{ encrypt($answer->AnswerID) }}">
 							</div>
