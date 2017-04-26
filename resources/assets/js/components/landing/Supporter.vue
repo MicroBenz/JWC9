@@ -1,34 +1,36 @@
 <template>
   <div class="sponsor-wrapper">
-    <h1>Sponsor</h1>
     <div class="sponsor-title">
       <h1 class="sponsor-eng">Sponsor</h1>
       <h1 class="sponsor-thai">สนับสนุน</h1>
     </div>
     <div class="container">
-      <div class="row">
       <div class="box-sponsor-logoList">
+        <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive" src="./sponsor/VIP/Chandrakasem.gif">
+              <img class="img-responsive sponsor-img sponsor-vip" src="./sponsor/VIP/Chandrakasem.gif">
           </div>
           <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive" src="./sponsor/VIP/TWA.png">
+              <img class="img-responsive sponsor-img sponsor-vip" src="./sponsor/VIP/TWA.png">
           </div>
-          <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive" src="./sponsor/SuperPartner/CampHUB.png">
+        </div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <img class="img-responsive sponsor-img sponsor-super" src="./sponsor/SuperPartner/CampHUB.png">
           </div>
-          <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive" src="./sponsor/SuperPartner/P and T.png">
+          <div class="col-xs-6 col-sm-3 col-md-4">
+            <img class="img-responsive sponsor-img sponsor-super" style="max-height: 140px;" src="./sponsor/Partner/OnDemand.png">
           </div>
-          <div class="col-xs-6 col-sm-3 col-md-3">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+              <img class="img-responsive sponsor-img sponsor-super" src="./sponsor/SuperPartner/P and T.png">
+          </div>
+          <!--<div class="col-xs-6 col-sm-3 col-md-3">
               <img class="img-responsive" src="./sponsor/SuperPartner/Witty.jpg">
-          </div>
-          <div class="col-xs-6 col-sm-3 col-md-3">
+          </div>-->
+          <div class="col-xs-6 col-sm-3 col-md-5">
               <img class="img-responsive" src="./sponsor/Partner/LNW.png">
           </div>
-          <div class="col-xs-6 col-sm-3 col-md-3">
-              <img class="img-responsive" src="./sponsor/Partner/OnDemand.png">
-          </div>
+        </div>
           <div class="col-xs-6 col-sm-3 col-md-3">
               <img class="img-responsive" src="./sponsor/Partner/Thumb.png">
           </div>
@@ -87,6 +89,7 @@
   .box-sponsor-logoList {
     background-color:#fff;
     border-radius:40px;
+      padding: 60px;
 
   }
   h2, h4, p {
@@ -96,5 +99,17 @@
       max-width:100%;
   }
 }
+
+    .sponsor-img{
+        margin: auto;
+    }
+
+    .sponsor-vip{
+        max-width: 300px !important;
+    }
+
+    .sponsor-super{
+        max-width: 240px !important;
+    }
 
 </style>

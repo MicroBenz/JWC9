@@ -1,6 +1,5 @@
 <template>
   <div class="sponsor-wrapper">
-    <h1>Sponsor</h1>
     <div class="sponsor-title">
       <h1 class="sponsor-eng">Sponsor</h1>
       <h1 class="sponsor-thai">สนับสนุน</h1>
