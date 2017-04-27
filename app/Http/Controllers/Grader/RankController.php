@@ -31,8 +31,7 @@ class RankController extends Controller
             }
             $answers_id = $answers->pluck('AnswerID');
             $scores = Scores::whereIn('AnswerID', $answers_id)->get();
-            $verify = Scores::where('AnswerID', $verify->AnswerID)->first();
-
+            $verify = Scores::where('AnswerID', $verify->AnswerID)->get();
             if(!$scores->isEmpty())
             {
                 $tmp_score = array();
@@ -48,10 +47,10 @@ class RankController extends Controller
                 $camper->scores = $tmp_score;
                 $camper->total = $total;
 
-                if($verify)
+                if(!$verify->isEmpty())
                 {
                     $passed = 'fail';
-                    if($verify->ScoreValue == 1)
+                    if($verify->sum('ScoreValue')/$verify->count() == 1)
                     {
                         $passed = 'pass';
                     }
