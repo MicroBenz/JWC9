@@ -10,7 +10,7 @@
     <jwc-map></jwc-map>
     <gallery></gallery>
     <faq></faq>
-    <!--<supporter></supporter>-->
+    <supporter></supporter>
     <social-banner></social-banner>
   </div>
 </template>
