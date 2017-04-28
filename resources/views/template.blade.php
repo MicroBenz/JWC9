@@ -135,12 +135,25 @@
             height: 100%;
             z-index: 9999;
         }
+        .row-sponsor-footer img.sponsor-img{
+            display: inline-block;
+            max-width: 200px;
+            max-height: 60px;
+        }
+
     </style>
 </head>
 <body style="">
     <img class="free-flag" style="" src="/img/free.png">
     <div id="app" style="">@yield('content')</div>
     <div style="width: 100%; min-height: 60px; background: black; padding: 20px;" class="text-center">
+        <!--<div class="box-sponsor-logoList">
+            <div class="row row-sponsor-footer text-center">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/Chandrakasem.png">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/TWA.png">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/sanook.png">
+            </div>
+        </div>-->
         <small>Copyright &copy; {{ date('Y') }}, Young Webmaster Camp, in association with Thai Webmaster Association. All right reserved.</small>
     </div>
     <script>

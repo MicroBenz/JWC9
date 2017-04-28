@@ -6,35 +6,20 @@
     </div>
     <div class="container">
       <div class="box-sponsor-logoList">
-        <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive sponsor-img sponsor-vip" src="./sponsor/VIP/Chandrakasem.gif">
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-6">
-              <img class="img-responsive sponsor-img sponsor-vip" src="./sponsor/VIP/TWA.png">
-          </div>
+        <div class="row row-sponsor text-center">
+              <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/Chandrakasem.png">
+              <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/TWA.png">
+            <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/sanook.png">
+        </div>
+        <div class="row row-sponsor text-center">
+            <img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/super/CampHUB.png">
+            <img class="img-responsive sponsor-img sponsor-super" id="logo-ondemand" src="/images/sponsor/super/OnDemand.png">
+            <img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/super/P and T.png">
         </div>
         <div class="row">
-          <div class="col-xs-12 col-sm-6 col-md-4">
-              <img class="img-responsive sponsor-img sponsor-super" src="./sponsor/SuperPartner/CampHUB.png">
-          </div>
-          <div class="col-xs-6 col-sm-3 col-md-4">
-            <img class="img-responsive sponsor-img sponsor-super" style="max-height: 140px;" src="./sponsor/Partner/OnDemand.png">
-          </div>
-          <div class="col-xs-12 col-sm-6 col-md-4">
-              <img class="img-responsive sponsor-img sponsor-super" src="./sponsor/SuperPartner/P and T.png">
-          </div>
-          <!--<div class="col-xs-6 col-sm-3 col-md-3">
-              <img class="img-responsive" src="./sponsor/SuperPartner/Witty.jpg">
-          </div>-->
-          <div class="col-xs-6 col-sm-3 col-md-5">
-              <img class="img-responsive" src="./sponsor/Partner/LNW.png">
-          </div>
+            <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/Thumb.png">
+            <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/LNW.png">
         </div>
-          <div class="col-xs-6 col-sm-3 col-md-3">
-              <img class="img-responsive" src="./sponsor/Partner/Thumb.png">
-          </div>
-      </div>
       </div>
     </div>
   </div>
@@ -101,15 +86,58 @@
 }
 
     .sponsor-img{
-        margin: auto;
+        margin: auto 30px;
+        display: inline-block;
     }
 
     .sponsor-vip{
-        max-width: 300px !important;
+        max-width: 280px !important;
+        max-height: 160px;
     }
 
     .sponsor-super{
-        max-width: 240px !important;
+        max-width: 220px !important;
     }
 
+    .sponsor-partner{
+        max-width: 130px !important;
+    }
+
+    .row-sponsor{
+        margin-bottom: 60px;
+    }
+
+    .row-sponsor:last-child{
+        margin-bottom: 0;
+    }
+
+    @media all and (max-width: 768px){
+        .sponsor-img{
+            display: inline-block;
+            margin: 10px auto;
+        }
+
+        .sponsor-vip{
+            display: block !important;
+            max-width: 90% !important;
+            margin: 40px auto !important;
+        }
+
+        .sponsor-super{
+            max-width: 44% !important;
+            margin: 15px 5px;
+        }
+
+        .sponsor-partner{
+            max-width: 20% !important;
+        }
+
+        .row-sponsor{
+            margin-bottom: 10px;
+        }
+
+        .box-sponsor-logoList{
+            padding: 40px !important;
+        }
+    }
 </style>
