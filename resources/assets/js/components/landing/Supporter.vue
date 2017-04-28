@@ -7,9 +7,9 @@
     <div class="container">
       <div class="box-sponsor-logoList">
         <div class="row row-sponsor text-center">
-              <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/Chandrakasem.png">
-              <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/TWA.png">
             <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/sanook.png">
+              <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/Chandrakasem.gif">
+              <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/TWA.png">
         </div>
         <div class="row row-sponsor text-center">
             <img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/super/CampHUB.png">
