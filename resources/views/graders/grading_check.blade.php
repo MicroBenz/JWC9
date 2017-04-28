@@ -27,13 +27,31 @@
 		<div class="row profile">
 			<div class="col-md-12">
 				@foreach($answers as $answer)
+				@if($answer->question->QuestionID < 5)
+				<div class="row">
+					<div class="col-md-12">
+						<!-- BEGIN Portlet PORTLET-->
+						<div class="portlet box grey">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="fa fa-gift"></i>{{ $answer->question->QuestionText }}
+								</div>
+							</div>
+							<div class="portlet-body">
+								{{ $answer->AnswerText }}
+							</div>
+						</div>
+						<!-- END Portlet PORTLET-->
+					</div>
+				</div>
+				@else
 				<div class="row">
 					<div class="col-md-10">
 						<!-- BEGIN Portlet PORTLET-->
 						<div class="portlet box {{ $answer->scoreByGrader ? 'green':'yellow' }}">
 							<div class="portlet-title">
 								<div class="caption">
-									<i class="fa fa-gift"></i>{{ $answer->question->QuestionText }}
+									<i class="fa fa-rocket"></i>{{ $answer->question->QuestionText }}
 								</div>
 							</div>
 							<div class="portlet-body">
@@ -55,6 +73,7 @@
 						</div>
 					</div>
 				</div>
+				@endif
 				@endforeach
 				<hr>
 			</div>
