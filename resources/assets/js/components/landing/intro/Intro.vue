@@ -2,9 +2,9 @@
 <div class="intro" id="intro">
   <img class="jwc-logo" src="/img/logo.png" style="max-width: 240px !important;">
   <div class="main-img-sponsor">
-       <img class="" src="/images/sponsor/vip/sanook.png">
+       <img class="" src="/images/sponsor/vip/sanook.png" style="transform: scale(1.35)">
        <img class="" src="/images/sponsor/vip/TWA.png">
-       <img class="" src="/images/sponsor/vip/Chandrakasem.gif">
+       <img class="sponsor-horizontal" src="/images/sponsor/vip/Chandrakasem.gif">
   </div>
   <div class="date-and-place">
     <h1 class="camp-slogan">Digital Web War<br>มหาสงครามคนดิจิทัล</h1>
@@ -53,3 +53,8 @@ export default {
 </script>
 
 <style lang="scss" src="./Intro.scss" scoped></style>
+<style type="text/css">
+    .sponsor-horizontal{
+        transform: scale(0.95);
+    }
+</style>

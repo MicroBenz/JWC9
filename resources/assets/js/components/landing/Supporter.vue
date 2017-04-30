@@ -9,7 +9,7 @@
         <div class="row row-sponsor text-center">
             <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/sanook.png">
             <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/twa2.png">
-              <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/Chandrakasem.gif">
+              <img class="img-responsive sponsor-img sponsor-vip sponsor-horizontal" src="/images/sponsor/vip/Chandrakasem.gif">
         </div>
         <div class="row row-sponsor text-center">
             <img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/super/CampHUB.png">
@@ -86,6 +86,10 @@
   }
 }
 
+    .sponsor-horizontal{
+        transform: scale(0.85);
+    }
+
     .sponsor-img{
         margin: auto 30px;
         display: inline-block;
@@ -97,11 +101,11 @@
     }
 
     .sponsor-super{
-        max-width: 180px !important;
+        max-width: 190px !important;
     }
 
     .sponsor-partner{
-        max-width: 80px !important;
+        max-width: 100px !important;
     }
 
     .row-sponsor{
