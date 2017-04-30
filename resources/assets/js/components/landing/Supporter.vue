@@ -8,8 +8,8 @@
       <div class="box-sponsor-logoList">
         <div class="row row-sponsor text-center">
             <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/sanook.png">
+            <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/twa2.png">
               <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/Chandrakasem.gif">
-              <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/TWA.png">
         </div>
         <div class="row row-sponsor text-center">
             <img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/super/CampHUB.png">
@@ -19,6 +19,7 @@
         <div class="row">
             <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/Thumb.png">
             <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/LNW.png">
+            <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/02dual.png">
         </div>
       </div>
     </div>
@@ -96,11 +97,11 @@
     }
 
     .sponsor-super{
-        max-width: 220px !important;
+        max-width: 180px !important;
     }
 
     .sponsor-partner{
-        max-width: 130px !important;
+        max-width: 80px !important;
     }
 
     .row-sponsor{

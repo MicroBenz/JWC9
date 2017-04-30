@@ -150,8 +150,8 @@
         <div class="box-sponsor-logoList">
             <div class="row row-sponsor-footer text-center">
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/sanook.png">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/twa2.png">
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/Chandrakasem.png">
-                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/TWA.png">
             </div>
         </div>
         <small style="color: #ccc;">Copyright &copy; {{ date('Y') }}, Young Webmaster Camp, in association with Thai Webmaster Association. All right reserved.</small>
