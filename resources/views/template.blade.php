@@ -147,14 +147,14 @@
     <img class="free-flag" style="" src="/img/free.png">
     <div id="app" style="">@yield('content')</div>
     <div style="width: 100%; min-height: 60px; background: black; padding: 20px;" class="text-center">
-        <!--<div class="box-sponsor-logoList">
+        <div class="box-sponsor-logoList">
             <div class="row row-sponsor-footer text-center">
-                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/Chandrakasem.png">
-                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/TWA.png">
-                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/sanook.png">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/sanook.png">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/Chandrakasem.png">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/TWA.png">
             </div>
-        </div>-->
-        <small>Copyright &copy; {{ date('Y') }}, Young Webmaster Camp, in association with Thai Webmaster Association. All right reserved.</small>
+        </div>
+        <small style="color: #ccc;">Copyright &copy; {{ date('Y') }}, Young Webmaster Camp, in association with Thai Webmaster Association. All right reserved.</small>
     </div>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
