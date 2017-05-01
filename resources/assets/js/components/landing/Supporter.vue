@@ -14,7 +14,8 @@
         <div class="row row-sponsor text-center">
             <img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/super/CampHUB.png">
             <img class="img-responsive sponsor-img sponsor-super" id="logo-ondemand" src="/images/sponsor/super/OnDemand.png">
-            <img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/super/P and T.png">
+            <img class="img-responsive sponsor-img sponsor-super" style="" src="/images/sponsor/super/P and T.png">
+            <img class="img-responsive sponsor-img sponsor-super sponsor-horizontal" src="/images/sponsor/super/Pantip.png">
         </div>
         <div class="row">
             <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/Thumb.png">

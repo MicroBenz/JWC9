@@ -97,7 +97,7 @@ import axios from 'axios'
                      }
                 ]
             }).then((response) => {
-                console.log(response.data);
+                //console.log(response.data);
                 if(response.data.status == 'OK'){
                     if(this.$store.getters.selectedRole == 'marketing'){
                         this.$router.push('/register/step5-marketing');

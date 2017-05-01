@@ -95,7 +95,7 @@ import axios from 'axios'
 
     },
     updated() {
-        console.log('updated')
+        //console.log('updated')
         
     },
     methods: {
