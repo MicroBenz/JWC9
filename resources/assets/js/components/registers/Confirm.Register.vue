@@ -287,7 +287,6 @@ import axios from 'axios'
     methods: {
         submitAnswer() {
             //lock database
-<<<<<<< HEAD
             //var component = this;
             //let reallyConfirm = confirm('หากยืนยันการสมัครแล้วจะไม่สามารถแก้ไขข้อมูลได้, ยืนยันการสมัคร?')
             //if(reallyConfirm){
@@ -310,26 +309,6 @@ import axios from 'axios'
                     }
                 })
             //}
-=======
-            var component = this;
-            // let reallyConfirm = confirm('หากยืนยันการสมัครแล้วจะไม่สามารถแก้ไขข้อมูลได้, ยืนยันการสมัคร?')
-            // if(reallyConfirm){
-            axios.post('/api/register/complete').then((response) => {
-                console.log('!!!!Lock!!!!!');
-                console.log(response.data)
-
-                if(response.data.status == "OK"){
-                    // TODO : pop router stack till empty
-                    component.$router.push('/')
-                    component.$router.push('/register/success')
-                }
-                else{
-                    console.log('something went wrong while locking')
-                }
-
-            })
-            // }
->>>>>>> origin/master
         },
         goBack() {
             if(this.$store.getters.selectedRole == 'marketing'){
