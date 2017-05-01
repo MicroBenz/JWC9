@@ -303,9 +303,11 @@ import axios from 'axios'
                     else if(response.data.error){
                         console.log('[ERROR] Axios POST /register/complete')
                         console.log('[DEBUG] Axios POST /register/complete - Error Message: '+response.data.error)
+                        alert(response.data.error)
                     }
                     else{
                         console.log("[FAIL] Something went wrong while locking, Maybe Network slow or token expired")
+                        alert('Fail to connect')
                     }
                 })
             //}
