@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('eiei', 'RegistrantController@index');
+
 Route::get('/', function () {
 	return;
 })->middleware('spider');
