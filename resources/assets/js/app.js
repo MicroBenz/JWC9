@@ -14,6 +14,8 @@ Flatpickr.localize(th);
 import Landing from './pages/Landing.page.vue';
 import Register from './pages/Register.page.vue';
 import PageNotFound from './pages/404.page.vue';
+import Result from './pages/Result.page.vue';
+import Approve from './pages/Approve.page.vue';
 // import SocialGroupButton from './components/social-button/SocialGroupButton.vue';
 // import HamburgerMenu from './components/menu/HamburgerMenu.vue';
 import Profile from './components/registers/Profile.Register.vue';
@@ -89,6 +91,8 @@ const router = new VueRouter({
           }
         ]
       },
+      { path: '/announce', component: Result },
+      { path: '/approve', component: Approve },      
       { path: '*', component: PageNotFound }
   ],
   mode: 'history'
