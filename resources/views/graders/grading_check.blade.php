@@ -59,7 +59,7 @@
 							</div>
 							<div class="portlet-body">
 								@if($answer->question->QuestionID == 7)
-								Attachment: <a href="//jwc.in.th/storage/{{ $answer->Attachment }}" target="_blank"><img src="//jwc.in.th/storage/{{ $answer->Attachment }}" style="max-width: 400px;"></a>
+								Attachment: <br><a href="//jwc.in.th/storage/{{ $answer->Attachment }}" target="_blank"><img src="//jwc.in.th/storage/{{ $answer->Attachment }}" style="max-width: 400px;"></a>
 								@endif
 									<textarea style="width: 100%; min-height: 240px;" disabled>{{ $answer->AnswerText }}</textarea>
 								@for ($i = 0; $i < $answer->question->Criteria ; $i++)
