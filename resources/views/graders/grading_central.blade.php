@@ -160,7 +160,7 @@
 								</div>
 							</div>
 							<div class="portlet-body">
-								<h3>{{ $answer->AnswerText }}</h3>
+								<textarea style="width: 100%; min-height: 240px;" disabled>{{ $answer->AnswerText }}</textarea>
 							</div>
 						</div>
 						<!-- END Portlet PORTLET-->

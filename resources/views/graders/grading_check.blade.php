@@ -38,7 +38,7 @@
 								</div>
 							</div>
 							<div class="portlet-body">
-								{{ $answer->AnswerText }}
+								<textarea style="width: 100%; min-height: 240px;" disabled>{{ $answer->AnswerText }}</textarea>
 							</div>
 						</div>
 						<!-- END Portlet PORTLET-->
@@ -56,9 +56,9 @@
 							</div>
 							<div class="portlet-body">
 								@if($answer->question->QuestionID == 7)
-								Attachment: <a href="//jwc.in.th/storage/{{ $answer->Attachment }}" target="_blank">{{ $answer->Attachment }}</a>
+								Attachment: <a href="//jwc.in.th/storage/{{ $answer->Attachment }}" target="_blank"><img src="//jwc.in.th/storage/{{ $answer->Attachment }}" style="max-width: 400px;"></a>
 								@endif
-								<h3>{{ $answer->AnswerText }}</h3>
+									<textarea style="width: 100%; min-height: 240px;" disabled>{{ $answer->AnswerText }}</textarea>
 								@for ($i = 0; $i < $answer->question->Criteria ; $i++)
 								<input type="hidden" name="answers[]" value="{{ encrypt($answer->AnswerID) }}">
 								<input type="hidden" name="criteria[]" value="{{ $i+1 }}">
