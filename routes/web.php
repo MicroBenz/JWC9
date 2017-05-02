@@ -34,12 +34,12 @@ Route::group(['prefix' => 'wearehiring'], function () {
 	// Route::post('login', 'Grader\LoginController@authenticate');
 
 	Route::get('dashboard', 'Grader\DashboardController@getIndex');
-	Route::get('sneakpeek', 'Grader\SneakpeekController@getIndex');
-	Route::get('sneakpeek/{secret}', 'Grader\SneakpeekController@getInfo');
+	// Route::get('sneakpeek', 'Grader\SneakpeekController@getIndex');
+	// Route::get('sneakpeek/{secret}', 'Grader\SneakpeekController@getInfo');
 	Route::get('grading', 'Grader\GradingController@getIndex');
 	Route::get('grading/{secret}', 'Grader\GradingController@getAnswer');
 	Route::post('grading', 'Grader\GradingController@postScore');
-	Route::get('rank', 'Grader\RankController@getIndex');
+	Route::get('romeo-alfa-november-kilo', 'Grader\RankController@getIndex');
 });
 
 Route::get('/{any}', function() { return view('app'); })->where('any', '.*');

@@ -112,24 +112,24 @@
 					<span class="title">Dashboard</span>
 					</a>
 				</li>
-				<li class="{{ (Request::is('*/sneakpeek') || Request::is('*/sneakpeek/*')) ? 'active open':'' }}">
+				{{-- <li class="{{ (Request::is('*/sneakpeek') || Request::is('*/sneakpeek/*')) ? 'active open':'' }}">
 					<a href="{{ url('wearehiring/sneakpeek') }}">
 					<i class="icon-user"></i>
 					<span class="title">Sneak Peek</span>
 					</a>
-				</li>
+				</li> --}}
 				<li class="{{ (Request::is('*/grading') || Request::is('*/grading/*')) ? 'active open':'' }}">
 					<a href="{{ url('wearehiring/grading') }}">
 					<i class="icon-rocket"></i>
 					<span class="title">Grading</span>
 					</a>
 				</li>
-				<li class="{{ (Request::is('*/rank')) ? 'active open':'' }}">
+				{{-- <li class="{{ (Request::is('*/rank')) ? 'active open':'' }}">
 					<a href="{{ url('wearehiring/rank') }}">
 					<i class="icon-trophy"></i>
 					<span class="title">Rank</span>
 					</a>
-				</li>
+				</li> --}}
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
