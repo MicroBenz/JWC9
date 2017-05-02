@@ -25,7 +25,7 @@ class SocialAuthController extends Controller
 
     public function redirect_for_register($team)
     {
-        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/wearehring/register'.'/'.$team.'/callback');
+        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/wearehiring/register'.'/'.$team.'/callback');
         return Socialite::driver('facebook')->redirect();   
     }   
 
