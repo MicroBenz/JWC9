@@ -29,8 +29,8 @@ Route::group(['prefix' => 'wearehiring'], function () {
 	Route::get('logout', 'SocialAuthController@logout');
 	Route::get('login/redirect', 'SocialAuthController@redirect_for_login');
 	Route::get('login/callback', 'SocialAuthController@login');
-	Route::get('register/{team}/callback', 'SocialAuthController@register');
-	Route::get('register/{team}', 'SocialAuthController@redirect_for_register');
+	// Route::get('register/{team}/callback', 'SocialAuthController@register');
+	// Route::get('register/{team}', 'SocialAuthController@redirect_for_register');
 	// Route::post('login', 'Grader\LoginController@authenticate');
 
 	Route::get('dashboard', 'Grader\DashboardController@getIndex');
