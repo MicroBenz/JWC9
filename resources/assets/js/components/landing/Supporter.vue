@@ -17,7 +17,7 @@
             <img class="img-responsive sponsor-img sponsor-super sponsor-horizontal" src="/images/sponsor/super/Pantip.png">
         </div>
         <div class="row row-sponsor text-center">
-            <img class="img-responsive sponsor-img sponsor-super " src="/images/sponsor/super/uppercuz.png">
+            <img class="img-responsive sponsor-img sponsor-super " src="/images/sponsor/super/Uppercuz.png">
             <img class="img-responsive sponsor-img sponsor-super" style="" src="/images/sponsor/super/P and T.png">
         </div>
         <div class="row">
