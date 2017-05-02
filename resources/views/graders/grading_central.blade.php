@@ -131,10 +131,10 @@
 						$answerid = encrypt($answer->AnswerID);
 						$pass = false;
 						$fail = false;
-						if($answer->scoreByGrader)
+						if(!$answer->scoreByGrader->isEmpty())
 						{
 							$color = 'green';
-							if($answer->scoreByGrader->ScoreValue == 1)
+							if($answer->scoreByGrader[0]->ScoreValue == 1)
 							{
 								$pass = true;
 							}
@@ -173,6 +173,7 @@
 	<hr>
 	<div class="form-group">
 		<input type="hidden" name="answers[]" value="{{ $answerid }}">
+		<input type="hidden" name="criteria[]" value="0">
 		<div class="col-md-offset-4 col-md-8">
 			<div class="input-group">
 				<div class="icheck-inline">
