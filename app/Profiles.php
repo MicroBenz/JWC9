@@ -48,4 +48,8 @@ class Profiles extends Model
     public function team() {
         return $this->belongsToMany('App\Teams','campers', 'CamperID', 'TeamID');
     }
+
+    public function camper(){
+        return $this->belongsTo('App\Campers', 'CamperID');
+    }
 }
