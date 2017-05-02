@@ -23,7 +23,7 @@
 
 @section('content')
 <h3 class="page-title">
-	Grading System
+	Grading System (Ref# {{ substr($camper->profile->Telephone, 0, -3) . 'xxx' }})
 </h3>
 <!-- BEGIN PAGE CONTENT-->
 <div class="row profile">
