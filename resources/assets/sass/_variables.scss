@@ -36,6 +36,11 @@ $text-color: #ffffff;
 // Navbar
 $navbar-default-bg: #fff;
 
+// Color theme for each role
+$design-color: #fdbe00;
+$content-color: rgb(51, 100, 167);
+$marketing-color: rgb(241, 77, 80);
+
 // Mixins
 @mixin background($imgUrl) {
   background: url($imgUrl) repeat center;
