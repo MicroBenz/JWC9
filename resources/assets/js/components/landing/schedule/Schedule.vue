@@ -26,7 +26,7 @@
           <img v-if="!isActiveClass(3)" src="./3.png">
           <img v-if="isActiveClass(3)" src="./3-active.png">          
           <h3 :class="isActiveClass(3) ? 'highlight' : ''">ยืนยันสิทธิ์</h3>
-          <p>6 - 10 พฤษภาคม</p>
+          <p>7 - 9 พฤษภาคม</p>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
@@ -60,10 +60,10 @@ export default {
           return startDate.isSame(today);
         case 3:
           startDate = moment('2017-05-07');
-          endDate = moment('2017-05-10');         
+          endDate = moment('2017-05-9');
           return startDate.isSameOrBefore(today) && today.isSameOrBefore(endDate);
         case 4:
-          startDate = moment('2017-05-26');
+          startDate = moment('2017-05-25');
           endDate = moment('2017-05-28');  
           return startDate.isSameOrBefore(today) && today.isSameOrBefore(endDate);
       }
