@@ -36,7 +36,7 @@
 									{{ $count+1 }}
 								</td>
 								<td>
-									{{ $waiting->profile->EmergencyTel }}
+									{{ substr($waiting->profile->Telephone, 0, -3) . 'xxx' }}
 								</td>
 								<td>
 									{{ $waiting->team->TeamName }}
@@ -86,7 +86,7 @@
 									{{ $count+1 }}
 								</td>
 								<td>
-									{{ $complete->profile->EmergencyTel }}
+									{{ substr($complete->profile->Telephone, 0, -3) . 'xxx' }}
 								</td>
 								<td>
 									{{ $complete->team->TeamName }}
