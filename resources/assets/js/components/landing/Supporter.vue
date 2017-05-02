@@ -2,7 +2,7 @@
   <div class="sponsor-wrapper">
     <div class="sponsor-title">
       <h1 class="sponsor-eng">Sponsor</h1>
-      <h1 class="sponsor-thai">สนับสนุน</h1>
+      <h1 class="sponsor-thai">สนับสนุนโดย</h1>
     </div>
     <div class="container">
       <div class="box-sponsor-logoList">
@@ -14,13 +14,17 @@
         <div class="row row-sponsor text-center">
             <img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/super/CampHUB.png">
             <img class="img-responsive sponsor-img sponsor-super" id="logo-ondemand" src="/images/sponsor/super/OnDemand.png">
-            <img class="img-responsive sponsor-img sponsor-super" style="" src="/images/sponsor/super/P and T.png">
             <img class="img-responsive sponsor-img sponsor-super sponsor-horizontal" src="/images/sponsor/super/Pantip.png">
+        </div>
+        <div class="row row-sponsor text-center">
+            <img class="img-responsive sponsor-img sponsor-super " src="/images/sponsor/super/uppercuz.png">
+            <img class="img-responsive sponsor-img sponsor-super" style="" src="/images/sponsor/super/P and T.png">
         </div>
         <div class="row">
             <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/Thumb.png">
             <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/LNW.png">
             <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/02dual.png">
+            <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/Witty.png">
         </div>
       </div>
     </div>
@@ -102,11 +106,11 @@
     }
 
     .sponsor-super{
-        max-width: 190px !important;
+        max-width: 185px !important;
     }
 
     .sponsor-partner{
-        max-width: 100px !important;
+        max-width: 90px !important;
     }
 
     .row-sponsor{
