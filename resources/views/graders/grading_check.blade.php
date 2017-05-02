@@ -46,7 +46,7 @@
 				</div>
 				@else
 				<div class="row">
-					<div class="col-md-10">
+					<div class="col-md-12">
 						<!-- BEGIN Portlet PORTLET-->
 						<div class="portlet box {{ $answer->scoreByGrader ? 'green':'yellow' }}">
 							<div class="portlet-title">
@@ -59,17 +59,30 @@
 								Attachment: <a href="//jwc.in.th/storage/{{ $answer->Attachment }}" target="_blank">{{ $answer->Attachment }}</a>
 								@endif
 								<h3>{{ $answer->AnswerText }}</h3>
+								@for ($i = 0; $i < $answer->question->Criteria ; $i++)
 								<input type="hidden" name="answers[]" value="{{ encrypt($answer->AnswerID) }}">
+								<input type="hidden" name="criteria[]" value="{{ $i+1 }}">
+								@endfor
 							</div>
 						</div>
 						<!-- END Portlet PORTLET-->
 					</div>
-					<div class="col-md-2">
+					<div class="col-md-12">
 						<div class="form-group">
 							<label class="col-md-2 control-label">Score</label>
-							<div class="col-md-12">
-								<input type="number" class="form-control" name="scores[]" value="{{ $answer->scoreByGrader ? $answer->scoreByGrader->ScoreValue:'' }}" required>
+							@if(!$answer->scoreByGrader->isEmpty())
+							@foreach($answer->scoreByGrader as $score)
+							<div class="col-md-2">
+								<input type="number" class="form-control" name="scores[]" value="{{ $score->ScoreValue }}" step="0.5" required>
 							</div>
+							@endforeach
+							@else
+							@for ($i = 0; $i < $answer->question->Criteria ; $i++)
+							<div class="col-md-2">
+								<input type="number" class="form-control" name="scores[]" step="0.5" required>
+							</div>
+							@endfor
+							@endif
 						</div>
 					</div>
 				</div>

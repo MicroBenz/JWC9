@@ -72,15 +72,15 @@ class GradingController extends Controller
             return redirect('404-notfound');
         }
         $grader = Auth::user()->grader;
-        foreach (array_combine($request->answers, $request->scores) as $answer => $score) {
+        foreach ($request->answers as $key => $answer) {
             try {
                 $answer_id = decrypt($answer);
             } catch (DecryptException $e) {
                 return redirect('404-notfound');
             }
             $score = Scores::updateOrCreate(
-                ['AnswerID' => $answer_id, 'GraderID' => $grader->GraderID],
-                ['ScoreValue' => $score]
+                ['AnswerID' => $answer_id, 'GraderID' => $grader->GraderID, 'Criteria' => $request->criteria[$key]],
+                ['ScoreValue' => $request->scores[$key]]
             );
         }
         return redirect('wearehiring/grading');
