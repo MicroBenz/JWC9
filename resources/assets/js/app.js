@@ -15,7 +15,7 @@ import Landing from './pages/Landing.page.vue';
 import Register from './pages/Register.page.vue';
 import PageNotFound from './pages/404.page.vue';
 import Result from './pages/Result.page.vue';
-import Approve from './pages/Approve.page.vue';
+import Confirm from './pages/Confirm.page.vue';
 // import SocialGroupButton from './components/social-button/SocialGroupButton.vue';
 // import HamburgerMenu from './components/menu/HamburgerMenu.vue';
 import Profile from './components/registers/Profile.Register.vue';
@@ -26,7 +26,7 @@ import Designer from './components/registers/roles/Designer.Register.vue';
 import Content from './components/registers/roles/Content.Register.vue';
 import Marketer from './components/registers/roles/Marketing.Register.vue';
 import store from './store/index';
-import Confirm from './components/registers/Confirm.Register.vue';
+import ConfirmRegis from './components/registers/Confirm.Register.vue';
 import Success from './components/registers/Success.Register.vue';
 import SuccessLock from './components/registers/Success.Lock.Register.vue';
 // import 'loaders.css';
@@ -79,7 +79,7 @@ const router = new VueRouter({
           },
           {
             path: 'step6',
-            component: Confirm
+            component: ConfirmRegis
           },
           {
             path: 'step7',
@@ -92,7 +92,7 @@ const router = new VueRouter({
         ]
       },
       { path: '/announce', component: Result },
-      { path: '/approve', component: Approve },      
+      { path: '/confirm', component: Confirm },      
       { path: '*', component: PageNotFound }
   ],
   mode: 'history'

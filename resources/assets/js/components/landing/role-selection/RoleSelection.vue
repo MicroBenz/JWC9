@@ -539,6 +539,7 @@ export default {
         border-bottom: 5px solid #1a40a7;
         margin: auto;
         margin-top: 10px;
+        margin-bottom: 20px;
         cursor: pointer;
     }
 

@@ -23,6 +23,7 @@ Route::post('subscribe', 'SubscribeController@insert');
 // Route::get('/callback/{team}', 'SocialAuthController@callback');
 // Route::get('/login/{team}', 'SocialAuthController@redirect');
 Route::post('authen/{team}', 'SocialAuthController@authen');
+Route::post('approve-authen', 'SocialAuthController@approveAuthen');
 
 Route::group(['prefix' => 'wearehiring'], function () {
 	Route::get('login', 'Grader\LoginController@getLogin');
