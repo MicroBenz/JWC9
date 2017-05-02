@@ -43,8 +43,8 @@
         </div>
 
             <div class="counter desktop">
-                <b style="color: #fac61f;">Design</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count.design }}</span> คน<br>
-                <b style="color: #3364a7;">Content</b> มีผู้เข้าร่วมแล้ว <span class="color: #3364a7">{{ count.content }}</span> คน<br>
+                <b style="color: #fac61f;">Designer</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count.design }}</span> คน<br>
+                <b style="color: #3364a7;">Content Creator</b> มีผู้เข้าร่วมแล้ว <span class="color: #3364a7">{{ count.content }}</span> คน<br>
                 <b style="color: #f14d50;">Marketing</b> มีผู้เข้าร่วมแล้ว <span class="color: #f14d50">{{ count.marketing }}</span> คน<br>
             </div>
         </div>
@@ -66,8 +66,8 @@
                     <div class="skill-info">{{ skillDesc }}</div>
                 </div>
                 <div class="counter mobile">
-                    <b style="color: #fac61f;">Design</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count.design }}</span> คน<br>
-                    <b style="color: #3364a7;">Content</b> มีผู้เข้าร่วมแล้ว <span class="color: #3364a7">{{ count.content }}</span> คน<br>
+                    <b style="color: #fac61f;">Designer</b> มีผู้เข้าร่วมแล้ว <span class="color: #fac61f">{{ count.design }}</span> คน<br>
+                    <b style="color: #3364a7;">Content Creator</b> มีผู้เข้าร่วมแล้ว <span class="color: #3364a7">{{ count.content }}</span> คน<br>
                     <b style="color: #f14d50;">Marketing</b> มีผู้เข้าร่วมแล้ว <span class="color: #f14d50">{{ count.marketing }}</span> คน<br>
                 </div>
             </div>

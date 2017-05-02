@@ -18,6 +18,9 @@
 	label {
 		font-size: 20px;
 	}
+	textarea {
+		font-size: 20px;
+	}
 </style>
 @endsection
 

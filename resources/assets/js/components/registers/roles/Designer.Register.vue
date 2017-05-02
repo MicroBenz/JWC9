@@ -84,7 +84,7 @@ import axios from 'axios'
                      }
                 ]
             }).then((response) => {
-                console.log(response.data);
+                //console.log(response.data);
                 if(response.data.status == 'OK'){
                     this.$router.push('/register/step6');
                 }
@@ -107,7 +107,8 @@ import axios from 'axios'
             formData.append('designAttachment', files[0])
 
             axios.post('/api/questions/design_picture', formData).then(function (res) {
-                console.log(res.data)
+                //console.log(res.data)
+                console.log('[Success] Upload Design Answer (1)')
             })
         },
         createImage(file) {
@@ -132,6 +133,7 @@ import axios from 'axios'
                     }
                     else{
                         alert('ขนาดไฟล์เกิน 2 MB')
+                        console.log('[DEBUG] File Too Large')
                     }
                 }
                 image.src = e.target.result;

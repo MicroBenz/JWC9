@@ -49,6 +49,7 @@
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>
     <style type="text/css">
+        body, input, textarea, select, button {text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;-moz-font-feature-settings: "liga", "kern";}
         .btn-game{
             font-size: 48px;
             background: #ee5d5f;
@@ -134,13 +135,26 @@
             height: 100%;
             z-index: 9999;
         }
+        .row-sponsor-footer img.sponsor-img{
+            display: inline-block;
+            max-width: 200px;
+            max-height: 60px;
+        }
+
     </style>
 </head>
 <body style="">
     <img class="free-flag" style="" src="/img/free.png">
     <div id="app" style="">@yield('content')</div>
     <div style="width: 100%; min-height: 60px; background: black; padding: 20px;" class="text-center">
-        <small>Copyright &copy; {{ date('Y') }}, Young Webmaster Camp, in association with Thai Webmaster Association. All right reserved.</small>
+        <div class="box-sponsor-logoList">
+            <div class="row row-sponsor-footer text-center">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/sanook.png">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/twa2.png">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/Chandrakasem.png">
+            </div>
+        </div>
+        <small style="color: #ccc;">Copyright &copy; {{ date('Y') }}, Young Webmaster Camp, in association with Thai Webmaster Association. All right reserved.</small>
     </div>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

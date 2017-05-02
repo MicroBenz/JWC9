@@ -75,7 +75,7 @@ import axios from 'axios'
                      }
                 ]
             }).then((response) => {
-                console.log(response.data);
+                //console.log(response.data);
                 if(response.data.status == 'OK'){
                     this.$router.push('/register/step6');
                 }

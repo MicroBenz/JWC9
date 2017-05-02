@@ -1,8 +1,14 @@
 <template>
 <div class="intro" id="intro">
   <img class="jwc-logo" src="/img/logo.png" style="max-width: 240px !important;">
+  <div class="main-img-sponsor">
+       <img class="sponsor-vip-intro" src="/images/sponsor/vip/sanook.png" style="transform: scale(1.35)">
+       <img class="sponsor-vip-intro" src="/images/sponsor/vip/TWA.png">
+       <img class="sponsor-vip-intro sponsor-horizontal" src="/images/sponsor/vip/Chandrakasem.gif">
+      <img class="sponsor-vip-intro sponsor-horizontal" src="/images/sponsor/vip/DekD.png">
+  </div>
   <div class="date-and-place">
-    <h1 class="camp-slogan">Digital Web War<br>มหาสงครามคนดิจิตอล</h1>
+    <h1 class="camp-slogan">Digital Web War<br>มหาสงครามคนดิจิทัล</h1>
     <h3 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h3>
     <h4 class="camp-place">จัดโดยสมาคมผู้ดูแลเว็บไทย</h4>
   </div>
@@ -48,3 +54,18 @@ export default {
 </script>
 
 <style lang="scss" src="./Intro.scss" scoped></style>
+<style type="text/css">
+    .sponsor-horizontal{
+        transform: scale(0.95);
+    }
+
+    .sponsor-vip-intro{
+        max-height: 70px;
+    }
+
+    @media all and (min-width: 768px){
+        .main-img-sponsor{
+            margin-left: 30px;
+        }
+    }
+</style>

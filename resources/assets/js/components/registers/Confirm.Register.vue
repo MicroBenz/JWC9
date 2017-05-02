@@ -282,29 +282,35 @@ import axios from 'axios'
 
     },
     updated() {
-        console.log('updated')
+        //console.log('updated')
     },
     methods: {
         submitAnswer() {
             //lock database
-            var component = this;
-            let reallyConfirm = confirm('หากยืนยันการสมัครแล้วจะไม่สามารถแก้ไขข้อมูลได้, ยืนยันการสมัคร?')
-            if(reallyConfirm){
+            //var component = this;
+            //let reallyConfirm = confirm('หากยืนยันการสมัครแล้วจะไม่สามารถแก้ไขข้อมูลได้, ยืนยันการสมัคร?')
+            //if(reallyConfirm){
                 axios.post('/api/register/complete').then((response) => {
-                    console.log('!!!!Lock!!!!!');
-                    console.log(response.data)
+                    console.log('Axios POST /register/complete');
+                    //console.log(response.data)
 
                     if(response.data.status == "OK"){
                         // TODO : pop router stack till empty
-                        component.$router.push('/')
-                        component.$router.push('/register/success')
+                        console.log('[SUCCESS] Axios POST /register/')
+                        this.$router.push('/')
+                        this.$router.push('/register/success')
+                    }
+                    else if(response.data.error){
+                        console.log('[ERROR] Axios POST /register/complete')
+                        console.log('[DEBUG] Axios POST /register/complete - Error Message: '+response.data.error)
+                        alert(response.data.error)
                     }
                     else{
-                        console.log('something went wrong while locking')
+                        console.log("[FAIL] Something went wrong while locking, Maybe Network slow or token expired")
+                        alert('Fail to connect')
                     }
-
                 })
-            }
+            //}
         },
         goBack() {
             if(this.$store.getters.selectedRole == 'marketing'){
