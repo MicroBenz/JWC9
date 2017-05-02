@@ -2,9 +2,10 @@
 <div class="intro" id="intro">
   <img class="jwc-logo" src="/img/logo.png" style="max-width: 240px !important;">
   <div class="main-img-sponsor">
-       <img class="" src="/images/sponsor/vip/sanook.png" style="transform: scale(1.35)">
-       <img class="" src="/images/sponsor/vip/TWA.png">
-       <img class="sponsor-horizontal" src="/images/sponsor/vip/Chandrakasem.gif">
+       <img class="sponsor-vip-intro" src="/images/sponsor/vip/sanook.png" style="transform: scale(1.35)">
+       <img class="sponsor-vip-intro" src="/images/sponsor/vip/TWA.png">
+       <img class="sponsor-vip-intro sponsor-horizontal" src="/images/sponsor/vip/Chandrakasem.gif">
+      <img class="sponsor-vip-intro sponsor-horizontal" src="/images/sponsor/vip/DekD.png">
   </div>
   <div class="date-and-place">
     <h1 class="camp-slogan">Digital Web War<br>มหาสงครามคนดิจิทัล</h1>
@@ -56,5 +57,15 @@ export default {
 <style type="text/css">
     .sponsor-horizontal{
         transform: scale(0.95);
+    }
+
+    .sponsor-vip-intro{
+        max-height: 70px;
+    }
+
+    @media all and (min-width: 768px){
+        .main-img-sponsor{
+            margin-left: 30px;
+        }
     }
 </style>

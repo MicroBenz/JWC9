@@ -7,24 +7,27 @@
     <div class="container">
       <div class="box-sponsor-logoList">
         <div class="row row-sponsor text-center">
-            <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/sanook.png">
-            <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/twa2.png">
-              <img class="img-responsive sponsor-img sponsor-vip sponsor-horizontal" src="/images/sponsor/vip/Chandrakasem.gif">
+            <a rel="nofollow" href="https://www.webmaster.or.th"><img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/twa2.png"></a>
+            <a rel="nofollow" href="http://www.chandra.ac.th"><img class="img-responsive sponsor-img sponsor-vip sponsor-horizontal" src="/images/sponsor/vip/Chandrakasem.gif"></a>
         </div>
         <div class="row row-sponsor text-center">
-            <img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/super/CampHUB.png">
-            <img class="img-responsive sponsor-img sponsor-super" id="logo-ondemand" src="/images/sponsor/super/OnDemand.png">
-            <img class="img-responsive sponsor-img sponsor-super sponsor-horizontal" src="/images/sponsor/super/Pantip.png">
+            <a rel="nofollow" href="http://www.sanook.com"><img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/sanook.png"></a>
+            <a rel="nofollow" href="https://www.dek-d.com"><img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/DekD.png"></a>
+        </div>
+        <div class="row row-sponsor text-center row-sponsor-super-row1">
+            <a rel="nofollow" href="https://www.pantip.com"><img class="img-responsive sponsor-img sponsor-super sponsor-horizontal" src="/images/sponsor/super/Pantip.png"></a>
+            <a rel="nofollow" href="http://www.uppercuz.com/brand"><img class="img-responsive sponsor-img sponsor-super sponsor-uppercuz" style="" src="/images/sponsor/super/Uppercuz.png"></a>
+            <a rel="nofollow" href="http://www.pathosting.com"><img class="img-responsive sponsor-img sponsor-super sponsor-pat" style="" src="/images/sponsor/super/P and T.png"></a>
         </div>
         <div class="row row-sponsor text-center">
-            <img class="img-responsive sponsor-img sponsor-super " src="/images/sponsor/super/Uppercuz.png">
-            <img class="img-responsive sponsor-img sponsor-super" style="" src="/images/sponsor/super/P and T.png">
+            <a rel="nofollow" href="https://www.camphub.in.th"><img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/super/CampHUB.png"></a>
+            <a rel="nofollow" href="http://www.ondemand.in.th"><img class="img-responsive sponsor-img sponsor-super" id="logo-ondemand" src="/images/sponsor/super/OnDemand.png"></a>
         </div>
         <div class="row">
-            <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/Thumb.png">
-            <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/LNW.png">
-            <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/02dual.png">
-            <img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/Witty.png">
+            <a rel="nofollow" href="https://lnw.co.th"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/LNW.png"></a>
+            <a rel="nofollow" href="https://www.02dual.com"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/02dual.png"></a>
+            <a rel="nofollow" href="https://thumbinthai.wordpress.com"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/Thumb.png"></a>
+            <a rel="nofollow" href="http://www.witty.co.th"><img class="img-responsive sponsor-img sponsor-partner sponsor-witty" src="/images/sponsor/partner/Witty.png"></a>
         </div>
       </div>
     </div>
@@ -98,19 +101,41 @@
     .sponsor-img{
         margin: auto 30px;
         display: inline-block;
+        cursor: pointer;
     }
 
     .sponsor-vip{
-        max-width: 280px !important;
-        max-height: 160px;
+        max-width: 340px !important;
+        max-height: 190px;
     }
 
     .sponsor-super{
-        max-width: 185px !important;
+        //max-width: 185px !important;
+        max-width: 230px !important;
     }
 
     .sponsor-partner{
         max-width: 90px !important;
+    }
+
+    .sponsor-pantip{
+        max-height: 120px;
+    }
+
+    .sponsor-uppercuz{
+        width: 260px !important;
+        max-width: none !important;
+        margin-top: 15px;
+    }
+
+    .sponsor-pat{
+        width: 260px !important;
+        max-width: none !important;
+    }
+
+    .sponsor-witty{
+        max-width: none !important;
+        max-height: 40px;
     }
 
     .row-sponsor{
@@ -122,6 +147,10 @@
     }
 
     @media all and (max-width: 768px){
+        .row-sponsor-super-row1{
+            margin-bottom: -50px !important;
+        }
+
         .sponsor-img{
             display: inline-block;
             margin: 10px auto;
@@ -134,12 +163,15 @@
         }
 
         .sponsor-super{
-            max-width: 44% !important;
-            margin: 15px 5px;
+            display: block;
+            max-width: 60% !important;
+            //margin: 15px 5px;
+            margin: 50px auto;
         }
 
         .sponsor-partner{
-            max-width: 20% !important;
+            max-width: 30% !important;
+            margin: 20px;
         }
 
         .row-sponsor{
