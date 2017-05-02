@@ -19,19 +19,19 @@ class SocialAuthController extends Controller
 {
     public function redirect_for_login()
     {
-        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/login/callback');
+        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/wearehiring/login/callback');
         return Socialite::driver('facebook')->redirect();   
     }
 
     public function redirect_for_register($team)
     {
-        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/register'.'/'.$team.'/callback');
+        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/wearehring/register'.'/'.$team.'/callback');
         return Socialite::driver('facebook')->redirect();   
     }   
 
     public function login()
     {
-        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/login/callback');
+        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/wearehiring/login/callback');
         $fb_user = Socialite::driver('facebook')->stateless()->user();
         $user = Fbaccounts::find($fb_user->getId());
         if(is_null($user)) return redirect('/wearehiring/login');
@@ -44,7 +44,7 @@ class SocialAuthController extends Controller
 
     public function register($team)
     {
-        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/register'.'/'.$team.'/callback');
+        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/wearehiring/register'.'/'.$team.'/callback');
         $fb_user = Socialite::driver('facebook')->stateless()->user();
         $user = Fbaccounts::find($fb_user->getId());
         $team_id = Teams::where('TeamName', $team)->first()['TeamID'];
