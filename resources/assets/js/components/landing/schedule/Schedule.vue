@@ -10,7 +10,7 @@
           <img v-if="!isActiveClass(1)" src="./1.png">
           <img v-if="isActiveClass(1)" src="./1-active.png">
           <h3 :class="isActiveClass(1) ? 'highlight' : ''">รับสมัคร</h3>
-          <p>10 เมษายน - 1 พฤษภาคม</p>
+          <p>10 เมษายน - 5 พฤษภาคม</p>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
@@ -18,7 +18,7 @@
           <img v-if="!isActiveClass(2)" src="./2.png">
           <img v-if="isActiveClass(2)" src="./2-active.png">        
           <h3 :class="isActiveClass(2) ? 'highlight' : ''">ประกาศผล</h3>
-          <p>5 พฤษภาคม</p>
+          <p>6 พฤษภาคม</p>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
@@ -26,7 +26,7 @@
           <img v-if="!isActiveClass(3)" src="./3.png">
           <img v-if="isActiveClass(3)" src="./3-active.png">          
           <h3 :class="isActiveClass(3) ? 'highlight' : ''">ยืนยันสิทธิ์</h3>
-          <p>5 - 10 พฤษภาคม</p>
+          <p>6 - 10 พฤษภาคม</p>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
@@ -52,14 +52,14 @@ export default {
       switch (order) {
         case 1:
           startDate = moment('2017-04-10');
-          endDate = moment('2017-05-01');
+          endDate = moment('2017-05-05');
           // today = moment('2017-04-15');
           return startDate.isSameOrBefore(today) && today.isSameOrBefore(endDate); 
         case 2:
-          startDate = moment('2017-05-05');
+          startDate = moment('2017-05-06');
           return startDate.isSame(today);
         case 3:
-          startDate = moment('2017-05-05');
+          startDate = moment('2017-05-07');
           endDate = moment('2017-05-10');         
           return startDate.isSameOrBefore(today) && today.isSameOrBefore(endDate);
         case 4:
