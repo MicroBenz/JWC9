@@ -17,7 +17,7 @@ class Answers extends Model
 
     public function scoreByGrader()
 	{
-		return $this->hasOne('App\Scores', 'AnswerID')
+		return $this->hasMany('App\Scores', 'AnswerID')
 					->where('GraderID', Auth::user()->grader->GraderID);
 	}
 }

@@ -124,12 +124,14 @@
 					<span class="title">Grading</span>
 					</a>
 				</li>
-				{{-- <li class="{{ (Request::is('*/rank')) ? 'active open':'' }}">
-					<a href="{{ url('wearehiring/rank') }}">
+				@if(Auth::user()->grader->TeamID == 4)
+				<li class="{{ (Request::is('*/romeo-alfa-november-kilo')) ? 'active open':'' }}">
+					<a href="{{ url('wearehiring/romeo-alfa-november-kilo') }}">
 					<i class="icon-trophy"></i>
 					<span class="title">Rank</span>
 					</a>
-				</li> --}}
+				</li>
+				@endif
 			</ul>
 			<!-- END SIDEBAR MENU -->
 		</div>
