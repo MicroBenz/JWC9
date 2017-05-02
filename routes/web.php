@@ -12,6 +12,7 @@
 */
 
 Route::get('eiei', 'RegistrantController@index');
+Route::get('deknarak', 'RegistrantController@index2');
 
 Route::get('/', function () {
 	return;

@@ -27,4 +27,16 @@ class RegistrantController extends Controller {
 		]);
 	}
 
+	public function index2 () {
+		$registrants = DB::table('campers')
+			->join('fbaccounts', 'campers.FacebookUniqueID', '=', 'fbaccounts.FacebookUniqueID')
+			->join('profiles', 'profiles.CamperID', '=', 'campers.CamperID')
+			->get();
+
+		//echo "<pre>".var_export($registrants, true)."</pre>";
+		return view('profiles', [
+			'registrants' => $registrants,
+		]);
+	}
+
 }
