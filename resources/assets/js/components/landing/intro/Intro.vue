@@ -19,8 +19,8 @@
     <p>{{countdownTime}}</p>
   </div>-->
   <p class="scroll-down-text" @click="scrollDown('#jwc-story')"><span class="text">scroll down <br></span><span class="arrow"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span></p>
-  <img class="kid kid-left" src="./kid-left.png">
-  <img class="kid kid-right" src="./kid-right.png">  
+  <img class="kid kid-left" src="./kid-left-announce.png">
+  <img class="kid kid-right" src="./kid-right-announce.png">  
 </div>
 </template>
 
