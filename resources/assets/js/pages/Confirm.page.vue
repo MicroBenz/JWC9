@@ -25,6 +25,7 @@
         </div>
       </div>
     </div>
+    <h3 class="status">สถานะ: <b>รอการยืนยัน</b></h3>
   </div>
 </template>
 
@@ -142,6 +143,16 @@ export default {
       margin-top: 13px;
       border-bottom: 3px solid #2455a7;
     }
+  }
+}
+
+.status {
+  display: inline-block;
+  border: 1px solid white;
+  padding: 9px 44px;
+  border-radius: 12px;
+  b {
+    color: $yellow;
   }
 }
 </style>

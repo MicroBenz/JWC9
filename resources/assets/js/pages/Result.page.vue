@@ -1,5 +1,6 @@
 <template>
 <div class="result-page">
+  <img class="logo" src="../components/landing/logo.png">
   <instruction></instruction>
   <div class="banner">
     <h1>ประกาศผลค่าย JWC ครั้งที่ 9</h1>
@@ -91,6 +92,9 @@ export default {
 <style lang="scss">
 @import '../../sass/_variables.scss';
 
+.logo {
+  height: 350px;
+}
 .container {
   margin-top: 35px;
   margin-bottom: 35px;
