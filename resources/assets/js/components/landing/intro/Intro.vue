@@ -12,7 +12,7 @@
     <h3 class="camp-date">วันที่ 26-28 พฤษภาคม 2560</h3>
     <h4 class="camp-place">จัดโดยสมาคมผู้ดูแลเว็บไทย</h4>
   </div>
-  <a class="btn-game"><div class="btn-game" @click="goToAnnounce()">ดูประกาศผล</div></a>
+  <a class="btn-game"><div class="btn-game" @click="goToAnnounce()">ประกาศผล</div></a>
   <!--<img v-on:click="scrollDown" class="login-with-fb-button" src="./register-button.png">-->
   <!--<div class="countdown">
     <p>เหลือเวลาสมัครอีก</p>
