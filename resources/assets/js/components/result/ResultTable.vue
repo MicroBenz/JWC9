@@ -1,6 +1,11 @@
 <template>
 <div>
-  <h1 class="role">{{role}}</h1>
+  <h1 v-bind:class="[
+    'role',
+    role === 'Content' ? 'content' : '',
+    role === 'Designer' ? 'design' : '',      
+    role === 'Marketing' ? 'marketing' : '',
+  ]">{{role}}</h1>
   <table class="table">
     <thead v-bind:class="[
       'table-header',
@@ -36,8 +41,19 @@ export default {
 
 .role {
   text-transform: uppercase;
-  font-size: 60px;
-  padding-bottom: 15px;
+  font-size: 45px;
+  font-weight: 800;
+  padding-bottom: 9px;
+  text-shadow: 1px 1px 2px rgba(0,0,0, 0.2);
+  &.content {
+    color: $content-color;
+  }
+  &.design {
+    color: $design-color;
+  }
+  &.marketing {
+    color: $marketing-color;
+  }
 }
 .table {
   background-color: white;

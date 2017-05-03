@@ -1,7 +1,9 @@
 <template>
 <div class="result-page">
-  <h1>ประกาศผลค่าย JWC ครั้งที่ 9</h1>
   <instruction></instruction>
+  <div class="banner">
+    <h1>ประกาศผลค่าย JWC ครั้งที่ 9</h1>
+  </div>
   <div class="container">
     <div class="col-md-4 col-sm-6 col-xs-12">
       <result-table :campers="content" role="Content"></result-table>
@@ -14,7 +16,9 @@
     </div>
   </div>
   <div v-on:click="login()" class="confirm-btn">ยืนยันสิทธิ์</div>
-  <h2>รายชื่อตัวสำรอง</h2>
+  <div class="banner">
+    <h1>รายชื่อตัวสำรอง</h1>
+  </div>
   <div class="container">
     <div class="col-md-4 col-sm-6 col-xs-12">
       <result-table :campers="content" role="Content"></result-table>
@@ -86,6 +90,30 @@ export default {
 
 <style lang="scss">
 @import '../../sass/_variables.scss';
+
+.container {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.banner {
+  background-color: $brown;
+  color: $yellow;
+  max-width: 75%;
+  min-width: 500px;
+  border-radius: 50px;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  h1 {
+    font-weight: 800;
+    font-size: 54px;
+    line-height: 78px;
+  }
+  @media(max-width: 768px) {
+    font-size: 45px;
+    line-height: 55px;
+  }
+}
 .confirm-btn {
     width: 200px;
     background: #3364a7;
@@ -94,7 +122,7 @@ export default {
     border-bottom: 5px solid #1a40a7;
     margin: auto;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 55px;
     cursor: pointer;
 }
 

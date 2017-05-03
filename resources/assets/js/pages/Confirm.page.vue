@@ -1,24 +1,28 @@
 <template>
   <div class="confirm-container">
-    <h1>ยืนยันสิทธิ์</h1>
-    <div class="camper-detail">
-      <h4><b>Ref ID:</b></h4>
-      <h4><b>ชื่อ-นามสกุล:</b> นายทดสอบ นามสกุลเทสสสสส</h4>
-      <h4><b>ยอดเงิน:</b> 200.11</h4>
-    </div>
-    <div>
-      <div class="slip-image">
-        <img v-if="img === ''" src="http://bulma.io/images/placeholders/128x128.png">
-        <img v-else :src="img">        
+    <div class="container">
+      <div class="col-md-6 col-xs-12">
+        <h1 class="confirm-title">ยืนยันสิทธิ์</h1>
+        <div class="camper-detail">
+          <h4 class="pad-ref"><b>Ref ID:</b></h4>        
+          <h4><b>ชื่อ-นามสกุล:</b> นายทดสอบ นามสกุลเทสสสสส</h4>
+          <h4><b>ยอดเงิน:</b> 200.11</h4>
+        </div>
       </div>
-      <div style="text-align:center;">
-          <input type="file" id="files" class="hidden" v-on:change="onFileChange" accept="image/*"/>
-          <label for="files">
-              <!--<img class="upload-btn" src="./upload.png">-->
-              <a class="btn-game">
-                  <div class="btn-game upload-btn">อัพโหลดหลักฐานการโอนเงิน</div>
-              </a>
-          </label>
+      <div class="col-md-6 col-xs-12">
+        <div class="slip-image">
+          <div v-if="img === ''" class="slip-placeholder"></div>
+          <img v-else :src="img">        
+        </div>
+        <div style="text-align:center;">
+            <input type="file" id="files" class="hidden" v-on:change="onFileChange" accept="image/*"/>
+            <label for="files">
+                <!--<img class="upload-btn" src="./upload.png">-->
+                <a class="btn-game">
+                    <div class="btn-game upload-btn">อัพโหลดหลักฐานการโอนเงิน</div>
+                </a>
+            </label>
+        </div>
       </div>
     </div>
   </div>
@@ -79,6 +83,10 @@ export default {
 <style lang="scss">
 @import '../../sass/_variables.scss';
 
+.confirm-title {
+  font-weight: 600;
+  color: $yellow;
+}
 .upload-btn:hover {
     margin-top: 0px;
 }
@@ -98,11 +106,24 @@ export default {
   .camper-detail {
     padding-top: 10px;
     padding-bottom: 10px;
+    .pad-ref {
+      padding-bottom: 30px;
+      @media(max-width: 768px) {
+        padding-bottom: 0px;
+      }
+    }
   }
   .slip-image {
     height: 350px;
     margin-top: 20px;
     margin-bottom: 20px;
+    .slip-placeholder {
+      background-color: white;
+      border-radius: 50px;
+      width: 350px;
+      height: 350px;
+      margin: 0 auto;
+    }
     img {
       height: 100%;
     }
