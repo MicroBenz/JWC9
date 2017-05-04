@@ -25,7 +25,7 @@ class ProgressController extends Controller
             foreach ($graders as $grader) {
                 $tmpgrader = collect();
                 $tmpgrader->put('grader', $grader->fbaccount);
-                $tmpgrader->put('percentnow', (Scores::where('GraderID', $grader->GraderID)->count()*100)/$countcamp);
+                $tmpgrader->put('percentnow', ((Scores::where('GraderID', $grader->GraderID)->count()/$sumques)*100)/$countcamp);
 
                 $sumgrader->push($tmpgrader);
             }
