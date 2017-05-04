@@ -1,83 +1,32 @@
 <template>
-  <div class="confirm-container">
-    <div class="container">
-      <div class="col-md-6 col-xs-12">
-        <h1 class="confirm-title">ยืนยันสิทธิ์</h1>
-        <div class="camper-detail">
-          <h4 class="pad-ref"><b>Ref ID:</b></h4>        
-          <h4><b>ชื่อ-นามสกุล:</b> นายทดสอบ นามสกุลเทสสสสส</h4>
-          <h4><b>ยอดเงิน:</b> 200.11</h4>
-        </div>
-      </div>
-      <div class="col-md-6 col-xs-12">
-        <div class="slip-image">
-          <div v-if="img === ''" class="slip-placeholder"></div>
-          <img v-else :src="img">        
-        </div>
-        <div style="text-align:center;">
-            <input type="file" id="files" class="hidden" v-on:change="onFileChange" accept="image/*"/>
-            <label for="files">
-                <!--<img class="upload-btn" src="./upload.png">-->
-                <a class="btn-game">
-                    <div class="btn-game upload-btn">อัพโหลดหลักฐานการโอนเงิน</div>
-                </a>
-            </label>
-        </div>
-      </div>
-    </div>
-    <h3 class="status">สถานะ: <b>รอการยืนยัน</b></h3>
-  </div>
+  <slip-uploader v-if="!isShowCongrat"></slip-uploader>
+  <congratulation v-else></congratulation>  
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 
+import SlipUploader from '../components/confirm/SlipUploader';
+import Congratulation from '../components/confirm/Congratulation';
+
 export default {
   mounted() {
-    if (this.$store.getters.accessToken === '') {
+    console.log('TOKEN', this.token);
+    if (this.token === '') {
       // this.$router.push('/');
     }
   },
+  components: {
+    SlipUploader,
+    Congratulation
+  },
   data: () => ({
     img: '',
+    isShowCongrat: true,
   }),
   computed: mapGetters({
     token: 'accessToken',
-  }),
-  methods: {
-    onFileChange(e) {
-      const files = e.target.files || e.dataTransfer.files;
-      if (!files.length)
-        return;
-      this.createImage(files[0]);
-
-      // let formData = new FormData()
-      // formData.append('ProfilePicture', files[0])
-
-      // axios.post('/api/register/profilepicture', formData).then(function (res) {
-      //   console.log(res.data)
-      // })
-    },
-    createImage(file) {
-      const reader = new FileReader();
-      const vm = this;
-      reader.onload = function (e) {
-        const image = new Image();
-        image.onload = () => {
-          console.log('success', image.width, image.height);
-          console.log(file.size)
-          if (file.size <= 2100000) {
-            vm.img = e.target.result;
-          }
-          else {
-            alert('ขนาดไฟล์เกิน 2 MB')
-          }
-        }
-        image.src = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    },
-  }
+  })
 }
 </script>
 
