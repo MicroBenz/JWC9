@@ -79,11 +79,11 @@
 								</td>
 								@foreach($content->scores as $score)
 								<td>
-									{{ $score["ScoreValue"] }}
+									{{ number_format((float)$score["ScoreValue"], 2, '.', '') }}
 								</td>
 								@endforeach
 								<td>
-									{{ $content->total }}
+									{{ number_format((float)$content->total, 2, '.', '') }}
 								</td>
 							</tr>
 							@endforeach
@@ -155,11 +155,11 @@
 								</td>
 								@foreach($design->scores as $score)
 								<td>
-									{{ $score["ScoreValue"] }}
+									{{ number_format((float)$score["ScoreValue"], 2, '.', '') }}
 								</td>
 								@endforeach
 								<td>
-									{{ $design->total }}
+									{{ number_format((float)$design->total, 2, '.', '') }}
 								</td>
 							</tr>
 							@endforeach
@@ -231,11 +231,11 @@
 								</td>
 								@foreach($market->scores as $score)
 								<td>
-									{{ $score["ScoreValue"] }}
+									{{ number_format((float)$score["ScoreValue"], 2, '.', '') }}
 								</td>
 								@endforeach
 								<td>
-									{{ $market->total }}
+									{{ number_format((float)$market->total, 2, '.', '') }}
 								</td>
 							</tr>
 							@endforeach

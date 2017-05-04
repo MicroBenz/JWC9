@@ -131,6 +131,12 @@
 					<span class="title">Rank</span>
 					</a>
 				</li>
+				<li class="{{ (Request::is('*/tracking')) ? 'active open':'' }}">
+					<a href="{{ url('wearehiring/tracking') }}">
+					<i class="icon-pie-chart"></i>
+					<span class="title">Tracking</span>
+					</a>
+				</li>
 				@endif
 			</ul>
 			<!-- END SIDEBAR MENU -->

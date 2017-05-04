@@ -11,13 +11,6 @@
 |
 */
 
-Route::get('eiei', 'RegistrantController@index');
-Route::get('deknarak', 'RegistrantController@index2');
-
-Route::get('/', function () {
-	return;
-})->middleware('spider');
-
 Route::get('/', function () {
     return view('app');
 });
@@ -47,6 +40,7 @@ Route::group(['prefix' => 'wearehiring'], function () {
 	Route::get('grading/{secret}', 'Grader\GradingController@getAnswer');
 	Route::post('grading', 'Grader\GradingController@postScore');
 	Route::get('romeo-alfa-november-kilo', 'Grader\RankController@getIndex');
+	Route::get('tracking', 'Grader\ProgressController@getIndex');
 });
 
 Route::get('/{any}', function() { return view('app'); })->where('any', '.*');
