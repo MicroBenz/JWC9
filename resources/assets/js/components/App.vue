@@ -1,5 +1,6 @@
 <template>
   <div class="apps-container">
+    <free-flag></free-flag>
     <div v-if="isFacebookApiReady">
       <transition name="fade">
         <router-view></router-view>

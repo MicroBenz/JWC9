@@ -22,7 +22,7 @@ export default {
   },
   data: () => ({
     img: '',
-    isShowCongrat: true,
+    isShowCongrat: true, //Trigger upon user state
   }),
   computed: mapGetters({
     token: 'accessToken',

@@ -35,8 +35,15 @@
 	font-weight: normal;
 }
 
+
 @font-face{
 	font-family: 'Cordia New';
-	src: url('./Cordia New.ttf');
+	src: url('CordiaNew.ttf');
+	font-weight: normal;
+}
+
+@font-face{
+	font-family: 'Cordia New';
+	src: url('CordiaNewBold.ttf');
 	font-weight: bold;
 }

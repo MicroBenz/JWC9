@@ -16,6 +16,7 @@ import Register from './pages/Register.page.vue';
 import PageNotFound from './pages/404.page.vue';
 import Result from './pages/Result.page.vue';
 import Confirm from './pages/Confirm.page.vue';
+
 // import SocialGroupButton from './components/social-button/SocialGroupButton.vue';
 // import HamburgerMenu from './components/menu/HamburgerMenu.vue';
 import Profile from './components/registers/Profile.Register.vue';
@@ -102,6 +103,7 @@ Vue.component('app', require('./components/App.vue'));
 Vue.component('loader', require('./components/Loader.vue'));
 Vue.component('apps-menu', require('./components/menu/HamburgerMenu.vue'));
 Vue.component('social-group-button', require('./components/social-button/SocialGroupButton.vue'));
+Vue.component('free-flag', require('./components/FreeFlag.vue'));
 
 const app = new Vue({
   router,

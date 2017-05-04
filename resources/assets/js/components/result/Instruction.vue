@@ -7,8 +7,8 @@
         <li>ส่งหลักฐานการโอนเงินในระบบ <b>ภายในวันที่ 9 พฤษภาคม 2560 เวลา 23.59 น.</b></li>
         <li>น้องๆ ต้องส่งใบอนุญาตจากผู้ปกครอง <b>ภายในวันที่ 26 พฤษภาคม 2560</b></li>
       </ol>
-      <p class="description">** การโอนเงินยืนยันสิทธิ์เพื่อเป็นการยืนยันว่าน้องสามารถเข้าค่ายได้จริงๆ ซึ่งหลังจบค่ายวันสุดท้ายจะมีการคืนเงินให้น้องๆ ทุกคนที่เข้าร่วม **</p>
     </div>
+    <p class="description">** การโอนเงินยืนยันสิทธิ์เพื่อเป็นการยืนยันว่าน้องสามารถเข้าค่ายได้จริงๆ ซึ่งหลังจบค่ายวันสุดท้ายจะมีการคืนเงินให้น้องๆ ทุกคนที่เข้าร่วม **</p>
   </div>
 </template>
 
@@ -33,9 +33,12 @@
     font-family: 'Cordia New';
     font-weight: bold;
   }
-  .description {
-    font-style: italic;
-    text-align: center;
-  }
 }
+.description {
+    font-family: 'Cordia New';
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    padding-top: 35px;
+  }
 </style>

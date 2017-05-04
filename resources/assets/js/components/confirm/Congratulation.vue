@@ -45,6 +45,15 @@
     padding-top: 25px;
     padding-bottom: 25px;
   }
+  p {
+    font-family: 'Cordia New';
+    font-weight: bold;
+    font-size: 36px;
+    @media(max-width: 768px) {
+      font-size: 28px;
+    }
+  }
+
 }
 .printout {
   background-color: #ee5d5f;
@@ -55,14 +64,6 @@
   cursor: pointer;
   font-weight: bold;
 }
-
-p {
-  font-size: 36px;
-  @media(max-width: 768px) {
-    font-size: 28px;
-  }
-}
-
 .kid {
     position: absolute;
     bottom: 0;
