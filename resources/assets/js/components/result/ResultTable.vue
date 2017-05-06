@@ -19,11 +19,16 @@
         <td v-if="!noid">จำนวนเงิน</td>
       </tr>
     </thead>
-    <tbody>
+    <tbody v-if="!isLoad">
       <tr v-for="camper in campers">
         <td v-if="!noid">{{camper.id}}</td>
         <td>{{camper.name}}</td>
         <td v-if="!noid">{{camper.price}}</td>
+      </tr>
+    </tbody>
+    <tbody v-else>
+      <tr>
+        <td colspan="2">ลุ้นอยู่ละสิ...รอสักครู่นะ</td>
       </tr>
     </tbody>
   </table>
@@ -32,7 +37,7 @@
 
 <script>
 export default {
-  props: ['campers', 'role', 'noid'],
+  props: ['campers', 'role', 'noid', 'isLoad'],
 }
 </script>
 

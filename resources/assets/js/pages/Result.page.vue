@@ -7,13 +7,13 @@
   </div>
   <div class="container">
     <div class="col-md-4 col-sm-6 col-xs-12">
-      <result-table :campers="content" role="Content"></result-table>
+      <result-table :campers="content" role="Content" v-bind:isLoad="isLoad"></result-table>
     </div>
     <div class="col-md-4 col-sm-6 col-xs-12">
-      <result-table :campers="design" role="Designer"></result-table>
+      <result-table :campers="design" role="Designer" v-bind:isLoad="isLoad"></result-table>
     </div>
     <div class="col-md-4 col-sm-6 col-xs-12">
-      <result-table :campers="marketing" role="Marketing"></result-table>
+      <result-table :campers="marketing" role="Marketing" v-bind:isLoad="isLoad"></result-table>
     </div>
   </div>
   <!--<div v-on:click="login()" class="confirm-btn">ยืนยันสิทธิ์</div>-->
@@ -22,13 +22,13 @@
   </div>
   <div class="container">
     <div class="col-md-4 col-sm-6 col-xs-12">
-      <result-table :campers="backup.content" role="Content" v-bind:noid="true"></result-table>
+      <result-table :campers="backup.content" role="Content" v-bind:noid="true" v-bind:isLoad="isLoad"></result-table>
     </div>
     <div class="col-md-4 col-sm-6 col-xs-12">
-      <result-table :campers="backup.design" role="Designer" v-bind:noid="true"></result-table>
+      <result-table :campers="backup.design" role="Designer" v-bind:noid="true" v-bind:isLoad="isLoad"></result-table>
     </div>
     <div class="col-md-4 col-sm-6 col-xs-12">
-      <result-table :campers="backup.marketing" role="Marketing" v-bind:noid="true"></result-table>
+      <result-table :campers="backup.marketing" role="Marketing" v-bind:noid="true" v-bind:isLoad="isLoad"></result-table>
     </div>
   </div>
 </div>
@@ -46,6 +46,7 @@ export default {
     Instruction
   },
   data: () => ({
+    isLoad: true,
     content: [],
     marketing: [],
     design: [],
@@ -115,6 +116,7 @@ export default {
           this.backup.design = designs.map((camper) => ({
             name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
           })).slice(15);
+          this.isLoad = false;
         }
       )
   },
