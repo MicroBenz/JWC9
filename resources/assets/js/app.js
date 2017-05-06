@@ -94,20 +94,20 @@ const routes = [
     { path: '*', component: PageNotFound }
 ]
 
-if (moment().isAfter(moment('2017-05-06 21:00'))) {
-  routes.unshift(
-    {
-      path: '/announce',
-      component: Result
-    }
-  );
-  routes.unshift(
-    {
-      path: '/confirm',
-      component: Confirm,
-    }
-  );
-}
+// if (moment().isAfter(moment('2017-05-06 21:00'))) {
+//   routes.unshift(
+//     {
+//       path: '/announce',
+//       component: Result
+//     }
+//   );
+//   routes.unshift(
+//     {
+//       path: '/confirm',
+//       component: Confirm,
+//     }
+//   );
+// }
 const router = new VueRouter({
   base: __dirname,
   routes,
