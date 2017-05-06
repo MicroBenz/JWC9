@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddAnnounceIDToAnnouncementsTable extends Migration
+class DropPrimarykeyFromAnnouncementsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddAnnounceIDToAnnouncementsTable extends Migration
     public function up()
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->increments('AnnounceID')->first();
+            $table->dropPrimary('CamperID');
         });
     }
 
