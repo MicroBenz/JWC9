@@ -37,13 +37,10 @@
 									#
 								</th>
 								<th>
-									Facebook
+									Camper ID
 								</th>
 								<th>
-									Name
-								</th>
-								<th>
-									Nickname
+									Code
 								</th>
 								<th>
 									Profile
@@ -66,13 +63,9 @@
 									{{ $count+1 }}
 								</td>
 								<td>
-									{!! "<a href=\"//fb.com/".$content->FacebookUniqueID."\" target=\"_blank\">".$content->fbaccount->FacebookName."</a>" !!}
-								</td>
+									{!! "<a href=\"grading/".encrypt($content->FacebookUniqueID)."\" target=\"_blank\">".$content->CamperID."</a>" !!}
 								<td>
-									{{ $content->profile->FirstName." ".$content->profile->LastName }}
-								</td>
-								<td>
-									{{ $content->profile->Nickname }}
+									{{ substr($content->profile->Telephone, 0, -3) . 'xxx' }}
 								</td>
 								<td>
 									<i class="fa fa-{{ $content->verify ? $content->verify == 'pass' ? 'check':'times':'question'}}-circle"></i>
@@ -83,7 +76,7 @@
 								</td>
 								@endforeach
 								<td>
-									{{ number_format((float)$content->total, 2, '.', '') }}
+									{!! "<a href=\"grading/".encrypt($content->FacebookUniqueID)."/YnlwYXNz\" target=\"_blank\">".number_format((float)$content->total, 2, '.', '')."</a>" !!}
 								</td>
 							</tr>
 							@endforeach
@@ -113,13 +106,10 @@
 									#
 								</th>
 								<th>
-									Facebook
+									Camper ID
 								</th>
 								<th>
-									Name
-								</th>
-								<th>
-									Nickname
+									Code
 								</th>
 								<th>
 									Profile
@@ -142,13 +132,9 @@
 									{{ $count+1 }}
 								</td>
 								<td>
-									{!! "<a href=\"//fb.com/".$design->FacebookUniqueID."\" target=\"_blank\">".$design->fbaccount->FacebookName."</a>" !!}
-								</td>
+									{!! "<a href=\"grading/".encrypt($design->FacebookUniqueID)."\" target=\"_blank\">".$design->CamperID."</a>" !!}
 								<td>
-									{{ $design->profile->FirstName." ".$design->profile->LastName }}
-								</td>
-								<td>
-									{{ $design->profile->Nickname }}
+									{{ substr($design->profile->Telephone, 0, -3) . 'xxx' }}
 								</td>
 								<td>
 									<i class="fa fa-{{ $design->verify ? $design->verify == 'pass' ? 'check':'times':'question'}}-circle"></i>
@@ -159,7 +145,7 @@
 								</td>
 								@endforeach
 								<td>
-									{{ number_format((float)$design->total, 2, '.', '') }}
+									{!! "<a href=\"grading/".encrypt($design->FacebookUniqueID)."/YnlwYXNz\" target=\"_blank\">".number_format((float)$design->total, 2, '.', '')."</a>" !!}
 								</td>
 							</tr>
 							@endforeach
@@ -189,13 +175,10 @@
 									#
 								</th>
 								<th>
-									Facebook
+									Camper ID
 								</th>
 								<th>
-									Name
-								</th>
-								<th>
-									Nickname
+									Code
 								</th>
 								<th>
 									Profile
@@ -218,13 +201,9 @@
 									{{ $count+1 }}
 								</td>
 								<td>
-									{!! "<a href=\"//fb.com/".$market->FacebookUniqueID."\" target=\"_blank\">".$market->fbaccount->FacebookName."</a>" !!}
-								</td>
+									{!! "<a href=\"grading/".encrypt($market->FacebookUniqueID)."\" target=\"_blank\">".$market->CamperID."</a>" !!}
 								<td>
-									{{ $market->profile->FirstName." ".$market->profile->LastName }}
-								</td>
-								<td>
-									{{ $market->profile->Nickname }}
+									{{ substr($market->profile->Telephone, 0, -3) . 'xxx' }}
 								</td>
 								<td>
 									<i class="fa fa-{{ $market->verify ? $market->verify == 'pass' ? 'check':'times':'question'}}-circle"></i>
@@ -235,7 +214,7 @@
 								</td>
 								@endforeach
 								<td>
-									{{ number_format((float)$market->total, 2, '.', '') }}
+									{!! "<a href=\"grading/".encrypt($market->FacebookUniqueID)."/YnlwYXNz\" target=\"_blank\">".number_format((float)$market->total, 2, '.', '')."</a>" !!}
 								</td>
 							</tr>
 							@endforeach
