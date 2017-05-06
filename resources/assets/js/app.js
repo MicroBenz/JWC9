@@ -2,6 +2,7 @@ require('./bootstrap');
 import VueRouter from 'vue-router';
 import vueScrollTo from 'vue-scroll-to';
 import Flatpickr from 'flatpickr';
+import moment from 'moment';
 // import VueFlatpickr from 'vue-flatpickr'
 // import 'vue-flatpickr/theme/airbnb.css'
 import 'flatpickr/dist/flatpickr.css';
@@ -37,65 +38,79 @@ Vue.use(vueScrollTo);
 // Vue.use(VueFlatpickr);
 //Vue.use(VueScrollTo);
 
+const routes = [
+  { path: '/', component: Landing },
+  { path: 'success', component: Success},
+  {
+    path: '/register',
+    component: Register,
+    children: [
+        {
+          path: '/',
+          component: Profile
+        },
+        {
+          path: 'step1',
+          component: Profile
+        },
+        {
+          path: 'step2',
+          component: Contact
+        },
+        {
+          path: 'step3',
+          component: Other
+        },
+        {
+          path: 'step4',
+          component: GeneralQuestion
+        },
+        {
+          path: 'step5-design',
+          component: Designer
+        },
+        {
+          path: 'step5-content',
+          component: Content
+        },
+        {
+          path: 'step5-marketing',
+          component: Marketer
+        },
+        {
+          path: 'step6',
+          component: ConfirmRegis
+        },
+        {
+          path: 'step7',
+          component: Success
+        },
+        {
+          path: 'success',
+          component: SuccessLock
+        }
+      ]
+    },    
+    { path: '*', component: PageNotFound }
+]
+
+if (moment().isAfter(moment('2017-05-06 21:00'))) {
+  routes.unshift(
+    {
+      path: '/announce',
+      component: Result
+    }
+  );
+  routes.unshift(
+    {
+      path: '/confirm',
+      component: Confirm,
+    }
+  );
+}
 const router = new VueRouter({
   base: __dirname,
-  routes: [
-    { path: '/', component: Landing },
-    { path: 'success', component: Success},
-    {
-      path: '/register',
-      component: Register,
-      children: [
-          {
-            path: '/',
-            component: Profile
-          },
-          {
-            path: 'step1',
-            component: Profile
-          },
-          {
-            path: 'step2',
-            component: Contact
-          },
-          {
-            path: 'step3',
-            component: Other
-          },
-          {
-            path: 'step4',
-            component: GeneralQuestion
-          },
-          {
-            path: 'step5-design',
-            component: Designer
-          },
-          {
-            path: 'step5-content',
-            component: Content
-          },
-          {
-            path: 'step5-marketing',
-            component: Marketer
-          },
-          {
-            path: 'step6',
-            component: ConfirmRegis
-          },
-          {
-            path: 'step7',
-            component: Success
-          },
-          {
-            path: 'success',
-            component: SuccessLock
-          }
-        ]
-      },
-      { path: '/announce', component: Result },
-      { path: '/confirm', component: Confirm },      
-      { path: '*', component: PageNotFound }
-  ],
+  routes,
   mode: 'history'
 })
 
