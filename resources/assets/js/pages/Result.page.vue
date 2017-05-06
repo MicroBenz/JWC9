@@ -65,6 +65,26 @@ export default {
       { name: "ชื่อจริง4 ทดสอบนามสกุล", price: 200.12 },
     ],
   }),
+  mounted() {
+    axios.get('/api/results')
+      .then(
+        ({ data }) => {
+          const { contents, markets, designs } = data;
+          this.content = contents.map((camper) => ({
+            name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
+            price: 200,
+          }));
+          this.marketing = markets.map((camper) => ({
+            name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
+            price: 200,
+          }));
+          this.design = designs.map((camper) => ({
+            name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
+            price: 200,
+          }));
+        }
+      )
+  },
   methods: {
       login() {
         FB.login((response) => {
