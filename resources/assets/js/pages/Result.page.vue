@@ -57,68 +57,157 @@ export default {
     }
   }),
   mounted() {
-    axios.get('/api/results')
-      .then(
-        ({ data }) => {
-          const { contents, markets, designs } = data;
-          this.content = contents
-            .map(({ camper }) => ({
-              name: `${camper.FirstName} ${camper.LastName}`,
-            }))
-            .slice(0, 14)
-            .sort((a, b) => {
-              if(a.name < b.name) return -1;
-              if(a.name > b.name) return 1;
-              return 0;
-            })
-            .map((camper, i) => ({
-              id: i + 1 < 10 ? `C0${i + 1}` : `C${i + 1}`,
-              name: camper.name,
-              price: i + 1 < 10 ? `200.0${i + 1}` : `200.${i + 1}`,
-            }))
-          this.design = designs
-            .map(({ camper }) => ({
-              name: `${camper.FirstName} ${camper.LastName}`,
-            }))
-            .slice(0, 14)
-            .sort((a, b) => {
-              if(a.name < b.name) return -1;
-              if(a.name > b.name) return 1;
-              return 0;
-            })
-            .map((camper, i) => ({
-              id: `D${i + 15}`,
-              name: camper.name,
-              price: `200.${i + 15}`,
-            }))
-          this.marketing = markets
-            .map(({ camper }) => ({
-              name: `${camper.FirstName} ${camper.LastName}`,
-            }))
-            .slice(0, 14)
-            .sort((a, b) => {
-              if(a.name < b.name) return -1;
-              if(a.name > b.name) return 1;
-              return 0;
-            })
-            .map((camper, i) => ({
-              id: `M${i + 29}`,
-              name: camper.name,
-              price: `200.${i + 29}`,
-            }))
+    // axios.get('/api/results')
+      // .then(
+        // ({ data }) => {
+          // const { contents, markets, designs } = data;
+          // this.content = contents
+          //   .map(({ camper }) => ({
+          //     name: `${camper.FirstName} ${camper.LastName}`,
+          //   }))
+          //   .slice(0, 14)
+          //   .sort((a, b) => {
+          //     if(a.name < b.name) return -1;
+          //     if(a.name > b.name) return 1;
+          //     return 0;
+          //   })
+          //   .map((camper, i) => ({
+          //     id: i + 1 < 10 ? `C0${i + 1}` : `C${i + 1}`,
+          //     name: camper.name,
+          //     price: i + 1 < 10 ? `200.0${i + 1}` : `200.${i + 1}`,
+          //   }))
+          // this.design = designs
+          //   .map(({ camper }) => ({
+          //     name: `${camper.FirstName} ${camper.LastName}`,
+          //   }))
+          //   .slice(0, 14)
+          //   .sort((a, b) => {
+          //     if(a.name < b.name) return -1;
+          //     if(a.name > b.name) return 1;
+          //     return 0;
+          //   })
+          //   .map((camper, i) => ({
+          //     id: `D${i + 15}`,
+          //     name: camper.name,
+          //     price: `200.${i + 15}`,
+          //   }))
+          // this.marketing = markets
+          //   .map(({ camper }) => ({
+          //     name: `${camper.FirstName} ${camper.LastName}`,
+          //   }))
+          //   .slice(0, 14)
+          //   .sort((a, b) => {
+          //     if(a.name < b.name) return -1;
+          //     if(a.name > b.name) return 1;
+          //     return 0;
+          //   })
+          //   .map((camper, i) => ({
+          //     id: `M${i + 29}`,
+          //     name: camper.name,
+          //     price: `200.${i + 29}`,
+          //   }))
 
-          this.backup.content = contents.map((camper) => ({
-            name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
-          })).slice(15);
-          this.backup.marketing = markets.map((camper) => ({
-            name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
-          })).slice(15);
-          this.backup.design = designs.map((camper) => ({
-            name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
-          })).slice(15);
-          this.isLoad = false;
-        }
-      )
+          // this.backup.content = contents.map((camper) => ({
+          //   name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
+          // })).slice(14);
+          // this.backup.marketing = markets.map((camper) => ({
+          //   name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
+          // })).slice(14);
+          // this.backup.design = designs.map((camper) => ({
+          //   name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
+          // })).slice(14);
+          // this.isLoad = false;
+        // }
+      // )
+      this.isLoad = false;
+      const content = [
+        { name: "กรทอง วิริยะเศวตกุล" },
+        { name: "เกวลิน ลิ้มสุวรรณ" },
+        { name: "ช่อผกา โพธิ์ศรีทัต" },
+        { name: "ชาลิสา เสียงสมบูรณ์" },
+        { name: "ณัฐกมล แซ่ลิ้ม" },
+        { name: "ดวิษา คล้ายมุข" },
+        { name: "นายภูมินันท์ สมเสก" },
+        { name: "พนิตวีร์ ใยระย้า" },
+        { name: "วรดา กฤตยาเกียรติกุล" },
+        { name: "วารีรัตน ปิ่นการะเกศ" },
+        { name: "สิรินยา ศรีสกุล" },
+        { name: "สุเทพ จันทร์ชูผล" },
+        { name: "โสพิศชยา ล้ำเมธี" },
+        { name: "อนัคฆมณี กฤษฎาสิมะ" }
+      ];
+      const design = [
+        { name: "เจณิกาพร ปิยะรัตน์" },
+        { name: "ฉัตรชนก วิทูรเดช" },
+        { name: "ณัฐณิชา วัฒนากูล" },
+        { name: "ดนุชเดช บุญน้อย" },
+        { name: "ธัชธรรม สีมาเอกรัตน์" },
+        { name: "ธัญพิชชา สิทธิจันทร์" },
+        { name: "ธัญริน ครุจิต" },
+        { name: "นางสาวณัฐพร เทพานนท์" },
+        { name: "บัญจภัทร์ ไชยสงวนธรรม" },
+        { name: "ภูมิรพี ลิ้มเพียรชอบ" },
+        { name: "รัฐศิลป์ โพธิ์ประพันธ์" },
+        { name: "ศุภัชฌา พงศ์พัฒนหยก" },
+        { name: "อภิชญาณ์ พิพัฒน์ฉัตรสกุล" },
+        { name: "อาภาภัทร คงมานะชาญ" }
+      ];
+      const market = [
+        { name: "กรมาดา พิริยะเกียรติสกุล" },
+        { name: "กฤตเมธ ชูวงศ์วรพินิจ" },
+        { name: "กัญญารัตน์ จันทขันธ์" },
+        { name: "คีตภัทร เกตุนวล" },
+        { name: "จิราภา ผ่องผิว" },
+        { name: "ญาณภัทร นิคมรักษ์" },
+        { name: "ณัฐกิตติ์ สำเร็จ" },
+        { name: "ธนกร ภาแสงเทียน" },
+        { name: "นภัสธิดา แย้มศรี" },
+        { name: "ปัญจม์พร อุทัยรังศรีเลิศ" },
+        { name: "ภทรชนก คุ้มนุ้ย" },
+        { name: "ภูมิปรินทร์ มะโน" },
+        { name: "สรณ์สิริ พรหมมา" },
+        { name: "อริยา บุญชู" }
+      ];
+      this.backup.content = [
+        { name: "ภัทรานิษฐ์ คงแสนคำ" },
+        { name: "ภาสินี สันติวรนันท์" },
+        { name: "สิรินทรา งามวิริยะพงศ์" },
+        { name: "กัญญ์ชนก ไชยสาคร" },
+        { name: "ศุภกานต์ สง่ากชกร" },
+      ];
+      this.backup.design = [
+        { name: "ณิชาภัทร อนุวัฒนวารี" },
+        { name: "กัญญพัชร ชาญวาณิช" },
+        { name: "ฐานดา ศุภสัญญา" },
+        { name: "ชัชนันท์ วัฒนศิริ" },
+        { name: "ณภัทร นุเจิ้น" },
+      ];
+      this.backup.marketing = [
+        { name: "ณฐนนท ระฤก" },
+        { name: "เมสิยาพร อมรเวชเศวตพร" },
+        { name: "ปูรณ์ โชตธีรวสุ" },
+        { name: "ญาณิศา ลี้รัตนา" },
+        { name: "นาย กฤตเมธ ชูวงศ์วรพินิจ" },
+      ]
+      this.content = content
+        .map((camper, i) => ({
+          id: i + 1 < 10 ? `C0${i + 1}` : `C${i + 1}`,
+          name: camper.name,
+          price: i + 1 < 10 ? `200.0${i + 1}` : `200.${i + 1}`,
+        }));
+      this.design = design
+        .map((camper, i) => ({
+          id: i + 1 < 10 ? `D0${i + 1}` : `D${i + 1}`,
+          name: camper.name,
+          price: `200.${i + 15}`,
+        }));
+      this.marketing = market
+        .map((camper, i) => ({
+          id: i + 1 < 10 ? `M0${i + 1}` : `M${i + 1}`,
+          name: camper.name,
+          price: `200.${i + 29}`,
+        }));
+      console.log(this.market);
   },
   methods: {
       login() {

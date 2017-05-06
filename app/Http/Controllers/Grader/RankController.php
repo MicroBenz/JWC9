@@ -136,7 +136,8 @@ class RankController extends Controller
                 $toInsert = [
                     'camper' => [
                         'FirstName' => $profile->FirstName,
-                        'LastName' => $profile->LastName
+                        'LastName' => $profile->LastName,
+                        'ID' => $profile->CamperID
                     ],
                     'total' => $camper->total
                 ];

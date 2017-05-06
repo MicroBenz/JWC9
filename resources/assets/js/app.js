@@ -91,8 +91,7 @@ const routes = [
         }
       ]
     },
-    // { path: '/announce', component: Result },
-    { path: '/this/is/very/secret/route/do/not/enter', component: Result },
+    { path: '/announce', component: Result },
     { path: '/confirm', component: Confirm },
     { path: '*', component: PageNotFound }
 ]
