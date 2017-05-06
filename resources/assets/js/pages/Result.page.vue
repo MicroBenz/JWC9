@@ -238,6 +238,9 @@ export default {
 
 .logo {
   height: 350px;
+  @media(max-width: 768px) {
+    height: 230px;
+  }
 }
 .container {
   margin-top: 35px;
@@ -247,7 +250,7 @@ export default {
   background-color: $brown;
   color: $yellow;
   max-width: 75%;
-  min-width: 500px;
+  min-width: 200px;
   border-radius: 50px;
   margin: 0 auto;
   padding-top: 10px;
@@ -257,8 +260,8 @@ export default {
     font-size: 54px;
     line-height: 78px;
     @media(max-width: 768px) {
-      font-size: 45px;
-      line-height: 55px;
+      font-size: 20px;
+      line-height: 27px;
     }
   }
 }

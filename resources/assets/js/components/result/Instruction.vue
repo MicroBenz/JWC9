@@ -4,8 +4,8 @@
       <h1 class="title">สิ่งที่ต้องทำ (สำหรับน้องตัวจริง)</h1>
       <ol>
         <li>น้องๆ ที่ผ่านการคัดเลือกต้องโอนเงินเพื่อยืนยันสิทธิ์ <b>(ให้น้องๆ ถ่ายรูปสลิปเก็บไว้ด้วยนะจ๊ะ)</b></li>
-        <li>ส่งหลักฐานการโอนเงินในระบบ <b>ภายในวันที่ 9 พฤษภาคม 2560 เวลา 23.59 น.</b></li>
-        <li>น้องๆ ต้องส่งใบอนุญาตจากผู้ปกครอง <b>ภายในวันที่ 26 พฤษภาคม 2560</b></li>
+        <li>ส่งหลักฐานการโอนเงินในระบบ <b>ตั้งแต่วันที่ 7 พฤษาภาคม เวลา 16.00 น. จนถึงวันที่ 9 พฤษภาคม 2560 เวลา 23.59 น.</b></li>
+        <li>น้องๆ ต้องส่งใบอนุญาตจากผู้ปกครอง <b>ในวันค่ายวันแรก 26 พฤษภาคม 2560</b></li>
       </ol>
       <h3 class="book-bank-title">โอนเงินยืนยันสิทธิ์มาได้ที่บัญชี</h3>
       <div class="book-bank-detail">
@@ -32,12 +32,18 @@
   background-color: $brown;
   padding: 25px 60px;
   text-align: left;
+  @media(max-width: 768px) {
+    padding: 25px 20px;
+  }
   .title {
     font-size: 60px;    
     color: $yellow;
     padding-bottom: 20px;
     font-weight: 600;
     text-align: center;
+    @media(max-width: 768px) {
+      font-size: 40px;
+    }
   }
   ol > li b {
     color: $yellow;
