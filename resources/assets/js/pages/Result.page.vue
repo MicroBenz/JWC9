@@ -187,7 +187,7 @@ export default {
         { name: "เมสิยาพร อมรเวชเศวตพร" },
         { name: "ปูรณ์ โชตธีรวสุ" },
         { name: "ญาณิศา ลี้รัตนา" },
-        { name: "นาย กฤตเมธ ชูวงศ์วรพินิจ" },
+        { name: "" },
       ]
       this.content = content
         .map((camper, i) => ({
