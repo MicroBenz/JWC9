@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('registrant_amount', 'StatController@getTeamRegisterAmount');
+Route::get('qualifies', 'QualifyController@getQualifies');
 
 Route::get('results', 'Grader\RankController@getRankAPI');
 

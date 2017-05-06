@@ -25,6 +25,9 @@ Route::post('subscribe', 'SubscribeController@insert');
 Route::post('authen/{team}', 'SocialAuthController@authen');
 Route::post('approve-authen', 'SocialAuthController@approveAuthen');
 
+
+Route::get('qualifies', 'QualifyController@getQualifies');
+
 Route::group(['prefix' => 'wearehiring'], function () {
 	Route::get('login', 'Grader\LoginController@getLogin');
 	Route::get('logout', 'SocialAuthController@logout');
