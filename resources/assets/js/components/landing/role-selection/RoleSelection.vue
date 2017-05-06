@@ -32,7 +32,8 @@
         <div class="presenter">
             <img class="presenter-body" v-bind:src="presenter.body">
             <img class="presenter-light" v-bind:src="presenter.light">
-            <div v-on:click="chooseRole()" v-bind:class="{'btn-join':true, 'btn-join-disabled':selectedRole=='none'}" >สมัครเลย</div>
+            <!--<div v-on:click="chooseRole()" v-bind:class="{'btn-join':true, 'btn-join-disabled':selectedRole=='none'}" >สมัครเลย</div>-->
+            <div class="btn-join">ปิดแล้วจ้า</div>
         </div>
 
         <!-- Right Section: Job Selector -->
