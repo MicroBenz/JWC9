@@ -16,19 +16,19 @@
       <result-table :campers="marketing" role="Marketing"></result-table>
     </div>
   </div>
-  <div v-on:click="login()" class="confirm-btn">ยืนยันสิทธิ์</div>
+  <!--<div v-on:click="login()" class="confirm-btn">ยืนยันสิทธิ์</div>-->
   <div class="banner">
     <h1>รายชื่อตัวสำรอง</h1>
   </div>
   <div class="container">
     <div class="col-md-4 col-sm-6 col-xs-12">
-      <result-table :campers="content" role="Content"></result-table>
+      <result-table :campers="backup.content" role="Content" v-bind:noid="true"></result-table>
     </div>
     <div class="col-md-4 col-sm-6 col-xs-12">
-      <result-table :campers="design" role="Designer"></result-table>
+      <result-table :campers="backup.design" role="Designer" v-bind:noid="true"></result-table>
     </div>
     <div class="col-md-4 col-sm-6 col-xs-12">
-      <result-table :campers="marketing" role="Marketing"></result-table>
+      <result-table :campers="backup.marketing" role="Marketing" v-bind:noid="true"></result-table>
     </div>
   </div>
 </div>
@@ -46,42 +46,45 @@ export default {
     Instruction
   },
   data: () => ({
-    content: [
-      { name: "ชื่อจริง ทดสอบนามสกุล", price: 200.01 },
-      { name: "ชื่อจริง2 ทดสอบนามสกุล", price: 200.02 },
-      { name: "ชื่อจริง3 ทดสอบนามสกุล", price: 200.03 },
-      { name: "ชื่อจริง4 ทดสอบนามสกุล", price: 200.04 },
-    ],
-    marketing: [
-      { name: "ชื่อจริง ทดสอบนามสกุล", price: 200.05 },
-      { name: "ชื่อจริง2 ทดสอบนามสกุล", price: 200.06 },
-      { name: "ชื่อจริง3 ทดสอบนามสกุล", price: 200.07 },
-      { name: "ชื่อจริง4 ทดสอบนามสกุล", price: 200.08 },
-    ],
-    design: [
-      { name: "ชื่อจริง ทดสอบนามสกุล", price: 200.09 },
-      { name: "ชื่อจริง2 ทดสอบนามสกุล", price: 200.10 },
-      { name: "ชื่อจริง3 ทดสอบนามสกุล", price: 200.11 },
-      { name: "ชื่อจริง4 ทดสอบนามสกุล", price: 200.12 },
-    ],
+    content: [],
+    marketing: [],
+    design: [],
+    backup: {
+      content: [],
+      marketing: [],
+      design: [],
+    }
   }),
   mounted() {
     axios.get('/api/results')
       .then(
         ({ data }) => {
           const { contents, markets, designs } = data;
-          this.content = contents.map((camper) => ({
+          this.content = contents.map((camper, i) => ({
+            id: i + 1 < 10 ? `C0${i + 1}` : `C${i + 1}`,
             name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
-            price: 200,
-          }));
-          this.marketing = markets.map((camper) => ({
+            price: i + 1 < 10 ? `200.0${i + 1}` : `200.${i + 1}`,
+          })).slice(0, 14);
+          this.design = designs.map((camper, i) => ({
+            id: i + 1 < 10 ? `D0${i + 1}` : `D${i + 1}`,
             name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
-            price: 200,
-          }));
-          this.design = designs.map((camper) => ({
+            price: `200.${i + 15}`
+          })).slice(0, 14);
+          this.marketing = markets.map((camper, i) => ({
+            id: i + 1 < 10 ? `M0${i + 1}` : `M${i + 1}`,
             name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
-            price: 200,
-          }));
+            price: `200.${i + 29}`
+          })).slice(0, 14);
+
+          this.backup.content = contents.map((camper) => ({
+            name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
+          })).slice(15);
+          this.backup.marketing = markets.map((camper) => ({
+            name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
+          })).slice(15);
+          this.backup.design = designs.map((camper) => ({
+            name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
+          })).slice(15);
         }
       )
   },

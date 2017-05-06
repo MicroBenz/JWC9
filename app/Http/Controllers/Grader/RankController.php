@@ -155,11 +155,11 @@ class RankController extends Controller
             }
         }
         $contents = $contents->sortByDesc('total');
-        $contents = $contents->values()->take(14);
+        $contents = $contents->values()->take(19);
         $designs = $designs->sortByDesc('total');
-        $designs = $designs->values()->take(14);
+        $designs = $designs->values()->take(19);
         $markets = $markets->sortByDesc('total');
-        $markets = $markets->values()->take(14);
+        $markets = $markets->values()->take(19);
         // $designs = $designs->sortByDesc('total');
         // $designs = $designs->values()->all();
         // $markets = $markets->sortByDesc('total');

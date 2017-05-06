@@ -14,16 +14,16 @@
       role === 'Marketing' ? 'marketing-header' : '',
     ]">
       <tr>
-        <td>ID</td>
+        <td v-if="!noid">ID</td>
         <td>ชื่อ</td>
-        <td>จำนวนเงิน</td>
+        <td v-if="!noid">จำนวนเงิน</td>
       </tr>
     </thead>
     <tbody>
       <tr v-for="camper in campers">
-        <td>D01</td>
+        <td v-if="!noid">{{camper.id}}</td>
         <td>{{camper.name}}</td>
-        <td>{{camper.price}}</td>
+        <td v-if="!noid">{{camper.price}}</td>
       </tr>
     </tbody>
   </table>
@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  props: ['campers', 'role'],
+  props: ['campers', 'role', 'noid'],
 }
 </script>
 
