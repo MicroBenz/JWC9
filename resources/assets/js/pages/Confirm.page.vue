@@ -13,7 +13,7 @@ export default {
   mounted() {
     console.log('TOKEN', this.token);
     if (this.token === '') {
-      // this.$router.push('/');
+      this.$router.push('/');
     }
   },
   components: {
@@ -22,7 +22,7 @@ export default {
   },
   data: () => ({
     img: '',
-    isShowCongrat: true, //Trigger upon user state
+    isShowCongrat: false, //Trigger upon user state
   }),
   computed: mapGetters({
     token: 'accessToken',

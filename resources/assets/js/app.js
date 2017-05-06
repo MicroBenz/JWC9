@@ -90,7 +90,10 @@ const routes = [
           component: SuccessLock
         }
       ]
-    },    
+    },
+    // { path: '/announce', component: Result },
+    { path: '/this/is/very/secret/route/do/not/enter', component: Result },
+    { path: '/confirm', component: Confirm },
     { path: '*', component: PageNotFound }
 ]
 
