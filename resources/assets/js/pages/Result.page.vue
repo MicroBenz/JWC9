@@ -60,21 +60,51 @@ export default {
       .then(
         ({ data }) => {
           const { contents, markets, designs } = data;
-          this.content = contents.map((camper, i) => ({
-            id: i + 1 < 10 ? `C0${i + 1}` : `C${i + 1}`,
-            name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
-            price: i + 1 < 10 ? `200.0${i + 1}` : `200.${i + 1}`,
-          })).slice(0, 14);
-          this.design = designs.map((camper, i) => ({
-            id: i + 1 < 10 ? `D0${i + 1}` : `D${i + 1}`,
-            name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
-            price: `200.${i + 15}`
-          })).slice(0, 14);
-          this.marketing = markets.map((camper, i) => ({
-            id: i + 1 < 10 ? `M0${i + 1}` : `M${i + 1}`,
-            name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
-            price: `200.${i + 29}`
-          })).slice(0, 14);
+          this.content = contents
+            .map(({ camper }) => ({
+              name: `${camper.FirstName} ${camper.LastName}`,
+            }))
+            .slice(0, 14)
+            .sort((a, b) => {
+              if(a.name < b.name) return -1;
+              if(a.name > b.name) return 1;
+              return 0;
+            })
+            .map((camper, i) => ({
+              id: i + 1 < 10 ? `C0${i + 1}` : `C${i + 1}`,
+              name: camper.name,
+              price: i + 1 < 10 ? `200.0${i + 1}` : `200.${i + 1}`,
+            }))
+          this.design = designs
+            .map(({ camper }) => ({
+              name: `${camper.FirstName} ${camper.LastName}`,
+            }))
+            .slice(0, 14)
+            .sort((a, b) => {
+              if(a.name < b.name) return -1;
+              if(a.name > b.name) return 1;
+              return 0;
+            })
+            .map((camper, i) => ({
+              id: `D${i + 15}`,
+              name: camper.name,
+              price: `200.${i + 15}`,
+            }))
+          this.marketing = markets
+            .map(({ camper }) => ({
+              name: `${camper.FirstName} ${camper.LastName}`,
+            }))
+            .slice(0, 14)
+            .sort((a, b) => {
+              if(a.name < b.name) return -1;
+              if(a.name > b.name) return 1;
+              return 0;
+            })
+            .map((camper, i) => ({
+              id: `M${i + 29}`,
+              name: camper.name,
+              price: `200.${i + 29}`,
+            }))
 
           this.backup.content = contents.map((camper) => ({
             name: `${camper.camper.FirstName} ${camper.camper.LastName}`,
