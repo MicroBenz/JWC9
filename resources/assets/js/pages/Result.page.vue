@@ -135,10 +135,10 @@ export default {
     font-weight: 800;
     font-size: 54px;
     line-height: 78px;
-  }
-  @media(max-width: 768px) {
-    font-size: 45px;
-    line-height: 55px;
+    @media(max-width: 768px) {
+      font-size: 45px;
+      line-height: 55px;
+    }
   }
 }
 .confirm-btn {
