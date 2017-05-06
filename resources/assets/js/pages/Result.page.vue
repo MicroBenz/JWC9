@@ -16,7 +16,7 @@
       <result-table :campers="marketing" role="Marketing" v-bind:isLoad="isLoad"></result-table>
     </div>
   </div>
-  <!--<div v-on:click="login()" class="confirm-btn">ยืนยันสิทธิ์</div>-->
+  <div v-on:click="login()" class="confirm-btn">ยืนยันสิทธิ์</div>
   <div class="banner">
     <h1>รายชื่อตัวสำรอง</h1>
   </div>

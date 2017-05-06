@@ -13,7 +13,7 @@ export default {
   mounted() {
     console.log('TOKEN', this.token);
     if (this.token === '') {
-      this.$router.push('/');
+      // this.$router.push('/');
     }
   },
   components: {
