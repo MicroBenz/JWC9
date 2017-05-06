@@ -32,7 +32,7 @@ class GradingController extends Controller
                                     ->withWaitings($waitings);
     }
 
-    public function getAnswer($secret)
+    public function getAnswer($secret, $bypass = false)
     {
         try {
             $fbaccount = decrypt($secret);
@@ -43,9 +43,20 @@ class GradingController extends Controller
     	$camper = Campers::where('FacebookUniqueID', $fbaccount)->first();
         if($grader->TeamID == 4)
         {
-            $answers = Answers::where('CamperID', $camper->CamperID)->where('QuestionID', '<', 3)->get();
-            return view('graders.grading_central')->withCamper($camper)
+            if($bypass == "YnlwYXNz")
+            {
+                $questions = Questions::where('TeamID', $camper->TeamID)->pluck('QuestionID');
+                $questions = $questions->push(3)->push(4);
+                $answers = Answers::where('CamperID', $camper->CamperID)->whereIn('QuestionID', $questions)->get();
+                return view('graders.grading_check')->withCamper($camper)
                                                     ->withAnswers($answers);
+            }
+            else
+            {
+                $answers = Answers::where('CamperID', $camper->CamperID)->where('QuestionID', '<', 3)->get();
+                return view('graders.grading_central')->withCamper($camper)
+                                                    ->withAnswers($answers);
+            }
         }
         else
         {
