@@ -4,7 +4,7 @@
 <link href="{{ url('graders/css/profile-old.css') }}" rel="stylesheet" type="text/css"/>
 <style type="text/css">
 	.portlet.box > .portlet-body {
-		padding: 40px;
+		padding: 5px 40px 40px 40px;
 	}
 </style>
 @endsection
@@ -28,6 +28,7 @@
 								</div>
 							</div>
 							<div class="portlet-body">
+								<h1>Money: {{ $camper->Money }}</h1>
 								Slip Attachment: <br><a href="//jwc.in.th/storage/slip/{{ $camper->Slip }}" target="_blank"><img src="//jwc.in.th/storage/slip/{{ $camper->Slip }}" style="max-width: 400px;"></a><br><br>
 								<div class="form-group">
 									<label>Judgement</label>
