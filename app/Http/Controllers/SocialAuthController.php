@@ -40,7 +40,7 @@ class SocialAuthController extends Controller
         if(is_null($grader) ) return redirect('/wearehiring/login');
 
         Auth::loginUsingId($user['FacebookUniqueID']);
-        return redirect('/wearehiring/grading');
+        return redirect('/wearehiring/slip');
     }
 
     public function register($team)
