@@ -29,9 +29,13 @@ Route::post('approve-authen', 'SocialAuthController@approveAuthen');
 Route::get('qualifies', 'QualifyController@getQualifies');
 
 Route::get('/additional/register/marketing', function() {
-	// Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/callback');
+	Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/additional/register/marketing/callback');
     $fb_user = Socialite::driver('facebook')->stateless()->user();
     return $fb_user;
+});
+Route::get('/additional/register/marketing/callback', function() {
+	Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/wearehiring/register'.'/'.$team.'/callback');
+	$fb_user = Socialite::driver('facebook')->stateless()->user();
 });
 
 Route::group(['prefix' => 'wearehiring'], function () {
