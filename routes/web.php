@@ -33,8 +33,8 @@ Route::group(['prefix' => 'wearehiring'], function () {
 	Route::get('logout', 'SocialAuthController@logout');
 	Route::get('login/redirect', 'SocialAuthController@redirect_for_login');
 	Route::get('login/callback', 'SocialAuthController@login');
-	// Route::get('register/{team}/callback', 'SocialAuthController@register');
-	// Route::get('register/{team}', 'SocialAuthController@redirect_for_register');
+	Route::get('register/{team}/callback', 'SocialAuthController@register');
+	Route::get('register/{team}', 'SocialAuthController@redirect_for_register');
 	// Route::post('login', 'Grader\LoginController@authenticate');
 
 	Route::get('dashboard', 'Grader\DashboardController@getIndex');
@@ -45,6 +45,9 @@ Route::group(['prefix' => 'wearehiring'], function () {
 	Route::post('grading', 'Grader\GradingController@postScore');
 	Route::get('romeo-alfa-november-kilo', 'Grader\RankController@getIndex');
 	Route::get('tracking', 'Grader\ProgressController@getIndex');
+	Route::get('slip', 'Grader\SlipController@getIndex');
+	Route::get('slip/{secret}', 'Grader\SlipController@getSlip');
+	Route::post('slip', 'Grader\SlipController@postCheck');
 });
 
 Route::get('/{any}', function() { return view('app'); })->where('any', '.*');

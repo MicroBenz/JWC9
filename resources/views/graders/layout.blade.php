@@ -118,12 +118,12 @@
 					<span class="title">Sneak Peek</span>
 					</a>
 				</li> --}}
-				<li class="{{ (Request::is('*/grading') || Request::is('*/grading/*')) ? 'active open':'' }}">
+				{{-- <li class="{{ (Request::is('*/grading') || Request::is('*/grading/*')) ? 'active open':'' }}">
 					<a href="{{ url('wearehiring/grading') }}">
 					<i class="icon-rocket"></i>
 					<span class="title">Grading</span>
 					</a>
-				</li>
+				</li> --}}
 				@if(Auth::user()->grader->TeamID == 4)
 				<li class="{{ (Request::is('*/romeo-alfa-november-kilo')) ? 'active open':'' }}">
 					<a href="{{ url('wearehiring/romeo-alfa-november-kilo') }}">
@@ -135,6 +135,14 @@
 					<a href="{{ url('wearehiring/tracking') }}">
 					<i class="icon-pie-chart"></i>
 					<span class="title">Tracking</span>
+					</a>
+				</li>
+				@endif
+				@if(Auth::user()->grader->TeamID == 5)
+				<li class="{{ (Request::is('*/slip') || Request::is('*/slip/*')) ? 'active open':'' }}">
+					<a href="{{ url('wearehiring/slip') }}">
+					<i class="icon-trophy"></i>
+					<span class="title">Slip</span>
 					</a>
 				</li>
 				@endif
