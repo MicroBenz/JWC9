@@ -28,7 +28,7 @@
 								</div>
 							</div>
 							<div class="portlet-body">
-								Slip Attachment: <br><a href="//jwc.in.th/storage/{{ $camper->Slip }}" target="_blank"><img src="//jwc.in.th/storage/{{ $camper->Slip }}" style="max-width: 400px;"></a><br><br>
+								Slip Attachment: <br><a href="//jwc.in.th/storage/slip/{{ $camper->Slip }}" target="_blank"><img src="//jwc.in.th/storage/slip/{{ $camper->Slip }}" style="max-width: 400px;"></a><br><br>
 								<div class="form-group">
 									<label>Judgement</label>
 									<select class="form-control input-lg" name="checked">
