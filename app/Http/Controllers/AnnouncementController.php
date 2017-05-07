@@ -20,10 +20,10 @@ class AnnouncementController extends Controller
 	    if(!$checkMimeType){
 		    return ['error'=> "ไฟล์ภาพต้องเป็น JPG, PNG หรือ GIF เท่านั้น"];
 	    }
-	    if($file->getClientSize() > 2100000){
+	    if($file->getClientSize() > 4100000){
 		    // $data['errorMessage'] .= "ไฟล์ภาพต้องไม่ใหญ่กว่า 2MB";
 		    return ['error'=>
-			    "ไฟล์ภาพต้องไม่ใหญ่กว่า 2MB"];
+			    "ไฟล์ภาพต้องไม่ใหญ่กว่า 4MB"];
 	    }
 
 	    $user = Announcement::where('facebookUniqueID', $facebookUniqueID)->firstOrFail();

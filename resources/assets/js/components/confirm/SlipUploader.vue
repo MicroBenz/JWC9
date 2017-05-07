@@ -74,7 +74,7 @@ export default {
         image.onload = () => {
           console.log('success', image.width, image.height);
           console.log(file.size)
-          if (file.size <= 2100000) {
+          if (file.size <= 4100000) {
             vm.img = e.target.result;
           }
           else {
