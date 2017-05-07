@@ -18,6 +18,9 @@ Route::get('qualifies', 'QualifyController@getQualifies');
 
 Route::get('results', 'Grader\RankController@getRankAPI');
 
+
+Route::post('uploadslip', 'AnnouncementController@uploadslip');
+
 Route::group(['middleware' => 'jwt.auth'], function () {
     // This route group is protected by JWT Authentication. 
     Route::get('token_tests', function(){

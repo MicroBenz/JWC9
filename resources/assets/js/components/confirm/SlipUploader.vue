@@ -42,12 +42,12 @@ export default {
         return;
       this.createImage(files[0]);
 
-      // let formData = new FormData()
-      // formData.append('ProfilePicture', files[0])
+      let formData = new FormData()
+      formData.append('slip', files[0])
 
-      // axios.post('/api/register/profilepicture', formData).then(function (res) {
-      //   console.log(res.data)
-      // })
+      axios.post('/api/uploadslip', formData).then(res => {
+        console.log(res.data)
+      })
     },
     createImage(file) {
       const reader = new FileReader();

@@ -11,6 +11,7 @@ use App\Teams;
 use App\Campers;
 use App\Profiles;
 use App\Graders;
+use App\Announcement;
 use \Config;
 use Socialite;
 use Auth;
@@ -161,7 +162,7 @@ class SocialAuthController extends Controller
             //return response()->json(compact('token', 'team', $camper['CamperID']));
             return [
                 'token' => $token,
-                'camper_id' => $camper,
+                'camper' => Announcement::where('CamperID', $camper->CamperID)->first(),
             ];
         }
     }

@@ -3,11 +3,13 @@ export default {
     isFacebookApiReady: true,
     isLoggedIn: false,
     accessToken: '',
+    camper: {},
   },
   getters: {
     isLoggedIn: state => state.isLoggedIn,
     isFacebookApiReady: state => state.isFacebookApiReady,
     accessToken: state => state.accessToken,
+    camper: state => state.camper,
   },
   mutations: {
     setLoginStatus(state, isLoggedIn) {
@@ -18,6 +20,9 @@ export default {
     },
     setAccessToken(state, payload) {
       state.accessToken = payload.token;
+    },
+    setCamper(state, payload){
+      state.camper = payload.camper;
     }
   },
   actions: {
@@ -32,6 +37,9 @@ export default {
     },
     setAccessToken({ commit }, payload) {
       commit('setAccessToken', payload);
+    },
+    setCamper({ commit }, payload) {
+      commit('setCamper', payload);
     }
   }
 }

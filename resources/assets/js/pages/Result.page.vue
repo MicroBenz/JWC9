@@ -218,11 +218,14 @@ export default {
             axios.post('/approve-authen', {
               access_token: fbToken,
             }).then(
-              (authRes) => {
-                console.log(authRes);
+              (res) => {
+                console.log(res.data);
                 this.$store.dispatch('setAccessToken', {
-                  token: authRes.data.token
+                  token: res.data.token
                 });
+                  this.$store.dispatch('setCamper', {
+                      camper: res.data.camper
+                  });
                 this.$router.push('/confirm');
               }
             )
