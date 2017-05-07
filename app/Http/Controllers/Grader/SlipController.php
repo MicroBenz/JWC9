@@ -12,7 +12,7 @@ class SlipController extends Controller
 {
     public function getIndex()
     {
-        Auth::loginUsingId(1498012336884637);
+        // Auth::loginUsingId(1498012336884637);
         $grader = Auth::user()->grader;
 
         if($grader->TeamID == 5)
