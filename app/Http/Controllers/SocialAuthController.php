@@ -20,32 +20,32 @@ class SocialAuthController extends Controller
 {
     public function redirect_for_login()
     {
-        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/wearehiring/login/callback');
+        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/additional/login/callback');
         return Socialite::driver('facebook')->redirect();   
     }
 
     public function redirect_for_register($team)
     {
-        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/wearehiring/register'.'/'.$team.'/callback');
+        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/additional/register'.'/'.$team.'/callback');
         return Socialite::driver('facebook')->redirect();   
     }   
 
     public function login()
     {
-        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/wearehiring/login/callback');
+        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/additional/login/callback');
         $fb_user = Socialite::driver('facebook')->stateless()->user();
         $user = Fbaccounts::find($fb_user->getId());
-        if(is_null($user)) return redirect('/wearehiring/login');
+        if(is_null($user)) return redirect('/additional/login');
         $grader = $user->grader()->first();
-        if(is_null($grader) ) return redirect('/wearehiring/login');
+        if(is_null($grader) ) return redirect('/additional/login');
 
         Auth::loginUsingId($user['FacebookUniqueID']);
-        return redirect('/wearehiring/slip');
+        return redirect('/additional/slip');
     }
 
     public function register($team)
     {
-        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/wearehiring/register'.'/'.$team.'/callback');
+        Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/additional/register'.'/'.$team.'/callback');
         $fb_user = Socialite::driver('facebook')->stateless()->user();
         $user = Fbaccounts::find($fb_user->getId());
         $team_id = Teams::where('TeamName', $team)->first()['TeamID'];
@@ -58,15 +58,15 @@ class SocialAuthController extends Controller
             $grader->TeamID = $team_id;
             $grader->save();
         }
-        return redirect('/wearehiring/login');
+        return redirect('/additional/login');
     }
 
     public function logout() {
         $user = Auth::user();
-        if(is_null($user)) return redirect('wearehiring/login');
+        if(is_null($user)) return redirect('additional/login');
         Auth::logout();
         Session::flush();
-        return redirect('wearehiring/login');
+        return redirect('additional/login');
 
     }
 
