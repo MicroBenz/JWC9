@@ -28,7 +28,7 @@ Route::post('approve-authen', 'SocialAuthController@approveAuthen');
 
 Route::get('qualifies', 'QualifyController@getQualifies');
 
-Route::group(['prefix' => 'wearehiring'], function () {
+Route::group(['prefix' => 'additional'], function () {
 	Route::get('login', 'Grader\LoginController@getLogin');
 	Route::get('logout', 'SocialAuthController@logout');
 	Route::get('login/redirect', 'SocialAuthController@redirect_for_login');
