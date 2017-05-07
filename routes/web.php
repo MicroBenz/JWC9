@@ -30,8 +30,7 @@ Route::get('qualifies', 'QualifyController@getQualifies');
 
 Route::get('/additional/register/marketing', function() {
 	Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/additional/register/marketing/callback');
-    $fb_user = Socialite::driver('facebook')->stateless()->user();
-    return $fb_user;
+    return Socialite::driver('facebook')->redirect();
 });
 Route::get('/additional/register/marketing/callback', function() {
 	Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/additional/register/marketing/callback');
