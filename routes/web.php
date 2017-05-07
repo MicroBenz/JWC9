@@ -28,13 +28,19 @@ Route::post('approve-authen', 'SocialAuthController@approveAuthen');
 
 Route::get('qualifies', 'QualifyController@getQualifies');
 
-Route::group(['prefix' => 'additional'], function () {
+Route::get('/additional/register/marketing', function() {
+	// Config::set('services.facebook.redirect', env('FACEBOOK_REDIRECT_URL').'/callback');
+    $fb_user = Socialite::driver('facebook')->stateless()->user();
+    return $fb_user;
+});
+
+Route::group(['prefix' => 'wearehiring'], function () {
 	Route::get('login', 'Grader\LoginController@getLogin');
 	Route::get('logout', 'SocialAuthController@logout');
 	Route::get('login/redirect', 'SocialAuthController@redirect_for_login');
 	Route::get('login/callback', 'SocialAuthController@login');
-	Route::get('register/{team}/callback', 'SocialAuthController@register');
-	Route::get('register/{team}', 'SocialAuthController@redirect_for_register');
+	// Route::get('register/{team}/callback', 'SocialAuthController@register');
+	// Route::get('register/{team}', 'SocialAuthController@redirect_for_register');
 	// Route::post('login', 'Grader\LoginController@authenticate');
 
 	Route::get('dashboard', 'Grader\DashboardController@getIndex');
