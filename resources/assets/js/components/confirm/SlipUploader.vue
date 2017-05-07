@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <h3 class="status">สถานะ: <b>รอการยืนยัน</b></h3>
+    <h3 class="status">สถานะ: <b>{{ camper.Checked }}</b></h3>
   </div>
 </template>
 
@@ -59,6 +59,7 @@ export default {
 
       axios.post('/api/uploadslip/'+camper.FacebookUniqueID, formData).then(res => {
         if(res.data.status == "OK"){
+            this.camper.Checked = 'รอการตรวจสอบ'
             alert('อัพโหลดเรียบร้อย')
         }
         else {

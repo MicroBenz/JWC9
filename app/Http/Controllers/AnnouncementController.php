@@ -22,8 +22,7 @@ class AnnouncementController extends Controller
 	    }
 	    if($file->getClientSize() > 4100000){
 		    // $data['errorMessage'] .= "ไฟล์ภาพต้องไม่ใหญ่กว่า 2MB";
-		    return ['error'=>
-			    "ไฟล์ภาพต้องไม่ใหญ่กว่า 4MB"];
+		    return ['error'=> "ไฟล์ภาพต้องไม่ใหญ่กว่า 4MB"];
 	    }
 
 	    $user = Announcement::where('facebookUniqueID', $facebookUniqueID)->firstOrFail();
@@ -36,6 +35,7 @@ class AnnouncementController extends Controller
 	    try {
 	    	$user::where('facebookUniqueID', $user->FacebookUniqueID)->update([
 	    		    'Slip' => $filename,
+			        'Checked' => 'รอการตรวจสอบ'
 		        ]);
 	    }
 	    catch(Exception $e) {
