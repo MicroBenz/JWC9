@@ -19,7 +19,7 @@ Route::get('qualifies', 'QualifyController@getQualifies');
 Route::get('results', 'Grader\RankController@getRankAPI');
 
 
-Route::post('uploadslip', 'AnnouncementController@uploadslip');
+Route::post('uploadslip/{facebookUniqueID}', 'AnnouncementController@uploadslip');
 
 Route::group(['middleware' => 'jwt.auth'], function () {
     // This route group is protected by JWT Authentication. 

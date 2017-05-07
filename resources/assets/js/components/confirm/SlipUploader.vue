@@ -4,15 +4,15 @@
       <div class="col-md-6 col-xs-12">
         <h1 class="confirm-title">ยืนยันสิทธิ์</h1>
         <div class="camper-detail">
-          <h4 class="pad-ref"><b>Ref ID:</b></h4>        
-          <h4><b>ชื่อ-นามสกุล:</b> นายทดสอบ นามสกุลเทสสสสส</h4>
-          <h4><b>ยอดเงิน:</b> 200.11</h4>
+          <h4 class="pad-ref"><b>Ref ID: {{ camper.CamperID }}</b></h4>
+          <h4><b>ชื่อ-นามสกุล:</b> {{ camper.FirstName }} {{ camper.LastName }}</h4>
+          <h4><b>ยอดเงิน:</b> {{ camper.Money }}</h4>
         </div>
       </div>
       <div class="col-md-6 col-xs-12">
         <div class="slip-image">
           <div v-if="img === ''" class="slip-placeholder"></div>
-          <img v-else :src="img">        
+          <img v-else :src="img">
         </div>
         <div style="text-align:center;">
             <input type="file" id="files" class="hidden" v-on:change="onFileChange" accept="image/*"/>
@@ -34,7 +34,17 @@
 export default {
   data: () => ({
     img: '',
+    camper: {},
   }),
+
+  beforeMount () {
+    this.camper = this.$store.getters.camper
+  },
+  mounted () {
+      if (this.camper.Slip) {
+          this.img = 'storage/slip/'+this.camper.Slip
+      }
+  },
   methods: {
     onFileChange(e) {
       const files = e.target.files || e.dataTransfer.files;
@@ -45,8 +55,15 @@ export default {
       let formData = new FormData()
       formData.append('slip', files[0])
 
-      axios.post('/api/uploadslip', formData).then(res => {
-        console.log(res.data)
+      let camper = this.$store.getters.camper
+
+      axios.post('/api/uploadslip/'+camper.FacebookUniqueID, formData).then(res => {
+        if(res.data.status == "OK"){
+            alert('อัพโหลดเรียบร้อย')
+        }
+        else {
+            alert(res.data.status)
+        }
       })
     },
     createImage(file) {

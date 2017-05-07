@@ -1,6 +1,7 @@
 <template>
 <div class="result-page">
   <img class="logo" src="../components/landing/logo.png">
+  <div class="btn-game"  @click="login()">ยืนยันสิทธิ์</div>
   <instruction></instruction>
   <div class="banner">
     <h1>ประกาศผลค่าย JWC ครั้งที่ 9</h1>
@@ -8,15 +9,17 @@
   <div class="container">
     <div class="col-md-4 col-sm-6 col-xs-12">
       <result-table :campers="content" role="Content" v-bind:isLoad="isLoad"></result-table>
+      <div class="btn-game"  @click="login()">ยืนยันสิทธิ์</div>
     </div>
     <div class="col-md-4 col-sm-6 col-xs-12">
       <result-table :campers="design" role="Designer" v-bind:isLoad="isLoad"></result-table>
+      <div class="btn-game"  @click="login()">ยืนยันสิทธิ์</div>
     </div>
     <div class="col-md-4 col-sm-6 col-xs-12">
       <result-table :campers="marketing" role="Marketing" v-bind:isLoad="isLoad"></result-table>
+      <div class="btn-game" @click="login()">ยืนยันสิทธิ์</div>
     </div>
   </div>
-  <!--<div v-on:click="login()" class="confirm-btn">ยืนยันสิทธิ์</div>-->
   <div class="banner">
     <h1>รายชื่อตัวสำรอง</h1>
   </div>

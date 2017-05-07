@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Announcement;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
 class AnnouncementController extends Controller
 {
-    public function uploadSlip (Request $request) {
+    public function uploadSlip (Request $request, $facebookUniqueID) {
 	    $file = $request->file('slip');
 	    $data['errorMessage'] = '';
 	    $checkMimeType = false;
@@ -24,18 +25,18 @@ class AnnouncementController extends Controller
 		    return ['error'=>
 			    "ไฟล์ภาพต้องไม่ใหญ่กว่า 2MB"];
 	    }
-	    $user = JWTAuth::parseToken()->authenticate();
-	    $profile = $user->profile()->first();
 
-	    var_dump($user);
-	    exit();
+	    $user = Announcement::where('facebookUniqueID', $facebookUniqueID)->firstOrFail();
 
-	    $filename = $user->FacebookUniqueID.date("YmdHis");
+	    $filename = $user->FacebookUniqueID.'-'.date("YmdHis"); // String Concaternation
+	    $filename = $filename.".".$file->getClientOriginalExtension();
 
-	    $path = $file->storeAs('slip',  $filename.".".$file->getClientOriginalExtension());
+	    $path = $file->storeAs('public/slip',  $filename);
 
 	    try {
-		    $profile->update(['ProfilePicture'=>$filename.".".$file->getClientOriginalExtension()]);
+	    	$user::where('facebookUniqueID', $user->FacebookUniqueID)->update([
+	    		    'Slip' => $filename,
+		        ]);
 	    }
 	    catch(Exception $e) {
 		    return response()->json(['error' => $e->getMessage()], 500);
