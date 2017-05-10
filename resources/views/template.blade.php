@@ -153,7 +153,7 @@
                 <br>
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/ETDA.svg">
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/CP ALL.svg">
-                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/Tencent-White.svg">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/Tencent-White.png">
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/DekD.svg">
             </div>
         </div>
