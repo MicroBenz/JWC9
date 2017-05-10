@@ -2,10 +2,13 @@
 <div class="intro" id="intro">
   <img class="jwc-logo" src="/img/logo.png" style="max-width: 240px !important;">
   <div class="main-img-sponsor">
-       <img class="sponsor-vip-intro" src="/images/sponsor/vip/sanook.png" style="transform: scale(1.35)">
        <img class="sponsor-vip-intro" src="/images/sponsor/vip/TWA.png">
        <img class="sponsor-vip-intro sponsor-horizontal" src="/images/sponsor/vip/Chandrakasem.gif">
-      <img class="sponsor-vip-intro sponsor-horizontal" src="/images/sponsor/vip/DekD.png">
+      <br>
+      <img class="sponsor-vip-intro sponsor-margin-top-10 sponsor-vip-intro-line2" src="/images/sponsor/svg/ETDA.svg" style="">
+      <img class="sponsor-vip-intro sponsor-cp" src="/images/sponsor/svg/CP ALL.svg">
+      <img class="sponsor-vip-intro sponsor-margin-top-10 sponsor-vip-intro-line2" src="/images/sponsor/svg/Tencent.svg" style="">
+      <img class="sponsor-vip-intro sponsor-margin-top-10 sponsor-vip-intro-line2" src="/images/sponsor/svg/DekD.svg" style="">
   </div>
   <div class="date-and-place">
     <h1 class="camp-slogan">Digital Web War<br>มหาสงครามคนดิจิทัล</h1>
@@ -70,6 +73,24 @@ export default {
     @media all and (min-width: 768px){
         .main-img-sponsor{
             margin-left: 30px;
+        }
+
+        .sponsor-cp{
+            max-height: 78px !important;
+        }
+
+        .sponsor-vip-intro-line2{
+            max-height: 100px !important;
+            margin-top: 25px !important;
+        }
+    }
+
+    @media all and (max-width: 767px){
+        .sponsor-cp{
+            height: 30px !important;
+        }
+        .sponsor-margin-top-10{
+            margin-top: 10px !important;
         }
     }
 </style>

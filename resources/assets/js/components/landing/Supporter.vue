@@ -7,27 +7,39 @@
     <div class="container">
       <div class="box-sponsor-logoList">
         <div class="row row-sponsor text-center">
-            <a rel="nofollow" href="https://www.webmaster.or.th"><img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/twa2.png"></a>
-            <a rel="nofollow" href="http://www.chandra.ac.th"><img class="img-responsive sponsor-img sponsor-vip sponsor-horizontal" src="/images/sponsor/vip/Chandrakasem.gif"></a>
-        </div>
-        <div class="row row-sponsor text-center">
-            <a rel="nofollow" href="http://www.sanook.com"><img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/sanook.png"></a>
-            <a rel="nofollow" href="https://www.dek-d.com"><img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/DekD.png"></a>
+            <a rel="nofollow" href="http://www.chandra.ac.th"><img class="img-responsive sponsor-img sponsor-vip sponsor-horizontal" src="/images/sponsor/svg/Chandrakasem.svg"></a>
+            <a rel="nofollow" href="https://www.webmaster.or.th"><img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg/TWA.svg"></a>
+            <a rel="nofollow" href="https://www.etda.or.th"><img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg/ETDA.svg"></a>
+            <a rel="nofollow" href="https://www.cpall.co.th"><img class="img-responsive sponsor-img sponsor-vip sponsor-vip-float" src="/images/sponsor/svg/CP ALL.svg"></a>
+            <a rel="nofollow" href="http://www.sanook.com"><img class="img-responsive sponsor-img sponsor-vip sponsor-vip-float sponsor-tencent" src="/images/sponsor/svg/Tencent.svg"></a>
+            <a rel="nofollow" href="https://www.dek-d.com"><img class="img-responsive sponsor-img sponsor-vip sponsor-vip-float sponsor-dekd" src="/images/sponsor/svg/DekD.svg"></a>
         </div>
         <div class="row row-sponsor text-center row-sponsor-super-row1">
-            <a rel="nofollow" href="https://www.pantip.com"><img class="img-responsive sponsor-img sponsor-super sponsor-horizontal" src="/images/sponsor/super/Pantip.png"></a>
-            <a rel="nofollow" href="http://www.uppercuz.com/brand"><img class="img-responsive sponsor-img sponsor-super sponsor-uppercuz" style="" src="/images/sponsor/super/Uppercuz.png"></a>
-            <a rel="nofollow" href="http://www.pathosting.com"><img class="img-responsive sponsor-img sponsor-super sponsor-pat" style="" src="/images/sponsor/super/P and T.png"></a>
-        </div>
-        <div class="row row-sponsor text-center">
-            <a rel="nofollow" href="https://www.camphub.in.th"><img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/super/CampHUB.png"></a>
-            <a rel="nofollow" href="http://www.ondemand.in.th"><img class="img-responsive sponsor-img sponsor-super" id="logo-ondemand" src="/images/sponsor/super/OnDemand.png"></a>
+            <a rel="nofollow" href="http://www.uppercuz.com/brand"><img class="img-responsive sponsor-img sponsor-super sponsor-uppercuz" style="" src="/images/sponsor/svg/Uppercuz.svg"></a>
+            <a rel="nofollow" href="https://www.pantip.com"><img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/svg/Pantip.svg"></a>
+            <a rel="nofollow" href="http://www.pathosting.com"><img class="img-responsive sponsor-img sponsor-super" style="" src="/images/sponsor/svg/PT.svg"></a>
+            <a rel="nofollow" href="https://www.camphub.in.th"><img class="img-responsive sponsor-img sponsor-super" src="/images/sponsor/svg/CampHUB.svg"></a>
+            <a rel="nofollow" href="http://www.ondemand.in.th"><img class="img-responsive sponsor-img sponsor-super" id="logo-ondemand" src="/images/sponsor/svg/OnDemand.svg"></a>
+            <a rel="nofollow" href="http://www.ondemand.in.th"><img class="img-responsive sponsor-img sponsor-super" id="logo-ondemand" src="/images/sponsor/svg/Provision.svg"></a>
         </div>
         <div class="row">
-            <a rel="nofollow" href="https://lnw.co.th"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/LNW.png"></a>
-            <a rel="nofollow" href="https://www.02dual.com"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/02dual.png"></a>
-            <a rel="nofollow" href="https://thumbinthai.wordpress.com"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/partner/Thumb.png"></a>
-            <a rel="nofollow" href="http://www.witty.co.th"><img class="img-responsive sponsor-img sponsor-partner sponsor-witty" src="/images/sponsor/partner/Witty.png"></a>
+            <a rel="nofollow" href="https://www.02dual.com"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/02dual.svg"></a>
+            <a rel="nofollow" href="https://lnw.co.th"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/LNW.svg"></a>
+            <a rel="nofollow" href="http://moonshot.co.th"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/Moonshot.svg"></a>
+            <a rel="nofollow" href="https://www.iurban.in.th/"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/iUrban.svg"></a>
+            <a rel="nofollow" href="https://www.facebook.com/tutulivethailand/"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/TuTu Live.svg"></a>
+            <a rel="nofollow" href="http://www.trueplookpanya.com/"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/True Plookpanya.svg"></a>
+            <a rel="nofollow" href="https://wongnai.com"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/Wongnai.svg"></a>
+            <a rel="nofollow" href="http://www.witty.co.th"><img class="img-responsive sponsor-img sponsor-partner sponsor-witty" src="/images/sponsor/svg/Witty.svg"></a>
+            <a rel="nofollow" href="https://www.facebook.com/dekcomstorypage/"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/DekCom.svg"></a>
+            <a rel="nofollow" href="http://www.dotarai.com"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/DotArai.svg"></a>
+            <a rel="nofollow" href="https://thumbinthai.wordpress.com"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/Thumb.svg"></a>
+            <a rel="nofollow" href="https://www.facebook.com/fabercastellthailandfan/"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/Faber-Castell.svg"></a>
+            <a rel="nofollow" href="http://singha.com/singhadrinkingwater/"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/Singha.svg"></a>
+        </div>
+        <div class="row">
+            <a rel="nofollow" href="http://www.lactasoy.com"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/Lactasoy.svg"></a>
+            <a rel="nofollow" href="http://www.koh-kae.com/"><img class="img-responsive sponsor-img sponsor-partner" src="/images/sponsor/svg/Kohkae.svg"></a>
         </div>
       </div>
     </div>
@@ -105,17 +117,18 @@
     }
 
     .sponsor-vip{
-        max-width: 340px !important;
+        max-width: 280px !important;
         max-height: 190px;
     }
 
     .sponsor-super{
         //max-width: 185px !important;
-        max-width: 230px !important;
+        max-width: 210px !important;
     }
 
     .sponsor-partner{
-        max-width: 90px !important;
+        max-width: 110px !important;
+        margin: 10px;
     }
 
     .sponsor-pantip{
@@ -123,9 +136,9 @@
     }
 
     .sponsor-uppercuz{
-        width: 260px !important;
-        max-width: none !important;
-        margin-top: 15px;
+        /*width: 260px !important;
+        max-width: none !important;*/
+        margin-top: 35px;
     }
 
     .sponsor-pat{
@@ -134,8 +147,11 @@
     }
 
     .sponsor-witty{
-        max-width: none !important;
-        max-height: 40px;
+        max-width: 180px !important;
+    }
+
+    .sponsor-moonshot{
+        max-width: 150px !important;
     }
 
     .row-sponsor{
@@ -148,7 +164,7 @@
 
     @media all and (max-width: 768px){
         .row-sponsor-super-row1{
-            margin-bottom: -50px !important;
+            margin-bottom: 30px !important;
         }
 
         .sponsor-img{
@@ -158,20 +174,19 @@
 
         .sponsor-vip{
             display: block !important;
-            max-width: 90% !important;
+            max-width: 75% !important;
             margin: 40px auto !important;
         }
 
         .sponsor-super{
-            display: block;
-            max-width: 60% !important;
+            display: inline-block;
+            max-width: 45% !important;
             //margin: 15px 5px;
-            margin: 50px auto;
+            margin: 10px 3px;
         }
 
         .sponsor-partner{
-            max-width: 30% !important;
-            margin: 20px;
+            max-width: 22% !important;
         }
 
         .row-sponsor{
@@ -180,6 +195,17 @@
 
         .box-sponsor-logoList{
             padding: 40px !important;
+        }
+    }
+    @media all and (min-width: 768px){
+        .sponsor-vip-float{
+            float: left;
+        }
+        .sponsor-dekd{
+            margin-top: 30px;
+        }
+        .sponsor-tencent{
+            margin-top: 40px;
         }
     }
 </style>
