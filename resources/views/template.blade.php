@@ -139,6 +139,7 @@
             display: inline-block;
             max-width: 100px;
             max-height: 60px;
+            margin: 0 20px;
         }
 
     </style>
@@ -151,10 +152,10 @@
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/twa2.png">
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/Chandrakasem.png">
                 <br>
-                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/ETDA.svg">
-                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/CP ALL.svg">
-                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/Tencent-White.png">
-                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/DekD.svg">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/ETDA.svg" style="max-height: 70px; margin-top: 10px;">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/CP ALL.svg" style="max-height: 50px !important;">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/Tencent-White.png" style="margin-top: 10px;">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/DekD.svg" style="margin-top: 10px;">
             </div>
         </div>
         <small style="color: #ccc;">Copyright &copy; {{ date('Y') }}, Young Webmaster Camp, in association with Thai Webmaster Association. All right reserved.</small>
