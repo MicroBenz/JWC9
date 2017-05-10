@@ -2,8 +2,8 @@
 <div class="intro" id="intro">
   <img class="jwc-logo" src="/img/logo.png" style="max-width: 240px !important;">
   <div class="main-img-sponsor">
+      <img class="sponsor-vip-intro sponsor-horizontal" src="/images/sponsor/vip/Chandrakasem.gif">
        <img class="sponsor-vip-intro" src="/images/sponsor/vip/TWA.png">
-       <img class="sponsor-vip-intro sponsor-horizontal" src="/images/sponsor/vip/Chandrakasem.gif">
       <br>
       <img class="sponsor-vip-intro sponsor-margin-top-10 sponsor-vip-intro-line2" src="/images/sponsor/svg/ETDA.svg" style="">
       <img class="sponsor-vip-intro sponsor-cp" src="/images/sponsor/svg/CP ALL.svg">
