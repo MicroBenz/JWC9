@@ -148,9 +148,12 @@
     <div style="width: 100%; min-height: 60px; background: black; padding: 20px;" class="text-center">
         <div class="box-sponsor-logoList">
             <div class="row row-sponsor-footer text-center">
-                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/sanook.png">
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/twa2.png">
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/Chandrakasem.png">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/ETDA.svg">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/CP ALL.svg">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/Tencent.svg">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/DekD.svg">
             </div>
         </div>
         <small style="color: #ccc;">Copyright &copy; {{ date('Y') }}, Young Webmaster Camp, in association with Thai Webmaster Association. All right reserved.</small>
