@@ -137,7 +137,7 @@
         }
         .row-sponsor-footer img.sponsor-img{
             display: inline-block;
-            max-width: 200px;
+            max-width: 100px;
             max-height: 60px;
         }
 
@@ -150,9 +150,10 @@
             <div class="row row-sponsor-footer text-center">
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/twa2.png">
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/vip/white/Chandrakasem.png">
+                <br>
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/ETDA.svg">
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/CP ALL.svg">
-                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/Tencent.svg">
+                <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/Tencent-White.svg">
                 <img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg-white/DekD.svg">
             </div>
         </div>
