@@ -7,11 +7,16 @@
           <h4 class="pad-ref"><b>Ref ID: {{ camper.CamperID }}</b></h4>
           <h4><b>ชื่อ-นามสกุล:</b> {{ camper.FirstName }} {{ camper.LastName }}</h4>
           <h4><b>ยอดเงิน:</b> {{ camper.Money }}</h4>
-          <a href="/storage/files/jwc9-parent-approval-request.pdf">
+          <a href="/storage/files/jwc9-parent-approval-request.pdf" style="color: white !important;">
             <div class="btn-game">
               ดาวน์โหลด ใบขออนุญาตผู้ปกครอง
             </div>
           </a>
+            <a v-bind:href="'/storage/files/' + camper.FacebookUniqueID" style="color: white !important;">
+                <div class="btn-game">
+                    ดาวน์โหลด ใบลา
+                  </div>
+            </a>
         </div>
       </div>
       <div class="col-md-6 col-xs-12">

@@ -11,7 +11,7 @@
             <a rel="nofollow" href="https://www.webmaster.or.th"><img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg/TWA.svg"></a>
             <a rel="nofollow" href="https://www.etda.or.th"><img class="img-responsive sponsor-img sponsor-vip" src="/images/sponsor/svg/ETDA.svg"></a>
             <a rel="nofollow" href="https://www.cpall.co.th"><img class="img-responsive sponsor-img sponsor-vip sponsor-vip-float" src="/images/sponsor/svg/CP ALL.svg"></a>
-            <a rel="nofollow" href="http://www.sanook.com"><img class="img-responsive sponsor-img sponsor-vip sponsor-vip-float sponsor-tencent" src="/images/sponsor/svg/Tencent.svg"></a>
+            <a rel="nofollow" href="http://corporate.sanook.com"><img class="img-responsive sponsor-img sponsor-vip sponsor-vip-float sponsor-tencent" src="/images/sponsor/svg/Tencent.svg"></a>
             <a rel="nofollow" href="https://www.dek-d.com"><img class="img-responsive sponsor-img sponsor-vip sponsor-vip-float sponsor-dekd" src="/images/sponsor/svg/DekD.svg"></a>
         </div>
         <div class="row row-sponsor text-center row-sponsor-super-row1">
