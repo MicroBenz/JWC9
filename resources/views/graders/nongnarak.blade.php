@@ -32,8 +32,8 @@
                             </a>
                         </td>
                         <td class="text-center">
-                            <b>{{ $camper->Nickname }}</b><br>
-                            <small>{{ $camper->FirstName }} {{ $camper->LastName }}</small>
+                            <h1 style="padding-top: 80px;"><b>{{ $camper->Nickname }}</b></h1><br>
+                            <p style="padding-top: 5px; color: #666;">{{ $camper->FirstName }} {{ $camper->LastName }}</p>
                         </td>
                         <td width="300">
                             <a href="https://www.facebook.com/{{ $camper->FacebookUniqueID }}">
