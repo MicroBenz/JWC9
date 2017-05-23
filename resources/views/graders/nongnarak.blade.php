@@ -12,13 +12,13 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th>
+                        <th width="300">
                             Facebook Photo
                         </th>
                         <th>
                             Camper Info
                         </th>
-                        <th>
+                        <th width="300">
                             Profiles Photo
                         </th>
                     </tr>
@@ -26,12 +26,20 @@
                 <tbody>
                 @foreach($qualifies as $camper)
                     <tr>
-                        <td><img style="max-width: 300px;" src="https://jwc9.jwc.in.th/storage/{{ $camper->ProfilePicture }}"></td>
+                        <td width="300">
+                            <a href="https://www.facebook.com/{{ $registrant->FacebookUniqueID }}">
+                                <img style="max-width: 300px;" src="https://jwc9.jwc.in.th/storage/{{ $camper->ProfilePicture }}">
+                            </a>
+                        </td>
                         <td class="text-center">
                             <b>{{ $camper->Nickname }}</b><br>
                             <small>{{ $camper->FirstName }} {{ $camper->LastName }}</small>
                         </td>
-                        <td><img style="max-width: 300px;"  src="https://graph.facebook.com/v2.8/{{ $camper->FacebookUniqueID }}/picture/?width=1000&height=1000"></td>
+                        <td width="300">
+                            <a href="https://www.facebook.com/{{ $registrant->FacebookUniqueID }}">
+                                <img style="max-width: 300px;"  src="https://graph.facebook.com/v2.8/{{ $camper->FacebookUniqueID }}/picture/?width=1000&height=1000">
+                            </a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
