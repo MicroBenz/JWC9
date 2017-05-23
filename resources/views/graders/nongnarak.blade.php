@@ -27,7 +27,7 @@
                 @foreach($qualifies as $camper)
                     <tr>
                         <td width="300">
-                            <a href="https://www.facebook.com/{{ $registrant->FacebookUniqueID }}">
+                            <a href="https://www.facebook.com/{{ $camper->FacebookUniqueID }}">
                                 <img style="max-width: 300px;" src="https://jwc9.jwc.in.th/storage/{{ $camper->ProfilePicture }}">
                             </a>
                         </td>
