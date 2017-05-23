@@ -12,13 +12,13 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                        <th width="300">
+                        <th width="300" class="text-center">
                             Facebook Photo
                         </th>
-                        <th>
+                        <th class="text-center">
                             Camper Info
                         </th>
-                        <th width="300">
+                        <th width="300" class="text-center">
                             Profiles Photo
                         </th>
                     </tr>
