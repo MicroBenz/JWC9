@@ -13,13 +13,13 @@
                 <thead>
                     <tr>
                         <th width="300" class="text-center">
-                            Facebook Photo
+                            Profile Photo
                         </th>
                         <th class="text-center">
                             Camper Info
                         </th>
                         <th width="300" class="text-center">
-                            Profiles Photo
+                            Facebook Photo
                         </th>
                     </tr>
                 </thead>
