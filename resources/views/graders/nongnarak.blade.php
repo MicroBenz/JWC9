@@ -36,7 +36,7 @@
                             <small>{{ $camper->FirstName }} {{ $camper->LastName }}</small>
                         </td>
                         <td width="300">
-                            <a href="https://www.facebook.com/{{ $registrant->FacebookUniqueID }}">
+                            <a href="https://www.facebook.com/{{ $camper->FacebookUniqueID }}">
                                 <img style="max-width: 300px;"  src="https://graph.facebook.com/v2.8/{{ $camper->FacebookUniqueID }}/picture/?width=1000&height=1000">
                             </a>
                         </td>
