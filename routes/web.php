@@ -58,6 +58,8 @@ Route::group(['prefix' => 'wearehiring'], function () {
 	Route::get('slip', 'Grader\SlipController@getIndex');
 	Route::get('slip/{secret}', 'Grader\SlipController@getSlip');
 	Route::post('slip', 'Grader\SlipController@postCheck');
+
+	Route::get('nongnarak', 'Grader\HiredCamperController@index');
 });
 
 Route::get('/{any}', function() { return view('app'); })->where('any', '.*');
