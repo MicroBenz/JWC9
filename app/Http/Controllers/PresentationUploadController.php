@@ -15,7 +15,7 @@ class PresentationUploadController extends Controller
     }
     public function store (Request $request)
     {
-	    $file = $request->file('slip');
+	    $powerpoint = $request->file('powerpoint');
 	    $data['errorMessage'] = '';
 	    $checkMimeType = false;
 	    $allowMimeType = [
@@ -25,7 +25,7 @@ class PresentationUploadController extends Controller
 	    ];
 
 	    foreach($allowMimeType as $mime){
-		    $checkMimeType = $checkMimeType || ($file->getMimeType() == $mime);
+		    $checkMimeType = $checkMimeType || ($powerpoint->getMimeType() == $mime);
 	    }
 	    if(!$checkMimeType){
 		    return ['error'=> "ไฟล์ต้องเป็น .pptx หรือ .pdf เท่านั้น"];
