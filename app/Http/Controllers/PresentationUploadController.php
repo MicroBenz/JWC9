@@ -42,9 +42,9 @@ class PresentationUploadController extends Controller
 		    return ['error'=> "ไฟล์ภาพต้องไม่ใหญ่กว่า 100MB"];
 	    }
 
-	    $filename = $powerpoint->getClientOriginalName();
+	    $filename = $pdf->getClientOriginalName();
 
-	    $path = $powerpoint->storeAs('public/slides',  $filename);
+	    $path = $pdf->storeAs('public/slides',  $filename);
 
 	    return response()->json(['status' => 'OK']);
     }
