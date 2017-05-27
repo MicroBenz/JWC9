@@ -28,7 +28,7 @@
             <img src="https://jwc9.jwc.in.th/img/logo.png" style="max-width: 100%; max-height: 300px;">
         </div>
         <h4 style="margin-bottom: 15px;" class="text-center">1.เลือกไฟล์</h4>
-        <form action="https://jwc9.jwc.in.th/upload" method="post">
+        <form action="https://jwc9.jwc.in.th/upload" method="post" enctype="multipart/form-data">
             <div class="table-responsive">
                 <table class="table table-bordered table-striped">
                     <colgroup>
