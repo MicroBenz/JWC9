@@ -39,6 +39,40 @@ class PresentationUploadController extends Controller
 
 	    $path = $powerpoint->storeAs('public/slides',  $filename);
 
+
+
+
+
+
+
+
+	    $pdf = $request->file('pdf');
+	    $data['errorMessage'] = '';
+	    $checkMimeType = false;
+	    $allowMimeType = [
+		    'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+		    'application/vnd.ms-powerpoint',
+		    'application/pdf'
+	    ];
+
+	    foreach($allowMimeType as $mime){
+	    	echo $mime;
+	    	echo "<br>";
+	    	echo $pdf->getMimeType();
+		    $checkMimeType = $checkMimeType || ($pdf->getMimeType() == $mime);
+	    }
+	    if(!$checkMimeType){
+		    return ['error'=> "ไฟล์ต้องเป็น .pptx หรือ .pdf เท่านั้น (2)"];
+	    }
+	    if($powerpoint->getClientSize() > 104857600){
+		    // $data['errorMessage'] .= "ไฟล์ภาพต้องไม่ใหญ่กว่า 2MB";
+		    return ['error'=> "ไฟล์ภาพต้องไม่ใหญ่กว่า 100MB"];
+	    }
+
+	    $filename = $powerpoint->getClientOriginalName();
+
+	    $path = $powerpoint->storeAs('public/slides',  $filename);
+
 	    return response()->json(['status' => 'OK']);
     }
 }
