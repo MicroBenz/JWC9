@@ -30,7 +30,7 @@ class PresentationUploadController extends Controller
 	    if(!$checkMimeType){
 		    return ['error'=> "ไฟล์ต้องเป็น .pptx หรือ .pdf เท่านั้น"];
 	    }
-	    if($file->getClientSize() > 104857600){
+	    if($powerpoint->getClientSize() > 104857600){
 		    // $data['errorMessage'] .= "ไฟล์ภาพต้องไม่ใหญ่กว่า 2MB";
 		    return ['error'=> "ไฟล์ภาพต้องไม่ใหญ่กว่า 100MB"];
 	    }
