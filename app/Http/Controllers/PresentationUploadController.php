@@ -12,6 +12,7 @@ class PresentationUploadController extends Controller
     }
     public function store (Request $request)
     {
-	    $file = $request->file('slide')->store('slides');
+	    $file = $request->file('powerpoint')->store('slides');
+	    $file = $request->file('pdf')->store('slides');
     }
 }
