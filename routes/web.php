@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('upload', 'PresentationUploadController@index');
+Route::post('upload', 'PresentationUploadController@store');
+
 Route::get('/', function () {
     return view('app');
 });
